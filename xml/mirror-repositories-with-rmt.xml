@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section
+[
+  <!ENTITY % entities SYSTEM "generic-entities.ent">
+    %entities;
+]>
+
+<section xml:id="mirror-repositories-with-rmt" xml:lang="en"
+ xmlns="http://docbook.org/ns/docbook" version="5.1"
+ xmlns:xi="http://www.w3.org/2001/XInclude"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <title>Mirroring PRODUCT repositories with &rmt;</title>
+ <info>
+  <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
+   <dm:bugtracker></dm:bugtracker>
+   <dm:translation>no</dm:translation>
+  </dm:docmanager>
+ </info>
+
+ <para>
+  Use this procedure to mirror repositories on the &rmt; server.
+ </para>
+ <itemizedlist>
+  <title>Prerequisites</title>
+  <listitem>
+   <para>
+    Set up RMT
+   </para>
+  </listitem>
+  <listitem>
+   <para>
+    Make sure you set organization credentials in /etc/rmt.conf
+   </para>
+  </listitem>
+  <listitem>
+   <para>
+    Liberty subscription
+   </para>
+  </listitem>
+ </itemizedlist>
+ <procedure xml:id="pro-mirror-repositories-with-rmt">
+  <step>
+   <para>
+    Synchronize repository metadata (information about available products and repositories)
+   </para>
+<screen>&prompt.root;rmt-cli sync</screen>
+   <para>
+    Periodic synchronization is done via systemd timer rmt-server-sync.timer. For status information e.g. next running time use systemctl status :
+   </para>
+<screen>&prompt.root;systemctl status rmt-server-sync.timer</screen>
+  </step>
+  <step>
+   <para>
+    Find the product ID for PRODUCT:
+   </para>
+<screen>&prompt.root;rmt-cli products list –-all --name=PRODUCT</screen>
+  </step>
+  <step>
+   <para>
+    Enable PRODUCT using the product ID (this will enable or disable all repo associated with the product.
+   </para>
+<screen>&prompt.root;rmt-cli product enable $PRODUCT_ID</screen>
+<remark>**Specify the product - what product/s?**
+</remark>
+  </step>
+  <step>
+   <para>
+    Enable repositories mirroring (if you want to change product defaults, e.g. you want src repo).
+   </para>
+<screen>&prompt.root;rmt-cli repo list --all
+&prompt.root;rmt-cli repo enable $REPO_ID</screen>
+<remark>**Specify the repos - what repos?**
+**Shouldn't actually need this step unless you want to enable more than the default repos**</remark>
+  </step>
+  <step>
+   <para>
+    Start package mirroring for enabled repositories:
+   </para>
+<screen>&prompt.root;rmt-cli mirror</screen>
+   <para>
+    Packages are downloaded to RMT once a day. This task is done by systemd timer rmt-server-mirror.timer once a day. For status information e.g. next running time use systemctl status:
+   </para>
+<screen>&prompt.root;systemctl status rmt-server-mirror.timer</screen>
+  </step>
+ </procedure>
+</section>

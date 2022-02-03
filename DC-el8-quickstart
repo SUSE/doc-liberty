@@ -1,0 +1,12 @@
+MAIN="art-el8-quickstart.xml"
+ROOTID="art-el8-quickstart"
+
+PROFCONDITION="suse-product"
+#PROFCONDITION="suse-product;beta"
+#PROFCONDITION="community-project"
+
+DRAFT=1
+REMARKS=1
+
+STYLEROOT="/usr/share/xml/docbook/stylesheet/suse2021-ns"
+FALLBACK_STYLEROOT="/usr/share/xml/docbook/stylesheet/suse-ns"

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="urn:x-suse:xslt:profiling:docbook51-profile.xsl"
+ type="text/xml"
+ title="Profiling step"?>
+<!DOCTYPE article
+[
+  <!ENTITY % entities SYSTEM "generic-entities.ent">
+    %entities;
+]>
+
+<article xml:id="art-el8-quickstart" xml:lang="en"
+ xmlns="http://docbook.org/ns/docbook" version="5.1"
+ xmlns:its="http://www.w3.org/2005/11/its"
+ xmlns:xi="http://www.w3.org/2001/XInclude"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+
+ <info>
+  <title>&rhla;/CentOS 8 Quick Start (final title TBD)</title>
+  <productname>&productname;</productname>
+  <date><?dbtimestamp format="B d, Y"?></date>
+  <abstract>
+   <para>
+
+   </para>
+  </abstract>
+  <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
+   <!--dm:bugtracker>
+    <dm:url>https://bugzilla.suse.com/enter_bug.cgi</dm:url>
+    <dm:component>SUSE Liberty Linux</dm:component>
+    <dm:product>Documentation</dm:product>
+    <dm:assignee>tahlia.richardson@suse.com</dm:assignee>
+   </dm:bugtracker-->
+   <dm:translation>no</dm:translation>
+  </dm:docmanager>
+ </info>
+
+ <section xml:id="introduction-el8-quickstart">
+  <title>Introduction</title>
+   <para>
+    Describe Liberty.
+   </para>
+   <para>
+    Describe RMT.
+   </para>
+   <para>
+    Using &rmt; to attach a &productname; subscription to a &rhel; 8 or
+    CentOS Stream 8 system involves the following steps:
+   </para>
+   <orderedlist>
+    <listitem>
+     <para>
+      <xref linkend="requirements-el8-quickstart"/>. Make sure that you have
+      everything required for the following procedures.
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      <xref linkend="configure-rmt-server"/>. This server must be installed on
+      &sles; 15. You can skip this step if you already have an &rmt; server.
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      <xref linkend="mirror-repositories-with-rmt"/>. You can skip this step if
+      the PRODUCT product is already enabled and mirrored on your &rmt; server.
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      <xref linkend="register-el8-with-rmt"/>.
+     </para>
+    </listitem>
+   </orderedlist>
+ </section>
+
+ <section xml:id="requirements-el8-quickstart">
+  <title>Requirements</title>
+  <itemizedlist>
+   <listitem>
+    <para>
+     Liberty subscription
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     A &scc; account
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     A SLE 15 server for RMT, with lots of storage space, 200GB+. See <link xlink:href="https://documentation.suse.com/sles/15-SP3/single-html/SLES-rmt/#sec-rmt-storage-requirements"/>.
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     The EL8 server you want to register (too obvious?)
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     RHEL and RMT server need to be in the same network
+    </para>
+   </listitem>
+  </itemizedlist>
+ </section>
+
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="configure-rmt-server.xml"/>
+
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mirror-repositories-with-rmt.xml"/>
+
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="register-el8-with-rmt.xml"/>
+
+ <section xml:id="troubleshooting-el8-quickstart">
+  <title>Troubleshooting</title>
+  <variablelist>
+   <varlistentry>
+    <term>nginx.service not running after installing RMT</term>
+    <listitem>
+     <para>
+      Not sure yet, need to investigate
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term>Liberty product doesn't appear after rmt-cli sync</term>
+    <listitem>
+     <para>
+      Check your network. If network is down the sync command won't throw an error, but it also won't sync anything.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term>Zypper error</term>
+    <listitem>
+     <para>
+      Check if libzypp version 16.20.4 or higher is installed.
+     </para>
+     <remark>Might not need this anymore as the original note is two years old and current libzypp is version 17+</remark>
+    </listitem>
+   </varlistentry>
+  </variablelist>
+ </section>
+</article>

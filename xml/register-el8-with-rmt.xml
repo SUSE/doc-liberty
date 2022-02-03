@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section
+[
+  <!ENTITY % entities SYSTEM "generic-entities.ent">
+    %entities;
+]>
+
+<section xml:id="register-el8-with-rmt" xml:lang="en"
+ xmlns="http://docbook.org/ns/docbook" version="5.1"
+ xmlns:xi="http://www.w3.org/2001/XInclude"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <title>Registering &rhla;/CentOS 8 with &rmt;</title>
+
+ <info>
+  <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
+   <dm:bugtracker></dm:bugtracker>
+   <dm:translation>no</dm:translation>
+  </dm:docmanager>
+ </info>
+
+ <para>
+  Use this procedure to register a &rhel; 8 or CentOS Stream 8 machine with &rmt;.
+ </para>
+ <itemizedlist>
+  <title>Prerequisites</title>
+  <listitem>
+   <para>
+    A valid registration code for &productname;.
+   </para>
+  </listitem>
+  <listitem>
+   <para>
+    RHEL and RMT server need to be in the same network
+   </para>
+  </listitem>
+  <listitem>
+   <para>
+
+   </para>
+  </listitem>
+  <listitem>
+   <para>
+
+   </para>
+  </listitem>
+ </itemizedlist>
+ <procedure xml:id="pro-register-el8-with-rmt">
+  <step>
+   <para>
+    Download the <filename>rmt-client-setup-NAME?</filename> script:
+   </para>
+<screen>&prompt.root;curl http://<replaceable>RMT_SERVER</replaceable>/tools/rmt-client-setup-NAME? --output rmt-client-setup-NAME?</screen>
+<remark>**Check name of script. Liberty version?**</remark>
+  </step>
+  <step>
+   <para>
+    Run the <filename>rmt-client-setup-NAME?</filename> script with the URL of the RMT server as a parameter.
+   </para>
+<screen>&prompt.root;sh rmt-client-setup-res https://<replaceable>RMT_SERVER</replaceable></screen>
+   <para>
+    The script performs the following tasks:
+   </para>
+   <itemizedlist>
+    <listitem>
+     <para>
+      Adds repositories, install SUSEConnect and its dependencies, disable repositories
+     </para>
+     <remark>This part fails on sles_es-release because of conflicts between various versions of centos-stream-repos and centos-gpg-keys. It worked when I manually added --skip-broken to the script, but this is not ideal.</remark>
+    </listitem>
+    <listitem>
+     <para>
+      Downloads rmt-client-setup script and run it. The rmt-client-setup script does the following:
+     </para>
+     <itemizedlist>
+      <listitem>
+       <para>
+        Downloads all keys from http://rmt-server/repo/keys
+       </para>
+      </listitem>
+      <listitem>
+       <para>
+        Import the keys with gpg –import and rpm --import
+       </para>
+      </listitem>
+      <listitem>
+       <para>
+        Downloads CA’s certificate from https://rmt-server/rmt.crt
+       </para>
+      </listitem>
+      <listitem>
+       <para>
+        Import CA’s certificate to trusted store
+       </para>
+      </listitem>
+      <listitem>
+       <para>
+        Invoke SUSEConnect. SUSEConnect adds all repositories (BaseOS, AppStream, and CodeReady) and set them as enabled.
+       </para>
+       <remark>I got all the way up to here and then it couldn't detect the base product. Because I'm testing it on CentOS Stream maybe?</remark>
+      </listitem>
+     </itemizedlist>
+    </listitem>
+   </itemizedlist>
+  </step>
+  <step>
+   <para>
+    Run the following commands to test whether the script worked:
+   </para>
+   <itemizedlist>
+    <listitem>
+     <para>
+      List the available repositories:
+     </para>
+<screen>&prompt.root;dnf repolist</screen>
+    </listitem>
+    <listitem>
+     <para>
+      Update everything:
+     </para>
+<screen>&prompt.root;dnf update</screen>
+<remark>Why do this here, specifically?</remark>
+    </listitem>
+    <listitem>
+     <para>
+      List the registered products on this system:
+     </para>
+<screen>&prompt.root;SUSEConnect --status-text</screen>
+    </listitem>
+   </itemizedlist>
+  </step>
+  <step>
+   <para>
+    List the available extensions:
+   </para>
+<screen>&prompt.root;SUSEConnect --list-extensions</screen>
+   <para>Update everything again:</para>
+<screen>&prompt.root;dnf update</screen>
+<remark>Why do this here, specifically?</remark>
+  </step>
+  <step>
+   <para>
+    Activate the NAME? extension:
+   </para>
+<screen>&prompt.root;SUSEConnect –p **NAME??**/8/x86_64 –r <replaceable>REGISTRATION_CODE</replaceable></screen>
+<remark>**Check name of extension. Liberty version?**</remark>
+   <tip role="compact">
+    <para>
+     To find the registration code, log in to the
+     <link xlink:href="https://scc.suse.com">&scc;</link>, select your
+     organization from <guimenu>My Organizations</guimenu>, and click
+     <guimenu>Subscriptions</guimenu>.
+    </para>
+   </tip>
+  </step>
+ </procedure>
+</section>
