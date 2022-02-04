@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section
+[
+  <!ENTITY % entities SYSTEM "generic-entities.ent">
+    %entities;
+]>
+
+<section xml:id="register-el8-with-rmt" xml:lang="en"
+ xmlns="http://docbook.org/ns/docbook" version="5.1"
+ xmlns:xi="http://www.w3.org/2001/XInclude"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <title>Registering &rhla;/CentOS 8 with &rmt;</title>
+
+ <info>
+  <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
+   <dm:bugtracker></dm:bugtracker>
+   <dm:translation>no</dm:translation>
+  </dm:docmanager>
+ </info>
+
+ <para>
+  Use this procedure to register &rhel; 8 or CentOS 8 with &rmt;.
+ </para>
+ <itemizedlist>
+  <title>Prerequisites</title>
+  <listitem>
+   <para>
+    <xref linkend="configure-rmt-server"/>
+   </para>
+  </listitem>
+  <listitem>
+   <para>
+    <xref linkend="mirror-repositories-with-rmt"/>
+   </para>
+  </listitem>
+  <listitem>
+   <para>
+    The system you want to register can access the &rmt; server.
+   </para>
+  </listitem>
+  <listitem>
+   <para>
+    You have a valid registration code for &productname;.
+   </para>
+  </listitem>
+  <listitem>
+   <para>
+    <remark>Do you need to remove RH subscriptions/repos first?</remark>
+   </para>
+  </listitem>
+ </itemizedlist>
+ <procedure xml:id="pro-register-el8-with-rmt">
+  <step>
+   <para>
+    Download the <filename>rmt-client-setup-TODOCORRECTNAME</filename> script:
+   </para>
+<screen>&prompt.root;<command>curl http://<replaceable>RMT_SERVER</replaceable>/tools/rmt-client-setup-TODOCORRECTNAME --output rmt-client-setup-TODOCORRECTNAME</command></screen>
+<remark>Check if the name of the script has changed.</remark>
+  </step>
+  <step>
+   <para>
+    Run the <filename>rmt-client-setup-TODOCORRECTNAME</filename> script with
+    the URL of the RMT server as a parameter:
+   </para>
+<screen>&prompt.root;<command>sh rmt-client-setup-res https://<replaceable>RMT_SERVER</replaceable></command></screen>
+   <para>
+    The script performs the following tasks:
+   </para>
+   <itemizedlist>
+    <listitem>
+     <para>
+      Installs SUSEConnect and its dependencies.
+     </para>
+     <remark>This part fails on sles_es-release because of conflicts between various versions of centos-stream-repos and centos-gpg-keys. It worked when I manually added --skip-broken to the script, but this is not ideal.</remark>
+    </listitem>
+    <listitem>
+     <para>
+      Downloads and runs the <filename>rmt-client-setup</filename> script, which
+      does the following:
+     </para>
+     <itemizedlist>
+      <listitem>
+       <para>
+        Downloads all keys from <literal>http://<replaceable>RMT_SERVER</replaceable>/repo/keys</literal>.
+       </para>
+      </listitem>
+      <listitem>
+       <para>
+        Imports the keys with <command>gpg --import</command> and <command>rpm --import</command>.
+       </para>
+      </listitem>
+      <listitem>
+       <para>
+        Downloads the CA certificate from <literal>https://<replaceable>RMT_SERVER</replaceable>/rmt.crt</literal>.
+       </para>
+      </listitem>
+      <listitem>
+       <para>
+        Imports the CA certificate to the trust store.
+       </para>
+      </listitem>
+      <listitem>
+       <para>
+        Uses SUSEConnect to add and enable all repositories (BaseOS, AppStream, and CodeReady).
+       </para>
+       <remark>I got all the way up to here and then it couldn't detect the base product. Because I'm testing it on CentOS Stream maybe? I don't have access to a RHEL machine.</remark>
+      </listitem>
+     </itemizedlist>
+    </listitem>
+   </itemizedlist>
+  </step>
+  <step>
+   <para>
+    Run the following commands to test whether the script worked:
+   </para>
+   <itemizedlist>
+    <listitem>
+     <para>
+      List the available repositories:
+     </para>
+<screen>&prompt.root;<command>dnf repolist</command></screen>
+    </listitem>
+    <listitem>
+     <para>
+      Update everything:
+     </para>
+<screen>&prompt.root;<command>dnf update</command></screen>
+<remark>Why do this here, specifically?</remark>
+    </listitem>
+    <listitem>
+     <para>
+      List the registered products on this system:
+     </para>
+<screen>&prompt.root;<command>SUSEConnect --status-text</command></screen>
+    </listitem>
+   </itemizedlist>
+  </step>
+  <step>
+   <para>
+    List the available extensions:
+   </para>
+<screen>&prompt.root;<command>SUSEConnect --list-extensions</command></screen>
+   <para>Update everything again:</para>
+<screen>&prompt.root;<command>dnf update</command></screen>
+<remark>Why do this here, specifically?</remark>
+  </step>
+  <step>
+   <para>
+    Activate the TODOCORRECTNAME extension using the appropriate command from the
+    <command>--list-extensions</command> ouput:
+   </para>
+<screen>&prompt.root;<command>SUSEConnect –p TODOCORRECTNAME/8/x86_64 –r <replaceable>REGISTRATION_CODE</replaceable></command></screen>
+<remark>Check the correct name of the extension</remark>
+  </step>
+ </procedure>
+</section>

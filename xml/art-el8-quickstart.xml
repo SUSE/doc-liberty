@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="urn:x-suse:xslt:profiling:docbook51-profile.xsl"
+ type="text/xml"
+ title="Profiling step"?>
+<!DOCTYPE article
+[
+  <!ENTITY % entities SYSTEM "generic-entities.ent">
+    %entities;
+]>
+
+<article xml:id="art-el8-quickstart" xml:lang="en"
+ xmlns="http://docbook.org/ns/docbook" version="5.1"
+ xmlns:its="http://www.w3.org/2005/11/its"
+ xmlns:xi="http://www.w3.org/2001/XInclude"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+
+ <info>
+  <title>&rhla;/CentOS 8 Quick Start</title><!-- Final title TBD -->
+  <productname>&productname;</productname>
+  <date><?dbtimestamp format="B d, Y"?></date>
+  <abstract>
+   <para>
+    This guide describes how to attach a &productname; subscription to &rhel; 8
+    or CentOS 8 using &suse;'s &rmtool;.
+   </para>
+  </abstract>
+  <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
+   <!--dm:bugtracker>
+    <dm:url>https://bugzilla.suse.com/enter_bug.cgi</dm:url>
+    <dm:component>SUSE Liberty Linux</dm:component>
+    <dm:product>Documentation</dm:product>
+    <dm:assignee>tahlia.richardson@suse.com</dm:assignee>
+   </dm:bugtracker-->
+   <dm:translation>no</dm:translation>
+  </dm:docmanager>
+ </info>
+
+ <section xml:id="introduction-el8-quickstart">
+  <title>Introduction</title>
+   <para>
+    <remark>TO DO: Describe Liberty.</remark>
+   </para>
+   <para>
+    <remark>TO DO: Describe RMT.</remark>
+   </para>
+   <para>
+    Using &rmt; to attach a &productname; subscription to a &rhla; or CentOS 8
+    system involves the following steps:
+   </para>
+   <orderedlist>
+    <listitem>
+     <para>
+      <xref linkend="requirements-el8-quickstart"/>. Make sure that you have
+      everything required for the following procedures.
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      <xref linkend="configure-rmt-server"/>. This server must be installed on
+      &sles; 15. You can skip this step if you already have an &rmt; server in
+      your network.
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      <xref linkend="mirror-repositories-with-rmt"/>. You can skip this step if
+      the &productname; product is already enabled and mirrored on your &rmt; server.
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      <xref linkend="register-el8-with-rmt"/>.
+     </para>
+    </listitem>
+   </orderedlist>
+ </section>
+
+ <section xml:id="requirements-el8-quickstart">
+  <title>Requirements</title>
+  <itemizedlist>
+   <listitem>
+    <para>
+     You have a &productname; subscription.
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     You have a <link xlink:href="https://scc.suse.com">&scc;</link> account.
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     &sles; (&slsa;) 15 is installed and running in the same network as the
+     machines you want to register. This server will host &rmt;. To install the
+     latest version of &slsa; 15, see the
+     <link xlink:href="&dsc-sles;/&slesnumber;/html/SLES-all/article-installation.html">
+     &instquick;</link>.
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     The &slsa; 15 server has enough storage available for repository mirroring.
+    </para>
+    <para>
+     Downloaded packages are stored in <filename>/usr/share/rmt/public/repo</filename>,
+     which is a symbolic link to <filename>/var/lib/rmt/public/repo/</filename>.
+     The amount of storage required depends on the number of repositories and
+     architectures that you mirror, and the number of products that you enable.
+     We recommend 1.5 times the total size of all enabled repositories, or
+     approximately 200 GB per release.
+    </para>
+   </listitem>
+  </itemizedlist>
+ </section>
+
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="configure-rmt-server.xml"/>
+
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mirror-repositories-with-rmt.xml"/>
+
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="register-el8-with-rmt.xml"/>
+
+ <section xml:id="troubleshooting-el8-quickstart">
+  <title>Troubleshooting</title>
+  <variablelist>
+   <varlistentry>
+    <term><systemitem>nginx.service</systemitem> not running after installing RMT</term>
+    <listitem>
+     <para>
+      <remark>Not sure yet, need to investigate</remark>
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term>&productname; doesn't appear in product list after <command>rmt-cli sync</command></term>
+    <listitem>
+     <para>
+      Check your network. If the network is down, the sync command fails without
+      showing an error.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term>Mirroring completes with errors</term>
+    <listitem>
+     <para>
+      If some packages could not be downloaded due to timeouts, re-run the
+      <command>rmt-cli mirror</command> command until all packages are downloaded.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term>Setup script fails to install <command>SUSEConnect</command></term>
+    <listitem>
+     <para>
+      If some packages could not be downloaded to the RMT server due to timeouts
+      during the first mirroring, the <filename>repodata</filename> directory
+      won't be available, and <command>SUSEConnect</command> can't be installed.
+     </para>
+     <para>
+      On the RMT server, re-run the <command>rmt-cli mirror</command> command
+      until all packages are downloaded.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term>Zypper error</term>
+    <listitem>
+     <para>
+      Check if <package>libzypp</package> version 16.20.4 or higher is installed.
+     </para>
+     <remark>Might not need this anymore as the original note is two years old and current libzypp is version 17+</remark>
+    </listitem>
+   </varlistentry>
+  </variablelist>
+ </section>
+</article>
