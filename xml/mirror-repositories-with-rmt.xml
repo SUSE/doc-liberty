@@ -9,7 +9,7 @@
  xmlns="http://docbook.org/ns/docbook" version="5.1"
  xmlns:xi="http://www.w3.org/2001/XInclude"
  xmlns:xlink="http://www.w3.org/1999/xlink">
- <title>Mirroring PRODUCT repositories with &rmt;</title>
+ <title>Mirroring &productname; repositories with &rmt;</title>
  <info>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
    <dm:bugtracker></dm:bugtracker>
@@ -24,63 +24,70 @@
   <title>Prerequisites</title>
   <listitem>
    <para>
-    Set up RMT
+    <xref linkend="configure-rmt-server"/>
    </para>
   </listitem>
   <listitem>
    <para>
-    Make sure you set organization credentials in /etc/rmt.conf
+    Your organization credentials appear correctly in <filename>/etc/rmt.conf</filename>.
    </para>
   </listitem>
   <listitem>
    <para>
-    Liberty subscription
+    You have a &productname; subscription activated in the &scc;.
    </para>
   </listitem>
  </itemizedlist>
+
  <procedure xml:id="pro-mirror-repositories-with-rmt">
+  <title>Mirroring &productname; repositories with &rmt;</title>
   <step>
    <para>
-    Synchronize repository metadata (information about available products and repositories)
+    Update the available product and repository metadata:
    </para>
-<screen>&prompt.root;rmt-cli sync</screen>
+<screen>&prompt.root;<command>rmt-cli sync</command></screen>
    <para>
-    Periodic synchronization is done via systemd timer rmt-server-sync.timer. For status information e.g. next running time use systemctl status :
+    Synchronization is also performed automatically by
+    <systemitem>rmt-server-sync.timer</systemitem>. You can check the status and
+    the next scheduled sync time with the following command:
    </para>
-<screen>&prompt.root;systemctl status rmt-server-sync.timer</screen>
+<screen>&prompt.root;<command>systemctl status rmt-server-sync.timer</command></screen>
   </step>
   <step>
    <para>
-    Find the product ID for PRODUCT:
+    Find the product ID for &productname;:
    </para>
-<screen>&prompt.root;rmt-cli products list –-all --name=PRODUCT</screen>
+<screen>&prompt.root;<command>rmt-cli products list --all --name=TODOCORRECTNAME</command></screen>
+<remark>Specify the product - what name actually appears in the UI here?</remark>
   </step>
   <step>
    <para>
-    Enable PRODUCT using the product ID (this will enable or disable all repo associated with the product.
+    Enable the &productname; product using the product ID:
    </para>
-<screen>&prompt.root;rmt-cli product enable $PRODUCT_ID</screen>
-<remark>**Specify the product - what product/s?**
-</remark>
+<screen>&prompt.root;<command>rmt-cli product enable TODOCORRECTID</command></screen>
+   <para>
+    This enables all of the default repositories associated with the product.
+   </para>
   </step>
   <step>
    <para>
-    Enable repositories mirroring (if you want to change product defaults, e.g. you want src repo).
+    If you want to enable more repositories in addition to the defaults, find
+    and enable the additional repositories:
    </para>
-<screen>&prompt.root;rmt-cli repo list --all
-&prompt.root;rmt-cli repo enable $REPO_ID</screen>
-<remark>**Specify the repos - what repos?**
-**Shouldn't actually need this step unless you want to enable more than the default repos**</remark>
+<screen>&prompt.root;<command>rmt-cli repo list --all</command>
+&prompt.root;<command>rmt-cli repo enable <replaceable>REPO_ID</replaceable></command></screen>
   </step>
   <step>
    <para>
-    Start package mirroring for enabled repositories:
+    Start package mirroring for the enabled repositories:
    </para>
-<screen>&prompt.root;rmt-cli mirror</screen>
+<screen>&prompt.root;<command>rmt-cli mirror</command></screen>
    <para>
-    Packages are downloaded to RMT once a day. This task is done by systemd timer rmt-server-mirror.timer once a day. For status information e.g. next running time use systemctl status:
+    Packages are downloaded to the RMT server once per day by
+    <systemitem>rmt-server-mirror.timer</systemitem>. You can check the status
+    and the next scheduled download time with the following command:
    </para>
-<screen>&prompt.root;systemctl status rmt-server-mirror.timer</screen>
+<screen>&prompt.root;<command>systemctl status rmt-server-mirror.timer</command></screen>
   </step>
  </procedure>
 </section>

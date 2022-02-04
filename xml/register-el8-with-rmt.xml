@@ -19,84 +19,91 @@
  </info>
 
  <para>
-  Use this procedure to register a &rhel; 8 or CentOS Stream 8 machine with &rmt;.
+  Use this procedure to register &rhel; 8 or CentOS 8 with &rmt;.
  </para>
  <itemizedlist>
   <title>Prerequisites</title>
   <listitem>
    <para>
-    A valid registration code for &productname;.
+    <xref linkend="configure-rmt-server"/>
    </para>
   </listitem>
   <listitem>
    <para>
-    RHEL and RMT server need to be in the same network
+    <xref linkend="mirror-repositories-with-rmt"/>
    </para>
   </listitem>
   <listitem>
    <para>
-
+    The system you want to register can access the &rmt; server.
    </para>
   </listitem>
   <listitem>
    <para>
-
+    You have a valid registration code for &productname;.
+   </para>
+  </listitem>
+  <listitem>
+   <para>
+    <remark>Do you need to remove RH subscriptions/repos first?</remark>
    </para>
   </listitem>
  </itemizedlist>
  <procedure xml:id="pro-register-el8-with-rmt">
   <step>
    <para>
-    Download the <filename>rmt-client-setup-NAME?</filename> script:
+    Download the <filename>rmt-client-setup-TODOCORRECTNAME</filename> script:
    </para>
-<screen>&prompt.root;curl http://<replaceable>RMT_SERVER</replaceable>/tools/rmt-client-setup-NAME? --output rmt-client-setup-NAME?</screen>
-<remark>**Check name of script. Liberty version?**</remark>
+<screen>&prompt.root;<command>curl http://<replaceable>RMT_SERVER</replaceable>/tools/rmt-client-setup-TODOCORRECTNAME --output rmt-client-setup-TODOCORRECTNAME</command></screen>
+<remark>Check if the name of the script has changed.</remark>
   </step>
   <step>
    <para>
-    Run the <filename>rmt-client-setup-NAME?</filename> script with the URL of the RMT server as a parameter.
+    Run the <filename>rmt-client-setup-TODOCORRECTNAME</filename> script with
+    the URL of the RMT server as a parameter:
    </para>
-<screen>&prompt.root;sh rmt-client-setup-res https://<replaceable>RMT_SERVER</replaceable></screen>
+<screen>&prompt.root;<command>sh rmt-client-setup-res https://<replaceable>RMT_SERVER</replaceable></command></screen>
    <para>
     The script performs the following tasks:
    </para>
    <itemizedlist>
     <listitem>
      <para>
-      Adds repositories, install SUSEConnect and its dependencies, disable repositories
+      Installs SUSEConnect and its dependencies.
      </para>
      <remark>This part fails on sles_es-release because of conflicts between various versions of centos-stream-repos and centos-gpg-keys. It worked when I manually added --skip-broken to the script, but this is not ideal.</remark>
     </listitem>
     <listitem>
      <para>
-      Downloads rmt-client-setup script and run it. The rmt-client-setup script does the following:
+      Downloads and runs the <filename>rmt-client-setup</filename> script, which
+      does the following:
      </para>
      <itemizedlist>
       <listitem>
        <para>
-        Downloads all keys from http://rmt-server/repo/keys
+        Downloads all keys from <literal>http://<replaceable>RMT_SERVER</replaceable>/repo/keys</literal>.
        </para>
       </listitem>
       <listitem>
        <para>
-        Import the keys with gpg –import and rpm --import
+        Imports the keys with <command>gpg --import</command> and <command>rpm --import</command>.
        </para>
       </listitem>
       <listitem>
        <para>
-        Downloads CA’s certificate from https://rmt-server/rmt.crt
+        Downloads the CA certificate from <literal>https://<replaceable>RMT_SERVER</replaceable>/rmt.crt</literal>.
        </para>
       </listitem>
       <listitem>
        <para>
-        Import CA’s certificate to trusted store
+        Imports the CA certificate to the trust store.
        </para>
       </listitem>
       <listitem>
        <para>
-        Invoke SUSEConnect. SUSEConnect adds all repositories (BaseOS, AppStream, and CodeReady) and set them as enabled.
+        Uses SUSEConnect to add and enable all repositories (BaseOS, AppStream, and CodeReady).
        </para>
-       <remark>I got all the way up to here and then it couldn't detect the base product. Because I'm testing it on CentOS Stream maybe?</remark>
+       <remark>I got all the way up to here and then it couldn't detect the base product. Because I'm testing it on CentOS Stream maybe? I don't have access to a RHEL machine.</remark>
       </listitem>
      </itemizedlist>
     </listitem>
@@ -111,20 +118,20 @@
      <para>
       List the available repositories:
      </para>
-<screen>&prompt.root;dnf repolist</screen>
+<screen>&prompt.root;<command>dnf repolist</command></screen>
     </listitem>
     <listitem>
      <para>
       Update everything:
      </para>
-<screen>&prompt.root;dnf update</screen>
+<screen>&prompt.root;<command>dnf update</command></screen>
 <remark>Why do this here, specifically?</remark>
     </listitem>
     <listitem>
      <para>
       List the registered products on this system:
      </para>
-<screen>&prompt.root;SUSEConnect --status-text</screen>
+<screen>&prompt.root;<command>SUSEConnect --status-text</command></screen>
     </listitem>
    </itemizedlist>
   </step>
@@ -132,25 +139,18 @@
    <para>
     List the available extensions:
    </para>
-<screen>&prompt.root;SUSEConnect --list-extensions</screen>
+<screen>&prompt.root;<command>SUSEConnect --list-extensions</command></screen>
    <para>Update everything again:</para>
-<screen>&prompt.root;dnf update</screen>
+<screen>&prompt.root;<command>dnf update</command></screen>
 <remark>Why do this here, specifically?</remark>
   </step>
   <step>
    <para>
-    Activate the NAME? extension:
+    Activate the TODOCORRECTNAME extension using the appropriate command from the
+    <command>--list-extensions</command> ouput:
    </para>
-<screen>&prompt.root;SUSEConnect –p **NAME??**/8/x86_64 –r <replaceable>REGISTRATION_CODE</replaceable></screen>
-<remark>**Check name of extension. Liberty version?**</remark>
-   <tip role="compact">
-    <para>
-     To find the registration code, log in to the
-     <link xlink:href="https://scc.suse.com">&scc;</link>, select your
-     organization from <guimenu>My Organizations</guimenu>, and click
-     <guimenu>Subscriptions</guimenu>.
-    </para>
-   </tip>
+<screen>&prompt.root;<command>SUSEConnect –p TODOCORRECTNAME/8/x86_64 –r <replaceable>REGISTRATION_CODE</replaceable></command></screen>
+<remark>Check the correct name of the extension</remark>
   </step>
  </procedure>
 </section>
