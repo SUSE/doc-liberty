@@ -90,4 +90,13 @@
 <screen>&prompt.root;<command>systemctl status rmt-server-mirror.timer</command></screen>
   </step>
  </procedure>
+ <itemizedlist>
+  <title>More information</title>
+  <listitem>
+   <para>
+    <link xlink:href="&dsc-sles;/&slesnumber;/html/SLES-all/cha-rmt-mirroring.html">
+    Mirroring repositories on the RMT server</link>
+   </para>
+  </listitem>
+ </itemizedlist>
 </section>

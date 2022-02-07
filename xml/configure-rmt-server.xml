@@ -126,4 +126,13 @@ https://documentation.suse.com/sles/15-SP3/single-html/SLES-rmt/#sec-rmt-install
  <para>
   &yast; enables and starts all &rmt; &systemd; services and timers.
  </para>
+ <itemizedlist>
+  <title>More information</title>
+  <listitem>
+   <para>
+    <link xlink:href="&dsc-sles;/&slesnumber;/html/SLES-all/cha-rmt-installation.html">
+    RMT installation and configuration</link>
+   </para>
+  </listitem>
+ </itemizedlist>
 </section>

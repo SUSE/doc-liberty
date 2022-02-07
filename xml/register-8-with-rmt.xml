@@ -9,7 +9,7 @@
  xmlns="http://docbook.org/ns/docbook" version="5.1"
  xmlns:xi="http://www.w3.org/2001/XInclude"
  xmlns:xlink="http://www.w3.org/1999/xlink">
- <title>Registering &rhla;/CentOS 8 with &rmt;</title>
+ <title>Registering &rhla;/CentOS Linux 8 with &rmt;</title>
 
  <info>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
@@ -19,7 +19,10 @@
  </info>
 
  <para>
-  Use this procedure to register &rhel; 8 or CentOS 8 with &rmt;.
+  Use this procedure to register &rhel; 8 or CentOS Linux 8 with &suse;'s &rmtool;.
+ </para>
+ <para>
+  CentOS Stream 8 is not supported.
  </para>
  <itemizedlist>
   <title>Prerequisites</title>
@@ -71,7 +74,7 @@
      <para>
       Installs <command>&suseconnect;</command> and its dependencies.
      </para>
-     <remark>This part fails on sles_es-release because of conflicts between various versions of centos-stream-repos and centos-gpg-keys. It worked when I manually added --skip-broken to the script, but this is not ideal.</remark>
+     <remark>This part fails on sles_es-release because of conflicts between various versions of centos-stream-repos and centos-gpg-keys. It worked when I manually added --skip-broken to the script, but this is not ideal. Could just be Stream-related - need to test.</remark>
     </listitem>
     <listitem>
      <para>
@@ -108,7 +111,7 @@
         RMT server. Registering the system using <command>&suseconnect;</command>
         adds and enables all default repositories.
        </para>
-       <remark>I got all the way up to here and then it couldn't detect the base product. Because I'm testing it on CentOS Stream maybe? I don't have access to a RHEL machine and CentOS Linux 8 (non-Stream) ISOs don't seem to be available anymore.</remark>
+       <remark>I got all the way up to here and then it couldn't detect the base product because I'm testing it on CentOS Stream. I don't have access to a RHEL machine and CentOS Linux 8 (non-Stream) ISOs don't seem to be available anymore.</remark>
       </listitem>
      </itemizedlist>
     </listitem>
@@ -125,8 +128,9 @@
      </para>
 <screen>&prompt.root;<command>dnf repolist</command></screen>
      <para>
-      You should see BaseOS, AppStream, and Extras.
+      You should see BaseOS and AppStream.
      </para>
+     <remark>Need to test this</remark>
     </listitem>
     <listitem>
      <para>
@@ -147,21 +151,17 @@
   </step>
   <step>
    <para>
-    List the available extensions:
+    If your &productname; subscription includes the &ha; extension, activate the
+    extension using the appropriate command from the
+    <command>&suseconnect; --list-extensions</command> ouput:
    </para>
-<screen>&prompt.root;<command>&suseconnect; --list-extensions</command></screen>
-  </step>
-  <step>
-   <para>
-    Activate the TODOCORRECTNAME extension using the appropriate command from the
-    <command>--list-extensions</command> ouput:
-   </para>
+<screen>&prompt.root;<command>&suseconnect; --list-extensions</command>
+<remark>TO DO: Add example output</remark>
+&prompt.root;<command>&suseconnect; –p TODOCORRECTNAME-HA/8/x86_64 –r <replaceable>REGISTRATION_CODE</replaceable></command></screen>
 <remark>Check the correct name of the extension</remark>
-<screen>&prompt.root;<command>&suseconnect; –p TODOCORRECTNAME/8/x86_64 –r <replaceable>REGISTRATION_CODE</replaceable></command></screen>
-<remark>Is this step just for HA? Is this still relevant for Liberty?</remark>
   </step>
  </procedure>
  <para>
-
+  You can now update your system from repositories provided by &productname;.
  </para>
 </section>

@@ -20,8 +20,8 @@
   <date><?dbtimestamp format="B d, Y"?></date>
   <abstract>
    <para>
-    This guide describes how to attach a &productname; subscription to &rhel; 8
-    or CentOS 8 using &suse;'s &rmtool;.
+    This guide describes how to attach a &productname; subscription to
+    &rhel;&nbsp;8 or CentOS&nbsp;Linux&nbsp;8 using &suse;'s &rmtool;.
    </para>
   </abstract>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
@@ -41,11 +41,15 @@
     <remark>TO DO: Describe Liberty.</remark>
    </para>
    <para>
-    <remark>TO DO: Describe RMT.</remark>
+    The &rmtool; (&rmt;) for &sle; 15 is a proxy system for the &scc;. The &rmt;
+    server downloads packages from the &scc;. The other systems in the network
+    are registered with the &rmt; server and receive packages from it directly.
+    For more information, see the
+    <link xlink:href="&dsc-sles;/&slesnumber;/html/SLES-all/book-rmt.html">&rmtguide;</link>.
    </para>
    <para>
-    Using &rmt; to attach a &productname; subscription to a &rhla; or CentOS 8
-    system involves the following steps:
+    Using &rmt; to attach a &productname; subscription to a &rhla; or
+    CentOS Linux system involves the following steps:
    </para>
    <orderedlist>
     <listitem>
@@ -64,12 +68,13 @@
     <listitem>
      <para>
       <xref linkend="mirror-repositories-with-rmt"/>. You can skip this step if
-      the &productname; product is already enabled and mirrored on your &rmt; server.
+      &productname; is already enabled and mirrored on your &rmt; server.
      </para>
     </listitem>
     <listitem>
      <para>
-      <xref linkend="register-8-with-rmt"/>.
+      <xref linkend="register-8-with-rmt"/>. &rmt; includes a setup script to
+      automate the registration process.
      </para>
     </listitem>
    </orderedlist>
@@ -95,6 +100,9 @@
      latest version of &slsa; 15, see the
      <link xlink:href="&dsc-sles;/&slesnumber;/html/SLES-all/article-installation.html">
      &instquick;</link>.
+    </para>
+    <para>
+     <remark>Does this need a separate SLE subscription or can it also use the Liberty subscription?</remark>
     </para>
    </listitem>
    <listitem>
