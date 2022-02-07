@@ -1,5 +1,5 @@
-MAIN="art-el8-quickstart.xml"
-ROOTID="art-el8-quickstart"
+MAIN="art-quickstart-8.xml"
+ROOTID="art-quickstart-8"
 
 PROFCONDITION="suse-product"
 #PROFCONDITION="suse-product;beta"

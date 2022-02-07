@@ -8,7 +8,7 @@
     %entities;
 ]>
 
-<article xml:id="art-el8-quickstart" xml:lang="en"
+<article xml:id="art-quickstart-8" xml:lang="en"
  xmlns="http://docbook.org/ns/docbook" version="5.1"
  xmlns:its="http://www.w3.org/2005/11/its"
  xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -35,7 +35,7 @@
   </dm:docmanager>
  </info>
 
- <section xml:id="introduction-el8-quickstart">
+ <section xml:id="introduction-quickstart-8">
   <title>Introduction</title>
    <para>
     <remark>TO DO: Describe Liberty.</remark>
@@ -50,7 +50,7 @@
    <orderedlist>
     <listitem>
      <para>
-      <xref linkend="requirements-el8-quickstart"/>. Make sure that you have
+      <xref linkend="requirements-quickstart-8"/>. Make sure that you have
       everything required for the following procedures.
      </para>
     </listitem>
@@ -69,13 +69,13 @@
     </listitem>
     <listitem>
      <para>
-      <xref linkend="register-el8-with-rmt"/>.
+      <xref linkend="register-8-with-rmt"/>.
      </para>
     </listitem>
    </orderedlist>
  </section>
 
- <section xml:id="requirements-el8-quickstart">
+ <section xml:id="requirements-quickstart-8">
   <title>Requirements</title>
   <itemizedlist>
    <listitem>
@@ -117,16 +117,16 @@
 
 <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mirror-repositories-with-rmt.xml"/>
 
-<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="register-el8-with-rmt.xml"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="register-8-with-rmt.xml"/>
 
- <section xml:id="troubleshooting-el8-quickstart">
+ <section xml:id="troubleshooting-8-quickstart">
   <title>Troubleshooting</title>
   <variablelist>
    <varlistentry>
     <term><systemitem>nginx.service</systemitem> not running after installing RMT</term>
     <listitem>
      <para>
-      <remark>Not sure yet, need to investigate</remark>
+      <remark>Not sure yet, need to investigate. It seems to have fixed itself, though.</remark>
      </para>
     </listitem>
    </varlistentry>
@@ -143,7 +143,7 @@
     <term>Mirroring completes with errors</term>
     <listitem>
      <para>
-      If some packages could not be downloaded due to timeouts, re-run the
+      If some packages could not be downloaded due to timeouts, rerun the
       <command>rmt-cli mirror</command> command until all packages are downloaded.
      </para>
     </listitem>
@@ -157,18 +157,9 @@
       won't be available, and <command>SUSEConnect</command> can't be installed.
      </para>
      <para>
-      On the RMT server, re-run the <command>rmt-cli mirror</command> command
+      On the RMT server, rerun the <command>rmt-cli mirror</command> command
       until all packages are downloaded.
      </para>
-    </listitem>
-   </varlistentry>
-   <varlistentry>
-    <term>Zypper error</term>
-    <listitem>
-     <para>
-      Check if <package>libzypp</package> version 16.20.4 or higher is installed.
-     </para>
-     <remark>Might not need this anymore as the original note is two years old and current libzypp is version 17+</remark>
     </listitem>
    </varlistentry>
   </variablelist>
