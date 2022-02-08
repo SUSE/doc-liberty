@@ -15,7 +15,7 @@
  xmlns:xlink="http://www.w3.org/1999/xlink">
 
  <info>
-  <title>&rhla;/CentOS 8 Quick Start</title><!-- Final title TBD -->
+  <title>Registering &rhla; 8 with &rmt;</title><!-- Final title TBD -->
   <productname>&productname;</productname>
   <date><?dbtimestamp format="B d, Y"?></date>
   <abstract>
@@ -38,18 +38,21 @@
  <section xml:id="introduction-quickstart-8">
   <title>Introduction</title>
    <para>
-    <remark>TO DO: Describe Liberty.</remark>
+    &productname; is a technology and support solution for mixed Linux environments.
+    With a &productname; subscription, you can register and receive updates for
+    &rhel;, CentOS Linux, and &sles;. CentOS&nbsp;Stream is not supported.
+    <remark>Do we actually support CentOS Linux 8, though, since it's EOL? See also <link xlink:href="https://bugzilla.suse.com/show_bug.cgi?id=1195492"/>.</remark>
    </para>
    <para>
-    The &rmtool; (&rmt;) for &sle; 15 is a proxy system for the &scc;. The &rmt;
+    This guide explains how to register &rhel; and CentOS Linux with &suse;'s
+    &rmtool; (&rmt;). &rmt; is a proxy system for the &scc;. The &rmt;
     server downloads packages from the &scc;. The other systems in the network
     are registered with the &rmt; server and receive packages from it directly.
     For more information, see the
     <link xlink:href="&dsc-sles;/&slesnumber;/html/SLES-all/book-rmt.html">&rmtguide;</link>.
    </para>
    <para>
-    Using &rmt; to attach a &productname; subscription to a &rhla; or
-    CentOS Linux system involves the following steps:
+    Registering &rhla; or CentOS Linux with &rmt; involves the following steps:
    </para>
    <orderedlist>
     <listitem>
