@@ -9,7 +9,7 @@
  xmlns="http://docbook.org/ns/docbook" version="5.1"
  xmlns:xi="http://www.w3.org/2001/XInclude"
  xmlns:xlink="http://www.w3.org/1999/xlink">
- <title>Registering &rhla;/CentOS Linux 8 with &rmt;</title>
+ <title>Registering &rhel; 8 with &rmt;</title>
 
  <info>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
@@ -19,7 +19,7 @@
  </info>
 
  <para>
-  Use this procedure to register &rhel; 8 or CentOS Linux 8 with &suse;'s &rmtool;.
+  Use this procedure to register &rhel; 8 or CentOS Linux 8 with the &rmt; server.
  </para>
  <para>
   CentOS Stream 8 is not supported.
@@ -55,14 +55,14 @@
  <procedure xml:id="pro-register-8-with-rmt">
   <step>
    <para>
-    Download the <filename>rmt-client-setup-TODOCORRECTNAME</filename> script:
+    Download the <filename>rmt-client-setup-res</filename> script:
    </para>
-<screen>&prompt.root;<command>curl http://<replaceable>RMT_SERVER</replaceable>/tools/rmt-client-setup-TODOCORRECTNAME --output rmt-client-setup-TODOCORRECTNAME</command></screen>
+<screen>&prompt.root;<command>curl http://<replaceable>RMT_SERVER</replaceable>/tools/rmt-client-setup-res --output rmt-client-setup-res</command></screen>
 <remark>Check if the name of the script has changed.</remark>
   </step>
   <step>
    <para>
-    Run the <filename>rmt-client-setup-TODOCORRECTNAME</filename> script with
+    Run the <filename>rmt-client-setup-res</filename> script with
     the URL of the RMT server as a parameter:
    </para>
 <screen>&prompt.root;<command>sh rmt-client-setup-res https://<replaceable>RMT_SERVER</replaceable></command></screen>
@@ -119,7 +119,7 @@
   </step>
   <step>
    <para>
-    Run the following commands to verify that the script worked:
+    Verify that the script worked:
    </para>
    <itemizedlist>
     <listitem>
@@ -143,7 +143,7 @@
     </listitem>
     <listitem>
      <para>
-      Install any available updates:
+      Run the update command to make sure there are no errors:
      </para>
 <screen>&prompt.root;<command>dnf update</command></screen>
     </listitem>
@@ -157,7 +157,7 @@
    </para>
 <screen>&prompt.root;<command>&suseconnect; --list-extensions</command>
 <remark>TO DO: Add example output</remark>
-&prompt.root;<command>&suseconnect; –p TODOCORRECTNAME-HA/8/x86_64 –r <replaceable>REGISTRATION_CODE</replaceable></command></screen>
+&prompt.root;<command>&suseconnect; –p RES-HA/8/x86_64 –r <replaceable>REGISTRATION_CODE</replaceable></command></screen>
 <remark>Check the correct name of the extension</remark>
   </step>
  </procedure>

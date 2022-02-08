@@ -18,13 +18,18 @@
  </info>
 
  <para>
-  Use this procedure to mirror repositories on the &rmt; server.
+  Use this procedure to mirror the &productname; repositories on the &rmt; server.
  </para>
  <itemizedlist>
   <title>Prerequisites</title>
   <listitem>
    <para>
     <xref linkend="configure-rmt-server"/>
+   </para>
+  </listitem>
+  <listitem>
+   <para>
+    The &rmt; server has enough storage available for repository mirroring.
    </para>
   </listitem>
   <listitem>
@@ -57,14 +62,14 @@
    <para>
     Find the product ID for &productname;:
    </para>
-<screen>&prompt.root;<command>rmt-cli products list --all --name=TODOCORRECTNAME</command></screen>
+<screen>&prompt.root;<command>rmt-cli products list --all --name=**TODOCORRECTNAME**</command></screen>
 <remark>Specify the product - what name actually appears in the UI here?</remark>
   </step>
   <step>
    <para>
     Enable the &productname; product using the product ID:
    </para>
-<screen>&prompt.root;<command>rmt-cli product enable TODOCORRECTID</command></screen>
+<screen>&prompt.root;<command>rmt-cli product enable **TODOCORRECTID**</command></screen>
    <para>
     This enables all of the default repositories associated with the product.
    </para>
