@@ -138,10 +138,11 @@
   <title>Troubleshooting</title>
   <variablelist>
    <varlistentry>
-    <term><systemitem>nginx.service</systemitem> not running after installing RMT</term>
+    <term><systemitem>nginx.service</systemitem> inactive after installing the
+    <package>rmt-server</package> package</term>
     <listitem>
      <para>
-      <remark>Not sure yet, need to investigate. It seems to have fixed itself, though.</remark>
+      <remark>Not sure yet, need to investigate. It seems to have fixed itself, though. Might be apache-related? UPDATE: Looks like that gets solved automatically when you set up RMT in yast, so maybe it's not an issue to add to troubleshooting.</remark>
      </para>
     </listitem>
    </varlistentry>
