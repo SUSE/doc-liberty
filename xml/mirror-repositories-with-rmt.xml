@@ -18,7 +18,8 @@
  </info>
 
  <para>
-  Use this procedure to mirror the &productname; repositories on the &rmt; server.
+  Use this procedure to mirror the &productname; repositories for &rhel; 8 and
+  CentOS Linux 8.
  </para>
  <itemizedlist>
   <title>Prerequisites</title>
@@ -48,7 +49,7 @@
   <title>Mirroring &productname; repositories with &rmt;</title>
   <step>
    <para>
-    Update the available product and repository metadata:
+    On the &rmt; server, update the available product and repository metadata:
    </para>
 <screen>&prompt.root;<command>rmt-cli sync</command></screen>
    <para>

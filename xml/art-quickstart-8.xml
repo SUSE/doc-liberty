@@ -42,7 +42,6 @@
     With a &productname; subscription, you can register and receive updates for
     &rhel;, CentOS Linux, and &sles;. CentOS&nbsp;Stream is not supported.
    </para>
-   <remark>Do we actually support CentOS Linux 8, though, since it's EOL? ISOs for it aren't available for download anymore. See also <link xlink:href="https://bugzilla.suse.com/show_bug.cgi?id=1195492"/>.</remark>
    <para>
     An optional &ha; extension is also available.
    </para>
