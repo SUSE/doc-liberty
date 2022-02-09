@@ -48,8 +48,10 @@
   </listitem>
   <listitem>
    <para>
-    <remark>Do you need to remove RH subscriptions/repos first?</remark>
+    You have removed the system from any &rh; subscription services it was
+    registered to.
    </para>
+   <remark>Still confirming if this is necessary</remark>
   </listitem>
  </itemizedlist>
  <procedure xml:id="pro-register-8-with-rmt">
