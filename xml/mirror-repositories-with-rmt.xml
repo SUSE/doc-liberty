@@ -60,26 +60,42 @@
   </step>
   <step>
    <para>
-    Find the product ID for &productname;:
+    Enable &productname; using the product ID <literal>1921</literal>:
    </para>
-<screen>&prompt.root;<command>rmt-cli products list --all --name=**TODOCORRECTNAME**</command></screen>
-<remark>Specify the product - what name actually appears in the UI here?</remark>
-  </step>
-  <step>
-   <para>
-    Enable the &productname; product using the product ID:
-   </para>
-<screen>&prompt.root;<command>rmt-cli product enable **TODOCORRECTID**</command></screen>
+<screen>&prompt.root;<command>rmt-cli product enable 1921</command>
+Found product by target 1921: &sles; with Expanded Support 8 x86_64.
+Enabling &sles; with Expanded Support 8 x86_64:
+  &sles; with Expanded Support 8 x86_64:
+    Enabled repository RES-8-Updates.
+    Enabled repository RES-AS-8-Updates.
+    Enabled repository RES-CB-8-Updates.</screen>
    <para>
     This enables all of the default repositories associated with the product.
    </para>
   </step>
   <step>
    <para>
-    If you want to enable more repositories in addition to the defaults, find
-    and enable the additional repositories:
+    If your &productname; subscription includes the &ha; extension, enable the
+    extension using the product ID <literal>1922</literal>:
    </para>
-<screen>&prompt.root;<command>rmt-cli repo list --all</command>
+<screen>&prompt.root;<command>rmt-cli product enable 1922</command>
+Found product by target 1922: &sle; &ha; Extension with Expanded Support 8 x86_64.
+Enabling &sle; &ha; Extension with Expanded Support 8 x86_64:
+  &sle; &ha; Extension with Expanded Support 8 x86_64:
+    Enabled repository RES-8-HA-Updates.</screen>
+   <tip role="compact">
+    <para>
+     To check whether the &ha; extension is included in your subscription, run this
+     command: <command>rmt-cli products list --all --name="Expanded Support" --version=8</command>
+    </para>
+   </tip>
+  </step>
+  <step>
+   <para>
+    If you also need the <literal>Source</literal> or <literal>Debug</literal>
+    repositories, find and enable them using the following commands:
+   </para>
+<screen>&prompt.root;<command>rmt-cli repo list --all | grep RES-</command>
 &prompt.root;<command>rmt-cli repo enable <replaceable>REPO_ID</replaceable></command></screen>
   </step>
   <step>

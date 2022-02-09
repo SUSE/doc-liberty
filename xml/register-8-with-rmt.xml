@@ -55,10 +55,10 @@
  <procedure xml:id="pro-register-8-with-rmt">
   <step>
    <para>
-    Download the <filename>rmt-client-setup-res</filename> script:
+    On the system you want to register, download the
+    <filename>rmt-client-setup-res</filename> script:
    </para>
 <screen>&prompt.root;<command>curl http://<replaceable>RMT_SERVER</replaceable>/tools/rmt-client-setup-res --output rmt-client-setup-res</command></screen>
-<remark>Check if the name of the script has changed.</remark>
   </step>
   <step>
    <para>
@@ -138,8 +138,9 @@
      </para>
 <screen>&prompt.root;<command>&suseconnect; --status-text</command></screen>
      <para>
-      You should see the &productname; product.
+      You should see <literal>&sles; with Expanded Support</literal>.
      </para>
+     <remark>Need to test this</remark>
     </listitem>
     <listitem>
      <para>
@@ -158,7 +159,6 @@
 <screen>&prompt.root;<command>&suseconnect; --list-extensions</command>
 <remark>TO DO: Add example output</remark>
 &prompt.root;<command>&suseconnect; –p RES-HA/8/x86_64 –r <replaceable>REGISTRATION_CODE</replaceable></command></screen>
-<remark>Check the correct name of the extension</remark>
   </step>
  </procedure>
  <para>
