@@ -43,7 +43,7 @@
   </listitem>
   <listitem>
    <para>
-    You have a valid registration code for &productname;.
+    You have a &productname; subscription activated in the &scc;.
    </para>
   </listitem>
   <listitem>
@@ -76,7 +76,6 @@
      <para>
       Installs <command>&suseconnect;</command> and its dependencies.
      </para>
-     <remark>This part fails on sles_es-release because of conflicts between various versions of centos-stream-repos and centos-gpg-keys. It worked when I manually added --skip-broken to the script, but this is not ideal. Could just be Stream-related - need to test.</remark>
     </listitem>
     <listitem>
      <para>
@@ -113,7 +112,6 @@
         RMT server. Registering the system using <command>&suseconnect;</command>
         adds and enables all default repositories.
        </para>
-       <remark>I got all the way up to here and then it couldn't detect the base product because I'm testing it on CentOS Stream. I don't have access to a RHEL machine and CentOS Linux 8 (non-Stream) ISOs don't seem to be available anymore.</remark>
       </listitem>
      </itemizedlist>
     </listitem>
@@ -130,19 +128,18 @@
      </para>
 <screen>&prompt.root;<command>dnf repolist</command></screen>
      <para>
-      You should see BaseOS and AppStream.
+      You should see <literal>BaseOS</literal>, <literal>AppStream</literal>,
+      and <literal>Extras</literal>.
      </para>
-     <remark>Need to test this</remark>
     </listitem>
     <listitem>
      <para>
-      List the registered products:
+      List the installed products:
      </para>
 <screen>&prompt.root;<command>&suseconnect; --status-text</command></screen>
      <para>
-      You should see <literal>&sles; with Expanded Support</literal>.
+      You should see your operating system listed as <literal>Registered</literal>.
      </para>
-     <remark>Need to test this</remark>
     </listitem>
     <listitem>
      <para>
@@ -154,13 +151,17 @@
   </step>
   <step>
    <para>
-    If your &productname; subscription includes the &ha; extension, activate the
-    extension using the appropriate command from the
-    <command>&suseconnect; --list-extensions</command> ouput:
+    If your subscription includes the &ha; extension, activate it with the
+    following command:
    </para>
-<screen>&prompt.root;<command>&suseconnect; --list-extensions</command>
-<remark>TO DO: Add example output</remark>
-&prompt.root;<command>&suseconnect; –p RES-HA/8/x86_64 –r <replaceable>REGISTRATION_CODE</replaceable></command></screen>
+<screen>&prompt.root;<command>&suseconnect; –p RES-HA/8/x86_64 –r <replaceable>REGISTRATION_CODE</replaceable></command></screen>
+   <tip role="compact">
+    <para>
+     To check whether the &ha; extension is available, run
+     <command>&suseconnect; --list-extensions</command> and look for
+     <literal>&sle; &ha; Extension with Expanded Support</literal>.
+    </para>
+   </tip>
   </step>
  </procedure>
  <para>

@@ -91,12 +91,10 @@ https://documentation.suse.com/sles/15-SP3/single-html/SLES-rmt/#sec-rmt-install
   </step>
   <step>
    <para>
-    Enter all domain names and IP addresses with which you want to reach the
-    &rmt; server as <guimenu>Alternative common names</guimenu>. Select
-    <guimenu>Add</guimenu> to add new names. When all common names are entered,
-    select <guimenu>Next</guimenu>.
+    If the server has other domain names or IP addresses, enter these as
+    <guimenu>Alternative common names</guimenu>. Select <guimenu>Add</guimenu>
+    to add new names. When all common names are entered, select <guimenu>Next</guimenu>.
    </para>
-<remark>Does this mean all clients that will be getting updates from the RMT server? So if you install a new server do you have to go back and add it here? If that isn't what this means, then this part is confusingly written.</remark>
   </step>
   <step>
    <para>

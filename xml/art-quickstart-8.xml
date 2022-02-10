@@ -103,12 +103,10 @@
    <listitem>
     <para>
      &sles; (&slsa;) 15 is installed and running in the same network as the
-     systems you want to register. You can use the &productname; subscription to register the &slsa; server. To install the
-     latest version of &slsa; 15, see the
+     systems you want to register. You can use the &productname; subscription to
+     register the &slsa; server. To install the latest version of &slsa; 15, see the
      <link xlink:href="&dsc-sles;/&slesnumber;/html/SLES-all/article-installation.html">
      &instquick;</link>.
-    </para>
-    <para>
     </para>
    </listitem>
    <listitem>
@@ -141,7 +139,10 @@
     <package>rmt-server</package> package</term>
     <listitem>
      <para>
-      <remark>Not sure yet, need to investigate. It seems to have fixed itself, though. Might be apache-related? UPDATE: Looks like that gets solved automatically when you set up RMT in yast, so maybe it's not an issue to add to troubleshooting.</remark>
+      Continue the procedure to configure &rmt; in &yast;. This often resolves
+      the issue. If that fails, Apache might be installed on your server, and
+      must be disabled. Apache conflicts with NGINX because both web servers
+      listen on port 80.
      </para>
     </listitem>
    </varlistentry>
@@ -155,7 +156,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term>Mirroring completes with errors</term>
+    <term><literal>Mirroring completed with errors</literal></term>
     <listitem>
      <para>
       If some packages could not be downloaded due to timeouts, rerun the

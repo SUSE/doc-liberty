@@ -76,8 +76,8 @@ Enabling &sles; with Expanded Support 8 x86_64:
   </step>
   <step>
    <para>
-    If your &productname; subscription includes the &ha; extension, enable the
-    extension using the product ID <literal>1922</literal>:
+    If your subscription includes the &ha; extension, enable the extension using
+    the product ID <literal>1922</literal>:
    </para>
 <screen>&prompt.root;<command>rmt-cli product enable 1922</command>
 Found product by target 1922: &sle; &ha; Extension with Expanded Support 8 x86_64.
@@ -94,7 +94,7 @@ Enabling &sle; &ha; Extension with Expanded Support 8 x86_64:
   <step>
    <para>
     If you also need the <literal>Source</literal> or <literal>Debug</literal>
-    repositories, find and enable them using the following commands:
+    repositories, find and enable them with the following commands:
    </para>
 <screen>&prompt.root;<command>rmt-cli repo list --all | grep RES-</command>
 &prompt.root;<command>rmt-cli repo enable <replaceable>REPO_ID</replaceable></command></screen>
