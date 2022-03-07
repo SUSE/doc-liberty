@@ -51,14 +51,18 @@
     You have removed the system from any &rh; subscription services it was
     registered to.
    </para>
-   <remark>Still confirming if this is necessary</remark>
   </listitem>
  </itemizedlist>
  <procedure xml:id="pro-register-8-with-rmt">
   <step>
    <para>
-    On the system you want to register, download the
-    <filename>rmt-client-setup-res</filename> script:
+    Disable the &rhla; or CentOS repositories in <filename>/etc/yum.repos.d</filename>
+    by setting <literal>enabled=0</literal> in each <filename>.repo</filename> file.
+   </para>
+  </step>
+  <step>
+   <para>
+    Download the <filename>rmt-client-setup-res</filename> script:
    </para>
 <screen>&prompt.root;<command>curl http://<replaceable>RMT_SERVER</replaceable>/tools/rmt-client-setup-res --output rmt-client-setup-res</command></screen>
   </step>
@@ -76,6 +80,7 @@
      <para>
       Installs <command>&suseconnect;</command> and its dependencies.
      </para>
+     <remark>Fails due to conflicts between sles_es-release and centos-gpg-keys, centos-linux-repos, and centos-linux-release. It almost works when I manually add --allowerasing to the rmt-client-setup-res script, but then fails when /usr/share/redhat-release from sles_es-release conflicts with the file from centos-linux-release. It fully works when I also run `rm -r /usr/share/redhat-release` before running the script. I can add these workarounds as steps in this procedure, but it would be better if they (or some equivalent) were just in the script to begin with.</remark>
     </listitem>
     <listitem>
      <para>
@@ -124,21 +129,32 @@
    <itemizedlist>
     <listitem>
      <para>
-      List the available repositories:
-     </para>
-<screen>&prompt.root;<command>dnf repolist</command></screen>
-     <para>
-      You should see <literal>BaseOS</literal>, <literal>AppStream</literal>,
-      and <literal>Extras</literal>.
-     </para>
-    </listitem>
-    <listitem>
-     <para>
       List the installed products:
      </para>
 <screen>&prompt.root;<command>&suseconnect; --status-text</command></screen>
      <para>
-      You should see your operating system listed as <literal>Registered</literal>.
+      You should see the following output:
+     </para>
+<screen>
+Installed Products:
+------------------------------------------
+
+  SLES Expanded Support platform release file
+  (RES/8/x86_64)
+
+  Registered
+
+------------------------------------------
+</screen>
+    </listitem>
+    <listitem>
+     <para>
+      List the available repositories:
+     </para>
+<screen>&prompt.root;<command>dnf repolist</command></screen>
+     <para>
+      You should see <literal>RES-8-Updates</literal>, <literal>RES-AS-8-Updates</literal>,
+      and <literal>RES-CB-8-Updates</literal>.
      </para>
     </listitem>
     <listitem>
@@ -154,7 +170,7 @@
     If your subscription includes the &ha; extension, activate it with the
     following command:
    </para>
-<screen>&prompt.root;<command>&suseconnect; –p RES-HA/8/x86_64 –r <replaceable>REGISTRATION_CODE</replaceable></command></screen>
+<screen>&prompt.root;<command>&suseconnect; –p RES-HA/8/x86_64</command></screen>
    <tip role="compact">
     <para>
      To check whether the &ha; extension is available, run
