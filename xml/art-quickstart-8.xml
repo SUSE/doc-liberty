@@ -82,7 +82,7 @@
     </listitem>
     <listitem>
      <para>
-      <xref linkend="register-8-with-rmt"/>. &rmt; includes a setup script to
+      <xref linkend="register-rhel-with-rmt"/>. &rmt; includes a setup script to
       automate the registration process.
      </para>
     </listitem>
@@ -130,9 +130,9 @@
 
 <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mirror-repositories-with-rmt.xml"/>
 
-<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="register-8-with-rmt.xml"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="register-rhel-with-rmt.xml"/>
 
- <section xml:id="troubleshooting-8-quickstart">
+ <section xml:id="troubleshooting-quickstart-8">
   <title>Troubleshooting</title>
   <variablelist>
    <varlistentry>
