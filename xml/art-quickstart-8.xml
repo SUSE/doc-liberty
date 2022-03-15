@@ -40,11 +40,13 @@
    <para>
     &productname; is a technology and support solution for mixed Linux environments.
     With a &productname; subscription, you can register and receive updates for
-    &rhel;, CentOS Linux, and &sles;. CentOS&nbsp;Stream is not supported.
+    &rhel;, CentOS Linux, and &sles;. An optional &ha; extension is also available.
    </para>
-   <para>
-    An optional &ha; extension is also available.
-   </para>
+   <important role="compact">
+    <para>
+     CentOS&nbsp;Stream is not supported.
+    </para>
+   </important>
    <para>&productname; subscriptions are currently available as <literal>&sles;
     with Expanded Support</literal>. The &ha; extension is <literal>&sle; &ha; Extension with Expanded Support</literal>.
    </para>
@@ -116,10 +118,9 @@
     <para>
      Downloaded packages are stored in <filename>/usr/share/rmt/public/repo</filename>,
      which is a symbolic link to <filename>/var/lib/rmt/public/repo/</filename>.
-     The amount of storage required depends on the number of repositories and
-     architectures that you mirror, and the number of products that you enable.
-     We recommend 1.5 times the total size of all enabled repositories, or
-     approximately 200 GB per release.
+     The amount of storage required depends on the number of repositories that you
+     mirror, and the number of products that you enable. We recommend 1.5 times
+     the total size of all enabled repositories, or approximately 200 GB per release.
     </para>
    </listitem>
   </itemizedlist>
@@ -170,7 +171,7 @@
      <para>
       If some packages could not be downloaded to the RMT server due to timeouts
       during the first mirroring, the <filename>repodata</filename> directory
-      won't be available, and <command>SUSEConnect</command> can't be installed.
+      will not be available, and <command>SUSEConnect</command> cannot be installed.
      </para>
      <para>
       On the RMT server, rerun the <command>rmt-cli mirror</command> command
