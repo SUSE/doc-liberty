@@ -32,6 +32,7 @@
     <dm:product>Documentation</dm:product>
     <dm:assignee>tahlia.richardson@suse.com</dm:assignee>
    </dm:bugtracker-->
+   <dm:editurl>https://github.com/SUSE/doc-liberty/edit/main/xml/</dm:editurl>
    <dm:translation>no</dm:translation>
   </dm:docmanager>
  </info>
