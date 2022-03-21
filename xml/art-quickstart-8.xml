@@ -18,6 +18,7 @@
   <title>Registering &rhla; 8 or CentOS Linux 8</title>
   <productname>&productname;</productname>
   <date><?dbtimestamp format="B d, Y"?></date>
+  <xi:include href="common_copyright_gfdl.xml"/>
   <abstract>
    <para>
     This guide describes how to attach a &productname; subscription to
@@ -183,4 +184,5 @@
    </varlistentry>
   </variablelist>
  </section>
+ <xi:include href="common_legal.xml"/>
 </article>
