@@ -15,7 +15,7 @@
  xmlns:xlink="http://www.w3.org/1999/xlink">
 
  <info>
-  <title>Registering &rhla; 8 or CentOS Linux 8</title><!-- Final title TBD -->
+  <title>Registering &rhla; 8 or CentOS Linux 8</title>
   <productname>&productname;</productname>
   <date><?dbtimestamp format="B d, Y"?></date>
   <abstract>
@@ -47,8 +47,10 @@
      CentOS&nbsp;Stream is not supported.
     </para>
    </important>
-   <para>&productname; subscriptions are currently available as <literal>&sles;
-    with Expanded Support</literal>. The &ha; extension is <literal>&sle; &ha; Extension with Expanded Support</literal>.
+   <para><!-- Can delete this if/when the subscription name changes -->
+    &productname; subscriptions are currently available as <literal>&sles; with
+    Expanded Support</literal>. The &ha; extension is <literal>&sle; &ha;
+    Extension with Expanded Support</literal>.
    </para>
    <para>
     To register &rhel; 8 or CentOS Linux 8, use &suse;'s &rmtool; (&rmt;).
