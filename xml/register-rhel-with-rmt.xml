@@ -68,6 +68,25 @@
    </para>
 <screen>&prompt.root;<command>curl http://<replaceable>RMT_SERVER</replaceable>/tools/rmt-client-setup-res --output rmt-client-setup-res</command></screen>
   </step>
+  <step><!--Remove this step if/when the script is updated-->
+   <para>
+    Edit the <filename>rmt-client-setup-res</filename> script to add
+    <literal>--allowerasing</literal> to the following line:
+   </para>
+<screen>$DNF install ${AUTOACCEPT} SUSEConnect sles_es-release librepo-1.9.2 <emphasis role="bold">--allowerasing</emphasis></screen>
+  </step>
+  <step><!--Remove this step if/when the script is updated-->
+   <para>
+    Remove the <filename>/usr/share/redhat-release</filename> directory:
+   </para>
+<screen>&prompt.root;<command>rm -r /usr/share/redhat-release</command></screen>
+   <warning role="compact">
+    <para>
+     Do <emphasis>not</emphasis> remove the <filename>/etc/redhat-release</filename>
+     file.
+    </para>
+   </warning>
+  </step>
   <step>
    <para>
     Run the <filename>rmt-client-setup-res</filename> script with
@@ -82,7 +101,6 @@
      <para>
       Installs <command>&suseconnect;</command> and its dependencies.
      </para>
-     <remark>Fails due to conflicts between sles_es-release and centos-gpg-keys, centos-linux-repos, and centos-linux-release. It almost works when I manually add --allowerasing to the rmt-client-setup-res script, but then fails when /usr/share/redhat-release from sles_es-release conflicts with the file from centos-linux-release. It fully works when I also run `rm -r /usr/share/redhat-release` before running the script. I can add these workarounds as steps in this procedure, but it would be better if they (or some equivalent) were just in the script to begin with.</remark>
     </listitem>
     <listitem>
      <para>
