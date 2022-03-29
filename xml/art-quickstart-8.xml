@@ -49,11 +49,6 @@
      CentOS&nbsp;Stream is not supported.
     </para>
    </important>
-   <para><!-- Can delete this if/when the subscription name changes -->
-    &productname; subscriptions are currently available as <literal>&sles; with
-    Expanded Support</literal>. The &ha; extension is <literal>&sle; &ha;
-    Extension with Expanded Support</literal>.
-   </para>
    <para>
     To register &rhel; 8 or CentOS Linux 8, use &suse;'s &rmtool; (&rmt;).
     &rmt; is a proxy system for the &scc;. The &rmt; server is registered with
@@ -91,6 +86,15 @@
      </para>
     </listitem>
    </orderedlist>
+   <note><!-- Can delete this if/when all names have been changed -->
+    <title><emphasis>&productname;</emphasis> and <emphasis>&sles; with Expanded Support</emphasis></title>
+    <para>
+     <emphasis>&productname;</emphasis> now provides what used to be covered by
+     the <emphasis>&sles; with Expanded Support</emphasis> subscription. Some
+     components might still use the <emphasis>Expanded Support</emphasis> name
+     during the transition period.
+    </para>
+   </note>
  </section>
 
  <section xml:id="requirements-quickstart-8">
