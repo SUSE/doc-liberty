@@ -112,6 +112,12 @@
    </listitem>
    <listitem>
     <para>
+     The systems you want to register have been updated to the latest version of
+     &rhla; 8 or CentOS Linux 8.
+    </para>
+   </listitem>
+   <listitem>
+    <para>
      &sles; (&slsa;) 15 is installed and running in the same network as the
      systems you want to register. You can use the &productname; subscription to
      register the &slsa; server. To install the latest version of &slsa; 15, see the
@@ -140,11 +146,11 @@
 
 <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="register-rhel-with-rmt.xml"/>
 
- <section xml:id="troubleshooting-quickstart-8">
+ <section xml:id="troubleshoot-quickstart-8">
   <title>Troubleshooting</title>
   <variablelist>
    <varlistentry>
-    <term><systemitem>nginx.service</systemitem> inactive after installing the
+    <term><systemitem>nginx.service</systemitem> is inactive after installing the
     <package>rmt-server</package> package</term>
     <listitem>
      <para>
@@ -156,7 +162,8 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term>&productname; doesn't appear in product list after <command>rmt-cli sync</command></term>
+    <term>&productname; doesn't appear in <command>rmt-cli products list</command>
+     after <command>rmt-cli sync</command></term>
     <listitem>
      <para>
       Check your network. If the network is down, the sync command fails without
@@ -165,7 +172,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><literal>Mirroring completed with errors</literal></term>
+    <term>Mirroring completes with errors</term>
     <listitem>
      <para>
       If some packages could not be downloaded due to timeouts, rerun the
@@ -174,17 +181,90 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term>Setup script fails to install <command>SUSEConnect</command></term>
+    <term>Setup script cannot access the &productname; repository</term>
     <listitem>
      <para>
+      The <filename>repodata</filename> directory on the RMT server will not
+      be available until all of the packages for that repository are downloaded.
       If some packages could not be downloaded to the RMT server due to timeouts
-      during the first mirroring, the <filename>repodata</filename> directory
-      will not be available, and <command>SUSEConnect</command> cannot be installed.
+      during the first mirroring, rerun the <command>rmt-cli mirror</command>
+      command until all packages are downloaded.
      </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term>Setup script cannot remove the protected package
+    <package>redhat-release</package></term>
+    <listitem>
      <para>
-      On the RMT server, rerun the <command>rmt-cli mirror</command> command
-      until all packages are downloaded.
+      On &rhla;, the <package>redhat-release</package> package is protected as a
+      dependency of the <package>setup</package> package. If necessary, you can
+      use the following command to remove <package>redhat-release</package>
+      without checking for dependencies:
      </para>
+<screen>&prompt.root;<command>rpm -e redhat-release --nodeps</command></screen>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term>Setup script cannot install <package>sles_es-release</package> because
+    of package conflicts</term>
+    <listitem>
+     <para>
+      If <package>sles_es-release</package> conflicts with existing packages,
+      try the following workaround:
+     </para>
+     <orderedlist>
+      <listitem>
+       <para>
+       Remove the <filename>redhat-release</filename> directory:
+       </para>
+<screen>&prompt.root;<command>rm -r /usr/share/redhat-release</command></screen>
+       <para>
+        On CentOS, this removes the symbolic link between
+        <filename>redhat-release</filename> and <filename>centos-release</filename>.
+       </para>
+      </listitem>
+      <listitem>
+       <para>
+        Edit the <filename>rmt-client-setup-res</filename> script to add
+        <literal>--allowerasing</literal> to the following line:
+       </para>
+<screen>$DNF install ${AUTOACCEPT} SUSEConnect sles_es-release librepo-1.9.2 <emphasis role="bold">--allowerasing</emphasis></screen>
+      </listitem>
+     </orderedlist>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term>Setup script cannot install <package>SUSEConnect</package> because of
+    package dependencies</term>
+    <listitem>
+     <para>
+      &productname; only supports the latest version of &rhla; or CentOS Linux.
+      If your system is running the latest version and <package>SUSEConnect</package>
+      still has package dependency issues, try the following workaround:
+     </para>
+     <orderedlist>
+      <listitem>
+       <para>
+        Edit the <filename>rmt-client-setup-res</filename> script to add
+        <literal>--skip-broken</literal> to the following line:
+       </para>
+<screen>$DNF install ${AUTOACCEPT} SUSEConnect sles_es-release librepo-1.9.2 <emphasis role="bold">--skip-broken</emphasis></screen>
+      </listitem>
+      <listitem>
+       <para>
+        Run the script and accept any proposed package changes.
+        <package>SUSEConnect</package> will be skipped.
+       </para>
+      </listitem>
+      <listitem>
+       <para>
+        Run the script a second time. The package changes from the first attempt
+        can sometimes resolve the package dependency issues, allowing the second
+        attempt to successfully install <package>SUSEConnect</package>.
+       </para>
+      </listitem>
+     </orderedlist>
     </listitem>
    </varlistentry>
   </variablelist>

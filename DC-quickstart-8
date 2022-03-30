@@ -6,7 +6,6 @@ PROFCONDITION="suse-product"
 #PROFCONDITION="community-project"
 
 DRAFT=1
-REMARKS=1
 
 STYLEROOT="/usr/share/xml/docbook/stylesheet/suse2021-ns"
 FALLBACK_STYLEROOT="/usr/share/xml/docbook/stylesheet/suse-ns"
