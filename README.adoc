@@ -4,7 +4,7 @@ This is the source for the official Liberty Linux documentation.
 
 This repository hosts the documentation sources including translations (if available).
 
-Released versions of the documentation are published at https://documentation.suse.com/liberty/.
+Released versions of the documentation are published at https://documentation.suse.com/.
 
 Beta documentation versions are available at https://susedoc.github.io/, where all commits to `main` and maintenance branches are automatically built.
 
