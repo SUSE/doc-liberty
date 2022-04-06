@@ -1,3 +1,6 @@
+#
+# DC file for SUSE Liberty Linux
+#
 MAIN="art-quickstart-8.xml"
 ROOTID="art-quickstart-8"
 
