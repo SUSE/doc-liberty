@@ -8,36 +8,36 @@
     %entities;
 ]>
 
-<article xml:id="art-quickstart-8" xml:lang="en"
+<article xml:id="art-quickstart-7" xml:lang="en"
  xmlns="http://docbook.org/ns/docbook" version="5.1"
  xmlns:its="http://www.w3.org/2005/11/its"
  xmlns:xi="http://www.w3.org/2001/XInclude"
  xmlns:xlink="http://www.w3.org/1999/xlink">
 
  <info>
-  <title>Registering &rhla; 8 or CentOS Linux 8</title>
+  <title>Registering &rhla; 7 or CentOS Linux 7</title>
   <productname>&productname;</productname>
   <date><?dbtimestamp format="B d, Y"?></date>
   <xi:include href="common_copyright_gfdl.xml"/>
   <abstract>
    <para>
     This guide describes how to attach a &productname; subscription to
-    &rhel;&nbsp;8 or CentOS&nbsp;Linux&nbsp;8 using &suse;'s &rmtool;.
+    &rhel;&nbsp;7 or CentOS&nbsp;Linux&nbsp;7 using &suse;'s &smtool;.
    </para>
   </abstract>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
    <dm:bugtracker>
     <dm:url>https://github.com/SUSE/doc-liberty/issues/new</dm:url>
     <dm:labels>documentation,issue</dm:labels>
-    <dm:version>8</dm:version>
+    <dm:version>7</dm:version>
     <dm:assignee>tahliar</dm:assignee>
    </dm:bugtracker>
-   <dm:editurl>https://github.com/SUSE/doc-liberty/edit/main/xml/</dm:editurl>
+   <dm:editurl>https://github.com/SUSE/doc-liberty/edit/maintenane/SLL7/xml/</dm:editurl>
    <dm:translation>no</dm:translation>
   </dm:docmanager>
  </info>
 
- <section xml:id="introduction-quickstart-8">
+ <section xml:id="introduction-quickstart-7">
   <title>Introduction</title>
    <para>
     &productname; is a technology and support solution for mixed Linux environments.
@@ -50,39 +50,38 @@
     </para>
    </important>
    <para>
-    To register &rhel; 8 or CentOS Linux 8, use &suse;'s &rmtool; (&rmt;).
-    &rmt; is a proxy system for the &scc;. The &rmt; server is registered with
-    the &scc;, and other systems in the network are registered with the &rmt;
+    To register &rhel; 7 or CentOS Linux 7, use &suse;'s &smtool; (&smt;).
+    &smt; is a proxy system for the &scc;. The &smt; server is registered with
+    the &scc;, and other systems in the network are registered with the &smt;
     server and receive packages from it directly. For more information, see the
-    <link xlink:href="&dsc-sles;/&slesnumber;/html/SLES-all/book-rmt.html">&rmtguide;</link>.
+    <link xlink:href="&dsc-sles;/12-SP5/html/SLES-all/book-smt.html">&smtool; Guide</link>.
    </para>
    <para>
-    Registering &rhla; or CentOS Linux with &rmt; involves the following steps:
+    Registering &rhla; or CentOS Linux with &smt; involves the following steps:
    </para>
    <orderedlist>
     <listitem>
      <para>
-      <xref linkend="requirements-quickstart-8"/>. Make sure you have everything
+      <xref linkend="requirements-quickstart-7"/>. Make sure you have everything
       required for the following procedures.
      </para>
     </listitem>
     <listitem>
      <para>
-      <xref linkend="configure-rmt-server"/>. This server must be installed on
-      &sles; 15. You can skip this step if you already have an &rmt; server in
+      <xref linkend="configure-smt-server"/>. This server must be installed on
+      &sles; 12. You can skip this step if you already have an &smt; server in
       your network.
      </para>
     </listitem>
     <listitem>
      <para>
-      <xref linkend="mirror-repositories-with-rmt"/>. You can skip this step if
-      &productname; is already enabled and mirrored on your &rmt; server.
+      <xref linkend="mirror-repositories-with-smt"/>. You can skip this step if
+      &productname; is already enabled and mirrored on your &smt; server.
      </para>
     </listitem>
     <listitem>
      <para>
-      <xref linkend="register-rhel-with-rmt"/>. &rmt; includes a setup script to
-      automate the registration process.
+      <xref linkend="register-7-with-smt"/>.
      </para>
     </listitem>
    </orderedlist>
@@ -97,7 +96,7 @@
    </note>
  </section>
 
- <section xml:id="requirements-quickstart-8">
+ <section xml:id="requirements-quickstart-7">
   <title>Requirements</title>
   <itemizedlist>
    <listitem>
@@ -113,15 +112,15 @@
    <listitem>
     <para>
      The systems you want to register have been updated to the latest version of
-     &rhla; 8 or CentOS Linux 8.
+     &rhla; 7 or CentOS Linux 7.
     </para>
    </listitem>
    <listitem>
     <para>
-     &sles; (&slsa;) 15 is installed and running in the same network as the
+     &sles; (&slsa;) 12 is installed and running in the same network as the
      systems you want to register. You can use the &productname; subscription to
-     register the &slsa; server. To install the latest version of &slsa; 15, see the
-     <link xlink:href="&dsc-sles;/&slesnumber;/html/SLES-all/article-installation.html">
+     register the &slsa; server. To install the latest version of &slsa; 12, see the
+     <link xlink:href="&dsc-sles;/12-SP5/html/SLES-all/art-sle-installquick.html">
      &instquick;</link>.
     </para>
    </listitem>
@@ -130,8 +129,8 @@
      The &slsa; server has enough storage available for repository mirroring.
     </para>
     <para>
-     Downloaded packages are stored in <filename>/usr/share/rmt/public/repo</filename>,
-     which is a symbolic link to <filename>/var/lib/rmt/public/repo/</filename>.
+     <!--Downloaded packages are stored in <filename>/usr/share/rmt/public/repo</filename>,
+     which is a symbolic link to <filename>/var/lib/rmt/public/repo/</filename>.-->
      The amount of storage required depends on the number of repositories that you
      mirror, and the number of products that you enable. We recommend 1.5 times
      the total size of all enabled repositories, or approximately 200 GB per release.
@@ -140,13 +139,13 @@
   </itemizedlist>
  </section>
 
-<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="configure-rmt-server.xml"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="configure-smt-server.xml"/>
 
-<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mirror-repositories-with-rmt.xml"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mirror-repositories-with-smt.xml"/>
 
-<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="register-rhel-with-rmt.xml"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="register-rhel-with-smt.xml"/>
 
- <section xml:id="troubleshoot-quickstart-8">
+ <section xml:id="troubleshoot-quickstart-7">
   <title>Troubleshooting</title>
   <variablelist>
    <varlistentry>

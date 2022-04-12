@@ -5,11 +5,11 @@
     %entities;
 ]>
 
-<section xml:id="register-rhel-with-rmt" xml:lang="en"
+<section xml:id="register-7-with-smt" xml:lang="en"
  xmlns="http://docbook.org/ns/docbook" version="5.1"
  xmlns:xi="http://www.w3.org/2001/XInclude"
  xmlns:xlink="http://www.w3.org/1999/xlink">
- <title>Registering &rhla; or CentOS Linux with &rmt;</title>
+ <title>Registering &rhla; or CentOS Linux with &smt;</title>
 
  <info>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
@@ -19,7 +19,7 @@
  </info>
 
  <para>
-  Use this procedure to register &rhel; 8 or CentOS Linux 8 with the &rmt; server.
+  Use this procedure to register &rhel; 7 or CentOS Linux 7 with the &smt; server.
  </para>
  <important role="compact">
   <para>
@@ -30,23 +30,23 @@
   <title>Prerequisites</title>
   <listitem>
    <para>
-    <xref linkend="configure-rmt-server"/>
+    <xref linkend="configure-smt-server"/>
    </para>
   </listitem>
   <listitem>
    <para>
-    <xref linkend="mirror-repositories-with-rmt"/>
+    <xref linkend="mirror-repositories-with-smt"/>
    </para>
   </listitem>
   <listitem>
    <para>
-    The system you want to register can access the &rmt; server.
+    The system you want to register can access the &smt; server.
    </para>
   </listitem>
   <listitem>
    <para>
-    The system you want to register is running the latest version of &rhla; 8
-    or CentOS Linux 8.
+    The system you want to register is running the latest version of &rhla; 7
+    or CentOS Linux 7.
    </para>
   </listitem>
   <listitem>
@@ -61,8 +61,8 @@
    </para>
   </listitem>
  </itemizedlist>
- <procedure xml:id="pro-register-8-with-rmt">
-  <title>Registering &rhla; or CentOS Linux with &rmt;</title>
+ <procedure xml:id="pro-register-7-with-smt">
+  <title>Registering &rhla; or CentOS Linux with &smt;</title>
   <step>
    <para>
     Disable the &rhla; or CentOS repositories in <filename>/etc/yum.repos.d</filename>
@@ -71,16 +71,16 @@
   </step>
   <step>
    <para>
-    Download the <filename>rmt-client-setup-res</filename> script:
+    Download the <filename>smt-client-setup-res</filename> script:
    </para>
-<screen>&prompt.root;<command>curl http://<replaceable>RMT_SERVER</replaceable>/tools/rmt-client-setup-res --output rmt-client-setup-res</command></screen>
+<screen>&prompt.root;<command>curl http://<replaceable>RMT_SERVER</replaceable>/tools/smt-client-setup-res --output smt-client-setup-res</command></screen>
   </step>
   <step>
    <para>
-    Run the <filename>rmt-client-setup-res</filename> script with
+    Run the <filename>smt-client-setup-res</filename> script with
     the URL of the RMT server as a parameter:
    </para>
-<screen>&prompt.root;<command>sh rmt-client-setup-res https://<replaceable>RMT_SERVER</replaceable></command></screen>
+<screen>&prompt.root;<command>sh smt-client-setup-res https://<replaceable>RMT_SERVER</replaceable></command></screen>
    <para>
     The script performs the following tasks:
    </para>
@@ -92,7 +92,7 @@
     </listitem>
     <listitem>
      <para>
-      Downloads and runs the <filename>rmt-client-setup</filename> script, which
+      Downloads and runs the <filename>smt-client-setup</filename> script, which
       does the following:
      </para>
      <itemizedlist>
@@ -111,7 +111,7 @@
       <listitem>
        <para>
         Downloads the CA certificate from
-        <literal>https://<replaceable>RMT_SERVER</replaceable>/rmt.crt</literal>.
+        <literal>https://<replaceable>RMT_SERVER</replaceable>/smt.crt</literal>.
        </para>
       </listitem>
       <listitem>
@@ -131,7 +131,7 @@
    </itemizedlist>
    <para>
     If the script works, you will see <literal>Successfully registered system</literal>.
-    If the script fails, see <xref linkend="troubleshoot-quickstart-8"/> for
+    If the script fails, see <xref linkend="troubleshoot-quickstart-7"/> for
     potential solutions.
    </para>
   </step>

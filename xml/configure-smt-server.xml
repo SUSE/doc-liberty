@@ -5,14 +5,11 @@
     %entities;
 ]>
 
-<section xml:id="configure-rmt-server" xml:lang="en"
+<section xml:id="configure-smt-server" xml:lang="en"
  xmlns="http://docbook.org/ns/docbook" version="5.1"
  xmlns:xi="http://www.w3.org/2001/XInclude"
  xmlns:xlink="http://www.w3.org/1999/xlink">
- <title>Configuring the RMT server</title>
-
-<!-- There is also a version of this in doc-sle, file rmt_install.xml
-https://documentation.suse.com/sles/15-SP3/single-html/SLES-rmt/#sec-rmt-installation-yast-configuration -->
+ <title>Configuring the &smt; server</title>
 
  <info>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
@@ -22,13 +19,13 @@ https://documentation.suse.com/sles/15-SP3/single-html/SLES-rmt/#sec-rmt-install
  </info>
 
  <para>
-  Use this procedure to configure the &rmtool; (&rmt;) on &sles; 15.
+  Use this procedure to configure the &smtool; (&smt;) on &sles; 12.
  </para>
  <itemizedlist>
   <title>Prerequisites</title>
   <listitem>
    <para>
-    &sles; 15 is installed and up to date.
+    &sles; 12 is installed and up to date.
    </para>
   </listitem>
   <listitem>
@@ -38,19 +35,19 @@ https://documentation.suse.com/sles/15-SP3/single-html/SLES-rmt/#sec-rmt-install
   </listitem>
  </itemizedlist>
 
- <procedure xml:id="pro-configure-rmt-server">
-  <title>Configuring the RMT server</title>
+ <procedure xml:id="pro-configure-smt-server">
+  <title>Configuring the &smt; server</title>
   <step>
    <para>
-    Install &rmt; on &sles; 15:
+    Install &smt; on &sles; 12:
    </para>
-<screen>&prompt.root;<command>zypper in rmt-server</command></screen>
+<screen>&prompt.root;<command>zypper in smt-server</command></screen>
   </step>
   <step>
    <para>
-    Start &yast; with the <literal>rmt</literal> module:
+    Start &yast; with the <literal>smt</literal> module:
    </para>
-<screen>&prompt.root;<command>yast2 rmt</command></screen>
+<screen>&prompt.root;<command>yast2 smt</command></screen>
   </step>
   <step>
    <para>
@@ -110,7 +107,7 @@ https://documentation.suse.com/sles/15-SP3/single-html/SLES-rmt/#sec-rmt-install
   </step>
   <step>
    <para>
-    &yast; displays the <guimenu>&rmt; Service Status</guimenu>.
+    &yast; displays the <guimenu>&smt; Service Status</guimenu>.
     Select <guimenu>Next</guimenu>.
    </para>
   </step>
@@ -122,14 +119,20 @@ https://documentation.suse.com/sles/15-SP3/single-html/SLES-rmt/#sec-rmt-install
   </step>
  </procedure>
  <para>
-  &yast; enables and starts all &rmt; &systemd; services and timers.
+  &yast; enables and starts all &smt; &systemd; services and timers.
  </para>
  <itemizedlist>
   <title>More information</title>
   <listitem>
    <para>
-    <link xlink:href="&dsc-sles;/&slesnumber;/html/SLES-all/cha-rmt-installation.html">
-    RMT installation and configuration</link>
+    <link xlink:href="&dsc-sles;/12-SP5/html/SLES-all/smt-installation.html">
+    &smt; Installation</link>
+   </para>
+  </listitem>
+  <listitem>
+   <para>
+    <link xlink:href="&dsc-sles;/12-SP5/html/SLES-all/smt-server.html">
+    &smt; Server Configuration</link>
    </para>
   </listitem>
  </itemizedlist>

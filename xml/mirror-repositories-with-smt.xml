@@ -5,11 +5,11 @@
     %entities;
 ]>
 
-<section xml:id="mirror-repositories-with-rmt" xml:lang="en"
+<section xml:id="mirror-repositories-with-smt" xml:lang="en"
  xmlns="http://docbook.org/ns/docbook" version="5.1"
  xmlns:xi="http://www.w3.org/2001/XInclude"
  xmlns:xlink="http://www.w3.org/1999/xlink">
- <title>Mirroring &productname; repositories with &rmt;</title>
+ <title>Mirroring &productname; repositories with &smt;</title>
  <info>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
    <dm:bugtracker></dm:bugtracker>
@@ -18,24 +18,24 @@
  </info>
 
  <para>
-  Use this procedure to mirror the &productname; repositories for &rhel; 8 and
-  CentOS Linux 8.
+  Use this procedure to mirror the &productname; repositories for &rhel; 7 and
+  CentOS Linux 7.
  </para>
  <itemizedlist>
   <title>Prerequisites</title>
   <listitem>
    <para>
-    <xref linkend="configure-rmt-server"/>
+    <xref linkend="configure-smt-server"/>
    </para>
   </listitem>
   <listitem>
    <para>
-    The &rmt; server has enough storage available for repository mirroring.
+    The &smt; server has enough storage available for repository mirroring.
    </para>
   </listitem>
   <listitem>
    <para>
-    Your organization credentials appear correctly in <filename>/etc/rmt.conf</filename>.
+    Your organization credentials appear correctly in <filename>/etc/smt.conf</filename>.?????
    </para>
   </listitem>
   <listitem>
@@ -45,25 +45,25 @@
   </listitem>
  </itemizedlist>
 
- <procedure xml:id="pro-mirror-repositories-with-rmt">
-  <title>Mirroring &productname; repositories with &rmt;</title>
+ <procedure xml:id="pro-mirror-repositories-with-smt">
+  <title>Mirroring &productname; repositories with &smt;</title>
   <step>
    <para>
-    On the &rmt; server, update the available product and repository metadata:
+    On the &smt; server, update the available product and repository metadata:
    </para>
-<screen>&prompt.root;<command>rmt-cli sync</command></screen>
+<screen>&prompt.root;<command>smt-cli sync</command></screen>
    <para>
     Synchronization is also performed automatically by
-    <systemitem>rmt-server-sync.timer</systemitem>. You can check the status and
+    <systemitem>smt-server-sync.timer</systemitem>. You can check the status and
     the next scheduled sync time with the following command:
    </para>
-<screen>&prompt.root;<command>systemctl status rmt-server-sync.timer</command></screen>
+<screen>&prompt.root;<command>systemctl status smt-server-sync.timer</command></screen>
   </step>
   <step>
    <para>
     Enable &productname; using the product ID <literal>1921</literal>:
    </para>
-<screen>&prompt.root;<command>rmt-cli product enable 1921</command>
+<screen>&prompt.root;<command>smt-cli product enable 1921</command>
 Found product by target 1921: &sles; with Expanded Support 8 x86_64.
 Enabling &sles; with Expanded Support 8 x86_64:
   &sles; with Expanded Support 8 x86_64:
@@ -79,7 +79,7 @@ Enabling &sles; with Expanded Support 8 x86_64:
     If your subscription includes the &ha; extension, enable the extension using
     the product ID <literal>1922</literal>:
    </para>
-<screen>&prompt.root;<command>rmt-cli product enable 1922</command>
+<screen>&prompt.root;<command>smt-cli product enable 1922</command>
 Found product by target 1922: &sle; &ha; Extension with Expanded Support 8 x86_64.
 Enabling &sle; &ha; Extension with Expanded Support 8 x86_64:
   &sle; &ha; Extension with Expanded Support 8 x86_64:
@@ -87,7 +87,7 @@ Enabling &sle; &ha; Extension with Expanded Support 8 x86_64:
    <tip role="compact">
     <para>
      To check whether the &ha; extension is included in your subscription, run this
-     command: <command>rmt-cli products list --all --name="Expanded Support" --version=8</command>
+     command: <command>smt-cli products list --all --name="Expanded Support" --version=8</command>
     </para>
    </tip>
   </step>
@@ -96,28 +96,28 @@ Enabling &sle; &ha; Extension with Expanded Support 8 x86_64:
     If you also need the <literal>Source</literal> or <literal>Debug</literal>
     repositories, find and enable them with the following commands:
    </para>
-<screen>&prompt.root;<command>rmt-cli repo list --all | grep RES-</command>
-&prompt.root;<command>rmt-cli repo enable <replaceable>REPO_ID</replaceable></command></screen>
+<screen>&prompt.root;<command>smt-cli repo list --all | grep RES-</command>
+&prompt.root;<command>smt-cli repo enable <replaceable>REPO_ID</replaceable></command></screen>
   </step>
   <step>
    <para>
     Start package mirroring for the enabled repositories:
    </para>
-<screen>&prompt.root;<command>rmt-cli mirror</command></screen>
+<screen>&prompt.root;<command>smt-cli mirror</command></screen>
    <para>
     Packages are downloaded to the RMT server once per day by
-    <systemitem>rmt-server-mirror.timer</systemitem>. You can check the status
+    <systemitem>smt-server-mirror.timer</systemitem>. You can check the status
     and the next scheduled download time with the following command:
    </para>
-<screen>&prompt.root;<command>systemctl status rmt-server-mirror.timer</command></screen>
+<screen>&prompt.root;<command>systemctl status smt-server-mirror.timer</command></screen>
   </step>
  </procedure>
  <itemizedlist>
   <title>More information</title>
   <listitem>
    <para>
-    <link xlink:href="&dsc-sles;/&slesnumber;/html/SLES-all/cha-rmt-mirroring.html">
-    Mirroring repositories on the RMT server</link>
+    <link xlink:href="&dsc-sles;/12-SP5/html/SLES-all/smt-mirroring.html">
+    Mirroring Repositories on the &smt; Server</link>
    </para>
   </listitem>
  </itemizedlist>
