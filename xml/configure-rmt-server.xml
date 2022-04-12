@@ -9,7 +9,7 @@
  xmlns="http://docbook.org/ns/docbook" version="5.1"
  xmlns:xi="http://www.w3.org/2001/XInclude"
  xmlns:xlink="http://www.w3.org/1999/xlink">
- <title>Configuring the RMT server</title>
+ <title>Configuring the &rmt; server</title>
 
 <!-- There is also a version of this in doc-sle, file rmt_install.xml
 https://documentation.suse.com/sles/15-SP3/single-html/SLES-rmt/#sec-rmt-installation-yast-configuration -->
@@ -39,7 +39,7 @@ https://documentation.suse.com/sles/15-SP3/single-html/SLES-rmt/#sec-rmt-install
  </itemizedlist>
 
  <procedure xml:id="pro-configure-rmt-server">
-  <title>Configuring the RMT server</title>
+  <title>Configuring the &rmt; server</title>
   <step>
    <para>
     Install &rmt; on &sles; 15:
@@ -129,7 +129,7 @@ https://documentation.suse.com/sles/15-SP3/single-html/SLES-rmt/#sec-rmt-install
   <listitem>
    <para>
     <link xlink:href="&dsc-sles;/&slesnumber;/html/SLES-all/cha-rmt-installation.html">
-    RMT installation and configuration</link>
+    &rmt; installation and configuration</link>
    </para>
   </listitem>
  </itemizedlist>

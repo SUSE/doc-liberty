@@ -105,7 +105,7 @@ Enabling &sle; &ha; Extension with Expanded Support 8 x86_64:
    </para>
 <screen>&prompt.root;<command>rmt-cli mirror</command></screen>
    <para>
-    Packages are downloaded to the RMT server once per day by
+    Packages are downloaded to the &rmt; server once per day by
     <systemitem>rmt-server-mirror.timer</systemitem>. You can check the status
     and the next scheduled download time with the following command:
    </para>
@@ -117,7 +117,7 @@ Enabling &sle; &ha; Extension with Expanded Support 8 x86_64:
   <listitem>
    <para>
     <link xlink:href="&dsc-sles;/&slesnumber;/html/SLES-all/cha-rmt-mirroring.html">
-    Mirroring repositories on the RMT server</link>
+    Mirroring repositories on the &rmt; server</link>
    </para>
   </listitem>
  </itemizedlist>

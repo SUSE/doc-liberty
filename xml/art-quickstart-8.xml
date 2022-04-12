@@ -184,9 +184,9 @@
     <term>Setup script cannot access the &productname; repository</term>
     <listitem>
      <para>
-      The <filename>repodata</filename> directory on the RMT server will not
+      The <filename>repodata</filename> directory on the &rmt; server will not
       be available until all of the packages for that repository are downloaded.
-      If some packages could not be downloaded to the RMT server due to timeouts
+      If some packages could not be downloaded to the &rmt; server due to timeouts
       during the first mirroring, rerun the <command>rmt-cli mirror</command>
       command until all packages are downloaded.
      </para>

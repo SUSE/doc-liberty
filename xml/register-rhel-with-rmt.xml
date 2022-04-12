@@ -73,12 +73,12 @@
    <para>
     Download the <filename>rmt-client-setup-res</filename> script:
    </para>
-<screen>&prompt.root;<command>curl http://<replaceable>RMT_SERVER</replaceable>/tools/rmt-client-setup-res --output rmt-client-setup-res</command></screen>
+<screen>&prompt.root;<command>curl http://<replaceable>&rmt;_SERVER</replaceable>/tools/rmt-client-setup-res --output rmt-client-setup-res</command></screen>
   </step>
   <step>
    <para>
     Run the <filename>rmt-client-setup-res</filename> script with
-    the URL of the RMT server as a parameter:
+    the URL of the &rmt; server as a parameter:
    </para>
 <screen>&prompt.root;<command>sh rmt-client-setup-res https://<replaceable>RMT_SERVER</replaceable></command></screen>
    <para>
@@ -122,7 +122,7 @@
       <listitem>
        <para>
         Uses <command>&suseconnect;</command> to register the system with the
-        RMT server. Registering the system using <command>&suseconnect;</command>
+        &rmt; server. Registering the system using <command>&suseconnect;</command>
         adds and enables all default repositories.
        </para>
       </listitem>
