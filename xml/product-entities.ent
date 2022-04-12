@@ -8,7 +8,7 @@
 <!ENTITY repo-readme            "&repo-url;/blob/main/README.adoc">
 
 <!-- DOCUMENTATION.SUSE.COM PRODUCT URL -->
-<!ENTITY doc-url                "&dsc;/[PRODUCT]/[VERSION]">
+<!ENTITY doc-url                "&dsc;/liberty/8">
 
 <!-- START YEAR OF COPYRIGHT -->
 <!ENTITY copyrightstart         "2022">

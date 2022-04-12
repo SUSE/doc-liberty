@@ -61,7 +61,7 @@
    </para>
   </listitem>
  </itemizedlist>
- <procedure xml:id="pro-register-8-with-rmt">
+ <procedure xml:id="pro-register-rhel-with-rmt">
   <title>Registering &rhla; or CentOS Linux with &rmt;</title>
   <step>
    <para>
