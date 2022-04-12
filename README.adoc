@@ -15,7 +15,8 @@ Beta documentation versions are available at https://susedoc.github.io/, where a
 [options="header"]
 |=======================================================================
 | Name                             | Purpose
-| `main`                           | Current working branch
+| `main`                           | Working branch for current version
+| `maintenance/*`                  | Maintenance for released versions
 |=======================================================================
 
 
@@ -29,13 +30,11 @@ If possible, please check for duplicates before creating a new report.
 
 Thank you for contributing to this repo. Please adhere to the following guidelines when creating a pull request:
 
-////
 . If you are contributing to the most recent release (currently SLL 8), create your pull request against the _main_ branch.
 This branch is protected.
 
 . If you are contributing to a previous release, create your pull request against the respective _maintenance/<RELEASENUMBER>_ branch.
 These branches are also protected.
-////
 
 . Make sure all validation (GitHub Actions) checks are passed.
 
