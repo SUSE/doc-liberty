@@ -129,8 +129,7 @@
      The &slsa; server has enough storage available for repository mirroring.
     </para>
     <para>
-     <!--Downloaded packages are stored in <filename>/usr/share/rmt/public/repo</filename>,
-     which is a symbolic link to <filename>/var/lib/rmt/public/repo/</filename>.-->
+     Downloaded packages are stored in <filename>/srv/www/htdocs/repo</filename>.
      The amount of storage required depends on the number of repositories that you
      mirror, and the number of products that you enable. We recommend 1.5 times
      the total size of all enabled repositories, or approximately 200 GB per release.

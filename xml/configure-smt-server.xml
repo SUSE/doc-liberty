@@ -39,20 +39,24 @@
   <title>Configuring the &smt; server</title>
   <step>
    <para>
-    Install &smt; on &sles; 12:
+    Install the &smt; pattern on &sles; 12:
    </para>
-<screen>&prompt.root;<command>zypper in smt-server</command></screen>
+<screen>&prompt.root;<command>zypper in -t pattern smt</command></screen>
   </step>
   <step>
    <para>
-    Start &yast; with the <literal>smt</literal> module:
+    Start the <literal>smt-wizard</literal> module in &yast;:
    </para>
-<screen>&prompt.root;<command>yast2 smt</command></screen>
+<screen>&prompt.root;<command>yast2 smt-wizard</command></screen>
   </step>
   <step>
    <para>
-    Enter your <guimenu>Organization Credentials</guimenu>, then select
-    <guimenu>Next</guimenu>.
+    Activate the <guimenu>Open Port in Firewall</guimenu> check box.
+   </para>
+  </step>
+  <step>
+   <para>
+    Enter your <guimenu>Organization (Mirroring) Credentials</guimenu>.
    </para>
    <tip role="compact">
     <para>
@@ -66,8 +70,32 @@
   </step>
   <step>
    <para>
-    Enter <guimenu>Database Credentials</guimenu> for a new MariaDB database user,
-    then select <guimenu>Next</guimenu>. The new user is created.
+    Select <guimenu>Test</guimenu> to validate the credentials. &smt; connects
+    to the &scc; using the provided credentials and downloads testing data.
+   </para>
+  </step>
+  <step>
+   <para>
+    Enter the <guimenu>SCC E-mail Used for Registration</guimenu>.
+   </para>
+  </step>
+  <step>
+   <para>
+    Verify that the correct URL appears in <guimenu>Your SMT Server URL</guimenu>,
+    then select <guimenu>Next</guimenu>.
+   </para>
+  </step>
+  <step>
+   <para>
+    For security reasons, &smt; requires a separate user to connect to the database.
+    Set a password for this user in the <guimenu>Database Password for smt User</guimenu>
+    field, then confirm the new password in the next field.
+   </para>
+  </step>
+  <step>
+   <para>
+    Select <guimenu>Add</guimenu> to enter any e-mail addresses that should receive
+    &smt; reports. When all e-mail addresses are entered, select <guimenu>Next</guimenu>.
    </para>
   </step>
   <step>
@@ -76,22 +104,17 @@
     when prompted, then select <guimenu>OK</guimenu>.
    </para>
    <para>
-     If no password is set for the &mariadb; root user, enter and confirm a new
-     password when prompted, then select <guimenu>OK</guimenu>.
+    If no password is set for the &mariadb; root user, enter and confirm a new
+    password when prompted, then select <guimenu>OK</guimenu>.
    </para>
   </step>
   <step>
    <para>
-    Enter a <guimenu>Common Name</guimenu> for the SSL certificates. The common
-    name is usually the FQDN of the server.
+    By default, &smt; communicates with clients via a secure protocol. If the
+    SSL certificate does not exist, the wizard displays a warning. Select
+    <guimenu>Run CA Management</guimenu> to create the certificate.
    </para>
-  </step>
-  <step>
-   <para>
-    If the server has other domain names or IP addresses, enter these as
-    <guimenu>Alternative common names</guimenu>. Select <guimenu>Add</guimenu>
-    to add new names. When all common names are entered, select <guimenu>Next</guimenu>.
-   </para>
+   <!--Test again and add steps/confirm following steps-->
   </step>
   <step>
    <para>
@@ -101,13 +124,7 @@
   </step>
   <step>
    <para>
-    Activate the check box <guimenu>Open Ports for HTTP and HTTPS in Firewall</guimenu>,
-    then select <guimenu>Next</guimenu>.
-   </para>
-  </step>
-  <step>
-   <para>
-    &yast; displays the <guimenu>&smt; Service Status</guimenu>.
+    &yast; displays the <guimenu>Installation Overview</guimenu>.
     Select <guimenu>Next</guimenu>.
    </para>
   </step>
@@ -118,9 +135,6 @@
    </para>
   </step>
  </procedure>
- <para>
-  &yast; enables and starts all &smt; &systemd; services and timers.
- </para>
  <itemizedlist>
   <title>More information</title>
   <listitem>
