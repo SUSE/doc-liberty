@@ -71,112 +71,46 @@
   </step>
   <step>
    <para>
-    Download the <filename>smt-client-setup-res</filename> script:
+    Import the repository signing key from the &smt; server:
    </para>
-<screen>&prompt.root;<command>curl http://<replaceable>RMT_SERVER</replaceable>/tools/smt-client-setup-res --output smt-client-setup-res</command></screen>
+<screen>&prompt.root;<command>rpm --import http://<replaceable>SMT_SERVER_URL</replaceable>/repo/keys/res-signingkeys.key</command></screen>
   </step>
   <step>
    <para>
-    Run the <filename>smt-client-setup-res</filename> script with
-    the URL of the RMT server as a parameter:
+    Create a file called <filename>/etc/yum.repos.d/RES7.repo</filename> and add
+    the following content:
    </para>
-<screen>&prompt.root;<command>sh smt-client-setup-res https://<replaceable>RMT_SERVER</replaceable></command></screen>
-   <para>
-    The script performs the following tasks:
-   </para>
-   <itemizedlist>
-    <listitem>
-     <para>
-      Installs <command>&suseconnect;</command> and its dependencies.
-     </para>
-    </listitem>
-    <listitem>
-     <para>
-      Downloads and runs the <filename>smt-client-setup</filename> script, which
-      does the following:
-     </para>
-     <itemizedlist>
-      <listitem>
-       <para>
-        Downloads all keys from
-        <literal>http://<replaceable>RMT_SERVER</replaceable>/repo/keys</literal>.
-       </para>
-      </listitem>
-      <listitem>
-       <para>
-        Imports the keys with <command>gpg --import</command> and
-        <command>rpm --import</command>.
-       </para>
-      </listitem>
-      <listitem>
-       <para>
-        Downloads the CA certificate from
-        <literal>https://<replaceable>RMT_SERVER</replaceable>/smt.crt</literal>.
-       </para>
-      </listitem>
-      <listitem>
-       <para>
-        Imports the CA certificate to the trust store.
-       </para>
-      </listitem>
-      <listitem>
-       <para>
-        Uses <command>&suseconnect;</command> to register the system with the
-        RMT server. Registering the system using <command>&suseconnect;</command>
-        adds and enables all default repositories.
-       </para>
-      </listitem>
-     </itemizedlist>
-    </listitem>
-   </itemizedlist>
-   <para>
-    If the script works, you will see <literal>Successfully registered system</literal>.
-    If the script fails, see <xref linkend="troubleshoot-quickstart-7"/> for
-    potential solutions.
-   </para>
+<screen>[smt]
+name=SMT repository
+baseurl=http://<replaceable>SMT_SERVER_URL</replaceable>/repo/$RCE/RES7/x86_64/
+enabled=1
+gpgcheck=1</screen>
   </step>
   <step>
    <para>
-    Verify the installed product:
+    Install the <package>suseRegisterRES</package> package:
    </para>
-<screen>&prompt.root;<command>&suseconnect; --status-text</command></screen>
-   <para>
-    You should see the following output:
-   </para>
-<screen>
-Installed Products:
-------------------------------------------
-
-  SLES Expanded Support platform release file
-  (RES/8/x86_64)
-
-  Registered
-
-------------------------------------------
-</screen>
+<screen>&prompt.root;<command>yum install suseRegisterRES</command></screen>
   </step>
   <step>
    <para>
-    Verify the available repositories:
+    Copy the &smt; certificate to rhe system:
    </para>
-<screen>&prompt.root;<command>dnf repolist</command></screen>
-   <para>
-    You should see <literal>RES-8-Updates</literal>, <literal>RES-AS-8-Updates</literal>,
-    and <literal>RES-CB-8-Updates</literal>.
-   </para>
+<screen>&prompt.root;<command>wget http://<replaceable>SMT_SERVER_URL</replaceable>/smt.crt</command>
+&prompt.root;<command>cat smt.crt >> /etc/pki/tls/cert.pem</command></screen>
   </step>
   <step>
    <para>
-    If your subscription includes the &ha; extension, activate it with the
-    following command:
+    Edit <filename>/etc/suseRegister.conf</filename> to point to &smt; by
+    changing the <literal>url</literal> value:
    </para>
-<screen>&prompt.root;<command>&suseconnect; –p RES-HA/8/x86_64</command></screen>
-   <tip role="compact">
-    <para>
-     To check whether the extension is available, run the
-     <command>&suseconnect; --list-extensions</command> command.
-    </para>
-   </tip>
+<screen>url = https://<replaceable>SMT_SERVER_URL</replaceable>/center/regsvc/</screen>
+  </step>
+  <step>
+   <para>
+    Register the system:
+   </para>
+<screen>&prompt.root;<command>suse_register</command></screen>
   </step>
   <step>
    <para>
