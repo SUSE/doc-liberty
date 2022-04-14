@@ -114,7 +114,6 @@
     SSL certificate does not exist, the wizard displays a warning. Select
     <guimenu>Run CA Management</guimenu> to create the certificate.
    </para>
-   <!--Test again and add steps/confirm following steps-->
   </step>
   <step>
    <para>
@@ -124,17 +123,15 @@
   </step>
   <step>
    <para>
-    &yast; displays the <guimenu>Installation Overview</guimenu>.
-    Select <guimenu>Next</guimenu>.
-   </para>
-  </step>
-  <step>
-   <para>
-    Review the <guimenu>Configuration Summary</guimenu>, then select
-    <guimenu>Finish</guimenu> to close &yast;.
+    Review the <guimenu>Installation Overview</guimenu>, then select
+    <guimenu>Next</guimenu>.
    </para>
   </step>
  </procedure>
+ <para>
+  &yast; writes the &smt; configuration and runs a synchronization check.
+  The synchronization check might take some time.
+ </para>
  <itemizedlist>
   <title>More information</title>
   <listitem>

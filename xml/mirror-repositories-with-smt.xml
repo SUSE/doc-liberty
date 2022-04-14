@@ -52,9 +52,6 @@
     On the &smt; server, update the available product and repository metadata:
    </para>
 <screen>&prompt.root;<command>smt-sync</command></screen>
-   <para><!--Check default in YaST Scheduled SMT Jobs-->
-    Synchronization is also performed automatically at regular intervals.
-   </para>
   </step>
   <step>
    <para>
@@ -79,7 +76,7 @@
   </step>
   <step>
    <para>
-    Start package mirroring for the enabled repositories, and log verbose output
+    Start package mirroring for the enabled repositories, and log the output
     in case you need to troubleshoot errors:
    </para>
 <screen>&prompt.root;<command>smt-mirror --debug --logfile /var/log/smt/smt-mirror.log</command></screen>

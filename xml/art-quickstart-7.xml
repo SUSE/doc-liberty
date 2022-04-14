@@ -50,12 +50,17 @@
     </para>
    </important>
    <para>
-    To register &rhel; 7 or CentOS Linux 7, use &suse;'s &smtool; (&smt;).
+    To register &rhla; 7 or CentOS Linux 7, use &suse;'s &smtool; (&smt;) for &sle; 12.
     &smt; is a proxy system for the &scc;. The &smt; server is registered with
     the &scc;, and other systems in the network are registered with the &smt;
     server and receive packages from it directly. For more information, see the
     <link xlink:href="&dsc-sles;/12-SP5/html/SLES-all/book-smt.html">&smtool; Guide</link>.
    </para>
+   <important role="compact">
+    <para>
+     The &rmtool; (&rmt;) for &sle; 15 does not support &rhla;/CentOS 7 registration.
+    </para>
+   </important>
    <para>
     Registering &rhla; or CentOS Linux with &smt; involves the following steps:
    </para>
@@ -134,6 +139,7 @@
      mirror, and the number of products that you enable. We recommend 1.5 times
      the total size of all enabled repositories, or approximately 200 GB per release.
     </para>
+    <remark>This might not be enough! 200 GB was more than enough for RES8 during my test, but is not enough for my RES7 test. Over time, it might also become too small for RES8 as it gets more packages added to it.</remark>
    </listitem>
   </itemizedlist>
  </section>
@@ -148,121 +154,24 @@
   <title>Troubleshooting</title>
   <variablelist>
    <varlistentry>
-    <term><systemitem>nginx.service</systemitem> is inactive after installing the
-    <package>rmt-server</package> package</term>
-    <listitem>
-     <para>
-      Continue the procedure to configure &rmt; in &yast;. This often resolves
-      the issue. If that fails, Apache might be installed on your server, and
-      must be disabled. Apache conflicts with NGINX because both web servers
-      listen on port 80.
-     </para>
-    </listitem>
-   </varlistentry>
-   <varlistentry>
-    <term>&productname; doesn't appear in <command>rmt-cli products list</command>
-     after <command>rmt-cli sync</command></term>
-    <listitem>
-     <para>
-      Check your network. If the network is down, the sync command fails without
-      showing an error.
-     </para>
-    </listitem>
-   </varlistentry>
-   <varlistentry>
     <term>Mirroring completes with errors</term>
     <listitem>
      <para>
       If some packages could not be downloaded due to timeouts, rerun the
-      <command>rmt-cli mirror</command> command until all packages are downloaded.
+      <command>smt-mirror</command> command until all packages are downloaded.
      </para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term>Setup script cannot access the &productname; repository</term>
+    <term>Cannot access the &productname; repository</term>
     <listitem>
      <para>
-      The <filename>repodata</filename> directory on the RMT server will not
+      The <filename>repodata</filename> directory on the &smt; server will not
       be available until all of the packages for that repository are downloaded.
-      If some packages could not be downloaded to the RMT server due to timeouts
-      during the first mirroring, rerun the <command>rmt-cli mirror</command>
+      If some packages could not be downloaded to the &smt; server due to timeouts
+      during the first mirroring, rerun the <command>smt-mirror</command>
       command until all packages are downloaded.
      </para>
-    </listitem>
-   </varlistentry>
-   <varlistentry>
-    <term>Setup script cannot remove the protected package
-    <package>redhat-release</package></term>
-    <listitem>
-     <para>
-      On &rhla;, the <package>redhat-release</package> package is protected as a
-      dependency of the <package>setup</package> package. If necessary, you can
-      use the following command to remove <package>redhat-release</package>
-      without checking for dependencies:
-     </para>
-<screen>&prompt.root;<command>rpm -e redhat-release --nodeps</command></screen>
-    </listitem>
-   </varlistentry>
-   <varlistentry>
-    <term>Setup script cannot install <package>sles_es-release</package> because
-    of package conflicts</term>
-    <listitem>
-     <para>
-      If <package>sles_es-release</package> conflicts with existing packages,
-      try the following workaround:
-     </para>
-     <orderedlist>
-      <listitem>
-       <para>
-       Remove the <filename>redhat-release</filename> directory:
-       </para>
-<screen>&prompt.root;<command>rm -r /usr/share/redhat-release</command></screen>
-       <para>
-        On CentOS, this removes the symbolic link between
-        <filename>redhat-release</filename> and <filename>centos-release</filename>.
-       </para>
-      </listitem>
-      <listitem>
-       <para>
-        Edit the <filename>rmt-client-setup-res</filename> script to add
-        <literal>--allowerasing</literal> to the following line:
-       </para>
-<screen>$DNF install ${AUTOACCEPT} SUSEConnect sles_es-release librepo-1.9.2 <emphasis role="bold">--allowerasing</emphasis></screen>
-      </listitem>
-     </orderedlist>
-    </listitem>
-   </varlistentry>
-   <varlistentry>
-    <term>Setup script cannot install <package>SUSEConnect</package> because of
-    package dependencies</term>
-    <listitem>
-     <para>
-      &productname; only supports the latest version of &rhla; or CentOS Linux.
-      If your system is running the latest version and <package>SUSEConnect</package>
-      still has package dependency issues, try the following workaround:
-     </para>
-     <orderedlist>
-      <listitem>
-       <para>
-        Edit the <filename>rmt-client-setup-res</filename> script to add
-        <literal>--skip-broken</literal> to the following line:
-       </para>
-<screen>$DNF install ${AUTOACCEPT} SUSEConnect sles_es-release librepo-1.9.2 <emphasis role="bold">--skip-broken</emphasis></screen>
-      </listitem>
-      <listitem>
-       <para>
-        Run the script and accept any proposed package changes.
-        <package>SUSEConnect</package> will be skipped.
-       </para>
-      </listitem>
-      <listitem>
-       <para>
-        Run the script a second time. The package changes from the first attempt
-        can sometimes resolve the package dependency issues, allowing the second
-        attempt to successfully install <package>SUSEConnect</package>.
-       </para>
-      </listitem>
-     </orderedlist>
     </listitem>
    </varlistentry>
   </variablelist>
