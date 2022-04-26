@@ -86,12 +86,15 @@
   </step>
   <step>
    <para>
-    To enable GPG checking, install the <package>res-signingkeys</package> on
-    the &smt; server:
+    To enable GPG checking, install the <package>res-signingkeys</package>
+    package on the &smt; server:
    </para>
-<screen>&prompt.root;<command>zypper in -y res-signingkeys</command></screen>
+<screen>&prompt.root;<command>zypper in res-signingkeys</command></screen>
    <para>
     The key is now available on the &smt; server and can be imported to clients.
+    You can check for the key in <filename>/srv/www/htdocs/repo/keys/</filename>
+    on the server, or at <literal>http://<replaceable>SMT_SERVER_URL</replaceable>/repo/keys/</literal>
+    in a browser.
    </para>
   </step>
  </procedure>

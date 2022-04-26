@@ -130,7 +130,8 @@
  </procedure>
  <para>
   &yast; writes the &smt; configuration and runs a synchronization check.
-  The synchronization check might take some time.
+  The synchronization check might take some time, even after the progress bar
+  says <literal>100%</literal>.
  </para>
  <itemizedlist>
   <title>More information</title>
