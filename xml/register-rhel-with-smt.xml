@@ -56,8 +56,8 @@
   </listitem>
   <listitem>
    <para>
-    You have removed the system from any &rh; subscription services it was
-    registered to.
+    The &rhla; or CentOS repositories are still enabled. These might be
+    required for package dependencies during the registration procedure.
    </para>
   </listitem>
  </itemizedlist>
@@ -65,23 +65,21 @@
   <title>Registering &rhla; or CentOS Linux with &smt;</title>
   <step>
    <para>
-    Disable the &rhla; or CentOS repositories in <filename>/etc/yum.repos.d</filename>
-    by setting <literal>enabled=0</literal> in each <filename>.repo</filename> file.
-   </para>
-  </step>
-  <step>
-   <para>
     Import the repository signing key from the &smt; server:
    </para>
-<screen>&prompt.root;<command>rpm --import http://<replaceable>SMT_SERVER_URL</replaceable>/repo/keys/res-signingkeys.key</command></screen>
+<screen>&prompt.root;<command>rpm --import -vv http://<replaceable>SMT_SERVER_URL</replaceable>/repo/keys/res-signingkeys.key</command></screen>
+   <para>
+    Use <option>-vv</option> to verify the import. Look for <literal>D: added key
+    gpg-pubkey-<replaceable>ID-STRING</replaceable> to keyring</literal>.
+   </para>
   </step>
   <step>
    <para>
-    Create a file called <filename>/etc/yum.repos.d/RES7.repo</filename> and add
-    the following content:
+    Create a file called <filename>/etc/yum.repos.d/liberty7.repo</filename> and
+    add the following content:
    </para>
-<screen>[smt]
-name=SMT repository
+<screen>[liberty7]
+name=SUSE Liberty Linux 7
 baseurl=http://<replaceable>SMT_SERVER_URL</replaceable>/repo/$RCE/RES7/x86_64/
 enabled=1
 gpgcheck=1</screen>
@@ -94,10 +92,16 @@ gpgcheck=1</screen>
   </step>
   <step>
    <para>
-    Copy the &smt; certificate to rhe system:
+    Copy the &smt; certificate to the system:
    </para>
 <screen>&prompt.root;<command>wget http://<replaceable>SMT_SERVER_URL</replaceable>/smt.crt</command>
 &prompt.root;<command>cat smt.crt >> /etc/pki/tls/cert.pem</command></screen>
+  </step>
+  <step>
+   <para>
+    Disable the &rhla; or CentOS repositories in <filename>/etc/yum.repos.d</filename>
+    by setting <literal>enabled=0</literal> in each <filename>.repo</filename> file.
+   </para>
   </step>
   <step>
    <para>
@@ -116,10 +120,11 @@ gpgcheck=1</screen>
    <para>
     Run the update command to make sure there are no errors:
    </para>
-<screen>&prompt.root;<command>dnf update</command></screen>
+<screen>&prompt.root;<command>yum update</command></screen>
   </step>
  </procedure>
  <para>
-  You can now update your system from repositories provided by &productname;.
+  You can now remove the system from any &rh; subscription services it was
+  registered to, and receive updates from repositories provided by &productname;.
  </para>
 </section>
