@@ -110,12 +110,6 @@ gpgcheck=1</screen>
   </step>
   <step>
    <para>
-    Disable the &rhla; or CentOS repositories in <filename>/etc/yum.repos.d</filename>
-    by setting <literal>enabled=0</literal> in each <filename>.repo</filename> file.
-   </para>
-  </step>
-  <step>
-   <para>
     Edit <filename>/etc/suseRegister.conf</filename> to point to &smt; by
     changing the <literal>url</literal> value:
    </para>
@@ -126,6 +120,12 @@ gpgcheck=1</screen>
     Register the system:
    </para>
 <screen>&prompt.root;<command>suse_register</command></screen>
+  </step>
+  <step>
+   <para>
+    Disable the &rhla; or CentOS repositories in <filename>/etc/yum.repos.d</filename>
+    by setting <literal>enabled=0</literal> in each <filename>.repo</filename> file.
+   </para>
   </step>
   <step>
    <para>

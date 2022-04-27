@@ -21,8 +21,8 @@
   <xi:include href="common_copyright_gfdl.xml"/>
   <abstract>
    <para>
-    This guide describes how to attach a &productname; subscription to
-    &rhel;&nbsp;7 or CentOS&nbsp;Linux&nbsp;7 using &suse;'s &smtool;.
+    This guide describes how to use &productname; to update &rhel;&nbsp;7 or
+    CentOS&nbsp;Linux&nbsp;7.
    </para>
   </abstract>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
@@ -53,8 +53,7 @@
     To register &rhla; 7 or CentOS Linux 7, use &suse;'s &smtool; (&smt;) for &sle; 12.
     &smt; is a proxy system for the &scc;. The &smt; server is registered with
     the &scc;, and other systems in the network are registered with the &smt;
-    server and receive packages from it directly. For more information, see the
-    <link xlink:href="&dsc-sles;/12-SP5/html/SLES-all/book-smt.html">&smtool; Guide</link>.
+    server and receive packages from it directly.
    </para>
    <important role="compact">
     <para>
@@ -90,7 +89,8 @@
      </para>
     </listitem>
    </orderedlist>
-   <note><!-- Can delete this if/when all names have been changed -->
+   <!-- Can delete this if/when all names have been changed-->
+   <note>
     <title><emphasis>&productname;</emphasis> and <emphasis>&sles; with Expanded Support</emphasis></title>
     <para>
      <emphasis>&productname;</emphasis> now provides what used to be covered by
@@ -99,6 +99,20 @@
      during the transition period.
     </para>
    </note>
+   <itemizedlist>
+    <title>Related information</title>
+    <listitem>
+     <para>
+      <link xlink:href="&dsc-sles;/12-SP5/html/SLES-all/book-smt.html">&smtool; Guide</link>
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      <link xlink:href="&dsc;/liberty/8/html/quickstart-8/art-quickstart-8.html">
+      Registering &rhla; 8 or CentOS Linux 8</link>
+     </para>
+    </listitem>
+   </itemizedlist>
  </section>
 
  <section xml:id="requirements-quickstart-7">
@@ -172,6 +186,26 @@
       during the first mirroring, rerun the <command>smt-mirror</command>
       command until all packages are downloaded.
      </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term><command>yum update</command> fails because of package conflicts</term>
+    <listitem>
+     <para>
+      If <package>sles_es-release-server</package> conflicts with existing packages,
+      try the following workaround:
+     </para>
+<screen>&prompt.root;<command>rm -r /usr/share/redhat-release</command></screen>
+     <para>
+      On CentOS, this removes the symbolic link between
+      <filename>redhat-release</filename> and <filename>centos-release</filename>.
+     </para>
+     <important role="compact">
+      <para>
+       Make sure you run this command <emphasis>without</emphasis> a <literal>/</literal>
+      after <literal>redhat-release</literal>.
+      </para>
+     </important>
     </listitem>
    </varlistentry>
   </variablelist>
