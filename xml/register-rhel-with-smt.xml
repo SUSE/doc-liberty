@@ -86,6 +86,17 @@ gpgcheck=1</screen>
   </step>
   <step>
    <para>
+    To enable the &ha; repository, create a file called
+    <filename>/etc/yum.repos.d/liberty7-ha.repo</filename> and add the following content:
+   </para>
+<screen>[liberty7-ha]
+name=SUSE Liberty Linux 7 HA extension
+baseurl=http://<replaceable>SMT_SERVER_URL</replaceable>/repo/$RCE/RES7-HA/x86_64/
+enabled=1
+gpgcheck=1</screen>
+  </step>
+  <step>
+   <para>
     Install the <package>suseRegisterRES</package> package:
    </para>
 <screen>&prompt.root;<command>yum install suseRegisterRES</command></screen>
