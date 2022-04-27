@@ -145,15 +145,14 @@
    </listitem>
    <listitem>
     <para>
-     The &slsa; server has enough storage available for repository mirroring.
+     The &slsa; server has enough storage available for repository mirroring. Downloaded packages are stored in <filename>/srv/www/htdocs/repo</filename>.
+     The amount of storage required depends on the number of repositories that you
+     mirror, and the number of products that you enable.
     </para>
     <para>
-     Downloaded packages are stored in <filename>/srv/www/htdocs/repo</filename>.
-     The amount of storage required depends on the number of repositories that you
-     mirror, and the number of products that you enable. We recommend 1.5 times
-     the total size of all enabled repositories, or approximately 200 GB per release.
+     We recommend 1.5 times
+     the total size of all enabled repositories. For &rhla; 7 or CentOS Linux 7, this is approximately 565&nbsp;GB for the default repositories, and an additional 180&nbsp;GB for the <literal>src</literal> repositories. However, be aware that these repositories will grow over time.
     </para>
-    <remark>This might not be enough! 200 GB was more than enough for RES8 during my test, but is not enough for my RES7 test. Over time, it might also become too small for RES8 as it gets more packages added to it.</remark>
    </listitem>
   </itemizedlist>
  </section>
