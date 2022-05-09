@@ -138,14 +138,14 @@
     <para>
      &sles; (&slsa;) 12 is installed and running in the same network as the
      systems you want to register. You can use the &productname; subscription to
-     register the &slsa; server. To install the latest version of &slsa; 12, see the
+     register this server. To install the latest version of &slsa; 12, see the
      <link xlink:href="&dsc-sles;/12-SP5/html/SLES-all/art-sle-installquick.html">
      &instquick;</link>.
     </para>
    </listitem>
    <listitem>
     <para>
-     The &slsa; server has enough storage available for repository mirroring.
+     The &slsa; 12 server has enough storage available for repository mirroring.
      Downloaded packages are stored in <filename>/srv/www/htdocs/repo</filename>.
      The amount of storage required depends on the number of repositories that you mirror.
     </para>
@@ -173,7 +173,7 @@
     <term>Mirroring completes with errors</term>
     <listitem>
      <para>
-      If some packages could not be downloaded due to timeouts, rerun the
+      If some packages could not be downloaded because of timeouts, rerun the
       <command>smt-mirror</command> command until all packages are downloaded.
      </para>
     </listitem>
@@ -184,8 +184,8 @@
      <para>
       The <filename>repodata</filename> directory on the &smt; server will not
       be available until all of the packages for that repository are downloaded.
-      If some packages could not be downloaded to the &smt; server due to timeouts
-      during the first mirroring, rerun the <command>smt-mirror</command>
+      If some packages could not be downloaded to the &smt; server because of
+      timeouts during the first mirroring, rerun the <command>smt-mirror</command>
       command until all packages are downloaded.
      </para>
     </listitem>
