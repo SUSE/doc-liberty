@@ -150,9 +150,9 @@
      The amount of storage required depends on the number of repositories that you mirror.
     </para>
     <para>
-     We recommend 1.5 times the total size of all enabled repositories.
-     For &rhla; 7 or CentOS Linux 7, this is approximately 565&nbsp;GB for the
-     default repositories, and an additional 180&nbsp;GB if you need the
+     We recommend at least 1.5 times the total size of all enabled repositories.
+     For &rhla; 7 or CentOS Linux 7, this means approximately 565&nbsp;GB for
+     the default repositories, and an additional 180&nbsp;GB if you need the
      <literal>src</literal> repositories. However, be aware that these repositories
      will grow over time.
     </para>
