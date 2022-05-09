@@ -68,14 +68,10 @@
     Import the repository signing key from the &smt; server:
    </para>
 <screen>&prompt.root;<command>rpm --import -vv http://<replaceable>SMT_SERVER_URL</replaceable>/repo/keys/res-signingkeys.key</command></screen>
-   <para>
-    Use <option>-vv</option> to verify the import. Look for <literal>D: added key
-    gpg-pubkey-<replaceable>ID-STRING</replaceable> to keyring</literal>.
-   </para>
   </step>
   <step>
    <para>
-    Create a file called <filename>/etc/yum.repos.d/liberty7.repo</filename> and
+    Create a file called <filename>/etc/yum.repos.d/RES7.repo</filename> and
     add the following content:
    </para>
 <screen>[liberty7]
@@ -87,7 +83,7 @@ gpgcheck=1</screen>
   <step>
    <para>
     To enable the &ha; repository, create a file called
-    <filename>/etc/yum.repos.d/liberty7-ha.repo</filename> and add the following content:
+    <filename>/etc/yum.repos.d/RES7-HA.repo</filename> and add the following content:
    </para>
 <screen>[liberty7-ha]
 name=SUSE Liberty Linux 7 HA extension
