@@ -137,13 +137,13 @@
   <title>More information</title>
   <listitem>
    <para>
-    <link xlink:href="&dsc-sles;/12-SP5/html/SLES-all/smt-installation.html">
+    <link xlink:href="&dsc-sles;-12/html/SLES-all/smt-installation.html">
     &smt; Installation</link>
    </para>
   </listitem>
   <listitem>
    <para>
-    <link xlink:href="&dsc-sles;/12-SP5/html/SLES-all/smt-server.html">
+    <link xlink:href="&dsc-sles;-12/html/SLES-all/smt-server.html">
     &smt; Server Configuration</link>
    </para>
   </listitem>

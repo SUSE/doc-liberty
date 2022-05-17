@@ -32,7 +32,7 @@
     <dm:version>7</dm:version>
     <dm:assignee>tahliar</dm:assignee>
    </dm:bugtracker>
-   <dm:editurl>https://github.com/SUSE/doc-liberty/edit/maintenane/SLL7/xml/</dm:editurl>
+   <dm:editurl>https://github.com/SUSE/doc-liberty/edit/maintenance/SLL7/xml/</dm:editurl>
    <dm:translation>no</dm:translation>
   </dm:docmanager>
  </info>
@@ -103,13 +103,14 @@
     <title>Related information</title>
     <listitem>
      <para>
-      <link xlink:href="&dsc-sles;/12-SP5/html/SLES-all/book-smt.html">&smtool; Guide</link>
+      <link xlink:href="&dsc-sles;-12/html/SLES-all/book-smt.html">
+      <citetitle>&smtool; Guide</citetitle></link>
      </para>
     </listitem>
     <listitem>
      <para>
       <link xlink:href="&dsc;/liberty/8/html/quickstart-8/art-quickstart-8.html">
-      Registering &rhla; 8 or CentOS Linux 8</link>
+      <citetitle>Registering &rhla; 8 or CentOS Linux 8</citetitle></link>
      </para>
     </listitem>
    </itemizedlist>
@@ -139,7 +140,7 @@
      &sles; (&slsa;) 12 is installed and running in the same network as the
      systems you want to register. You can use the &productname; subscription to
      register this server. To install the latest version of &slsa; 12, see the
-     <link xlink:href="&dsc-sles;/12-SP5/html/SLES-all/art-sle-installquick.html">
+     <link xlink:href="&dsc-sles;-12/html/SLES-all/art-sle-installquick.html">
      &instquick;</link>.
     </para>
    </listitem>

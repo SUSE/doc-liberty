@@ -4,9 +4,6 @@
 MAIN="art-quickstart-7.xml"
 ROOTID="art-quickstart-7"
 
-DRAFT="yes"
-REMARKS="yes"
-
 PROFCONDITION="suse-product"
 #PROFCONDITION="suse-product;beta"
 #PROFCONDITION="community-project"

@@ -1,7 +1,6 @@
 <!-- PRODUCT NAME AND VERSIONS -->
 <!ENTITY productname            "SUSE Liberty Linux">
 <!ENTITY productnumber          "7">
-<!ENTITY slesnumber             "12-SP5">
 
 <!-- PROJECT REPOSITORY URL -->
 <!ENTITY repo-url               "https://github.com/SUSE/doc-liberty">
