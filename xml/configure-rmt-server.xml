@@ -48,7 +48,7 @@ https://documentation.suse.com/sles/15-SP3/single-html/SLES-rmt/#sec-rmt-install
   </step>
   <step>
    <para>
-    Start &yast; with the <literal>rmt</literal> module:
+    Start the <literal>rmt</literal> module in &yast;:
    </para>
 <screen>&prompt.root;<command>yast2 rmt</command></screen>
   </step>
@@ -128,7 +128,7 @@ https://documentation.suse.com/sles/15-SP3/single-html/SLES-rmt/#sec-rmt-install
   <title>More information</title>
   <listitem>
    <para>
-    <link xlink:href="&dsc-sles;/&slesnumber;/html/SLES-all/cha-rmt-installation.html">
+    <link xlink:href="&dsc-sles;-15/html/SLES-all/cha-rmt-installation.html">
     &rmt; installation and configuration</link>
    </para>
   </listitem>
