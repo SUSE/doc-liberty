@@ -15,14 +15,14 @@
  xmlns:xlink="http://www.w3.org/1999/xlink">
 
  <info>
-  <title>Registering &rhla; 8 or CentOS Linux 8</title>
+  <title>Registering &rhla; &productnumber; or CentOS Linux &productnumber;</title>
   <productname>&productname;</productname>
   <date><?dbtimestamp format="B d, Y"?></date>
   <xi:include href="common_copyright_gfdl.xml"/>
   <abstract>
    <para>
-    This guide describes how to use &productname; to update &rhel;&nbsp;8 or
-    CentOS&nbsp;Linux&nbsp;8.
+    This guide describes how to use &productname; to update &rhel;&nbsp;&productnumber;
+    or CentOS&nbsp;Linux&nbsp;&productnumber;.
    </para>
   </abstract>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
@@ -50,10 +50,10 @@
     </para>
    </important>
    <para>
-    To register &rhel; 8 or CentOS Linux 8, use &suse;'s &rmtool; (&rmt;).
-    &rmt; is a proxy system for the &scc;. The &rmt; server is registered with
-    the &scc;, and other systems in the network are registered with the &rmt;
-    server and receive packages from it directly.
+    To register &rhel; &productnumber; or CentOS Linux &productnumber;, use
+    &suse;'s &rmtool; (&rmt;). &rmt; is a proxy system for the &scc;. The &rmt;
+    server is registered with the &scc;, and other systems in the network are
+    registered with the &rmt; server and receive packages from it directly.
    </para>
    <para>
     Registering &rhla; or CentOS Linux with &rmt; involves the following steps:
@@ -126,7 +126,7 @@
    <listitem>
     <para>
      The systems you want to register have been updated to the latest version of
-     &rhla; 8 or CentOS Linux 8.
+     &rhla; &productnumber; or CentOS Linux &productnumber;.
     </para>
    </listitem>
    <listitem>
@@ -147,10 +147,10 @@
     </para>
     <para>
      We recommend at least 1.5 times the total size of all enabled repositories.
-     For &rhla; 8 or CentOS Linux 8, this means approximately 150&nbsp;GB for the
-     default repositories, and an additional 735&nbsp;GB if you need the
-     <literal>src</literal> and <literal>debug</literal> repositories. However,
-     be aware that these repositories will grow over time.
+     For &rhla; &productnumber; or CentOS Linux &productnumber;, this means approximately
+     150&nbsp;GB for the default repositories, and an additional 735&nbsp;GB if you
+     need the <literal>src</literal> and <literal>debug</literal> repositories.
+     However, be aware that these repositories will grow over time.
     </para>
    </listitem>
   </itemizedlist>

@@ -19,7 +19,8 @@
  </info>
 
  <para>
-  Use this procedure to register &rhel; 8 or CentOS Linux 8 with the &rmt; server.
+  Use this procedure to register &rhel; &productnumber; or CentOS Linux &productnumber;
+  with the &rmt; server.
  </para>
  <important role="compact">
   <para>
@@ -45,8 +46,8 @@
   </listitem>
   <listitem>
    <para>
-    The system you want to register is running the latest version of &rhla; 8
-    or CentOS Linux 8.
+    The system you want to register is running the latest version of &rhla; &productnumber;
+    or CentOS Linux &productnumber;.
    </para>
   </listitem>
   <listitem>
@@ -148,7 +149,7 @@ Installed Products:
 ------------------------------------------
 
   SLES Expanded Support platform release file
-  (RES/8/x86_64)
+  (RES/&productnumber;/x86_64)
 
   Registered
 
@@ -161,8 +162,9 @@ Installed Products:
    </para>
 <screen>&prompt.root;<command>dnf repolist</command></screen>
    <para>
-    You should see <literal>RES-8-Updates</literal>, <literal>RES-AS-8-Updates</literal>,
-    and <literal>RES-CB-8-Updates</literal>.
+    You should see <literal>RES-&productnumber;-Updates</literal>,
+    <literal>RES-AS-&productnumber;-Updates</literal>,
+    and <literal>RES-CB-&productnumber;-Updates</literal>.
    </para>
   </step>
   <step>
@@ -170,7 +172,7 @@ Installed Products:
     If your subscription includes the &ha; extension, activate it with the
     following command:
    </para>
-<screen>&prompt.root;<command>&suseconnect; –p RES-HA/8/x86_64</command></screen>
+<screen>&prompt.root;<command>&suseconnect; -p RES-HA/&productnumber;/x86_64</command></screen>
    <tip role="compact">
     <para>
      To check whether the extension is available, run the
