@@ -18,8 +18,8 @@
  </info>
 
  <para>
-  Use this procedure to mirror the &productname; repositories for &rhel; 7 and
-  CentOS Linux 7.
+  Use this procedure to mirror the &productname; repositories for &rhel; &productnumber;
+  and CentOS Linux &productnumber;.
  </para>
  <itemizedlist>
   <title>Prerequisites</title>
@@ -57,7 +57,7 @@
    <para>
     Enable &productname; with the following command:
    </para>
-<screen>&prompt.root;<command>smt-repos --enable-mirror RES7 x86_64</command>
+<screen>&prompt.root;<command>smt-repos --enable-mirror RES&productnumber; x86_64</command>
 1 repository enabled.</screen>
   </step>
   <step>
@@ -65,12 +65,12 @@
     If your subscription includes the &ha; extension, enable the extension with
     the following command:
    </para>
-<screen>&prompt.root;<command>smt-repos --enable-mirror RES7-HA x86_64</command>
+<screen>&prompt.root;<command>smt-repos --enable-mirror RES&productnumber;-HA x86_64</command>
 1 repository enabled.</screen>
    <tip role="compact">
     <para>
      To check whether the &ha; extension is available, run the
-     <command>smt-repos RES7-HA</command> command.
+     <command>smt-repos RES&productnumber;-HA</command> command.
     </para>
    </tip>
   </step>
