@@ -8,7 +8,7 @@
     %entities;
 ]>
 
-<article xml:id="art-quickstart-7" xml:lang="en"
+<article xml:id="art-quickstart" xml:lang="en"
  xmlns="http://docbook.org/ns/docbook" version="5.1"
  xmlns:its="http://www.w3.org/2005/11/its"
  xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -37,7 +37,7 @@
   </dm:docmanager>
  </info>
 
- <section xml:id="introduction-quickstart-7">
+ <section xml:id="introduction-quickstart">
   <title>Introduction</title>
    <para>
     &productname; is a technology and support solution for mixed Linux environments.
@@ -66,7 +66,7 @@
    <orderedlist>
     <listitem>
      <para>
-      <xref linkend="requirements-quickstart-7"/>. Make sure you have everything
+      <xref linkend="requirements-quickstart"/>. Make sure you have everything
       required for the following procedures.
      </para>
     </listitem>
@@ -116,7 +116,7 @@
    </itemizedlist>
  </section>
 
- <section xml:id="requirements-quickstart-7">
+ <section xml:id="requirements-quickstart">
   <title>Requirements</title>
   <itemizedlist>
    <listitem>
@@ -167,7 +167,7 @@
 
 <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="register-rhel-with-smt.xml"/>
 
- <section xml:id="troubleshoot-quickstart-7">
+ <section xml:id="troubleshoot-quickstart">
   <title>Troubleshooting</title>
   <variablelist>
    <varlistentry>
