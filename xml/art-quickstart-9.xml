@@ -107,6 +107,12 @@
       <citetitle>Registering &rhla; 7 or CentOS Linux 7</citetitle></link>
      </para>
     </listitem>
+    <listitem>
+     <para>
+      <link xlink:href="&dsc;/liberty/8/html/quickstart-8/art-quickstart-8.html">
+      <citetitle>Registering &rhla; 8 or CentOS Linux 8</citetitle></link>
+     </para>
+    </listitem>
    </itemizedlist>
  </section>
 
