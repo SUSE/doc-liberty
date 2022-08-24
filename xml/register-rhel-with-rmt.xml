@@ -5,7 +5,7 @@
     %entities;
 ]>
 
-<section xml:id="register-8-with-rmt" xml:lang="en"
+<section xml:id="register-rhel-with-rmt" xml:lang="en"
  xmlns="http://docbook.org/ns/docbook" version="5.1"
  xmlns:xi="http://www.w3.org/2001/XInclude"
  xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -132,7 +132,7 @@
    </itemizedlist>
    <para>
     If the script works, you will see <literal>Successfully registered system</literal>.
-    If the script fails, see <xref linkend="troubleshoot-quickstart-8"/> for
+    If the script fails, see <xref linkend="troubleshoot-quickstart-9"/> for
     potential solutions.
    </para>
   </step>

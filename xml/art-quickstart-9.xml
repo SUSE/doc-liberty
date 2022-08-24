@@ -8,7 +8,7 @@
     %entities;
 ]>
 
-<article xml:id="art-quickstart-8" xml:lang="en"
+<article xml:id="art-quickstart-9" xml:lang="en"
  xmlns="http://docbook.org/ns/docbook" version="5.1"
  xmlns:its="http://www.w3.org/2005/11/its"
  xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -29,7 +29,7 @@
    <dm:bugtracker>
     <dm:url>https://github.com/SUSE/doc-liberty/issues/new</dm:url>
     <dm:labels>documentation,issue</dm:labels>
-    <dm:version>8</dm:version>
+    <dm:version>9</dm:version>
     <dm:assignee>tahliar</dm:assignee>
    </dm:bugtracker>
    <dm:editurl>https://github.com/SUSE/doc-liberty/edit/main/xml/</dm:editurl>
@@ -37,7 +37,7 @@
   </dm:docmanager>
  </info>
 
- <section xml:id="introduction-quickstart-8">
+ <section xml:id="introduction-quickstart-9">
   <title>Introduction</title>
    <para>
     &productname; is a technology and support solution for mixed Linux environments.
@@ -61,7 +61,7 @@
    <orderedlist>
     <listitem>
      <para>
-      <xref linkend="requirements-quickstart-8"/>. Make sure you have everything
+      <xref linkend="requirements-quickstart-9"/>. Make sure you have everything
       required for the following procedures.
      </para>
     </listitem>
@@ -80,7 +80,7 @@
     </listitem>
     <listitem>
      <para>
-      <xref linkend="register-8-with-rmt"/>. &rmt; includes a setup script to
+      <xref linkend="register-rhel-with-rmt"/>. &rmt; includes a setup script to
       automate the registration process.
      </para>
     </listitem>
@@ -110,7 +110,7 @@
    </itemizedlist>
  </section>
 
- <section xml:id="requirements-quickstart-8">
+ <section xml:id="requirements-quickstart-9">
   <title>Requirements</title>
   <itemizedlist>
    <listitem>
@@ -162,7 +162,7 @@
 
 <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="register-rhel-with-rmt.xml"/>
 
- <section xml:id="troubleshoot-quickstart-8">
+ <section xml:id="troubleshoot-quickstart-9">
   <title>Troubleshooting</title>
   <variablelist>
    <varlistentry>
