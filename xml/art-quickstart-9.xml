@@ -15,14 +15,13 @@
  xmlns:xlink="http://www.w3.org/1999/xlink">
 
  <info>
-  <title>Registering &rhla; &productnumber; or CentOS Linux &productnumber;</title>
+  <title>Registering &rhla; &productnumber;</title>
   <productname>&productname;</productname>
   <date><?dbtimestamp format="B d, Y"?></date>
   <xi:include href="common_copyright_gfdl.xml"/>
   <abstract>
    <para>
-    This guide describes how to use &productname; to update &rhel;&nbsp;&productnumber;
-    or CentOS&nbsp;Linux&nbsp;&productnumber;.
+    This guide describes how to use &productname; to update &rhel;&nbsp;&productnumber;.
    </para>
   </abstract>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
@@ -42,7 +41,7 @@
    <para>
     &productname; is a technology and support solution for mixed Linux environments.
     With a &productname; subscription, you can register and receive updates for
-    &rhel;, CentOS Linux, and &sles;. An optional &ha; extension is also available.
+    &rhel; and &sles;. An optional &ha; extension is also available.
    </para>
    <important role="compact">
     <para>
@@ -50,13 +49,13 @@
     </para>
    </important>
    <para>
-    To register &rhel; &productnumber; or CentOS Linux &productnumber;, use
+    To register &rhel; &productnumber;, use
     &suse;'s &rmtool; (&rmt;). &rmt; is a proxy system for the &scc;. The &rmt;
     server is registered with the &scc;, and other systems in the network are
     registered with the &rmt; server and receive packages from it directly.
    </para>
    <para>
-    Registering &rhla; or CentOS Linux with &rmt; involves the following steps:
+    Registering &rhla; with &rmt; involves the following steps:
    </para>
    <orderedlist>
     <listitem>
@@ -132,7 +131,7 @@
    <listitem>
     <para>
      The systems you want to register have been updated to the latest version of
-     &rhla; &productnumber; or CentOS Linux &productnumber;.
+     &rhla; &productnumber;.
     </para>
    </listitem>
    <listitem>
@@ -153,7 +152,7 @@
     </para>
     <para>
      We recommend at least 1.5 times the total size of all enabled repositories.
-     For &rhla; &productnumber; or CentOS Linux &productnumber;, this means approximately
+     For &rhla; &productnumber;, this means approximately
      150&nbsp;GB for the default repositories, and an additional 735&nbsp;GB if you
      need the <literal>src</literal> and <literal>debug</literal> repositories.
      However, be aware that these repositories will grow over time.
@@ -228,40 +227,11 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term>Setup script cannot install <package>sles_es-release</package> because
-    of package conflicts</term>
-    <listitem>
-     <para>
-      If <package>sles_es-release</package> conflicts with existing packages,
-      try the following workaround:
-     </para>
-     <orderedlist>
-      <listitem>
-       <para>
-       Remove the <filename>redhat-release</filename> directory:
-       </para>
-<screen>&prompt.root;<command>rm -r /usr/share/redhat-release</command></screen>
-       <para>
-        On CentOS, this removes the symbolic link between
-        <filename>redhat-release</filename> and <filename>centos-release</filename>.
-       </para>
-      </listitem>
-      <listitem>
-       <para>
-        Edit the <filename>rmt-client-setup-res</filename> script to add
-        <literal>--allowerasing</literal> to the following line:
-       </para>
-<screen>$DNF install ${AUTOACCEPT} SUSEConnect sles_es-release librepo-1.9.2 <emphasis role="bold">--allowerasing</emphasis></screen>
-      </listitem>
-     </orderedlist>
-    </listitem>
-   </varlistentry>
-   <varlistentry>
     <term>Setup script cannot install <package>SUSEConnect</package> because of
     package dependencies</term>
     <listitem>
      <para>
-      &productname; only supports the latest version of &rhla; or CentOS Linux.
+      &productname; only supports the latest version of &rhla;.
       If your system is running the latest version and <package>SUSEConnect</package>
       still has package dependency issues, try the following workaround:
      </para>

@@ -18,8 +18,7 @@
  </info>
 
  <para>
-  Use this procedure to mirror the &productname; repositories for &rhel; &productnumber;
-  and CentOS Linux &productnumber;.
+  Use this procedure to mirror the &productname; repositories for &rhel; &productnumber;.
  </para>
  <itemizedlist>
   <title>Prerequisites</title>
