@@ -132,7 +132,7 @@
    </itemizedlist>
    <para>
     If the script works, you will see <literal>Successfully registered system</literal>.
-    If the script fails, see <xref linkend="troubleshoot-quickstart-8"/> for
+    If the script fails, see <xref linkend="troubleshoot-quickstart"/> for
     potential solutions.
    </para>
   </step>
