@@ -62,6 +62,7 @@
  </itemizedlist>
  <procedure xml:id="pro-register-rhel-with-rmt">
   <title>Registering &rhla; with &rmt;</title>
+  <remark>Will need to fully test and update this procedure.</remark>
   <step>
    <para>
     Disable the &rhla; repositories in <filename>/etc/yum.repos.d</filename>

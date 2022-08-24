@@ -89,6 +89,7 @@ Enabling &sle; &ha; Extension with Expanded Support &productnumber; x86_64:
      command: <command>rmt-cli products list --all --name="Expanded Support" --version=&productnumber;</command>
     </para>
    </tip>
+   <remark>Update steps 2 and 3 with new product ID.</remark>
   </step>
   <step>
    <para>

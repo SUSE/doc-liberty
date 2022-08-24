@@ -133,6 +133,7 @@
      The systems you want to register have been updated to the latest version of
      &rhla; &productnumber;.
     </para>
+    <remark>There was a question in Slack asking to clarify this: "Is this the OS version (DVD release) or the patch level, i.e. are the current Liberty repos compatible with the OS version 8.5.?" So, is there a clearer way to phrase this?</remark>
    </listitem>
    <listitem>
     <para>
@@ -157,6 +158,7 @@
      need the <literal>src</literal> and <literal>debug</literal> repositories.
      However, be aware that these repositories will grow over time.
     </para>
+    <remark>Revisit this when the info is available.</remark>
    </listitem>
   </itemizedlist>
  </section>
@@ -257,6 +259,7 @@
        </para>
       </listitem>
      </orderedlist>
+     <remark>Revisit these last two during testing.</remark>
     </listitem>
    </varlistentry>
   </variablelist>
