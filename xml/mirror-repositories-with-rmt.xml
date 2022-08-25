@@ -62,34 +62,25 @@
    <para>
     Enable &productname; using the product ID <literal>1921</literal>:
    </para>
-<screen>&prompt.root;<command>rmt-cli product enable 1921</command>
-Found product by target 1921: &sles; with Expanded Support &productnumber; x86_64.
-Enabling &sles; with Expanded Support &productnumber; x86_64:
-  &sles; with Expanded Support &productnumber; x86_64:
-    Enabled repository RES-&productnumber;-Updates.
-    Enabled repository RES-AS-&productnumber;-Updates.
-    Enabled repository RES-CB-&productnumber;-Updates.</screen>
+<screen>&prompt.root;<command>rmt-cli product enable 1921</command></screen>
    <para>
     This enables all of the default repositories associated with the product.
    </para>
+<remark>Update steps 2 and 3 with new product IDs. There also used to be output included here mostly to avoid confusion when it said Expanded Support, but I think with the full name change this will no longer be necessary.</remark>
   </step>
   <step>
    <para>
     If your subscription includes the &ha; extension, enable the extension using
     the product ID <literal>1922</literal>:
    </para>
-<screen>&prompt.root;<command>rmt-cli product enable 1922</command>
-Found product by target 1922: &sle; &ha; Extension with Expanded Support &productnumber; x86_64.
-Enabling &sle; &ha; Extension with Expanded Support &productnumber; x86_64:
-  &sle; &ha; Extension with Expanded Support &productnumber; x86_64:
-    Enabled repository RES-&productnumber;-HA-Updates.</screen>
+<screen>&prompt.root;<command>rmt-cli product enable 1922</command></screen>
    <tip role="compact">
     <para>
      To check whether the &ha; extension is available, run this
      command: <command>rmt-cli products list --all --name="Expanded Support" --version=&productnumber;</command>
     </para>
    </tip>
-   <remark>Update steps 2 and 3 with new product ID.</remark>
+   <remark>Update this tip with new name</remark>
   </step>
   <step>
    <para>
@@ -98,6 +89,7 @@ Enabling &sle; &ha; Extension with Expanded Support &productnumber; x86_64:
    </para>
 <screen>&prompt.root;<command>rmt-cli repo list --all | grep RES-</command>
 &prompt.root;<command>rmt-cli repo enable <replaceable>REPO_ID</replaceable></command></screen>
+<remark>Update grep command with new name</remark>
   </step>
   <step>
    <para>

@@ -84,15 +84,6 @@
      </para>
     </listitem>
    </orderedlist>
-   <note><!-- Can delete this if/when all names have been changed -->
-    <title><emphasis>&productname;</emphasis> and <emphasis>&sles; with Expanded Support</emphasis></title>
-    <para>
-     <emphasis>&productname;</emphasis> now provides what used to be covered by
-     the <emphasis>&sles; with Expanded Support</emphasis> subscription. Some
-     components might still use the <emphasis>Expanded Support</emphasis> name
-     during the transition period.
-    </para>
-   </note>
    <itemizedlist>
     <title>Related information</title>
     <listitem>
