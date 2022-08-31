@@ -30,7 +30,7 @@ If possible, please check for duplicates before creating a new report.
 
 Thank you for contributing to this repo. Please adhere to the following guidelines when creating a pull request:
 
-. If you are contributing to the most recent release (currently SLL 8), create your pull request against the _main_ branch.
+. If you are contributing to the most recent release (currently SLL 9), create your pull request against the _main_ branch.
 This branch is protected.
 
 . If you are contributing to a previous release, create your pull request against the respective _maintenance/<RELEASENUMBER>_ branch.
