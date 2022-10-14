@@ -131,8 +131,8 @@
    </listitem>
    <listitem>
     <para>
-     The systems you want to register have been updated to the latest version of
-     &rhla; &productnumber; or CentOS Linux &productnumber;.
+     The systems you want to register are up to date. &productname; only provides
+     support for the latest minor release of each &rhla; or CentOS Linux version.
     </para>
    </listitem>
    <listitem>
