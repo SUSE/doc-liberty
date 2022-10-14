@@ -121,10 +121,9 @@
    </listitem>
    <listitem>
     <para>
-     The systems you want to register have been updated to the latest version of
-     &rhla; &productnumber;.
+     The systems you want to register are up to date. &productname; only provides
+     support for the latest minor release of each &rhla; version.
     </para>
-    <remark>There was a question in Slack asking to clarify this: "Is this the OS version (DVD release) or the patch level, i.e. are the current Liberty repos compatible with the OS version 8.5.?" So, is there a clearer way to phrase this?</remark>
    </listitem>
    <listitem>
     <para>
