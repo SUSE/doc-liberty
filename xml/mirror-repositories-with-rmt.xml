@@ -60,36 +60,33 @@
   </step>
   <step>
    <para>
-    Enable &productname; using the product ID <literal>1921</literal>:
+    Enable &productname; using the product ID <literal>2538</literal>:
    </para>
-<screen>&prompt.root;<command>rmt-cli product enable 1921</command></screen>
+<screen>&prompt.root;<command>rmt-cli product enable 2538</command></screen>
    <para>
     This enables all of the default repositories associated with the product.
    </para>
-<remark>Update steps 2 and 3 with new product IDs. There also used to be output included here mostly to avoid confusion when it said Expanded Support, but I think with the full name change this will no longer be necessary.</remark>
   </step>
   <step>
    <para>
     If your subscription includes the &ha; extension, enable the extension using
-    the product ID <literal>1922</literal>:
+    the product ID <literal>2539</literal>:
    </para>
-<screen>&prompt.root;<command>rmt-cli product enable 1922</command></screen>
+<screen>&prompt.root;<command>rmt-cli product enable 2539</command></screen>
    <tip role="compact">
     <para>
      To check whether the &ha; extension is available, run this
-     command: <command>rmt-cli products list --all --name="Expanded Support" --version=&productnumber;</command>
+     command: <command>rmt-cli products list --all --name="Liberty Linux" --version=&productnumber;</command>
     </para>
    </tip>
-   <remark>Update this tip with new name</remark>
   </step>
   <step>
    <para>
     If you also need the <literal>Source</literal> or <literal>Debug</literal>
     repositories, find and enable them with the following commands:
    </para>
-<screen>&prompt.root;<command>rmt-cli repo list --all | grep RES-</command>
+<screen>&prompt.root;<command>rmt-cli repo list --all | grep SLL-</command>
 &prompt.root;<command>rmt-cli repo enable <replaceable>REPO_ID</replaceable></command></screen>
-<remark>Update grep command with new name</remark>
   </step>
   <step>
    <para>
