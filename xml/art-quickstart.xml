@@ -121,8 +121,8 @@
    </listitem>
    <listitem>
     <para>
-     The systems you want to register are up to date. &productname; only provides
-     support for the latest minor release of each &rhla; version.
+     The systems you want to register are up to date. &productname; only
+     supports the latest minor release of each &rhla; version.
     </para>
    </listitem>
    <listitem>
@@ -223,7 +223,7 @@
     package dependencies</term>
     <listitem>
      <para>
-      &productname; only supports the latest version of &rhla;.
+      &productname; only supports the latest minor release of &rhla;.
       If your system is running the latest version and <package>SUSEConnect</package>
       still has package dependency issues, try the following workaround:
      </para>
@@ -249,7 +249,6 @@
        </para>
       </listitem>
      </orderedlist>
-     <remark>Revisit these last two during testing.</remark>
     </listitem>
    </varlistentry>
   </variablelist>

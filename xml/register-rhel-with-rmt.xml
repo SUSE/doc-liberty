@@ -62,7 +62,6 @@
  </itemizedlist>
  <procedure xml:id="pro-register-rhel-with-rmt">
   <title>Registering &rhla; with &rmt;</title>
-  <remark>Will need to fully re-test and update this procedure.</remark>
   <step>
    <para>
     Disable the &rhla; repositories in <filename>/etc/yum.repos.d</filename>
@@ -74,6 +73,7 @@
     Download the <filename>rmt-client-setup-res</filename> script:
    </para>
 <screen>&prompt.root;<command>curl http://<replaceable>&rmt;_SERVER</replaceable>/tools/rmt-client-setup-res --output rmt-client-setup-res</command></screen>
+<remark>Script to be updated.</remark>
   </step>
   <step>
    <para>
@@ -81,6 +81,7 @@
     the URL of the &rmt; server as a parameter:
    </para>
 <screen>&prompt.root;<command>sh rmt-client-setup-res https://<replaceable>RMT_SERVER</replaceable></command></screen>
+<remark>Works with beta workarounds (not documented here). Need to retest when all resources are updated/available.</remark>
    <para>
     The script performs the following tasks:
    </para>
@@ -147,8 +148,8 @@
 Installed Products:
 ------------------------------------------
 
-  SLES Expanded Support platform release file
-  (RES/&productnumber;/x86_64)
+  &productname; release file
+  (SLL/&productnumber;/x86_64)
 
   Registered
 
@@ -161,9 +162,9 @@ Installed Products:
    </para>
 <screen>&prompt.root;<command>dnf repolist</command></screen>
    <para>
-    You should see <literal>RES-&productnumber;-Updates</literal>,
-    <literal>RES-AS-&productnumber;-Updates</literal>,
-    and <literal>RES-CB-&productnumber;-Updates</literal>.
+    You should see <literal>SLL-&productnumber;-Updates</literal>,
+    <literal>SLL-AS-&productnumber;-Updates</literal>,
+    and <literal>SLL-CB-&productnumber;-Updates</literal>.
    </para>
   </step>
   <step>
@@ -171,7 +172,7 @@ Installed Products:
     If your subscription includes the &ha; extension, activate it with the
     following command:
    </para>
-<screen>&prompt.root;<command>&suseconnect; -p RES-HA/&productnumber;/x86_64</command></screen>
+<screen>&prompt.root;<command>&suseconnect; -p SLL-HA/&productnumber;/x86_64</command></screen>
    <tip role="compact">
     <para>
      To check whether the extension is available, run the
@@ -184,6 +185,7 @@ Installed Products:
     Run the update command to make sure there are no errors:
    </para>
 <screen>&prompt.root;<command>dnf update</command></screen>
+<remark>Found packages but failed to install them. Issue is probably just beta-related.</remark>
   </step>
  </procedure>
  <para>
