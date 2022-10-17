@@ -125,8 +125,8 @@
    </listitem>
    <listitem>
     <para>
-     The systems you want to register are up to date. &productname; only provides
-     support for the latest minor release of each &rhla; or CentOS Linux version.
+     The systems you want to register are up to date. &productname; only
+     supports the latest minor release of each &rhla; or CentOS Linux version.
     </para>
    </listitem>
    <listitem>
@@ -255,7 +255,7 @@
     package dependencies</term>
     <listitem>
      <para>
-      &productname; only supports the latest version of &rhla; or CentOS Linux.
+      &productname; only supports the latest minor release of &rhla; or CentOS Linux.
       If your system is running the latest version and <package>SUSEConnect</package>
       still has package dependency issues, try the following workaround:
      </para>
