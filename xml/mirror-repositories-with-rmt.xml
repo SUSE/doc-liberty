@@ -21,7 +21,7 @@
   Use this procedure to mirror the &productname; repositories for &rhel; &productnumber;.
  </para>
  <itemizedlist>
-  <title>Prerequisites</title>
+  <title>Requirements</title>
   <listitem>
    <para>
     <xref linkend="configure-rmt-server"/>

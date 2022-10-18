@@ -27,7 +27,7 @@
   </para>
  </important>
  <itemizedlist>
-  <title>Prerequisites</title>
+  <title>Requirements</title>
   <listitem>
    <para>
     <xref linkend="configure-rmt-server"/>
