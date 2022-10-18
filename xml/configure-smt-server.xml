@@ -22,7 +22,7 @@
   Use this procedure to configure the &smtool; (&smt;) on &sles; 12.
  </para>
  <itemizedlist>
-  <title>Prerequisites</title>
+  <title>Requirements</title>
   <listitem>
    <para>
     &sles; 12 is installed and up to date.

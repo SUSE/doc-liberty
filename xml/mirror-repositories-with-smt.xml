@@ -22,7 +22,7 @@
   and CentOS Linux &productnumber;.
  </para>
  <itemizedlist>
-  <title>Prerequisites</title>
+  <title>Requirements</title>
   <listitem>
    <para>
     <xref linkend="configure-smt-server"/>
