@@ -133,23 +133,23 @@
     <para>
      &sles; (&slsa;) 15 is installed and running in the same network as the
      systems you want to register. You can use the &productname; subscription to
-     register the &slsa; server. To install the latest version of &slsa; 15, see the
+     register &slsa;. To install &slsa; 15, see the
      <link xlink:href="&dsc-sles;-15/html/SLES-all/article-installation.html">
      &instquick;</link>.
     </para>
    </listitem>
    <listitem>
     <para>
-     The &slsa; server has enough storage available for repository mirroring.
+     &sles; has enough storage available for repository mirroring.
      Downloaded packages are stored in <filename>/usr/share/rmt/public/repo</filename>,
      which is a symbolic link to <filename>/var/lib/rmt/public/repo/</filename>.
-     The amount of storage required depends on the number of repositories that you mirror.
+     The amount of storage required depends on the number of repositories you mirror.
     </para>
     <para>
      We recommend at least 1.5 times the total size of all enabled repositories.
      For &rhla; &productnumber; or CentOS Linux &productnumber;, this means approximately
      150&nbsp;GB for the default repositories, and an additional 735&nbsp;GB if you
-     need the <literal>src</literal> and <literal>debug</literal> repositories.
+     need the <literal>Source</literal> and <literal>Debug</literal> repositories.
      However, be aware that these repositories will grow over time.
     </para>
    </listitem>
@@ -182,7 +182,7 @@
      after <command>rmt-cli sync</command></term>
     <listitem>
      <para>
-      Check your network. If the network is down, the sync command fails without
+      Check your network. If the network is down, <command>rmt-cli sync</command> fails without
       showing an error.
      </para>
     </listitem>
@@ -191,7 +191,7 @@
     <term>Mirroring completes with errors</term>
     <listitem>
      <para>
-      If some packages could not be downloaded due to timeouts, rerun the
+      If some packages could not be downloaded because of timeouts, rerun the
       <command>rmt-cli mirror</command> command until all packages are downloaded.
      </para>
     </listitem>
@@ -202,7 +202,7 @@
      <para>
       The <filename>repodata</filename> directory on the &rmt; server will not
       be available until all of the packages for that repository are downloaded.
-      If some packages could not be downloaded to the &rmt; server due to timeouts
+      If some packages could not be downloaded to the &rmt; server because of timeouts
       during the first mirroring, rerun the <command>rmt-cli mirror</command>
       command until all packages are downloaded.
      </para>
