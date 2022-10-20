@@ -83,51 +83,40 @@
 <screen>&prompt.root;<command>sh rmt-client-setup-res https://<replaceable>RMT_SERVER</replaceable></command></screen>
 <remark>Works with beta workarounds (not documented here). Need to retest when all resources are updated/available.</remark>
    <para>
-    The script performs the following tasks:
+    The script installs <command>&suseconnect;</command> and its dependencies,
+    then downloads and runs the <filename>rmt-client-setup</filename> script,
+    which performs the following tasks:
    </para>
    <itemizedlist>
     <listitem>
      <para>
-      Installs <command>&suseconnect;</command> and its dependencies.
+      Downloads all keys from
+      <literal>http://<replaceable>RMT_SERVER</replaceable>/repo/keys</literal>.
      </para>
     </listitem>
     <listitem>
      <para>
-      Downloads and runs the <filename>rmt-client-setup</filename> script, which
-      does the following:
+      Imports the keys with <command>gpg --import</command> and
+      <command>rpm --import</command>.
      </para>
-     <itemizedlist>
-      <listitem>
-       <para>
-        Downloads all keys from
-        <literal>http://<replaceable>RMT_SERVER</replaceable>/repo/keys</literal>.
-       </para>
-      </listitem>
-      <listitem>
-       <para>
-        Imports the keys with <command>gpg --import</command> and
-        <command>rpm --import</command>.
-       </para>
-      </listitem>
-      <listitem>
-       <para>
-        Downloads the CA certificate from
-        <literal>https://<replaceable>RMT_SERVER</replaceable>/rmt.crt</literal>.
-       </para>
-      </listitem>
-      <listitem>
-       <para>
-        Imports the CA certificate to the trust store.
-       </para>
-      </listitem>
-      <listitem>
-       <para>
-        Uses <command>&suseconnect;</command> to register the system with the
-        &rmt; server. Registering the system using <command>&suseconnect;</command>
-        adds and enables all default repositories.
-       </para>
-      </listitem>
-     </itemizedlist>
+    </listitem>
+    <listitem>
+     <para>
+      Downloads the CA certificate from
+      <literal>https://<replaceable>RMT_SERVER</replaceable>/rmt.crt</literal>.
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      Imports the CA certificate to the trust store.
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      Uses <command>&suseconnect;</command> to register the system with the
+      &rmt; server. Registering the system using <command>&suseconnect;</command>
+      adds and enables all default repositories.
+     </para>
     </listitem>
    </itemizedlist>
    <para>

@@ -54,7 +54,7 @@
    <para>
     Synchronization is also performed automatically by
     <systemitem>rmt-server-sync.timer</systemitem>. You can check the status and
-    the next scheduled sync time with the following command:
+    the next scheduled synchronization time with the following command:
    </para>
 <screen>&prompt.root;<command>systemctl status rmt-server-sync.timer</command></screen>
   </step>
