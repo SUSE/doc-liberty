@@ -143,8 +143,8 @@
     </para>
     <para>
      We recommend at least 1.5 times the total size of all enabled repositories.
-     For &rhla; &productnumber;, this means approximately
-     60&nbsp;GB for the default repositories, and an additional 95&nbsp;GB if you
+     For &rhla; &productnumber;, this currently means approximately
+     65&nbsp;GB for the default repositories, and an additional 120&nbsp;GB if you
      need the <literal>Source</literal> and <literal>Debug</literal> repositories.
      However, be aware that these repositories will grow over time.
     </para>
