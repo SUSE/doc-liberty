@@ -64,12 +64,6 @@
   <title>Registering &rhla; with &rmt;</title>
   <step>
    <para>
-    Disable the &rhla; repositories in <filename>/etc/yum.repos.d</filename>
-    by setting <literal>enabled=0</literal> in each <filename>.repo</filename> file.
-   </para>
-  </step>
-  <step>
-   <para>
     Download the <filename>rmt-client-setup-res</filename> script:
    </para>
 <screen>&prompt.root;<command>curl http://<replaceable>&rmt;_SERVER</replaceable>/tools/rmt-client-setup-res --output rmt-client-setup-res</command></screen>
