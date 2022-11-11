@@ -141,14 +141,16 @@
      which is a symbolic link to <filename>/var/lib/rmt/public/repo/</filename>.
      The amount of storage required depends on the number of repositories you mirror.
     </para>
+<!-- trichardson 2022-11-11: I needed to hard-code a date here because the repo size
+     constantly grows, and the docs are republished weekly so I couldn't just point
+     to the publication date. I'm hoping to eventually find a more future-proof option.-->
     <para>
      We recommend at least 1.5 times the total size of all enabled repositories.
-     At the time of writing, this means approximately 65&nbsp;GB for the default
-     &productname; &productnumber; repositories, and an additional 120&nbsp;GB if you
-     need the <literal>Source</literal> and <literal>Debug</literal> repositories.
-     However, be aware that these repositories will grow substantially over time.
+     At the time of writing (November 11, 2022), this means approximately 65&nbsp;GB
+     for the default &productname; &productnumber; repositories, and an additional
+     125&nbsp;GB if you need the <literal>Source</literal> and <literal>Debug</literal>
+     repositories. However, be aware that these repositories will grow substantially over time.
     </para>
-   <remark>This is not maintainable in the long term. I would need to regularly update the numbers, and the published Liberty guides are rebuilt weekly, so I can't rely on something like "as of the latest publication date". Is there a general recommendation we can give (can we make an informed guess at how big the repos will get?), or is there some way for people to see the size of repos in SCC/anywhere?</remark>
    </listitem>
   </itemizedlist>
  </section>
