@@ -208,19 +208,6 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term>Setup script cannot remove the protected package
-    <package>redhat-release</package></term>
-    <listitem>
-     <para>
-      On &rhla;, the <package>redhat-release</package> package is protected as a
-      dependency of the <package>setup</package> package. If necessary, you can
-      use the following command to remove <package>redhat-release</package>
-      without checking for dependencies:
-     </para>
-<screen>&prompt.root;<command>rpm -e redhat-release --nodeps</command></screen>
-    </listitem>
-   </varlistentry>
-   <varlistentry>
     <term>Setup script cannot install <package>SUSEConnect</package> because of
     package dependencies</term>
     <listitem>

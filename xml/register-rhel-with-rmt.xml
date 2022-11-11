@@ -63,10 +63,30 @@
  <procedure xml:id="pro-register-rhel-with-rmt">
   <title>Registering &rhla; with &rmt;</title>
   <step>
-   <para>
-    Download the <filename>rmt-client-setup-res</filename> script:
+   <!--para> (trichardson 2022-11-11: Temporarily replacing the regular steps until the new script is available in RMT)
+    On the &rhla; system, download the <filename>rmt-client-setup-res</filename> script:
    </para>
-<screen>&prompt.root;<command>curl http://<replaceable>&rmt;_SERVER</replaceable>/tools/rmt-client-setup-res --output rmt-client-setup-res</command></screen>
+<screen>&prompt.root;<command>curl http://<replaceable>&rmt;_SERVER</replaceable>/tools/rmt-client-setup-res -/-output rmt-client-setup-res</command></screen-->
+   <para>
+    On the &rhla; system, save the following script as <literal>rmt-client-setup-res</literal>,
+    replacing <replaceable>RMT_SERVER</replaceable> with the name of the &rmt; server:
+   </para>
+<screen language="bash">#! /bin/sh
+
+PARAMS=$@
+
+/usr/bin/rpm --import http://<replaceable>RMT_SERVER</replaceable>/repo/SUSE/Updates/SLL/9/x86_64/update/repodata/repomd.xml.key
+sed -i 's/^enabled=1/enabled=0/' /etc/yum.repos.d/*
+rm -rf /usr/share/redhat-release
+rm -rf /etc/dnf/protected.d/redhat-release.conf
+/usr/bin/dnf config-manager --add-repo http://<replaceable>RMT_SERVER</replaceable>/repo/SUSE/Updates/SLL/9/x86_64/update
+/usr/bin/dnf config-manager --add-repo http://<replaceable>RMT_SERVER</replaceable>/repo/SUSE/Updates/SLL-AS/9/x86_64/update
+/usr/bin/dnf install --assumeyes --allowerasing sll-release
+/usr/bin/dnf install --assumeyes SUSEConnect librepo
+/usr/bin/dnf config-manager --set-disabled "<replaceable>RMT_SERVER</replaceable>_repo_SUSE_Updates_SLL_9_x86_64_update"
+/usr/bin/dnf config-manager --set-disabled "<replaceable>RMT_SERVER</replaceable>_repo_SUSE_Updates_SLL-AS_9_x86_64_update"
+/usr/bin/curl -s -S http://<replaceable>RMT_SERVER</replaceable>/tools/rmt-client-setup --output rmt-client-setup
+sh rmt-client-setup $PARAMS</screen>
   </step>
   <step>
    <para>
@@ -112,7 +132,7 @@
     </listitem>
    </itemizedlist>
    <para>
-    If the script works, you will see <literal>Successfully registered system</literal>.
+    You should see <literal>Successfully registered system</literal>.
    </para>
   </step>
   <step>
