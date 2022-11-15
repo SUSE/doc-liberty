@@ -109,7 +109,13 @@
     </listitem>
     <listitem>
      <para>
-      <link xlink:href="&dsc;/liberty/8/html/quickstart-8/art-quickstart-8.html">
+      <link xlink:href="&dsc;/liberty/9/html/quickstart/art-quickstart.html">
+      <citetitle>Registering &rhla; 9</citetitle></link>
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      <link xlink:href="&dsc;/liberty/8/html/quickstart/art-quickstart.html">
       <citetitle>Registering &rhla; 8 or CentOS Linux 8</citetitle></link>
      </para>
     </listitem>
