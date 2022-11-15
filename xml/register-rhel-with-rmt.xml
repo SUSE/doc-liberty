@@ -76,7 +76,7 @@
 PARAMS=$@
 
 /usr/bin/rpm --import http://<replaceable>RMT_SERVER</replaceable>/repo/SUSE/Updates/SLL/9/x86_64/update/repodata/repomd.xml.key
-sed -i 's/^enabled=1/enabled=0/' /etc/yum.repos.d/*
+dnf config-manager --disable $(dnf repolist -q | awk '{ print $1 }' | grep -v repo)
 rm -rf /usr/share/redhat-release
 rm -rf /etc/dnf/protected.d/redhat-release.conf
 /usr/bin/dnf config-manager --add-repo http://<replaceable>RMT_SERVER</replaceable>/repo/SUSE/Updates/SLL/9/x86_64/update
@@ -86,7 +86,9 @@ rm -rf /etc/dnf/protected.d/redhat-release.conf
 /usr/bin/dnf config-manager --set-disabled "<replaceable>RMT_SERVER</replaceable>_repo_SUSE_Updates_SLL_9_x86_64_update"
 /usr/bin/dnf config-manager --set-disabled "<replaceable>RMT_SERVER</replaceable>_repo_SUSE_Updates_SLL-AS_9_x86_64_update"
 /usr/bin/curl -s -S http://<replaceable>RMT_SERVER</replaceable>/tools/rmt-client-setup --output rmt-client-setup
-sh rmt-client-setup $PARAMS</screen>
+sh rmt-client-setup $PARAMS
+systemctl start suseconnect-keepalive.timer
+systemctl enable suseconnect-keepalive.timer</screen>
   </step>
   <step>
    <para>
