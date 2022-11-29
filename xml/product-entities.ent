@@ -1,5 +1,6 @@
 <!-- PRODUCT NAME AND VERSIONS -->
 <!ENTITY productname            "SUSE Liberty Linux">
+<!ENTITY productnameshort       "SLL">
 <!ENTITY productnumber          "9">
 
 <!-- PROJECT REPOSITORY URL -->
