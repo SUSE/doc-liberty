@@ -17,6 +17,7 @@
  <info>
   <title>Registering &rhla; &productnumber; or CentOS Linux &productnumber;</title>
   <productname>&productname;</productname>
+  <productname role="abbrev">&productnameshort;</productname>
   <date><?dbtimestamp format="B d, Y"?></date>
   <xi:include href="common_copyright_gfdl.xml"/>
   <abstract>
