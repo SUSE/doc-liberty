@@ -217,48 +217,6 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term>Setup script cannot remove the protected package
-    <package>redhat-release</package></term>
-    <listitem>
-     <para>
-      On &rhla;, the <package>redhat-release</package> package is protected as a
-      dependency of the <package>setup</package> package. If necessary, you can
-      use the following command to remove <package>redhat-release</package>
-      without checking for dependencies:
-     </para>
-<screen>&prompt.root;<command>rpm -e redhat-release --nodeps</command></screen>
-    </listitem>
-   </varlistentry>
-   <varlistentry>
-    <term>Setup script cannot install <package>sles_es-release</package> because
-    of package conflicts</term>
-    <listitem>
-     <para>
-      If <package>sles_es-release</package> conflicts with existing packages,
-      try the following workaround:
-     </para>
-     <orderedlist>
-      <listitem>
-       <para>
-       Remove the <filename>redhat-release</filename> directory:
-       </para>
-<screen>&prompt.root;<command>rm -r /usr/share/redhat-release</command></screen>
-       <para>
-        On CentOS, this removes the symbolic link between
-        <filename>redhat-release</filename> and <filename>centos-release</filename>.
-       </para>
-      </listitem>
-      <listitem>
-       <para>
-        Edit the <filename>rmt-client-setup-res</filename> script to add
-        <literal>--allowerasing</literal> to the following line:
-       </para>
-<screen>$DNF install ${AUTOACCEPT} SUSEConnect sles_es-release librepo-1.9.2 <emphasis role="bold">--allowerasing</emphasis></screen>
-      </listitem>
-     </orderedlist>
-    </listitem>
-   </varlistentry>
-   <varlistentry>
     <term>Setup script cannot install <package>SUSEConnect</package> because of
     package dependencies</term>
     <listitem>
@@ -273,7 +231,7 @@
         Edit the <filename>rmt-client-setup-res</filename> script to add
         <literal>--skip-broken</literal> to the following line:
        </para>
-<screen>$DNF install ${AUTOACCEPT} SUSEConnect librepo <emphasis role="bold">--skip-broken</emphasis></screen>
+<screen>$DNF install SUSEConnect librepo <emphasis role="bold">--skip-broken</emphasis></screen>
       </listitem>
       <listitem>
        <para>

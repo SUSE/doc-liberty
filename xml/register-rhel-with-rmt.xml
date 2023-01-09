@@ -66,12 +66,6 @@
   <title>Registering &rhla; or CentOS Linux with &rmt;</title>
   <step>
    <para>
-    Disable the &rhla; or CentOS repositories in <filename>/etc/yum.repos.d</filename>
-    by setting <literal>enabled=0</literal> in each <filename>.repo</filename> file.
-   </para>
-  </step>
-  <step>
-   <para>
     Download the <filename>rmt-client-setup-res</filename> script:
    </para>
 <screen>&prompt.root;<command>curl http://<replaceable>&rmt;_SERVER</replaceable>/tools/rmt-client-setup-res --output rmt-client-setup-res</command></screen>
@@ -120,9 +114,7 @@
     </listitem>
    </itemizedlist>
    <para>
-    If the script works, you will see <literal>Successfully registered system</literal>.
-    If the script fails, see <xref linkend="troubleshoot-quickstart"/> for
-    potential solutions.
+    You should see <literal>Successfully registered system</literal>.
    </para>
   </step>
   <step>
