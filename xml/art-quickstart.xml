@@ -159,9 +159,9 @@
     </para>
     <para>
      We recommend at least 1.5 times the total size of all enabled repositories.
-     At the time of writing (November 11, 2022), this means approximately
-     600&nbsp;GB for the default &productname; &productnumber; repositories,
-     and an additional 195&nbsp;GB if you need the <literal>src</literal> repositories.
+     As of the latest publication date, this means approximately
+     615&nbsp;GB for the default &productname; &productnumber; repositories,
+     and an additional 200&nbsp;GB if you need the <literal>src</literal> repositories.
      However, be aware that these repositories will grow substantially over time.
     </para>
    </listitem>
