@@ -40,6 +40,11 @@
   </listitem>
   <listitem>
    <para>
+    The &rmt; server is running <package>rmt-server</package> version 2.10 or later.
+   </para>
+  </listitem>
+  <listitem>
+   <para>
     The system you want to register can access the &rmt; server.
    </para>
   </listitem>
