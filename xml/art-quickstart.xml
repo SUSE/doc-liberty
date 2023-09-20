@@ -146,9 +146,9 @@
     <para>
      &sles; (&slsa;) 12 is installed and running in the same network as the
      systems you want to register. You can use the &productname; subscription to
-     register &slsa;. To install &slsa; 12, see the
+     register &slsa;. To install &slsa; 12, see
      <link xlink:href="&dsc-sles;-12/html/SLES-all/art-sle-installquick.html">
-     &instquick;</link>.
+     <citetitle>&instquick;</citetitle></link>.
     </para>
    </listitem>
    <listitem>
