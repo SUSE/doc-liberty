@@ -99,7 +99,7 @@
     <title>Related information</title>
     <listitem>
      <para>
-      <link xlink:href="&dsc-sles;-15/html/SLES-all/book-rmt.html">&rmtguide;</link>
+      <link xlink:href="&dsc-sles;-15/html/SLES-all/book-rmt.html"><citetitle>&rmtguide;</citetitle></link>
      </para>
     </listitem>
     <listitem>
@@ -140,9 +140,9 @@
     <para>
      &sles; (&slsa;) 15 is installed and running in the same network as the
      systems you want to register. You can use the &productname; subscription to
-     register &slsa;. To install &slsa; 15, see the
+     register &slsa;. To install &slsa; 15, see
      <link xlink:href="&dsc-sles;-15/html/SLES-all/article-installation.html">
-     &instquick;</link>.
+     <citetitle>&instquick;</citetitle></link>.
     </para>
    </listitem>
    <listitem>
