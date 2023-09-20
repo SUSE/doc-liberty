@@ -151,14 +151,8 @@
      Downloaded packages are stored in <filename>/usr/share/rmt/public/repo</filename>,
      which is a symbolic link to <filename>/var/lib/rmt/public/repo/</filename>.
      The amount of storage required depends on the number of repositories you mirror.
-    </para>
-    <para>
      We recommend at least 1.5 times the total size of all enabled repositories.
-     As of the latest publication date, this means approximately
-     260&nbsp;GB for the default &productname; &productnumber; repositories,
-     and an additional 935&nbsp;GB if you need the <literal>Source</literal>
-     and <literal>Debug</literal> repositories.
-     However, be aware that these repositories will grow substantially over time.
+     Be aware that these repositories will grow substantially over time.
     </para>
    </listitem>
   </itemizedlist>
