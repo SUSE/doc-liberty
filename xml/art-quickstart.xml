@@ -51,7 +51,7 @@
     </para>
    </important>
    <para>
-    To register &rhel; &productnumber;, use
+    To register &rhel; &productnumber; or CentOS Linux &productnumber;, use
     &suse;'s &rmtool; (&rmt;). &rmt; is a proxy system for the &scc;. The &rmt;
     server is registered with the &scc;, and other systems in the network are
     registered with the &rmt; server and receive packages from it directly.
@@ -75,8 +75,8 @@
     </listitem>
     <listitem>
      <para>
-      <xref linkend="mirror-repositories-with-smt"/>. You can skip this step if
-      &productname; is already enabled and mirrored on your &smt; server.
+      <xref linkend="mirror-repositories-with-rmt"/>. You can skip this step if
+      &productname; is already enabled and mirrored on your &rmt; server.
      </para>
     </listitem>
     <listitem>
@@ -160,7 +160,7 @@
 
 <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="configure-rmt-server.xml"/>
 
-<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mirror-repositories-with-smt.xml"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mirror-repositories-with-rmt.xml"/>
 
 <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="register-rhel-with-smt.xml"/>
 
