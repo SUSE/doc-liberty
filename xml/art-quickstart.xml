@@ -51,18 +51,13 @@
     </para>
    </important>
    <para>
-    To register &rhla; &productnumber; or CentOS Linux &productnumber;, use &suse;'s
-    &smtool; (&smt;) for &sle; 12. &smt; is a proxy system for the &scc;. The &smt;
+    To register &rhel; &productnumber;, use
+    &suse;'s &rmtool; (&rmt;). &rmt; is a proxy system for the &scc;. The &rmt;
     server is registered with the &scc;, and other systems in the network are
-    registered with the &smt; server and receive packages from it directly.
+    registered with the &rmt; server and receive packages from it directly.
    </para>
-   <important role="compact">
-    <para>
-     The &rmtool; (&rmt;) for &sle; 15 does not support &rhla;/CentOS &productnumber; registration.
-    </para>
-   </important>
    <para>
-    Registering &rhla; or CentOS Linux with &smt; involves the following steps:
+    Registering &rhla; or CentOS Linux with &rmt; involves the following steps:
    </para>
    <orderedlist>
     <listitem>
@@ -73,8 +68,8 @@
     </listitem>
     <listitem>
      <para>
-      <xref linkend="configure-smt-server"/>. This server must be installed on
-      &sles; 12. You can skip this step if you already have an &smt; server in
+      <xref linkend="configure-rmt-server"/>. This server must be installed on
+      &sles; 15. You can skip this step if you already have an &rmt; server in
       your network.
      </para>
     </listitem>
@@ -104,8 +99,8 @@
     <title>Related information</title>
     <listitem>
      <para>
-      <link xlink:href="&dsc-sles;-12/html/SLES-all/book-smt.html">
-      <citetitle>&smtool; Guide</citetitle></link>
+      <link xlink:href="&dsc-sles;-15/html/SLES-all/book-rmt.html">
+      <citetitle>&rmtguide;</citetitle></link>
      </para>
     </listitem>
     <listitem>
@@ -144,10 +139,10 @@
    </listitem>
    <listitem>
     <para>
-     &sles; (&slsa;) 12 is installed and running in the same network as the
+     &sles; (&slsa;) 15 is installed and running in the same network as the
      systems you want to register. You can use the &productname; subscription to
-     register &slsa;. To install &slsa; 12, see
-     <link xlink:href="&dsc-sles;-12/html/SLES-all/art-sle-installquick.html">
+     register &slsa;. To install &slsa; 15, see
+     <link xlink:href="&dsc-sles;-15/html/SLES-all/article-installation.html">
      <citetitle>&instquick;</citetitle></link>.
     </para>
    </listitem>
@@ -163,7 +158,7 @@
   </itemizedlist>
  </section>
 
-<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="configure-smt-server.xml"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="configure-rmt-server.xml"/>
 
 <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mirror-repositories-with-smt.xml"/>
 

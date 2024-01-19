@@ -31,7 +31,7 @@
   <title>Requirements</title>
   <listitem>
    <para>
-    <xref linkend="configure-smt-server"/>
+    <xref linkend="configure-rmt-server"/>
    </para>
   </listitem>
   <listitem>
