@@ -63,13 +63,7 @@
    <para>
     Enable &productname; using the product ID <literal>1921</literal>:
    </para>
-<screen>&prompt.root;<command>rmt-cli product enable 1921</command>
-Found product by target 1921: &sles; with Expanded Support &productnumber; x86_64.
-Enabling &sles; with Expanded Support &productnumber; x86_64:
-  &sles; with Expanded Support &productnumber; x86_64:
-    Enabled repository RES-&productnumber;-Updates.
-    Enabled repository RES-AS-&productnumber;-Updates.
-    Enabled repository RES-CB-&productnumber;-Updates.</screen>
+<screen>&prompt.root;<command>rmt-cli product enable 1921</command></screen>
    <para>
     This enables all of the default repositories associated with the product.
    </para>
@@ -79,15 +73,11 @@ Enabling &sles; with Expanded Support &productnumber; x86_64:
     If your subscription includes the &ha; extension, enable the extension using
     the product ID <literal>1922</literal>:
    </para>
-<screen>&prompt.root;<command>rmt-cli product enable 1922</command>
-Found product by target 1922: &sle; &ha; Extension with Expanded Support &productnumber; x86_64.
-Enabling &sle; &ha; Extension with Expanded Support &productnumber; x86_64:
-  &sle; &ha; Extension with Expanded Support &productnumber; x86_64:
-    Enabled repository RES-&productnumber;-HA-Updates.</screen>
+<screen>&prompt.root;<command>rmt-cli product enable 1922</command></screen>
    <tip role="compact">
     <para>
      To check whether the &ha; extension is available, run this
-     command: <command>rmt-cli products list --all --name="Expanded Support" --version=&productnumber;</command>
+     command: <command>rmt-cli products list --all --name="Liberty" --version=&productnumber;</command>
     </para>
    </tip>
   </step>
