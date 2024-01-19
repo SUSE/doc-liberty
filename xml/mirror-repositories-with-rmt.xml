@@ -76,7 +76,7 @@
    <tip role="compact">
     <para>
      To check whether the &ha; extension is available, run this
-     command: <command>rmt-cli products list --all --name="Liberty Linux" --version=&productnumber;</command>
+     command: <command>rmt-cli products list --all --name="Liberty" --version=&productnumber;</command>
     </para>
    </tip>
   </step>
