@@ -77,7 +77,7 @@
    </para>
 <screen>[liberty&productnumber;]
 name=SUSE Liberty Linux &productnumber;
-baseurl=http://<replaceable>SMT_SERVER_URL</replaceable>/repo/$RCE/RES&productnumber;/x86_64/
+baseurl=http://<replaceable>SMT_SERVER_URL</replaceable>/repo/SUSE/Updates/RES/&productnumber;/x86_64/update
 enabled=1
 gpgcheck=1</screen>
   </step>
@@ -88,7 +88,7 @@ gpgcheck=1</screen>
    </para>
 <screen>[liberty&productnumber;-ha]
 name=SUSE Liberty Linux &productnumber; HA extension
-baseurl=http://<replaceable>SMT_SERVER_URL</replaceable>/repo/$RCE/RES&productnumber;-HA/x86_64/
+baseurl=http://<replaceable>SMT_SERVER_URL</replaceable>/repo/SUSE/Updates/RES-HA/&productnumber;/x86_64/update
 enabled=1
 gpgcheck=1</screen>
   </step>
