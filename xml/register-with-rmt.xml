@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section
+[
+  <!ENTITY % entities SYSTEM "generic-entities.ent">
+    %entities;
+]>
+
+<section xml:id="register-7-with-rmt" xml:lang="en"
+ xmlns="http://docbook.org/ns/docbook" version="5.1"
+ xmlns:xi="http://www.w3.org/2001/XInclude"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <title>Registering &rhla; or CentOS Linux with &rmt;</title>
+
+ <info>
+  <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
+   <dm:bugtracker></dm:bugtracker>
+   <dm:translation>no</dm:translation>
+  </dm:docmanager>
+ </info>
+
+ <para>
+  Use this procedure to register &rhel; &productnumber; or CentOS Linux &productnumber;
+  with the &rmt; server.
+ </para>
+ <important role="compact">
+  <para>
+   CentOS Stream is not supported.
+  </para>
+ </important>
+ <itemizedlist>
+  <title>Requirements</title>
+  <listitem>
+   <para>
+    <xref linkend="configure-rmt-server"/>
+   </para>
+  </listitem>
+  <listitem>
+   <para>
+    <xref linkend="mirror-repositories-with-rmt"/>
+   </para>
+  </listitem>
+  <listitem>
+   <para>
+    The &rmt; server is running <package>rmt-server</package> version 2.10 or later.
+   </para>
+  </listitem>
+  <listitem>
+   <para>
+    The system you want to register can access the &rmt; server.
+   </para>
+  </listitem>
+  <listitem>
+   <para>
+    The system you want to register is running the latest minor release of &rhla; &productnumber;
+    or CentOS Linux &productnumber;.
+   </para>
+  </listitem>
+  <listitem>
+   <para>
+    You have a &productname; subscription activated in the &scc;.
+   </para>
+  </listitem>
+  <listitem>
+   <para>
+    You have removed the system from any &rh; subscription services it was
+    registered to.
+   </para>
+  </listitem>
+ </itemizedlist>
+ <procedure xml:id="pro-register-rhel-with-rmt">
+  <title>Registering &rhla; or CentOS Linux with &rmt;</title>
+  <step>
+   <para>
+    Download the <filename>rmt-client-setup-res</filename> script:
+   </para>
+<screen>&prompt.root;<command>curl http://<replaceable>&rmt;_SERVER</replaceable>/tools/rmt-client-setup-res --output rmt-client-setup-res</command></screen>
+  </step>
+  <step>
+   <para>
+    Run the <filename>rmt-client-setup-res</filename> script with
+    the URL of the &rmt; server as a parameter:
+   </para>
+<screen>&prompt.root;<command>sh rmt-client-setup-res https://<replaceable>RMT_SERVER</replaceable></command></screen>
+   <para>
+    The script installs <command>&suseconnect;</command> and its dependencies,
+    then downloads and runs the <filename>rmt-client-setup</filename> script,
+    which performs the following tasks:
+   </para>
+   <itemizedlist>
+    <listitem>
+     <para>
+      Downloads all keys from
+      <literal>http://<replaceable>RMT_SERVER</replaceable>/repo/keys</literal>.
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      Imports the keys with <command>gpg --import</command> and
+      <command>rpm --import</command>.
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      Downloads the CA certificate from
+      <literal>https://<replaceable>RMT_SERVER</replaceable>/rmt.crt</literal>.
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      Imports the CA certificate to the trust store.
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      Uses <command>&suseconnect;</command> to register the system with the
+      &rmt; server. Registering the system using <command>&suseconnect;</command>
+      adds and enables all default repositories.
+     </para>
+    </listitem>
+   </itemizedlist>
+   <para>
+    You should see <literal>Successfully registered system</literal>.
+   </para>
+  </step>
+  <step>
+   <para>
+    Verify the installed product:
+   </para>
+<screen>&prompt.root;<command>&suseconnect; --status-text</command></screen>
+   <para>
+    You should see the following output:
+   </para>
+<screen>
+Installed Products:
+------------------------------------------
+
+  SLES Expanded Support platform release file
+  (RES/&productnumber;/x86_64)
+
+  Registered
+
+------------------------------------------
+</screen>
+  </step>
+  <step>
+   <para>
+    Verify the available repositories:
+   </para>
+<screen>&prompt.root;<command>dnf repolist</command></screen>
+   <para>
+    You should see <literal>RES-&productnumber;-Updates</literal>,
+    <literal>RES-AS-&productnumber;-Updates</literal>,
+    and <literal>RES-CB-&productnumber;-Updates</literal>.
+   </para>
+  </step>
+  <step>
+   <para>
+    If your subscription includes the &ha; extension, activate it with the
+    following command:
+   </para>
+<screen>&prompt.root;<command>&suseconnect; -p RES-HA/&productnumber;/x86_64</command></screen>
+   <tip role="compact">
+    <para>
+     To check whether the extension is available, run the
+     <command>&suseconnect; --list-extensions</command> command.
+    </para>
+   </tip>
+  </step>
+  <step>
+   <para>
+    Run the update command to make sure there are no errors:
+   </para>
+<screen>&prompt.root;<command>dnf update</command></screen>
+  </step>
+ </procedure>
+ <para>
+  You can now update your system from repositories provided by &productname;.
+ </para>
+</section>

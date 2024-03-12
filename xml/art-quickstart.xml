@@ -81,7 +81,7 @@
     </listitem>
     <listitem>
      <para>
-      <xref linkend="register-7-with-smt"/>.
+      <xref linkend="register-7-with-rmt"/>.
      </para>
     </listitem>
    </orderedlist>
@@ -162,7 +162,7 @@
 
 <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mirror-repositories-with-rmt.xml"/>
 
-<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="register-rhel-with-smt.xml"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="register-with-rmt.xml"/>
 
  <section xml:id="troubleshoot-quickstart">
   <title>Troubleshooting</title>
