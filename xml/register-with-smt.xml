@@ -31,12 +31,12 @@
   <title>Requirements</title>
   <listitem>
    <para>
-    <xref linkend="configure-rmt-server"/>
+    <xref linkend="configure-smt-server"/>
    </para>
   </listitem>
   <listitem>
    <para>
-    <xref linkend="mirror-repositories-with-rmt"/>
+    <xref linkend="mirror-repositories-with-smt"/>
    </para>
   </listitem>
   <listitem>

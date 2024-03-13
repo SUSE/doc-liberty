@@ -1,0 +1,12 @@
+#
+# DC file for SUSE Liberty Linux with SMT
+#
+MAIN="art-quickstart-smt.xml"
+ROOTID="art-quickstart-smt"
+
+PROFCONDITION="suse-product"
+#PROFCONDITION="suse-product;beta"
+#PROFCONDITION="community-project"
+
+STYLEROOT="/usr/share/xml/docbook/stylesheet/suse2022-ns"
+FALLBACK_STYLEROOT="/usr/share/xml/docbook/stylesheet/suse2021-ns"

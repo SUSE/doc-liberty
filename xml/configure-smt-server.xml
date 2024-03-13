@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section
+[
+  <!ENTITY % entities SYSTEM "generic-entities.ent">
+    %entities;
+]>
+
+<section xml:id="configure-smt-server" xml:lang="en"
+ xmlns="http://docbook.org/ns/docbook" version="5.1"
+ xmlns:xi="http://www.w3.org/2001/XInclude"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <title>Configuring the &smt; server</title>
+
+ <info>
+  <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
+   <dm:bugtracker></dm:bugtracker>
+   <dm:translation>no</dm:translation>
+  </dm:docmanager>
+ </info>
+
+ <para>
+  Use this procedure to configure the &smtool; (&smt;) on &sles; 12.
+ </para>
+ <itemizedlist>
+  <title>Requirements</title>
+  <listitem>
+   <para>
+    &sles; 12 is installed and up to date.
+   </para>
+  </listitem>
+  <listitem>
+   <para>
+    You have a &scc; account and organization credentials.
+   </para>
+  </listitem>
+ </itemizedlist>
+
+ <procedure xml:id="pro-configure-smt-server">
+  <title>Configuring the &smt; server</title>
+  <step>
+   <para>
+    Install the &smt; pattern on &sles; 12:
+   </para>
+<screen>&prompt.root;<command>zypper in -t pattern smt</command></screen>
+  </step>
+  <step>
+   <para>
+    Start the <literal>smt-wizard</literal> module in &yast;:
+   </para>
+<screen>&prompt.root;<command>yast2 smt-wizard</command></screen>
+  </step>
+  <step>
+   <para>
+    Activate the <guimenu>Open Port in Firewall</guimenu> check box.
+   </para>
+  </step>
+  <step>
+   <para>
+    Enter your <guimenu>Organization (Mirroring) Credentials</guimenu>.
+   </para>
+   <tip role="compact">
+    <para>
+     To find your organization credentials, log in to the
+     <link xlink:href="https://scc.suse.com">&scc;</link>, select your
+     organization from <guimenu>My Organizations</guimenu>, and click
+     <guimenu>Proxies</guimenu>. Your organization's <guimenu>Mirroring
+      credentials</guimenu> are in the top right corner.
+    </para>
+   </tip>
+  </step>
+  <step>
+   <para>
+    Select <guimenu>Test</guimenu> to validate the credentials. &smt; connects
+    to the &scc; using the provided credentials and downloads testing data.
+   </para>
+  </step>
+  <step>
+   <para>
+    Enter the <guimenu>SCC E-mail Used for Registration</guimenu>.
+   </para>
+  </step>
+  <step>
+   <para>
+    Verify that the correct URL appears in <guimenu>Your SMT Server URL</guimenu>,
+    then select <guimenu>Next</guimenu>.
+   </para>
+  </step>
+  <step>
+   <para>
+    For security reasons, &smt; requires a separate user to connect to the database.
+    Set a password for this user in the <guimenu>Database Password for smt User</guimenu>
+    field, then confirm the new password in the next field.
+   </para>
+  </step>
+  <step>
+   <para>
+    Select <guimenu>Add</guimenu> to enter any e-mail addresses that should receive
+    &smt; reports. When all e-mail addresses are entered, select <guimenu>Next</guimenu>.
+   </para>
+  </step>
+  <step>
+   <para>
+    If a password for the &mariadb; root user is already set, enter the password
+    when prompted, then select <guimenu>OK</guimenu>.
+   </para>
+   <para>
+    If no password is set for the &mariadb; root user, enter and confirm a new
+    password when prompted, then select <guimenu>OK</guimenu>.
+   </para>
+  </step>
+  <step>
+   <para>
+    By default, &smt; communicates with clients via a secure protocol. If the
+    SSL certificate does not exist, the wizard displays a warning. Select
+    <guimenu>Run CA Management</guimenu> to create the certificate.
+   </para>
+  </step>
+  <step>
+   <para>
+    If prompted, enter and confirm a password for the CA private key, then select
+    <guimenu>OK</guimenu>.
+   </para>
+  </step>
+  <step>
+   <para>
+    Review the <guimenu>Installation Overview</guimenu>, then select
+    <guimenu>Next</guimenu>.
+   </para>
+  </step>
+ </procedure>
+ <para>
+  &yast; writes the &smt; configuration and runs a synchronization check.
+  The synchronization check might take some time, even after the progress bar
+  says <literal>100%</literal>.
+ </para>
+ <itemizedlist>
+  <title>More information</title>
+  <listitem>
+   <para>
+    <link xlink:href="&dsc-sles;-12/html/SLES-all/smt-installation.html">
+    &smt; Installation</link>
+   </para>
+  </listitem>
+  <listitem>
+   <para>
+    <link xlink:href="&dsc-sles;-12/html/SLES-all/smt-server.html">
+    &smt; Server Configuration</link>
+   </para>
+  </listitem>
+ </itemizedlist>
+</section>
