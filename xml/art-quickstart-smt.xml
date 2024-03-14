@@ -8,14 +8,14 @@
     %entities;
 ]>
 
-<article xml:id="art-quickstart" xml:lang="en"
+<article xml:id="art-quickstart-smt" xml:lang="en"
  xmlns="http://docbook.org/ns/docbook" version="5.1"
  xmlns:its="http://www.w3.org/2005/11/its"
  xmlns:xi="http://www.w3.org/2001/XInclude"
  xmlns:xlink="http://www.w3.org/1999/xlink">
 
  <info>
-  <title>Registering &rhla; &productnumber; or CentOS Linux &productnumber; with &rmt;</title>
+  <title>Registering &rhla; &productnumber; or CentOS Linux &productnumber; with &smt;</title>
   <productname>&productname;</productname>
   <productname role="abbrev">&productnameshort;</productname>
   <date><?dbtimestamp format="B d, Y"?></date>
@@ -38,7 +38,7 @@
   </dm:docmanager>
  </info>
 
- <section xml:id="introduction-quickstart">
+ <section xml:id="introduction-quickstart-smt">
   <title>Introduction</title>
    <para>
     &productname; is a technology and support solution for mixed Linux environments.
@@ -72,34 +72,34 @@
      </listitem>
    </itemizedlist>
    <para>
-    This guide describes how to register with &rmt; on &sle; 15. &rmt; is a proxy system for the
-    &scc;. The &rmt; server is registered with the &scc;, and other systems in the network are
-    registered with the &rmt; server and receive packages from it directly.
+    This guide describes how to register with &smt; on &sle; 12. &smt; is a proxy system for the
+    &scc;. The &smt; server is registered with the &scc;, and other systems in the network are
+    registered with the &smt; server and receive packages from it directly.
    </para>
    <orderedlist>
     <title>Procedure overview</title>
     <listitem>
      <para>
-      <xref linkend="requirements-quickstart"/>. Make sure you have everything
+      <xref linkend="requirements-quickstart-smt"/>. Make sure you have everything
       required for the following procedures.
      </para>
     </listitem>
     <listitem>
      <para>
-      <xref linkend="configure-rmt-server"/>. This server must be installed on
-      &sles; 15. You can skip this step if you already have an &rmt; server in
+      <xref linkend="configure-smt-server"/>. This server must be installed on
+      &sles; 12. You can skip this step if you already have an &smt; server in
       your network.
      </para>
     </listitem>
     <listitem>
      <para>
-      <xref linkend="mirror-repositories-with-rmt"/>. You can skip this step if
-      &productname; is already enabled and mirrored on your &rmt; server.
+      <xref linkend="mirror-repositories-with-smt"/>. You can skip this step if
+      &productname; is already enabled and mirrored on your &smt; server.
      </para>
     </listitem>
     <listitem>
      <para>
-      <xref linkend="register-7-with-rmt"/>.
+      <xref linkend="register-7-with-smt"/>.
      </para>
     </listitem>
    </orderedlist>
@@ -117,14 +117,14 @@
     <title>Related information</title>
     <listitem>
      <para>
-      <link xlink:href="&dsc-sles;-15/html/SLES-all/book-rmt.html">
-      <citetitle>&rmtguide;</citetitle></link>
+      <link xlink:href="&dsc-sles;-12/html/SLES-all/book-smt.html">
+      <citetitle>&smtool; Guide</citetitle></link>
      </para>
     </listitem>
     <listitem>
      <para>
-      <link xlink:href="&dsc;/liberty/7/html/quickstart/art-quickstart-smt.html">
-      <citetitle>Registering &rhla; 7 or CentOS Linux 7 with SMT</citetitle></link>
+      <link xlink:href="&dsc;/liberty/7/html/quickstart/art-quickstart.html">
+      <citetitle>Registering &rhla; 7 or CentOS Linux 7 with RMT</citetitle></link>
      </para>
     </listitem>
     <listitem>
@@ -148,7 +148,7 @@
    </itemizedlist>
  </section>
 
- <section xml:id="requirements-quickstart">
+ <section xml:id="requirements-quickstart-smt">
   <title>Requirements</title>
   <itemizedlist>
    <listitem>
@@ -169,10 +169,10 @@
    </listitem>
    <listitem>
     <para>
-     &sles; (&slsa;) 15 is installed and running in the same network as the
+     &sles; (&slsa;) 12 is installed and running in the same network as the
      systems you want to register. You can use the &productname; subscription to
-     register &slsa;. To install &slsa; 15, see
-     <link xlink:href="&dsc-sles;-15/html/SLES-all/article-installation.html">
+     register &slsa;. To install &slsa; 12, see
+     <link xlink:href="&dsc-sles;-12/html/SLES-all/art-sle-installquick.html">
      <citetitle>&instquick;</citetitle></link>.
     </para>
    </listitem>
@@ -188,91 +188,56 @@
   </itemizedlist>
  </section>
 
-<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="configure-rmt-server.xml"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="configure-smt-server.xml"/>
 
-<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mirror-repositories-with-rmt.xml"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mirror-repositories-with-smt.xml"/>
 
-<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="register-with-rmt.xml"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="register-with-smt.xml"/>
 
- <section xml:id="troubleshoot-quickstart">
+ <section xml:id="troubleshoot-quickstart-smt">
   <title>Troubleshooting</title>
   <variablelist>
-    <varlistentry>
-      <term><systemitem>nginx.service</systemitem> is inactive after installing the
-      <package>rmt-server</package> package</term>
-      <listitem>
+   <varlistentry>
+    <term>Mirroring completes with errors</term>
+    <listitem>
+     <para>
+      If some packages could not be downloaded because of timeouts, rerun the
+      <command>smt-mirror</command> command until all packages are downloaded.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term>Cannot access the &productname; repository</term>
+    <listitem>
+     <para>
+      The <filename>repodata</filename> directory on the &smt; server will not
+      be available until all of the packages for that repository are downloaded.
+      If some packages could not be downloaded to the &smt; server because of
+      timeouts during the first mirroring, rerun the <command>smt-mirror</command>
+      command until all packages are downloaded.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term><command>yum update</command> fails because of package conflicts</term>
+    <listitem>
+     <para>
+      If <package>sles_es-release-server</package> conflicts with existing packages,
+      try the following workaround:
+     </para>
+<screen>&prompt.root;<command>rm -r /usr/share/redhat-release</command></screen>
+     <para>
+      On CentOS, this removes the symbolic link between
+      <filename>redhat-release</filename> and <filename>centos-release</filename>.
+     </para>
+     <important role="compact">
       <para>
-        Continue the procedure to configure &rmt; in &yast;. This often resolves
-        the issue. If that fails, Apache might be installed on your server, and
-        must be disabled. Apache conflicts with NGINX because both web servers
-        listen on port 80.
+       Make sure you run this command <emphasis>without</emphasis> a <literal>/</literal>
+      after <literal>redhat-release</literal>.
       </para>
-      </listitem>
-    </varlistentry>
-    <varlistentry>
-      <term>&productname; doesn't appear in <command>rmt-cli products list</command>
-      after <command>rmt-cli sync</command></term>
-      <listitem>
-      <para>
-        Check your network. If the network is down, <command>rmt-cli sync</command> fails without
-        showing an error.
-      </para>
-      </listitem>
-    </varlistentry>
-    <varlistentry>
-      <term>Mirroring completes with errors</term>
-      <listitem>
-      <para>
-        If some packages could not be downloaded because of timeouts, rerun the
-        <command>rmt-cli mirror</command> command until all packages are downloaded.
-      </para>
-      </listitem>
-    </varlistentry>
-    <varlistentry>
-      <term>Setup script cannot access the &productname; repository</term>
-      <listitem>
-      <para>
-        The <filename>repodata</filename> directory on the &rmt; server will not
-        be available until all of the packages for that repository are downloaded.
-        If some packages could not be downloaded to the &rmt; server because of timeouts
-        during the first mirroring, rerun the <command>rmt-cli mirror</command>
-        command until all packages are downloaded.
-      </para>
-      </listitem>
-    </varlistentry>
-    <varlistentry>
-      <term>Setup script cannot install <package>SUSEConnect</package> because of
-      package dependencies</term>
-      <listitem>
-      <para>
-        &productname; only supports the latest minor release of &rhla; or CentOS Linux.
-        If your system is running the latest version and <package>SUSEConnect</package>
-        still has package dependency issues, try the following workaround:
-      </para>
-      <orderedlist>
-        <listitem>
-        <para>
-          Edit the <filename>rmt-client-setup-res</filename> script to add
-          <literal>--skip-broken</literal> to the following line:
-        </para>
-<screen>$DNF install SUSEConnect librepo <emphasis role="bold">--skip-broken</emphasis></screen>
-        </listitem>
-        <listitem>
-        <para>
-          Run the script and accept any proposed package changes.
-          <package>SUSEConnect</package> will be skipped.
-        </para>
-        </listitem>
-        <listitem>
-        <para>
-          Run the script a second time. The package changes from the first attempt
-          can sometimes resolve the package dependency issues, allowing the second
-          attempt to successfully install <package>SUSEConnect</package>.
-        </para>
-        </listitem>
-      </orderedlist>
-      </listitem>
-    </varlistentry>
+     </important>
+    </listitem>
+   </varlistentry>
   </variablelist>
  </section>
  <xi:include href="common_legal.xml"/>
