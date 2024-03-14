@@ -15,7 +15,7 @@
  xmlns:xlink="http://www.w3.org/1999/xlink">
 
  <info>
-  <title>Registering &rhla; &productnumber; or CentOS Linux &productnumber;</title>
+  <title>Registering &rhla; &productnumber; or CentOS Linux &productnumber; with RMT</title>
   <productname>&productname;</productname>
   <productname role="abbrev">&productnameshort;</productname>
   <date><?dbtimestamp format="B d, Y"?></date>
@@ -51,15 +51,28 @@
     </para>
    </important>
    <para>
-    To register &rhel; &productnumber; or CentOS Linux &productnumber;, use
-    &suse;'s &rmtool; (&rmt;). &rmt; is a proxy system for the &scc;. The &rmt;
-    server is registered with the &scc;, and other systems in the network are
+    You can register &rhla; &productnumber; or CentOS Linux &productnumber; with one of the
+    following tools:
+   </para>
+   <itemizedlist>
+     <listitem>
+       <para>
+         &rmtool; (&rmt;) on &sle; 15
+       </para>
+     </listitem>
+     <listitem>
+       <para>
+         &suma;
+       </para>
+     </listitem>
+   </itemizedlist>
+   <para>
+    This guide describes how to register with &rmt; on &sle; 15. &rmt; is a proxy system for the
+    &scc;. The &rmt; server is registered with the &scc;, and other systems in the network are
     registered with the &rmt; server and receive packages from it directly.
    </para>
-   <para>
-    Registering &rhla; or CentOS Linux with &rmt; involves the following steps:
-   </para>
    <orderedlist>
+    <title>Procedure overview</title>
     <listitem>
      <para>
       <xref linkend="requirements-quickstart"/>. Make sure you have everything
@@ -104,15 +117,27 @@
     </listitem>
     <listitem>
      <para>
+      <link xlink:href="&dsc;/liberty/7/html/quickstart-smt/art-quickstart-smt.html">
+      <citetitle>Registering &rhla; 7 or CentOS Linux 7 with SMT</citetitle></link>
+     </para>
+    </listitem>
+    <listitem>
+     <para>
       <link xlink:href="&dsc;/liberty/7/html/quickstart/art-quickstart.html">
-      <citetitle>Registering &rhla; 7 or CentOS Linux 7</citetitle></link>
+      <citetitle>Registering &rhla; 7 or CentOS Linux 7 with RMT</citetitle></link>
      </para>
     </listitem>
     <listitem>
      <para>
       <link xlink:href="&dsc;/liberty/9/html/quickstart/art-quickstart.html">
-      <citetitle>Registering &rhla; 9</citetitle></link>
+      <citetitle>Registering &rhla; 9 with RMT</citetitle></link>
      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <link xlink:href="&dsc;/suma/en/suse-manager/client-configuration/clients-sleses.html">
+        <citetitle>&suma; Client Configuration Guide: Registering &sliberty; Clients</citetitle></link>
+      </para>
     </listitem>
    </itemizedlist>
  </section>
