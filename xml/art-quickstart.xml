@@ -123,7 +123,7 @@
     </listitem>
     <listitem>
      <para>
-      <link xlink:href="&dsc;/liberty/7/html/quickstart/art-quickstart-smt.html">
+      <link xlink:href="&dsc;/liberty/7/html/quickstart-smt/art-quickstart-smt.html">
       <citetitle>Registering &rhla; 7 or CentOS Linux 7 with SMT</citetitle></link>
      </para>
     </listitem>
@@ -141,7 +141,7 @@
     </listitem>
     <listitem>
       <para>
-        <link xlink:href="https://documentation.suse.com/suma/en/suse-manager/client-configuration/clients-sleses.html">
+        <link xlink:href="&dsc;/suma/en/suse-manager/client-configuration/clients-sleses.html">
         <citetitle>&suma; Client Configuration Guide: Registering &sliberty; Clients</citetitle></link>
       </para>
     </listitem>
