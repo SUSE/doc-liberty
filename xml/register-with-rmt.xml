@@ -196,7 +196,7 @@ Installed Products:
    <para>
     Verify the available repositories:
    </para>
-<screen>&prompt.root;<command>dnf repolist</command></screen>
+<screen>&prompt.root;<command>yum repolist</command></screen>
    <para>
     You should see <literal>RES-&productnumber;-Updates</literal>.
    </para>
@@ -218,7 +218,7 @@ Installed Products:
    <para>
     Run the update command to make sure there are no errors:
    </para>
-<screen>&prompt.root;<command>dnf update</command></screen>
+<screen>&prompt.root;<command>yum update</command></screen>
   </step>
  </procedure>
  <para>
