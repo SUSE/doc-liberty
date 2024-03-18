@@ -176,7 +176,7 @@
 
 <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mirror-repositories-with-rmt.xml"/>
 
-<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="register-rhel-with-rmt.xml"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="register-with-rmt.xml"/>
 
  <section xml:id="troubleshoot-quickstart">
   <title>Troubleshooting</title>
