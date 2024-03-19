@@ -239,7 +239,7 @@
         Edit the <filename>rmt-client-setup-res</filename> script to add
         <literal>--skip-broken</literal> to the following line:
        </para>
-<screen>$DNF install SUSEConnect librepo <emphasis role="bold">--skip-broken</emphasis></screen>
+<screen>$YUM install SUSEConnect librepo <emphasis role="bold">--skip-broken</emphasis></screen>
       </listitem>
       <listitem>
        <para>
