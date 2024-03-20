@@ -255,7 +255,7 @@
           Edit the <filename>rmt-client-setup-res</filename> script to add
           <literal>--skip-broken</literal> to the following line:
         </para>
-<screen>$DNF install sles_es-release-server suseconnect-ng librepo <emphasis role="bold">--skip-broken</emphasis></screen>
+<screen>$YUM install sles_es-release-server suseconnect-ng librepo <emphasis role="bold">--skip-broken</emphasis></screen>
         </listitem>
         <listitem>
         <para>
