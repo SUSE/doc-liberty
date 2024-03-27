@@ -169,16 +169,21 @@
    </listitem>
    <listitem>
     <para>
-     &sles; (&slsa;) 12 is installed and running in the same network as the
-     systems you want to register. You can use the &productname; subscription to
+     &sles; (&slsa;) 12 is installed and up to date. This machine will be
+     the &smt; server. You can use the &productname; subscription to
      register &slsa;. To install &slsa; 12, see
      <link xlink:href="&dsc-sles;-12/html/SLES-all/art-sle-installquick.html">
      <citetitle>&instquick;</citetitle></link>.
     </para>
    </listitem>
    <listitem>
+     <para>
+      The systems you want to register can reach the &smt; server.
+     </para>
+   </listitem>
+   <listitem>
     <para>
-     &sles; has enough storage available for repository mirroring.
+     The &smt; server has enough storage available for repository mirroring.
      Downloaded packages are stored in <filename>/srv/www/htdocs/repo</filename>.
      The amount of storage required depends on the number of repositories you mirror.
      We recommend at least 1.5 times the total size of all enabled repositories.
