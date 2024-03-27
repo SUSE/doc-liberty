@@ -152,16 +152,21 @@
    </listitem>
    <listitem>
     <para>
-     &sles; (&slsa;) 15 is installed and running in the same network as the
-     systems you want to register. You can use the &productname; subscription to
+     &sles; (&slsa;) 15 is installed and up to date. This machine will be
+     the &rmt; server. You can use the &productname; subscription to
      register &slsa;. To install &slsa; 15, see
      <link xlink:href="&dsc-sles;-15/html/SLES-all/article-installation.html">
      <citetitle>&instquick;</citetitle></link>.
     </para>
    </listitem>
    <listitem>
+     <para>
+      The systems you want to register can reach the &rmt; server.
+     </para>
+   </listitem>
+   <listitem>
     <para>
-     &sles; has enough storage available for repository mirroring.
+     The &rmt; server has enough storage available for repository mirroring.
      Downloaded packages are stored in <filename>/usr/share/rmt/public/repo</filename>,
      which is a symbolic link to <filename>/var/lib/rmt/public/repo/</filename>.
      The amount of storage required depends on the number of repositories you mirror.
