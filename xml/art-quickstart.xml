@@ -112,30 +112,31 @@
     <title>Related information</title>
     <listitem>
      <para>
-      <link xlink:href="&dsc-sles;-15/html/SLES-all/book-rmt.html"><citetitle>&rmtguide;</citetitle></link>
+      <link xlink:href="https://documentation.suse.com/sles-15/html/SLES-all/book-rmt.html">
+      <citetitle>&rmtguide;</citetitle></link>
      </para>
     </listitem>
     <listitem>
      <para>
-      <link xlink:href="&dsc;/liberty/7/html/quickstart-smt/art-quickstart-smt.html">
+      <link xlink:href="https://documentation.suse.com/liberty/7/html/quickstart-smt/art-quickstart-smt.html">
       <citetitle>Registering &rhla; 7 or CentOS Linux 7 with SMT</citetitle></link>
      </para>
     </listitem>
     <listitem>
      <para>
-      <link xlink:href="&dsc;/liberty/7/html/quickstart/art-quickstart.html">
+      <link xlink:href="https://documentation.suse.com/liberty/7/html/quickstart/art-quickstart.html">
       <citetitle>Registering &rhla; 7 or CentOS Linux 7 with RMT</citetitle></link>
      </para>
     </listitem>
     <listitem>
      <para>
-      <link xlink:href="&dsc;/liberty/9/html/quickstart/art-quickstart.html">
+      <link xlink:href="https://documentation.suse.com/liberty/9/html/quickstart/art-quickstart.html">
       <citetitle>Registering &rhla; 9 with RMT</citetitle></link>
      </para>
     </listitem>
     <listitem>
       <para>
-        <link xlink:href="&dsc;/suma/en/suse-manager/client-configuration/clients-sleses.html">
+        <link xlink:href="https://documentation.suse.com/suma/en/suse-manager/client-configuration/clients-sleses.html">
         <citetitle>&suma; Client Configuration Guide: Registering &sliberty; Clients</citetitle></link>
       </para>
     </listitem>
@@ -152,7 +153,7 @@
    </listitem>
    <listitem>
     <para>
-     You have a <link xlink:href="https://scc.suse.com">&scc;</link> account.
+     You have a <link xlink:href="&sccurl;">&scc;</link> account.
     </para>
    </listitem>
    <listitem>
@@ -166,7 +167,7 @@
      &sles; (&slsa;) 15 is installed and up to date. This machine will be
      the &rmt; server. You can use the &productname; subscription to
      register &slsa;. To install &slsa; 15, see
-     <link xlink:href="&dsc-sles;-15/html/SLES-all/article-installation.html">
+     <link xlink:href="https://documentation.suse.com/sles-15/html/SLES-all/article-installation.html">
      <citetitle>&instquick;</citetitle></link>.
     </para>
    </listitem>
