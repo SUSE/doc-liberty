@@ -106,7 +106,7 @@
   <title>More information</title>
   <listitem>
    <para>
-    <link xlink:href="&dsc-sles;-15/html/SLES-all/cha-rmt-mirroring.html">
+    <link xlink:href="https://documentation.suse.com/sles-15/html/SLES-all/cha-rmt-mirroring.html">
     Mirroring repositories on the &rmt; server</link>
    </para>
   </listitem>

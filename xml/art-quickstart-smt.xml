@@ -117,31 +117,31 @@
     <title>Related information</title>
     <listitem>
      <para>
-      <link xlink:href="&dsc-sles;-12/html/SLES-all/book-smt.html">
+      <link xlink:href="https://documentation.suse.com/sles-12/html/SLES-all/book-smt.html">
       <citetitle>&smtool; Guide</citetitle></link>
      </para>
     </listitem>
     <listitem>
      <para>
-      <link xlink:href="&dsc;/liberty/7/html/quickstart/art-quickstart.html">
+      <link xlink:href="https://documentation.suse.com/liberty/7/html/quickstart/art-quickstart.html">
       <citetitle>Registering &rhla; 7 or CentOS Linux 7 with RMT</citetitle></link>
      </para>
     </listitem>
     <listitem>
      <para>
-      <link xlink:href="&dsc;/liberty/8/html/quickstart/art-quickstart.html">
+      <link xlink:href="https://documentation.suse.com/liberty/8/html/quickstart/art-quickstart.html">
       <citetitle>Registering &rhla; 8 or CentOS Linux 8 with RMT</citetitle></link>
      </para>
     </listitem>
     <listitem>
      <para>
-      <link xlink:href="&dsc;/liberty/9/html/quickstart/art-quickstart.html">
+      <link xlink:href="https://documentation.suse.com/liberty/9/html/quickstart/art-quickstart.html">
       <citetitle>Registering &rhla; 9 with RMT</citetitle></link>
      </para>
     </listitem>
     <listitem>
       <para>
-        <link xlink:href="&dsc;/suma/en/suse-manager/client-configuration/clients-sleses.html">
+        <link xlink:href="https://documentation.suse.com/suma/en/suse-manager/client-configuration/clients-sleses.html">
         <citetitle>&suma; Client Configuration Guide: Registering &sliberty; Clients</citetitle></link>
       </para>
     </listitem>
@@ -158,7 +158,7 @@
    </listitem>
    <listitem>
     <para>
-     You have a <link xlink:href="https://scc.suse.com">&scc;</link> account.
+     You have a <link xlink:href="&sccurl;">&scc;</link> account.
     </para>
    </listitem>
    <listitem>
@@ -172,7 +172,7 @@
      &sles; (&slsa;) 12 is installed and up to date. This machine will be
      the &smt; server. You can use the &productname; subscription to
      register &slsa;. To install &slsa; 12, see
-     <link xlink:href="&dsc-sles;-12/html/SLES-all/art-sle-installquick.html">
+     <link xlink:href="https://documentation.suse.com/sles-12/html/SLES-all/art-sle-installquick.html">
      <citetitle>&instquick;</citetitle></link>.
     </para>
    </listitem>

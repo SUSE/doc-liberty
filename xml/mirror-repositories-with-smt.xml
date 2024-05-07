@@ -102,7 +102,7 @@
   <title>More information</title>
   <listitem>
    <para>
-    <link xlink:href="&dsc-sles;-12/html/SLES-all/smt-mirroring.html">
+    <link xlink:href="https://documentation.suse.com/sles-12/html/SLES-all/smt-mirroring.html">
     Mirroring Repositories on the &smt; Server</link>
    </para>
   </listitem>
