@@ -56,6 +56,13 @@
    </para>
   </listitem>
   <listitem>
+    <para>
+      The package <package>yum-utils</package> is installed on the system you want to register.
+      This package is installed by default in most installations, but not in a
+      <literal>Minimal Install</literal>.
+    </para>
+  </listitem>
+  <listitem>
    <para>
     You have a &productname; subscription activated in the &scc;.
    </para>
