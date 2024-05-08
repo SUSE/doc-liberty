@@ -36,6 +36,30 @@
    <dm:editurl>https://github.com/SUSE/doc-liberty/edit/maintenance/SLL7/xml/</dm:editurl>
    <dm:translation>no</dm:translation>
   </dm:docmanager>
+    <meta name="description" its:translate="yes">How to use SUSE Liberty Linux to update Red Hat Enterprise Linux 7 or CentOS Linux 7.</meta>
+  <meta name="social-descr" its:translate="yes">Use SUSE Liberty Linux to update RHEL 7 or CentOS 7.</meta>
+  <meta name="task" its:translate="yes">
+    <phrase>Upgrade &amp; Update</phrase>
+    <phrase>Administration</phrase>
+  </meta>
+  <revhistory xml:id="rh-art-quickstart">
+    <revision>
+      <date>2024-03-27</date>
+      <revdescription>
+        <para>
+          Clarify wording of requirements.
+        </para>
+      </revdescription>
+    </revision>
+    <revision>
+      <date>2022-04-01</date>
+      <revdescription>
+        <para>
+          Initial release.
+        </para>
+      </revdescription>
+    </revision>
+  </revhistory>
  </info>
 
  <section xml:id="introduction-quickstart">
