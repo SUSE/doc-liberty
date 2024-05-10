@@ -41,7 +41,7 @@
   </listitem>
   <listitem>
    <para>
-    The &rmt; server is running <package>rmt-server</package> version 2.10 or later.
+    The &rmt; server is running <package>rmt-server</package> version 2.15 or later.
    </para>
   </listitem>
   <listitem>
@@ -54,6 +54,13 @@
     The system you want to register is running the latest minor release of &rhla; &productnumber;
     or CentOS Linux &productnumber;.
    </para>
+  </listitem>
+  <listitem>
+    <para>
+      The package <package>yum-utils</package> is installed on the system you want to register.
+      This package is installed by default in most installations, but not in a
+      <literal>Minimal Install</literal>.
+    </para>
   </listitem>
   <listitem>
    <para>
@@ -70,60 +77,10 @@
  <procedure xml:id="pro-register-rhel-with-rmt">
   <title>Registering &rhla; or CentOS Linux with &rmt;</title>
   <step>
-
-   <!--para> (trichardson 2024-03-13: Temporarily replacing the regular steps until the new script is available in RMT)
+   <para>
     Download the <filename>rmt-client-setup-res</filename> script:
    </para>
-<screen>&prompt.root;<command>curl http://<replaceable>&rmt;_SERVER</replaceable>/tools/rmt-client-setup-res -/-output rmt-client-setup-res</command></screen-->
-    <para>
-      Save the following script as <literal>rmt-client-setup-res</literal>:
-    </para>
-<screen>#! /bin/sh
-
-SUSECONNECT=/usr/bin/SUSEConnect
-RPM=/usr/bin/rpm
-CURL=/usr/bin/curl
-YUM=/usr/bin/yum
-YUM_CONFIG_MGR=/usr/bin/yum-config-manager
-
-TEMPFILE="/etc/pki/ca-trust/source/anchors/rmt.crt"
-UPDATE_CA_TRUST=/usr/bin/update-ca-trust
-RPM_GPG_KEY_LOCATION="/etc/pki/rpm-gpg"
-
-PARAMS=$@
-REGURL=""
-RMTNAME=""
-REGURL=$1
-
-CERTURL=`echo "$REGURL" | awk -F/ '{print "https://" $3 "/rmt.crt"}'`
-$CURL --tlsv1.2 --silent --insecure --connect-timeout 10 --output $TEMPFILE $CERTURL
-$UPDATE_CA_TRUST enable
-$UPDATE_CA_TRUST extract
-
-SLL_version=7
-SLL_name="RES";
-SLL_release_package="sles_es-release-server"
-
-echo "Importing repomd.xml.key"
-$CURL --silent --show-error --insecure ${REGURL}/repo/SUSE/Updates/${SLL_name}/${SLL_version}/x86_64/update/repodata/repomd.xml.key --output repomd.xml.key
-$RPM --import repomd.xml.key
-
-echo "Disabling all repositories"
-$YUM_CONFIG_MGR --disable \* &gt; /dev/null
-
-if [ -f /usr/share/redhat-release ] | [ -h /usr/share/redhat-release ]; then
-    rm -f /usr/share/redhat-release;
-fi
-
-$YUM_CONFIG_MGR --add-repo ${REGURL}/repo/SUSE/Updates/${SLL_name}/${SLL_version}/x86_64/update
-$YUM_CONFIG_MGR --enable *suse.* &gt; /dev/null
-
-$YUM install sles_es-release-server suseconnect-ng librepo
-$YUM update yum
-
-$CURL --silent --show-error --insecure $REGURL/tools/rmt-client-setup --output rmt-client-setup
-echo "Running rmt-client-setup $PARAMS"
-sh rmt-client-setup $PARAMS</screen>
+<screen>&prompt.root;<command>curl http://<replaceable>RMT_SERVER</replaceable>/tools/rmt-client-setup-res --output rmt-client-setup-res</command></screen>
   </step>
   <step>
    <para>
