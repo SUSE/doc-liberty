@@ -35,7 +35,7 @@
    </dm:bugtracker>
    <dm:editurl>https://github.com/SUSE/doc-liberty/edit/main/xml/</dm:editurl>
    <dm:translation>no</dm:translation>
-  </dm:docmanager>  <meta name="title" its:translate="yes">Registering &rhla; &productnumber; or CentOS Linux with RMT</meta>
+  </dm:docmanager>  <meta name="title" its:translate="yes">Registering &rhla; &productnumber; or CentOS Linux 8 with RMT</meta>
   <meta name="description" its:translate="yes">How to use SUSE Liberty Linux to update Red Hat Enterprise Linux 8 or CentOS Linux 8.</meta>
   <meta name="social-descr" its:translate="yes">Use SUSE Liberty Linux to update RHEL 8 or CentOS 8.</meta>
   <meta name="task" its:translate="yes">
@@ -48,6 +48,14 @@
       <revdescription>
         <para>
           Clarify wording of requirements.
+        </para>
+      </revdescription>
+    </revision>
+    <revision>
+      <date>2023-01-09</date>
+      <revdescription>
+        <para>
+          Update with changes for new registration script.
         </para>
       </revdescription>
     </revision>
