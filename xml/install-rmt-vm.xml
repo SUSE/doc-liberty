@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section
+[
+  <!ENTITY % entities SYSTEM "generic-entities.ent">
+    %entities;
+]>
+
+<section xml:id="install-rmt-vm" xml:lang="en"
+ xmlns="http://docbook.org/ns/docbook" version="5.1"
+ xmlns:xi="http://www.w3.org/2001/XInclude"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <title>Installing a virtual machine to host &rmt;</title>
+
+ <info>
+  <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
+   <dm:bugtracker></dm:bugtracker>
+   <dm:translation>no</dm:translation>
+  </dm:docmanager>
+ </info>
+
+  <para>
+    Use this procedure to install a &minvm;. This machine will be the &rmtool; (&rmt;) server.
+    You can use your &productname; subscription to register &slsa;.
+  </para>
+  <para>
+    &minvm; is a slimmed-down version of &sles;, available as a preconfigured virtual machine image.
+    If you would prefer to install a full &slsa; machine on bare metal, see
+    <link xlink:href="https://documentation.suse.com/sles-15/html/SLES-all/article-installation.html">
+    <citetitle>&instquick;</citetitle></link>.
+  </para>
+  <itemizedlist>
+    <title>Requirements</title>
+    <listitem>
+      <para>
+        You have a &productname; subscription. This subscription entitles you to one
+        &slsa; machine to host &rmt;.
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        You have a <link xlink:href="&sccurl;">&scc;</link> account.
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        The VM must have a static IP address and host name. This guide includes steps for
+        configuring these, but you must have basic networking knowledge to fill in the details.
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        You have the infrastructure to run virtual machines. This procedure explains
+        how to set up the VM to host &rmt;, but does not describe how to use different
+        virtualization products. See the relevant documentation for your infrastructure.
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        Your virtual machine infrastructure has enough disk space available. The &rmt; server
+        needs enough storage to mirror the &reponame; &productnumber; repositories. Downloaded packages
+        are stored in <filename>/usr/share/rmt/public/repo</filename>, which is a symbolic link to
+        <filename>/var/lib/rmt/public/repo/</filename>. The amount of storage required depends on the
+        number of repositories you mirror. We recommend at least 1.5 times the total size of all enabled
+        repositories.
+      </para>
+      <important>
+        <title>&reponame; &productnumber; repository size</title>
+        <para>
+          The &reponame; repositories will grow substantially over time, because older package
+          versions are not removed. To meet the 1.5x size recommendation, based on the
+          current<footnote><para>As of 20 May, 2024</para></footnote>
+          size of the &reponame; &productnumber; repository, you will need approximately 710&nbsp;GB
+          of disk space available for the &rmt; server.
+        </para>
+      </important>
+    </listitem>
+  </itemizedlist>
+  <procedure xml:id="pro-install-rmt-vm">
+    <title>Installing a virtual machine to host &rmt;</title>
+    <step>
+      <para>
+        Download the <literal>Minimal-VM</literal> image for your VM
+        infrastructure from <link xlink:href="https://www.suse.com/download/sles/"/>.
+      </para>
+    </step>
+    <step>
+      <para>
+        Use the <literal>Minimal-VM</literal> image to start the virtual machine.
+      </para>
+      <para>
+        The default disk size for &minvm; is 24&nbsp;GB. If you can customize the configuration
+        before the installation begins, increase the available storage so that there is enough
+        disk space for repository mirroring.
+      </para>
+    </step>
+    <step>
+      <para>
+        When the &jeosfirstboot; screen appears, select <guimenu>Start</guimenu>.
+      </para>
+    </step>
+    <step>
+      <para>
+        Choose your keyboard layout and select <guimenu>OK</guimenu>.
+      </para>
+    </step>
+    <step>
+      <para>
+        Review the <literal>End User License Agreement</literal> and select <guimenu>EXIT</guimenu>.
+        To agree with the terms of the license, select <guimenu>Yes</guimenu>.
+      </para>
+    </step>
+    <step>
+      <para>
+        Choose your time zone and select <guimenu>OK</guimenu>.
+      </para>
+    </step>
+    <step>
+      <para>
+        Enter a &rootuser; password and select <guimenu>OK</guimenu>, then confirm the password
+        and select <guimenu>OK</guimenu> again.
+      </para>
+    </step>
+    <step>
+      <para>
+        &jeosfirstboot; shows the command to use to register this VM. Select <guimenu>OK</guimenu>.
+      </para>
+    </step>
+    <step>
+      <para>
+        When the VM is ready, log in as the &rootuser; user with the password you entered
+        during setup.
+      </para>
+    </step>
+    <step>
+      <para>
+        Register the VM using your &scc; email address and the registration code for &productname;:
+      </para>
+<screen>&prompt.root;<command>SUSEConnect -e <replaceable>EMAIL_ADDRESS</replaceable> -r <replaceable>REGISTRATION_CODE</replaceable></command></screen>
+      <para>
+        This activates the <literal>Basesystem</literal>, <literal>Server Applications</literal>,
+        and <literal>Python 3</literal> modules.
+      </para>
+    </step>
+    <step>
+      <para>
+        If you did not already increase the VM's disk space before the installation began,
+        increase it now. You might need to shut down the VM to do so. The VM must have enough
+        space to mirror the &reponame; &productnumber; repository.
+      </para>
+    </step>
+  </procedure>
+  <para>
+    You must also configure a static IP address and hostname for the VM. If you are familiar
+    with any networking tools in &slsa;, configure the network with your preferred tool.
+    If not, use the &yast; graphical interface:
+  </para>
+  <procedure xml:id="pro-pro-install-rmt-vm-network">
+    <title>Setting a static IP address in &yast;</title>
+    <step>
+      <para>
+        Install &yast; and the &yast; <literal>network</literal> module:
+      </para>
+<screen>&prompt.root;<command>zypper install yast2 yast2-network</command></screen>
+    </step>
+    <step>
+      <para>
+        Start the &yast; <literal>network</literal> module:
+      </para>
+<screen>&prompt.root;<command>yast2 lan</command></screen>
+    </step>
+    <step>
+      <para>
+        In the <guimenu>Overview</guimenu> tab, select <guimenu>Edit</guimenu> to change the settings
+        of the default <literal>eth0</literal> device. The <guimenu>Network Card Setup</guimenu>
+        dialog opens.
+      </para>
+    </step>
+    <step>
+      <para>
+        In the <guimenu>Address</guimenu> tab, activate <guimenu>Statically Assigned IP Address</guimenu>.
+      </para>
+    </step>
+    <step>
+      <para>
+        Fill in the <guimenu>IP Address</guimenu>, <guimenu>Subnet Mask</guimenu>, and
+        <guimenu>Hostname</guimenu> fields.
+      </para>
+    </step>
+    <step>
+      <para>
+        Select <guimenu>Next</guimenu>.
+      </para>
+    </step>
+    <step>
+      <para>
+        Switch to the <guimenu>Hostname/DNS</guimenu> tab and fill in the
+        <guimenu>Static Hostname</guimenu> field.
+      </para>
+    </step>
+    <step>
+      <para>
+        Change <guimenu>Set Hostname via DHCP</guimenu> to <literal>no</literal>.
+      </para>
+    </step>
+    <step>
+      <para>
+        Fill in at least one <guimenu>Name Server</guimenu> field.
+      </para>
+    </step>
+    <step>
+      <para>
+        Switch to the <guimenu>Routing</guimenu> tab and select <guimenu>Add</guimenu>. A new
+        dialog opens.
+      </para>
+    </step>
+    <step>
+      <para>
+        Fill in the <guimenu>Gateway</guimenu> field. Make sure to remove the <literal>-</literal>
+        character.
+      </para>
+    </step>
+    <step>
+      <para>
+        From the <guimenu>Device</guimenu> drop-down list, select <literal>eth0</literal>.
+      </para>
+    </step>
+    <step>
+      <para>
+        Select <guimenu>OK</guimenu> to close the dialog.
+      </para>
+    </step>
+    <step>
+      <para>
+        Select <guimenu>OK</guimenu> to complete the configuration and close &yast;.
+      </para>
+    </step>
+    <step>
+      <para>
+        Check the network settings:
+      </para>
+<screen>&prompt.root;<command>ip addr</command></screen>
+      <para>
+        Check the host name:
+      </para>
+<screen>&prompt.root;<command>hostname</command></screen>
+    </step>
+  </procedure>
+  <para>
+    You can now install &rmt; on the virtual machine.
+  </para>
+  <itemizedlist>
+    <title>More information</title>
+    <listitem>
+      <para>
+        <link xlink:href="https://documentation.suse.com/smart/virtualization-cloud/html/minimal-vm/">
+        <citetitle>Introduction to &minvm;</citetitle></link>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <link xlink:href="https://documentation.suse.com/sles/15-SP5/html/SLES-all/book-virtualization.html">
+        <citetitle>&virtual;</citetitle></link>
+      </para>
+    </listitem>
+  </itemizedlist>
+</section>

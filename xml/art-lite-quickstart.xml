@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="urn:x-suse:xslt:profiling:docbook51-profile.xsl"
+ type="text/xml"
+ title="Profiling step"?>
+<!DOCTYPE article
+[
+  <!ENTITY % entities SYSTEM "generic-entities.ent">
+    %entities;
+]>
+
+<article xml:id="art-lite-quickstart" xml:lang="en"
+ xmlns="http://docbook.org/ns/docbook" version="5.1"
+ xmlns:its="http://www.w3.org/2005/11/its"
+ xmlns:xi="http://www.w3.org/2001/XInclude"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+
+ <info>
+  <title>Registering CentOS Linux &productnumber; with &rmt;</title>
+  <productname>&productname;</productname>
+  <productname role="abbrev">&productnameshort;</productname>
+  <date><?dbtimestamp format="B d, Y"?></date>
+  <xi:include href="common_copyright_gfdl.xml"/>
+  <abstract>
+   <para>
+    This guide describes how to use &productname; to update CentOS&nbsp;Linux&nbsp;&productnumber;.
+   </para>
+  </abstract>
+  <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
+   <dm:bugtracker>
+    <dm:url>https://github.com/SUSE/doc-liberty/issues/new</dm:url>
+    <dm:labels>documentation,issue</dm:labels>
+    <dm:version>7</dm:version>
+    <dm:assignee>tahliar</dm:assignee>
+   </dm:bugtracker>
+   <dm:editurl>https://github.com/SUSE/doc-liberty/edit/maintenance/SLL7/xml/</dm:editurl>
+   <dm:translation>no</dm:translation>
+  </dm:docmanager>
+    <meta name="description" its:translate="yes">How to use &productname; and RMT to update CentOS Linux 7.</meta>
+  <meta name="social-descr" its:translate="yes">Use &productname; to update CentOS 7.</meta>
+  <meta name="task" its:translate="yes">
+    <phrase>Upgrade &amp; Update</phrase>
+    <phrase>Administration</phrase>
+  </meta>
+  <revhistory xml:id="rh-art-lite-quickstart">
+    <revision>
+      <date>2024-06-18</date>
+      <revdescription>
+        <para>
+          Initial release.
+        </para>
+      </revdescription>
+    </revision>
+  </revhistory>
+ </info>
+
+ <section xml:id="introduction-lite-quickstart">
+  <title>Introduction</title>
+   <para>
+    &productname; is a technology and support solution for CentOS Linux &productnumber;.
+    With this one-year subscription, you can register and receive updates for
+    CentOS&nbsp;Linux&nbsp;&productnumber; with &suse;'s &rmtool; (&rmt;). The subscription also
+    includes one entitlement for &sles; 15 to host &rmt;.
+   </para>
+   <para>
+     &rmt; is a proxy system
+    for the &scc;. The &rmt; server is registered with the &scc;, and other systems in the network
+    are registered with the &rmt; server and receive packages from it directly.
+
+   </para>
+   <important role="compact">
+    <para>
+     CentOS&nbsp;Stream is not supported.
+    </para>
+   </important>
+   <itemizedlist>
+    <title>Procedure overview</title>
+    <listitem>
+     <para>
+      If you already have an &rmt; server and only need to <emphasis role="bold">register your
+      CentOS Linux 7 system</emphasis>, skip straight to <xref linkend="register-7-with-rmt"/>.
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      If you already have an &rmt; server but still need to <emphasis role="bold">mirror the &reponame;
+      &productnumber; repositories</emphasis>, go to <xref linkend="mirror-repositories-with-rmt"/>.
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      If you still need to <emphasis role="bold">set up the &rmt; server</emphasis>,
+      start with <xref linkend="install-rmt-vm"/> and <xref linkend="configure-rmt-server"/>.
+     </para>
+    </listitem>
+   </itemizedlist>
+ </section>
+
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="install-rmt-vm.xml"/>
+
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="configure-rmt-server.xml"/>
+
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mirror-repositories-with-rmt.xml"/>
+
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="register-with-rmt.xml"/>
+
+ <section xml:id="troubleshoot-lite-quickstart">
+  <title>Troubleshooting</title>
+  <variablelist>
+    <varlistentry>
+      <term><systemitem>nginx.service</systemitem> is inactive after installing the
+      <package>rmt-server</package> package</term>
+      <listitem>
+      <para>
+        Continue the procedure to configure &rmt; in &yast;. This often resolves
+        the issue. If that fails, Apache might be installed on your server, and
+        must be disabled. Apache conflicts with NGINX because both web servers
+        listen on port 80.
+      </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>&reponame; doesn't appear in <command>rmt-cli products list</command>
+      after <command>rmt-cli sync</command></term>
+      <listitem>
+      <para>
+        Check your network. If the network is down, <command>rmt-cli sync</command> fails without
+        showing an error.
+      </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>Mirroring completes with errors</term>
+      <listitem>
+      <para>
+        If some packages could not be downloaded because of timeouts, rerun the
+        <command>rmt-cli mirror</command> command until all packages are downloaded.
+      </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>Setup script cannot access the &reponame; repository</term>
+      <listitem>
+      <para>
+        The <filename>repodata</filename> directory on the &rmt; server will not
+        be available until all of the packages for that repository are downloaded.
+        If some packages could not be downloaded to the &rmt; server because of timeouts
+        during the first mirroring, rerun the <command>rmt-cli mirror</command>
+        command until all packages are downloaded.
+      </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>Setup script cannot install <package>suseconnect-ng</package> because of
+      package dependencies</term>
+      <listitem>
+      <para>
+        &productname; only supports the latest minor release
+        of <phrase audience="sll">&rhla; or </phrase>CentOS Linux <phrase audience="sll-l">7</phrase>.
+        If your system is running the latest version and <package>suseconnect-ng</package>
+        still has package dependency issues, try the following workaround:
+      </para>
+      <orderedlist>
+        <listitem>
+        <para>
+          Edit the <filename>rmt-client-setup-res</filename> script to add
+          <literal>--skip-broken</literal> to the following line:
+        </para>
+<screen>$YUM install sles_es-release-server suseconnect-ng librepo <emphasis role="bold">--skip-broken</emphasis></screen>
+        </listitem>
+        <listitem>
+        <para>
+          Run the script and accept any proposed package changes.
+          <package>suseconnect-ng</package> will be skipped.
+        </para>
+        </listitem>
+        <listitem>
+        <para>
+          Run the script a second time. The package changes from the first attempt
+          can sometimes resolve the package dependency issues, allowing the second
+          attempt to successfully install <package>suseconnect-ng</package>.
+        </para>
+        </listitem>
+      </orderedlist>
+      </listitem>
+    </varlistentry>
+  </variablelist>
+ </section>
+ <xi:include href="common_legal.xml"/>
+</article>
