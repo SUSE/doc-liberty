@@ -119,7 +119,7 @@
       </listitem>
     </varlistentry>
     <varlistentry>
-      <term>&reponame; doesn't appear in <command>rmt-cli products list</command>
+      <term>&reponame; does not appear in <command>rmt-cli products list</command>
       after <command>rmt-cli sync</command></term>
       <listitem>
       <para>
@@ -132,7 +132,7 @@
       <term>Mirroring completes with errors</term>
       <listitem>
       <para>
-        If some packages could not be downloaded because of timeouts, rerun the
+        If any packages could not be downloaded because of timeouts, rerun the
         <command>rmt-cli mirror</command> command until all packages are downloaded.
       </para>
       </listitem>
@@ -141,9 +141,9 @@
       <term>Setup script cannot access the &reponame; repository</term>
       <listitem>
       <para>
-        The <filename>repodata</filename> directory on the &rmt; server will not
-        be available until all of the packages for that repository are downloaded.
-        If some packages could not be downloaded to the &rmt; server because of timeouts
+        The <filename>repodata</filename> directory on the &rmt; server is not
+        available until all the packages for that repository are downloaded.
+        If any packages could not be downloaded to the &rmt; server because of timeouts
         during the first mirroring, rerun the <command>rmt-cli mirror</command>
         command until all packages are downloaded.
       </para>

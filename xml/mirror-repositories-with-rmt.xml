@@ -68,7 +68,7 @@
    </para>
 <screen>&prompt.root;<command>rmt-cli product enable 1251</command></screen>
    <para>
-    This enables all of the default repositories associated with the product.
+    This enables all the default repositories associated with the product.
    </para>
   </step>
   <step audience="sll">
