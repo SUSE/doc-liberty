@@ -241,7 +241,7 @@
       <para>
         Check that the network interface can access external networks:
       </para>
-<screen>&prompt.root;<command>ping www.example.com</command></screen>
+<screen>&prompt.root;<command>ping www.suse.com</command></screen>
       <para>
         Cancel the ping with <keycombo><keycap function="control"/><keycap>C</keycap></keycombo>.
       </para>
