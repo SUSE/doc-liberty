@@ -20,11 +20,11 @@
 
   <para>
     Use this procedure to install a &minvm;. This machine will be the &rmtool; (&rmt;) server.
-    You can use your &productname; subscription to register &slsa;.
+    You can use your &productname; subscription to register this machine.
   </para>
   <para>
-    &minvm; is a slimmed-down version of &sles;, available as a preconfigured virtual machine image.
-    If you would prefer to install a full &slsa; machine on bare metal, see
+    &minvm; is a slimmed-down version of &sles; (&slsa;), available as a preconfigured
+    virtual machine image. If you would prefer to install a full &slsa; machine on bare metal, see
     <link xlink:href="https://documentation.suse.com/sles-15/html/SLES-all/article-installation.html">
     <citetitle>&instquick;</citetitle></link>.
   </para>
@@ -43,27 +43,26 @@
     </listitem>
     <listitem>
       <para>
-        The VM must have a static IP address and host name. This guide includes steps for
-        configuring these, but you must have basic networking knowledge to fill in the details.
+        The VM must have a static IP address and host name. This guide includes steps for configuring
+        the VM's network setup, but you must have basic networking knowledge to fill in the details.
       </para>
     </listitem>
     <listitem>
       <para>
-        You have the infrastructure to run virtual machines. This procedure explains
+        You have the infrastructure to run virtual machines. This guide explains
         how to set up the VM to host &rmt;, but does not describe how to use different
-        virtualization products. See the relevant documentation for your infrastructure.
+        virtualization products. See the relevant documentation for your product.
       </para>
     </listitem>
     <listitem>
       <para>
-        Your virtual machine infrastructure has enough disk space available. The &rmt; server
-        needs enough storage to mirror the &reponame; &productnumber; repositories. Downloaded packages
-        are stored in <filename>/usr/share/rmt/public/repo</filename>, which is a symbolic link to
-        <filename>/var/lib/rmt/public/repo/</filename>. The amount of storage required depends on the
-        number of repositories you mirror. We recommend at least 1.5 times the total size of all enabled
-        repositories.
+        The &rmt; server needs enough available disk space to mirror the &reponame; &productnumber;
+        repositories. Downloaded packages are stored in <filename>/var/lib/rmt/public/repo/</filename>.
+        The amount of storage required depends on the number of repositories you mirror.
+        We recommend at least 1.5 times the total size of all enabled repositories.
       </para>
       <important>
+<!-- trichardson 2024-06-18: TO DO: New streamlined repos will be available from July 1 -->
         <title>&reponame; &productnumber; repository size</title>
         <para>
           The &reponame; repositories will grow substantially over time, because older package
@@ -79,7 +78,7 @@
     <title>Installing a virtual machine to host &rmt;</title>
     <step>
       <para>
-        Download the <literal>Minimal-VM</literal> image for your VM
+        Download the appropriate <literal>Minimal-VM</literal> image for your virtualization
         infrastructure from <link xlink:href="https://www.suse.com/download/sles/"/>.
       </para>
     </step>
@@ -171,8 +170,7 @@
     <step>
       <para>
         In the <guimenu>Overview</guimenu> tab, select <guimenu>Edit</guimenu> to change the settings
-        of the default <literal>eth0</literal> device. The <guimenu>Network Card Setup</guimenu>
-        dialog opens.
+        of the <literal>eth0</literal> device. The <guimenu>Network Card Setup</guimenu> dialog opens.
       </para>
     </step>
     <step>

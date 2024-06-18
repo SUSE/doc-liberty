@@ -15,14 +15,15 @@
  xmlns:xlink="http://www.w3.org/1999/xlink">
 
  <info>
-  <title>Registering CentOS Linux &productnumber; with &rmt;</title>
+  <title>Registering CentOS Linux &productnumber; with &productname;</title>
   <productname>&productname;</productname>
   <productname role="abbrev">&productnameshort;</productname>
   <date><?dbtimestamp format="B d, Y"?></date>
   <xi:include href="common_copyright_gfdl.xml"/>
   <abstract>
    <para>
-    This guide describes how to use &productname; to update CentOS&nbsp;Linux&nbsp;&productnumber;.
+    This guide describes how to use &productname; and &rmt; to update
+    CentOS&nbsp;Linux&nbsp;&productnumber;.
    </para>
   </abstract>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
@@ -62,10 +63,9 @@
     includes one entitlement for &sles; 15 to host &rmt;.
    </para>
    <para>
-     &rmt; is a proxy system
-    for the &scc;. The &rmt; server is registered with the &scc;, and other systems in the network
-    are registered with the &rmt; server and receive packages from it directly.
-
+     &rmt; is a proxy system for the &scc;. The &rmt; server is registered with the &scc;,
+     and other systems in the network are registered with the &rmt; server and receive
+     packages from it directly.
    </para>
    <important role="compact">
     <para>
