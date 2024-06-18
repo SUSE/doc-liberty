@@ -9,7 +9,7 @@
  xmlns="http://docbook.org/ns/docbook" version="5.1"
  xmlns:xi="http://www.w3.org/2001/XInclude"
  xmlns:xlink="http://www.w3.org/1999/xlink">
- <title>Mirroring &productname; repositories with &rmt;</title>
+ <title>Mirroring &reponame; repositories with &rmt;</title>
  <info>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
    <dm:bugtracker></dm:bugtracker>
@@ -18,19 +18,22 @@
  </info>
 
  <para>
-  Use this procedure to mirror the &productname; repositories for &rhel; &productnumber;
-  and CentOS Linux &productnumber;.
+  Use this procedure to mirror the &reponame; repositories for
+  <phrase audience="sll">&rhel; &productnumber; and </phrase>CentOS Linux &productnumber;.
  </para>
  <itemizedlist>
   <title>Requirements</title>
   <listitem>
    <para>
-    <xref linkend="configure-rmt-server"/>
+    The &rmt; server is installed and up to date.
    </para>
   </listitem>
   <listitem>
    <para>
-    The &rmt; server has enough storage available for repository mirroring.
+    The &rmt; server has enough storage available for repository mirroring. The amount of storage
+    required depends on the number of repositories you mirror. We recommend at least 1.5 times
+    the total size of all enabled repositories. Be aware that the &reponame; repositories will
+    grow substantially over time.
    </para>
   </listitem>
   <listitem>
@@ -46,7 +49,7 @@
  </itemizedlist>
 
  <procedure xml:id="pro-mirror-repositories-with-rmt">
-  <title>Mirroring &productname; repositories with &rmt;</title>
+  <title>Mirroring the &reponame; repositories with &rmt;</title>
   <step>
    <para>
     On the &rmt; server, update the available product and repository metadata:
@@ -61,14 +64,14 @@
   </step>
   <step>
    <para>
-    Enable &productname; using the product ID <literal>1251</literal>:
+    Enable &reponame; &productnumber; using the product ID <literal>1251</literal>:
    </para>
 <screen>&prompt.root;<command>rmt-cli product enable 1251</command></screen>
    <para>
-    This enables all of the default repositories associated with the product.
+    This enables all the default repositories associated with the product.
    </para>
   </step>
-  <step>
+  <step audience="sll">
    <para>
     If your subscription includes the &ha; extension, enable the extension using
     the product ID <literal>1252</literal>:
@@ -83,8 +86,8 @@
   </step>
   <step>
    <para>
-    If you also need the <literal>Source</literal> or <literal>Debug</literal>
-    repositories, find and enable them with the following commands:
+    If you also need the <literal>Source</literal> repository, find and enable it with the
+    following commands:
    </para>
 <screen>&prompt.root;<command>rmt-cli repo list --all | grep RES-</command>
 &prompt.root;<command>rmt-cli repo enable <replaceable>REPO_ID</replaceable></command></screen>
