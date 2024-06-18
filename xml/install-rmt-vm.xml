@@ -121,7 +121,8 @@
     </step>
     <step>
       <para>
-        &jeosfirstboot; shows the command to use to register this VM. Select <guimenu>OK</guimenu>.
+        &jeosfirstboot; shows the command to use to register this VM. You do not need to write this
+        down; the command is explained in this procedure. Select <guimenu>OK</guimenu>.
       </para>
     </step>
     <step>
@@ -238,9 +239,12 @@
       </para>
 <screen>&prompt.root;<command>ip addr</command></screen>
       <para>
-        Check the host name:
+        Check that the network interface can access external networks:
       </para>
-<screen>&prompt.root;<command>hostname</command></screen>
+<screen>&prompt.root;<command>ping www.example.com</command></screen>
+      <para>
+        Cancel the ping with <keycombo><keycap function="control"/><keycap>C</keycap></keycombo>.
+      </para>
     </step>
   </procedure>
   <para>
@@ -251,13 +255,13 @@
     <listitem>
       <para>
         <link xlink:href="https://documentation.suse.com/smart/virtualization-cloud/html/minimal-vm/">
-        <citetitle>Introduction to &minvm;</citetitle></link>
+        Introduction to &minvm;</link>
       </para>
     </listitem>
     <listitem>
       <para>
         <link xlink:href="https://documentation.suse.com/sles/15-SP5/html/SLES-all/book-virtualization.html">
-        <citetitle>&virtual;</citetitle></link>
+        &virtual;</link>
       </para>
     </listitem>
   </itemizedlist>
