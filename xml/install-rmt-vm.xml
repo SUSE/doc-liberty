@@ -149,7 +149,7 @@
     </step>
   </procedure>
   <para>
-    You must also configure a static IP address and hostname for the VM. If you are familiar
+    You must also configure a static IP address and host name for the VM. If you are familiar
     with any networking tools in &slsa;, configure the network with your preferred tool.
     If not, use the &yast; graphical interface:
   </para>
