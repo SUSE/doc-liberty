@@ -67,7 +67,7 @@
         <para>
           The &reponame; repositories will grow substantially over time, because older package
           versions are not removed. To meet the 1.5x size recommendation, based on the
-          current<footnote><para>As of 20 May, 2024</para></footnote>
+          current<footnote><para>As of 20 June, 2024</para></footnote>
           size of the &reponame; &productnumber; repository, you will need approximately 710&nbsp;GB
           of disk space available for the &rmt; server.
         </para>
