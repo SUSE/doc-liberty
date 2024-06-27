@@ -22,18 +22,23 @@ https://documentation.suse.com/sles/15-SP3/single-html/SLES-rmt/#sec-rmt-install
  </info>
 
  <para>
-  Use this procedure to configure the &rmtool; (&rmt;) on &sles; 15.
+  Use this procedure to configure the &rmtool; (&rmt;) on &sles; (&slsa;) 15.
  </para>
  <itemizedlist>
   <title>Requirements</title>
   <listitem>
    <para>
-    &sles; 15 is installed and up to date.
+    A &slsa; 15 virtual machine is installed as described in <xref linkend="install-rmt-vm"/>.
    </para>
   </listitem>
   <listitem>
+    <para>
+      The &slsa; machine has a static IP address and host name.
+    </para>
+  </listitem>
+  <listitem>
    <para>
-    You have a &scc; account and organization credentials.
+    You have a <link xlink:href="&sccurl;">&scc;</link> account and organization credentials.
    </para>
   </listitem>
  </itemizedlist>
@@ -42,13 +47,19 @@ https://documentation.suse.com/sles/15-SP3/single-html/SLES-rmt/#sec-rmt-install
   <title>Configuring the &rmt; server</title>
   <step>
    <para>
-    Install &rmt; on &sles; 15:
+    On the &slsa; machine, install &rmt;:
    </para>
 <screen>&prompt.root;<command>zypper in rmt-server</command></screen>
   </step>
   <step>
+    <para>
+      Install the following packages, which are not installed by default on a &minvm;:
+    </para>
+<screen>&prompt.root;<command>zypper install yast2-rmt mariadb nginx</command></screen>
+  </step>
+  <step>
    <para>
-    Start the <literal>rmt</literal> module in &yast;:
+    Start the &yast; <literal>rmt</literal>:
    </para>
 <screen>&prompt.root;<command>yast2 rmt</command></screen>
   </step>
@@ -75,18 +86,14 @@ https://documentation.suse.com/sles/15-SP3/single-html/SLES-rmt/#sec-rmt-install
   </step>
   <step>
    <para>
-    If a password for the &mariadb; root user is already set, enter the password
-    when prompted, then select <guimenu>OK</guimenu>.
-   </para>
-   <para>
-     If no password is set for the &mariadb; root user, enter and confirm a new
-     password when prompted, then select <guimenu>OK</guimenu>.
+    When prompted, enter and confirm a new password for the &mariadb; root user, then select
+    <guimenu>OK</guimenu>.
    </para>
   </step>
   <step>
    <para>
     Enter a <guimenu>Common Name</guimenu> for the SSL certificates. The common
-    name is usually the FQDN of the server.
+    name is usually the host name of the server.
    </para>
   </step>
   <step>
@@ -110,8 +117,8 @@ https://documentation.suse.com/sles/15-SP3/single-html/SLES-rmt/#sec-rmt-install
   </step>
   <step>
    <para>
-    &yast; displays the <guimenu>&rmt; Service Status</guimenu>.
-    Select <guimenu>Next</guimenu>.
+    &yast; displays the <guimenu>&rmt; Service Status</guimenu>. If there are no issues,
+    select <guimenu>Next</guimenu>.
    </para>
   </step>
   <step>
