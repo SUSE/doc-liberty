@@ -30,17 +30,12 @@
   <title>Requirements</title>
   <listitem>
    <para>
-    <xref linkend="configure-rmt-server"/>
-   </para>
-  </listitem>
-  <listitem>
-   <para>
-    <xref linkend="mirror-repositories-with-rmt"/>
-   </para>
-  </listitem>
-  <listitem>
-   <para>
     The &rmt; server is running <package>rmt-server</package> version 2.10 or later.
+   </para>
+  </listitem>
+  <listitem>
+   <para>
+    The &reponame; &productnumber; repositories are available on the &rmt; server.
    </para>
   </listitem>
   <listitem>
@@ -50,18 +45,18 @@
   </listitem>
   <listitem>
    <para>
-    The system you want to register is running the latest minor release of &rhla; &productnumber;.
+    The system you want to register is up to date. &productname; only supports the latest
+    minor release of &rhla; &productnumber;.
    </para>
   </listitem>
   <listitem>
    <para>
-    You have a &productname; subscription activated in the &scc;.
+    You have a &productname; subscription activated in the <link xlink:href="&sccurl;">&scc;</link>.
    </para>
   </listitem>
   <listitem>
    <para>
-    You have removed the system from any &rh; subscription services it was
-    registered to.
+    You have removed the system from any &rh; subscription services it was registered to.
    </para>
   </listitem>
  </itemizedlist>
@@ -172,6 +167,6 @@ Installed Products:
   </step>
  </procedure>
  <para>
-  You can now update your system from repositories provided by &productname;.
+  You can now keep your system up to date from repositories provided by &productname;.
  </para>
 </section>
