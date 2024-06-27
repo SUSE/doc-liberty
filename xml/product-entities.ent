@@ -3,6 +3,8 @@
 <!ENTITY productnameshort       "SLL">
 <!ENTITY productnumber          "9">
 
+<!ENTITY reponame               "SUSE Liberty Linux">
+
 <!-- PROJECT REPOSITORY URL -->
 <!ENTITY repo-url               "https://github.com/SUSE/doc-liberty">
 <!ENTITY repo-readme            "&repo-url;/blob/main/README.adoc">
