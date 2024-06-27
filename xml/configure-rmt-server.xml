@@ -28,12 +28,7 @@ https://documentation.suse.com/sles/15-SP3/single-html/SLES-rmt/#sec-rmt-install
   <title>Requirements</title>
   <listitem>
    <para>
-    <phrase audience="sll">&sles; (&slsa;) 15 is installed and up to date. This machine will be the
-    &rmt; server. You can use the &productname; subscription to register &slsa;. To install &slsa; 15, see
-    <link xlink:href="https://documentation.suse.com/sles-15/html/SLES-all/article-installation.html">
-    <citetitle>&instquick;</citetitle></link>.</phrase>
-    <phrase audience="sll-l">A &slsa; 15 virtual machine is installed as described in
-    <xref linkend="install-rmt-vm"/>.</phrase>
+    A &slsa; 15 virtual machine is installed as described in <xref linkend="install-rmt-vm"/>.
    </para>
   </listitem>
   <listitem>
@@ -52,11 +47,11 @@ https://documentation.suse.com/sles/15-SP3/single-html/SLES-rmt/#sec-rmt-install
   <title>Configuring the &rmt; server</title>
   <step>
    <para>
-    Install &rmt; on &sles; 15:
+    On the &slsa; machine, install &rmt;:
    </para>
 <screen>&prompt.root;<command>zypper install rmt-server</command></screen>
   </step>
-  <step audience="sll-l">
+  <step>
     <para>
       Install the following packages, which are not installed by default on a &minvm;:
     </para>
@@ -91,12 +86,8 @@ https://documentation.suse.com/sles/15-SP3/single-html/SLES-rmt/#sec-rmt-install
   </step>
   <step>
    <para>
-    If a password for the &mariadb; root user is already set, enter the password
-    when prompted, then select <guimenu>OK</guimenu>.
-   </para>
-   <para>
-     If no password is set for the &mariadb; root user, enter and confirm a new
-     password when prompted, then select <guimenu>OK</guimenu>.
+    When prompted, enter and confirm a new password for the &mariadb; root user, then select
+    <guimenu>OK</guimenu>.
    </para>
   </step>
   <step>

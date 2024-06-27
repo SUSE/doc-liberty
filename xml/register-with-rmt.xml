@@ -31,17 +31,17 @@
   <title>Requirements</title>
   <listitem>
    <para>
-    The system you want to register can access the &rmt; server.
-   </para>
-  </listitem>
-  <listitem>
-   <para>
     The &rmt; server is running <package>rmt-server</package> version 2.15 or later.
    </para>
   </listitem>
   <listitem>
    <para>
     The &reponame; &productnumber; repositories are available on the &rmt; server.
+   </para>
+  </listitem>
+    <listitem>
+   <para>
+    The system you want to register can access the &rmt; server.
    </para>
   </listitem>
   <listitem>
@@ -175,6 +175,6 @@ Installed Products:
   </step>
  </procedure>
  <para>
-  You can now update your system from repositories provided by &productname;.
+  You can now keep your system up to date from repositories provided by &productname;.
  </para>
 </section>
