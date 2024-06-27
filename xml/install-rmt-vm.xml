@@ -19,21 +19,23 @@
  </info>
 
   <para>
-    Use this procedure to install a &minvm;. This machine will be the &rmtool; (&rmt;) server.
+    Use this procedure to install a &minvm;, a preconfigured virtual machine image that contains a slimmed-down version of &sles; (&slsa;). This machine will be the &rmtool; (&rmt;) server.
     You can use your &productname; subscription to register this machine.
   </para>
-  <para>
-    &minvm; is a slimmed-down version of &sles; (&slsa;), available as a preconfigured
-    virtual machine image. If you would prefer to install a full &slsa; machine on bare metal, see
-    <link xlink:href="https://documentation.suse.com/sles-15/html/SLES-all/article-installation.html">
-    <citetitle>&instquick;</citetitle></link>.
-  </para>
+  <tip role="compact">
+    <para>
+      If you would prefer to install a full &slsa; machine on bare metal, see
+      <link xlink:href="https://documentation.suse.com/sles-15/html/SLES-all/article-installation.html">
+      <citetitle>&instquick;</citetitle></link>.
+    </para>
+  </tip>
   <itemizedlist>
     <title>Requirements</title>
     <listitem>
       <para>
-        You have a &productname; subscription. This subscription entitles you to one
-        &slsa; machine to host &rmt;.
+        You have a &productname; subscription.
+        <phrase audience="sll">You can register &slsa; with this subscription.</phrase>
+        <phrase audience="sll-l">This subscription entitles you to one &slsa; machine to host &rmt;.</phrase>
       </para>
     </listitem>
     <listitem>

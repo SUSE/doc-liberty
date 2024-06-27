@@ -135,7 +135,7 @@
     <listitem>
      <para>
       If you still need to <emphasis role="bold">set up the &rmt; server</emphasis>, start with
-      <xref linkend="configure-rmt-server"/>.
+      <xref linkend="install-rmt-vm"/> and <xref linkend="configure-rmt-server"/>.
      </para>
     </listitem>
 
@@ -186,51 +186,7 @@
    </itemizedlist>
  </section>
 
- <section xml:id="requirements-quickstart">
-  <title>Requirements</title>
-  <itemizedlist>
-   <listitem>
-    <para>
-     You have a &productname; subscription.
-    </para>
-   </listitem>
-   <listitem>
-    <para>
-     You have a <link xlink:href="&sccurl;">&scc;</link> account.
-    </para>
-   </listitem>
-   <listitem>
-    <para>
-     The systems you want to register are up to date. &productname; only
-     supports the latest minor release of each &rhla; or CentOS Linux version.
-    </para>
-   </listitem>
-   <listitem>
-    <para>
-     &sles; (&slsa;) 15 is installed and up to date. This machine will be
-     the &rmt; server. You can use the &productname; subscription to
-     register &slsa;. To install &slsa; 15, see
-     <link xlink:href="https://documentation.suse.com/sles-15/html/SLES-all/article-installation.html">
-     <citetitle>&instquick;</citetitle></link>.
-    </para>
-   </listitem>
-   <listitem>
-     <para>
-      The systems you want to register can reach the &rmt; server.
-     </para>
-   </listitem>
-   <listitem>
-    <para>
-     The &rmt; server has enough storage available for repository mirroring.
-     Downloaded packages are stored in <filename>/usr/share/rmt/public/repo</filename>,
-     which is a symbolic link to <filename>/var/lib/rmt/public/repo/</filename>.
-     The amount of storage required depends on the number of repositories you mirror.
-     We recommend at least 1.5 times the total size of all enabled repositories.
-     Be aware that these repositories will grow substantially over time.
-    </para>
-   </listitem>
-  </itemizedlist>
- </section>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="install-rmt-vm.xml"/>
 
 <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="configure-rmt-server.xml"/>
 
