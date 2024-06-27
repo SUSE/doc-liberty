@@ -34,7 +34,6 @@
     <listitem>
       <para>
         You have a &productname; subscription.
-        <phrase audience="sll">You can register &slsa; with this subscription.</phrase>
         <phrase audience="sll-l">This subscription entitles you to one &slsa; machine to host &rmt;.</phrase>
       </para>
     </listitem>
@@ -90,13 +89,13 @@
       </para>
       <para>
         The default disk size for &minvm; is 24&nbsp;GB. If you can customize the configuration
-        before the installation begins, increase the available storage so that there is enough
+        before the installation begins, increase the available storage so there is enough
         disk space for repository mirroring.
       </para>
     </step>
     <step>
       <para>
-        When the &jeosfirstboot; screen appears, select <guimenu>Start</guimenu>.
+        When the <literal>&jeosfirstboot;</literal> screen appears, select <guimenu>Start</guimenu>.
       </para>
     </step>
     <step>
