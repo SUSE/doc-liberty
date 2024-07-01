@@ -135,12 +135,6 @@
     </listitem>
     <listitem>
      <para>
-      <link xlink:href="https://documentation.suse.com/liberty/7/html/quickstart-smt/art-quickstart-smt.html">
-      <citetitle>Registering &rhla; 7 or CentOS Linux 7 with SMT</citetitle></link>
-     </para>
-    </listitem>
-    <listitem>
-     <para>
       <link xlink:href="https://documentation.suse.com/liberty/7/html/quickstart/art-quickstart.html">
       <citetitle>Registering &rhla; 7 or CentOS Linux 7 with RMT</citetitle></link>
      </para>
