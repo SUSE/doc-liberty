@@ -44,6 +44,14 @@
   </meta>
   <revhistory xml:id="rh-art-lite-quickstart">
     <revision>
+      <date>2024-07-01</date>
+      <revdescription>
+        <para>
+          Updates for LTSS.
+        </para>
+      </revdescription>
+    </revision>
+    <revision>
       <date>2024-06-18</date>
       <revdescription>
         <para>
@@ -138,7 +146,7 @@
       </listitem>
     </varlistentry>
     <varlistentry>
-      <term>Setup script cannot access the &reponame; repository</term>
+      <term>Setup script cannot access the &reponame; repositories</term>
       <listitem>
       <para>
         The <filename>repodata</filename> directory on the &rmt; server is not

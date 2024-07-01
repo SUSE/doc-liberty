@@ -3,7 +3,7 @@
 <!ENTITY productnameshort       "<phrase xmlns='http://docbook.org/ns/docbook' role='productname'><phrase audience='sll'>SLL</phrase><phrase audience='sll-l'>SLL-L</phrase></phrase>">
 <!ENTITY productnumber          "7">
 
-<!ENTITY reponame               "SUSE Liberty Linux">
+<!ENTITY reponame               "SUSE Liberty Linux LTSS">
 
 <!-- PROJECT REPOSITORY URL -->
 <!ENTITY repo-url               "https://github.com/SUSE/doc-liberty">
