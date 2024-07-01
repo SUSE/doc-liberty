@@ -62,7 +62,7 @@
    <para>
      There are no new &ha; repositories. &ha; is not supported with &reponame; &productnumber;.
    </para>
-   <para>
+   <!--para>
     If you previously mirrored the &productname; repositories with the general subscription,
     clean up these repositories first before you start mirroring the new LTSS repositories:
    </para>
@@ -85,7 +85,7 @@
        </para>
 <screen>&prompt.root;<command>rmt-cli repos clean</command></screen>
      </listitem>
-   </orderedlist>
+   </orderedlist-->
  </important>
 
  <procedure xml:id="pro-mirror-repositories-with-rmt">
