@@ -33,7 +33,7 @@
     The &rmt; server has enough storage available for repository mirroring. The amount of storage
     required depends on the number of repositories you mirror. We recommend at least 1.5 times
     the total size of all enabled repositories. Be aware that the &reponame; repositories will
-    grow substantially over time.
+    grow over time.
    </para>
   </listitem>
   <listitem>
@@ -47,6 +47,46 @@
    </para>
   </listitem>
  </itemizedlist>
+
+ <important audience="sll">
+   <title>New repository structure for &reponame; &productnumber;</title>
+   <para>
+     The repository structure has changed in &reponame; &productnumber;. Previously, there was
+     one default repository and one optional <literal>Source</literal> repository. Now there are
+     two default repositories, <literal>BASE</literal> and <literal>LTSS</literal>, along with
+     optional <literal>Source</literal> and <literal>Debug</literal> repositories for both.
+     The <literal>BASE</literal> repositories are frozen and contain the existing packages from
+     the original &productname; repositories. The <literal>LTSS</literal> repositories contain
+     new packages for &reponame; &productnumber;.
+   </para>
+   <para>
+     There are no new &ha; repositories. &ha; is not supported with &reponame; &productnumber;.
+   </para>
+   <!--para>
+    If you previously mirrored the &productname; repositories with the general subscription,
+    clean up these repositories first before you start mirroring the new LTSS repositories:
+   </para>
+   <orderedlist>
+     <listitem>
+       <para>
+         Disable the original product. This also disables any repositories associated with the product:
+       </para>
+<screen>&prompt.root;<command>rmt-cli product disable 1251</command></screen>
+     </listitem>
+     <listitem>
+       <para>
+         If your previous subscription included the &ha; extension, disable this product too:
+       </para>
+<screen>&prompt.root;<command>rmt-cli product disable 1252</command></screen>
+     </listitem>
+     <listitem>
+       <para>
+         Free up space on the server by cleaning up the files associated with the disabled repositories:
+       </para>
+<screen>&prompt.root;<command>rmt-cli repos clean</command></screen>
+     </listitem>
+   </orderedlist-->
+ </important>
 
  <procedure xml:id="pro-mirror-repositories-with-rmt">
   <title>Mirroring the &reponame; repositories with &rmt;</title>
@@ -64,32 +104,20 @@
   </step>
   <step>
    <para>
-    Enable &reponame; &productnumber; using the product ID <literal>1251</literal>:
+    Enable &reponame; &productnumber; using the product ID <literal>2702</literal>:
    </para>
-<screen>&prompt.root;<command>rmt-cli product enable 1251</command></screen>
+<screen>&prompt.root;<command>rmt-cli product enable 2702</command></screen>
    <para>
     This enables all the default repositories associated with the product.
    </para>
   </step>
-  <step audience="sll">
-   <para>
-    If your subscription includes the &ha; extension, enable the extension using
-    the product ID <literal>1252</literal>:
-   </para>
-<screen>&prompt.root;<command>rmt-cli product enable 1252</command></screen>
-   <tip role="compact">
-    <para>
-     To check whether the &ha; extension is available, run this command:
-     <command>rmt-cli products list --all --name="Liberty" --version=&productnumber;</command>
-    </para>
-   </tip>
-  </step>
   <step>
    <para>
-    If you also need the <literal>Source</literal> repository, find and enable it with the
-    following commands:
+    If you also need the <literal>Source</literal> or <literal>Debug </literal>repositories,
+    find and enable them with the following commands:
    </para>
-<screen>&prompt.root;<command>rmt-cli repo list --all | grep RES-</command>
+<screen>&prompt.root;<command>rmt-cli repo list --all | grep RES-7-BASE</command>
+&prompt.root;<command>rmt-cli repo list --all | grep RES-7-LTSS</command>
 &prompt.root;<command>rmt-cli repo enable <replaceable>REPO_ID</replaceable></command></screen>
   </step>
   <step>

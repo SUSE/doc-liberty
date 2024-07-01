@@ -70,13 +70,34 @@
    </para>
   </listitem>
  </itemizedlist>
+
+ <!--important audience="sll">
+   <title>New registration setup for &reponame; &productnumber;</title>
+   <para>
+    The repository structure and registration setup has changed in &reponame; &productnumber;.
+    If you previously registered your system with a general &productname; subscription,
+    de-register your system from the original subscription and re-register with the LTSS subscription.
+   </para>
+   <para>
+    To de-register your system, run the following command:
+   </para>
+<screen>&prompt.root;<command>SUSEConnect -/-de-register</command></screen>
+   <para>
+     This command also removes the &ha; extension if it was installed on your system.
+     &ha; is not supported with &reponame; &productnumber;.
+   </para>
+ </important-->
+
  <procedure xml:id="pro-register-rhel-with-rmt">
   <title>Registering <phrase audience="sll">&rhla; or </phrase>CentOS Linux with &rmt;</title>
-  <step>
+  <step><!-- Temporary script until the new one is available from RMT
    <para>
     Download the <filename>rmt-client-setup-res</filename> script:
    </para>
-<screen>&prompt.root;<command>curl http://<replaceable>RMT_SERVER</replaceable>/tools/rmt-client-setup-res --output rmt-client-setup-res</command></screen>
+<screen>&prompt.root;<command>curl http://<replaceable>RMT_SERVER</replaceable>/tools/rmt-client-setup-res -/-output rmt-client-setup-res</command></screen-->
+   <para>
+    Save the script in <xref linkend="app-temp-script"/> as <filename>rmt-client-setup-res</filename>.
+   </para>
   </step>
   <step>
    <para>
@@ -137,8 +158,8 @@
 Installed Products:
 ------------------------------------------
 
-  SLES Expanded Support platform release file
-  (RES/&productnumber;/x86_64)
+  SUSE Liberty Linux release file
+  (RES-LTSS/&productnumber;/x86_64)
 
   Registered
 
@@ -151,21 +172,9 @@ Installed Products:
    </para>
 <screen>&prompt.root;<command>yum repolist</command></screen>
    <para>
-    You should see <literal>RES-&productnumber;-Updates</literal>.
+    You should see <literal>RES-&productnumber;-BASE-Updates</literal> and
+    <literal>RES-&productnumber;-LTSS-Updates</literal>.
    </para>
-  </step>
-  <step audience="sll">
-   <para>
-    If your subscription includes the &ha; extension, activate it with the
-    following command:
-   </para>
-<screen>&prompt.root;<command>&suseconnect; -p RES-HA/&productnumber;/x86_64</command></screen>
-   <tip role="compact">
-    <para>
-     To check whether the extension is available, run the
-     <command>&suseconnect; --list-extensions</command> command.
-    </para>
-   </tip>
   </step>
   <step>
    <para>

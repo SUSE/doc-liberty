@@ -44,6 +44,14 @@
   </meta>
   <revhistory xml:id="rh-art-quickstart">
     <revision>
+      <date>2024-07-01</date>
+      <revdescription>
+        <para>
+          Updates for LTSS.
+        </para>
+      </revdescription>
+    </revision>
+    <revision>
       <date>2024-06-27</date>
       <revdescription>
         <para>
@@ -80,10 +88,38 @@
 
  <section xml:id="introduction-quickstart">
   <title>Introduction</title>
+   <important>
+     <title>End of general support for &productname; &productnumber;</title>
+     <para>
+       &productname; &productnumber; has reached the end of general support and is now in LTSS
+       (Long Term Service Support).
+     </para>
+     <para>
+       If you have a <emphasis>&productname;</emphasis> subscription but do not have an
+       <emphasis>LTSS</emphasis> subscription, you can continue to use your systems. However,
+       registering new &rhla;&nbsp;&productnumber; or CentOS&nbsp;Linux&nbsp;&productnumber;
+       systems with the general subscription is no longer supported.
+     </para>
+     <para>
+       To register new &rhla;&nbsp;&productnumber; or CentOS&nbsp;Linux&nbsp;&productnumber;
+       systems, <!--and to continue receiving new updates for existing systems, -->you must purchase a
+       <emphasis>&reponame; &productnumber;</emphasis> subscription.
+     </para>
+     <para>
+       Additionally, the optional &ha; extension is no longer supported with
+       &reponame; &productnumber;. You must remove this product from your system
+       before you can register with an LTSS subscription.
+     </para>
+     <!--para>
+       If you previously registered your systems with a general subscription and want to move
+       them to an LTSS subscription, see <xref linkend="mirror-repositories-with-rmt"/>
+       and <xref linkend="register-7-with-rmt"/>.
+     </para-->
+   </important>
    <para>
     &productname; is a technology and support solution for mixed Linux environments.
     With a &productname; subscription, you can register and receive updates for
-    &rhel;, CentOS Linux, and &sles;. An optional &ha; extension is also available.
+    &rhel;, CentOS Linux, and &sles;.
    </para>
    <important role="compact">
     <para>
@@ -91,26 +127,9 @@
     </para>
    </important>
    <para>
-    You can register &rhla; &productnumber; or CentOS Linux &productnumber; with one of the
-    following tools:
+    You can register &rhla; &productnumber; or CentOS Linux &productnumber; with either
+    &suma; or the &rmtool; (&rmt;).
    </para>
-   <itemizedlist>
-     <listitem>
-       <para>
-         &smtool; (&smt;)
-       </para>
-     </listitem>
-     <listitem>
-       <para>
-         &rmtool; (&rmt;)
-       </para>
-     </listitem>
-     <listitem>
-       <para>
-         &suma;
-       </para>
-     </listitem>
-   </itemizedlist>
    <para>
     This guide describes how to register with an &rmt; server. &rmt; is a proxy system for the
     &scc;. The &rmt; server is registered with the &scc;, and other systems in the network are
@@ -128,7 +147,7 @@
     <listitem>
      <para>
       If you already have an &rmt; server but still need to <emphasis role="bold">mirror the
-      &productname;&nbsp;&productnumber; repositories</emphasis>, go to
+      &reponame;&nbsp;&productnumber; repositories</emphasis>, go to
       <xref linkend="mirror-repositories-with-rmt"/>.
      </para>
     </listitem>
@@ -157,12 +176,6 @@
      <para>
       <link xlink:href="https://documentation.suse.com/sles-15/html/SLES-all/book-rmt.html">
       <citetitle>&rmtguide;</citetitle></link>
-     </para>
-    </listitem>
-    <listitem>
-     <para>
-      <link xlink:href="https://documentation.suse.com/liberty/7/html/quickstart-smt/art-quickstart-smt.html">
-      <citetitle>Registering &rhla; 7 or CentOS Linux 7 with SMT</citetitle></link>
      </para>
     </listitem>
     <listitem>
@@ -229,7 +242,7 @@
       </listitem>
     </varlistentry>
     <varlistentry>
-      <term>Setup script cannot access the &productname; repository</term>
+      <term>Setup script cannot access the &productname; repositories</term>
       <listitem>
       <para>
         The <filename>repodata</filename> directory on the &rmt; server will not
@@ -275,5 +288,6 @@
     </varlistentry>
   </variablelist>
  </section>
+ <xi:include href="app-temp-script.xml"/>
  <xi:include href="common_legal.xml"/>
 </article>

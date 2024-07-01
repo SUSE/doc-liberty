@@ -44,6 +44,14 @@
   </meta>
   <revhistory xml:id="rh-art-quickstart">
     <revision>
+      <date>2024-07-01</date>
+      <revdescription>
+        <para>
+          Retire guide for LTSS.
+        </para>
+      </revdescription>
+    </revision>
+    <revision>
       <date>2024-03-27</date>
       <revdescription>
         <para>
@@ -62,7 +70,90 @@
   </revhistory>
  </info>
 
- <section xml:id="introduction-quickstart-smt">
+ <section xml:id="liberty-7-ltss">
+   <title>End of general support for &productname; &productnumber;</title>
+   <warning>
+     <title>&smt; is not supported with &productname; LTSS &productnumber;</title>
+     <para>
+      &productname; &productnumber; has reached the end of general support and is now in LTSS
+      (Long Term Service Support).
+     </para>
+     <para>
+       Registering systems with &smt; is not supported under &productname; LTSS &productnumber;.
+       You can register &rhla; &productnumber; or CentOS Linux &productnumber; with either
+       &suma; or the &rmtool; (&rmt;).
+     </para>
+     <para>
+       Before you register existing systems with &rmt;, de-register them from &smt;.
+       You can do this directly from the &smt; server using the steps in
+       <xref linkend="pro-deregister-client-from-smt"/>.
+     </para>
+     <para>
+      To migrate from &smt; to &rmt;, see
+      <link xlink:href="https://documentation.suse.com/sles/html/SLES-all/cha-rmt-migrate.html">
+      Migrate from SMT to RMT</link> in <citetitle>&rmtguide;</citetitle>.
+      Alternatively, install a fresh &rmt; server using the steps in
+      <link xlink:href="https://documentation.suse.com/liberty/7/html/quickstart/art-quickstart.html">
+      <citetitle>Registering &rhla; 7 or CentOS Linux 7 with RMT</citetitle></link>.
+     </para>
+   </warning>
+
+   <procedure xml:id="pro-deregister-client-from-smt">
+     <title>De-registering a client from &smt;</title>
+     <step>
+       <para>
+         List the existing clients and make a note of the client IDs:
+       </para>
+<screen>&prompt.root;<command>smt-list-registrations</command></screen>
+     </step>
+     <step>
+       <para>
+         De-register the clients using their client IDs:
+       </para>
+<screen>&prompt.root;<command>smt-delete-registration -g <replaceable>CLIENT_ID</replaceable></command></screen>
+       <para>
+         To de-register multiple clients, you can use the <option>-g</option> option multiple times
+         in the same command.
+       </para>
+     </step>
+   </procedure>
+
+   <itemizedlist>
+    <title>Related information</title>
+    <listitem>
+     <para>
+      <link xlink:href="https://documentation.suse.com/sles-15/html/SLES-all/book-rmt.html">
+      <citetitle>&rmtguide;</citetitle></link>
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      <link xlink:href="https://documentation.suse.com/liberty/7/html/quickstart/art-quickstart.html">
+      <citetitle>Registering &rhla; 7 or CentOS Linux 7 with RMT</citetitle></link>
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      <link xlink:href="https://documentation.suse.com/liberty/8/html/quickstart/art-quickstart.html">
+      <citetitle>Registering &rhla; 8 or CentOS Linux 8 with RMT</citetitle></link>
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      <link xlink:href="https://documentation.suse.com/liberty/9/html/quickstart/art-quickstart.html">
+      <citetitle>Registering &rhla; 9 with RMT</citetitle></link>
+     </para>
+    </listitem>
+    <listitem>
+      <para>
+        <link xlink:href="https://documentation.suse.com/suma/en/suse-manager/client-configuration/clients-sleses.html">
+        <citetitle>&suma; Client Configuration Guide: Registering &sliberty; Clients</citetitle></link>
+      </para>
+    </listitem>
+   </itemizedlist>
+ </section>
+
+ <!--section xml:id="introduction-quickstart-smt">
   <title>Introduction</title>
    <para>
     &productname; is a technology and support solution for mixed Linux environments.
@@ -127,7 +218,6 @@
      </para>
     </listitem>
    </orderedlist>
-   <!-- Can delete this if/when all names have been changed-->
    <note>
     <title><emphasis>&productname;</emphasis> and <emphasis>&sles; with Expanded Support</emphasis></title>
     <para>
@@ -268,6 +358,6 @@
     </listitem>
    </varlistentry>
   </variablelist>
- </section>
+ </section-->
  <xi:include href="common_legal.xml"/>
 </article>
