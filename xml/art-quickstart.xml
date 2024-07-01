@@ -101,8 +101,8 @@
        systems with the general subscription is no longer supported.
      </para>
      <para>
-       To register new systems, you must use a <emphasis>&productname; LTSS &productnumber;</emphasis>
-       subscription.
+       To register new &rhla;&nbsp;&productnumber; or CentOS&nbsp;Linux&nbsp;&productnumber; systems, and to continue receiving new updates for existing systems, you must purchase a
+       <emphasis>&productname; LTSS &productnumber;</emphasis> subscription.
      </para>
    </important>
    <para>
@@ -116,21 +116,9 @@
     </para>
    </important>
    <para>
-    You can register &rhla; &productnumber; or CentOS Linux &productnumber; with one of the
-    following tools:
+    You can register &rhla; &productnumber; or CentOS Linux &productnumber; with either
+    &suma; or the &rmtool; (&rmt;).
    </para>
-   <itemizedlist>
-     <listitem>
-       <para>
-         &rmtool; (&rmt;)
-       </para>
-     </listitem>
-     <listitem>
-       <para>
-         &suma;
-       </para>
-     </listitem>
-   </itemizedlist>
    <para>
     This guide describes how to register with an &rmt; server. &rmt; is a proxy system for the
     &scc;. The &rmt; server is registered with the &scc;, and other systems in the network are
@@ -289,5 +277,6 @@
     </varlistentry>
   </variablelist>
  </section>
+ <xi:include href="app-temp-script.xml"/>
  <xi:include href="common_legal.xml"/>
 </article>

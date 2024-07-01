@@ -193,5 +193,6 @@
     </varlistentry>
   </variablelist>
  </section>
+ <xi:include href="app-temp-script.xml"/>
  <xi:include href="common_legal.xml"/>
 </article>
