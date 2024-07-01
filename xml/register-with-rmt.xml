@@ -154,19 +154,6 @@ Installed Products:
     You should see <literal>RES-&productnumber;-Updates</literal>.
    </para>
   </step>
-  <step audience="sll">
-   <para>
-    If your subscription includes the &ha; extension, activate it with the
-    following command:
-   </para>
-<screen>&prompt.root;<command>&suseconnect; -p RES-HA/&productnumber;/x86_64</command></screen>
-   <tip role="compact">
-    <para>
-     To check whether the extension is available, run the
-     <command>&suseconnect; --list-extensions</command> command.
-    </para>
-   </tip>
-  </step>
   <step>
    <para>
     Run the update command to make sure there are no errors:

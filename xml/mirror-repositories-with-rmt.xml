@@ -71,19 +71,6 @@
     This enables all the default repositories associated with the product.
    </para>
   </step>
-  <step audience="sll">
-   <para>
-    If your subscription includes the &ha; extension, enable the extension using
-    the product ID <literal>1252</literal>:
-   </para>
-<screen>&prompt.root;<command>rmt-cli product enable 1252</command></screen>
-   <tip role="compact">
-    <para>
-     To check whether the &ha; extension is available, run this command:
-     <command>rmt-cli products list --all --name="Liberty" --version=&productnumber;</command>
-    </para>
-   </tip>
-  </step>
   <step>
    <para>
     If you also need the <literal>Source</literal> repository, find and enable it with the
