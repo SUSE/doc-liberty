@@ -101,8 +101,19 @@
        systems with the general subscription is no longer supported.
      </para>
      <para>
-       To register new &rhla;&nbsp;&productnumber; or CentOS&nbsp;Linux&nbsp;&productnumber; systems, and to continue receiving new updates for existing systems, you must purchase a
-       <emphasis>&productname; LTSS &productnumber;</emphasis> subscription.
+       To register new &rhla;&nbsp;&productnumber; or CentOS&nbsp;Linux&nbsp;&productnumber;
+       systems, and to continue receiving new updates for existing systems, you must purchase a
+       <emphasis>&reponame; &productnumber;</emphasis> subscription.
+     </para>
+     <para>
+       Additionally, the optional &ha; extension is no longer supported with
+       &reponame; &productnumber;. You must remove this product from your system
+       before you can register with an LTSS subscription.
+     </para>
+     <para>
+       If you previously registered your systems with a general subscription and want to move
+       them to an LTSS subscription, see <xref linkend="mirror-repositories-with-rmt"/>
+       and <xref linkend="register-7-with-rmt"/>.
      </para>
    </important>
    <para>

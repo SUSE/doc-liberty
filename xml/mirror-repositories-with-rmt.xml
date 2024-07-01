@@ -55,11 +55,12 @@
      one default repository and one optional <literal>Source</literal> repository. Now there are
      two default repositories, <literal>BASE</literal> and <literal>LTSS</literal>, along with
      optional <literal>Source</literal> and <literal>Debug</literal> repositories for both.
-   </para>
-   <para>
      The <literal>BASE</literal> repositories are frozen and contain the existing packages from
      the original &productname; repositories. The <literal>LTSS</literal> repositories contain
      new packages for &reponame; &productnumber;.
+   </para>
+   <para>
+     There are no new &ha; repositories. &ha; is not supported with &reponame; &productnumber;.
    </para>
    <para>
     If you previously mirrored the &productname; repositories with the general subscription,
@@ -71,6 +72,12 @@
          Disable the original product. This also disables any repositories associated with the product:
        </para>
 <screen>&prompt.root;<command>rmt-cli product disable 1251</command></screen>
+     </listitem>
+     <listitem>
+       <para>
+         If your previous subscription included the &ha; extension, disable this product too:
+       </para>
+<screen>&prompt.root;<command>rmt-cli product disable 1252</command></screen>
      </listitem>
      <listitem>
        <para>

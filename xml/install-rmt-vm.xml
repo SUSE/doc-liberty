@@ -63,14 +63,17 @@
         We recommend at least 1.5 times the total size of all enabled repositories.
       </para>
       <important>
-<!-- trichardson 2024-06-18: TO DO: New streamlined repos will be available from July 1 -->
         <title>&reponame; &productnumber; repository size</title>
         <para>
-          The &reponame; repositories will grow substantially over time, because older package
+          The &reponame; repositories will grow over time, because older package
           versions are not removed. To meet the 1.5x size recommendation, based on the
-          current<footnote><para>As of 20 June, 2024</para></footnote>
-          size of the &reponame; &productnumber; repository, you will need approximately 710&nbsp;GB
+          current<footnote><para>As of 01 July, 2024</para></footnote> size of the default
+          &reponame; &productnumber; repositories, you will need approximately 225&nbsp;GB
           of disk space available for the &rmt; server.
+        </para>
+        <para>
+          If you also need the <literal>Source</literal> and <literal>Debug</literal>
+          repositories, you will need an additional 765&nbsp;GB available.
         </para>
       </important>
     </listitem>

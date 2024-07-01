@@ -82,6 +82,10 @@
     To de-register your system, run the following command:
    </para>
 <screen>&prompt.root;<command>SUSEConnect --de-register</command></screen>
+   <para>
+     This command also removes the &ha; extension if it was installed on your system.
+     &ha; is not supported with &reponame; &productnumber;.
+   </para>
  </important>
 
  <procedure xml:id="pro-register-rhel-with-rmt">
