@@ -71,22 +71,33 @@
   </listitem>
  </itemizedlist>
 
- <!--important audience="sll">
+ <important audience="sll">
    <title>New registration setup for &reponame; &productnumber;</title>
    <para>
     The repository structure and registration setup has changed in &reponame; &productnumber;.
     If you previously registered your system with a general &productname; subscription,
-    de-register your system from the original subscription and re-register with the LTSS subscription.
+    de-register your system from the original subscription before you re-register
+    with the LTSS subscription:
    </para>
-   <para>
-    To de-register your system, run the following command:
-   </para>
-<screen>&prompt.root;<command>SUSEConnect -/-de-register</command></screen>
-   <para>
-     This command also removes the &ha; extension if it was installed on your system.
-     &ha; is not supported with &reponame; &productnumber;.
-   </para>
- </important-->
+   <orderedlist>
+     <listitem>
+       <para>
+         De-register your system:
+       </para>
+<screen>&prompt.root;<command>SUSEConnect --de-register</command></screen>
+       <para>
+        This command also removes the &ha; extension if it was installed on your system.
+        &ha; is not supported with &reponame; &productnumber;.
+      </para>
+     </listitem>
+     <listitem>
+       <para>
+         Clean up the registration status:
+       </para>
+<screen>&prompt.root;<command>SUSEConnect --cleanup</command></screen>
+     </listitem>
+   </orderedlist>
+ </important>
 
  <procedure xml:id="pro-register-rhel-with-rmt">
   <title>Registering <phrase audience="sll">&rhla; or </phrase>CentOS Linux with &rmt;</title>

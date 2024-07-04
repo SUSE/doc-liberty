@@ -62,14 +62,14 @@
    <para>
      There are no new &ha; repositories. &ha; is not supported with &reponame; &productnumber;.
    </para>
-   <!--para>
+   <para>
     If you previously mirrored the &productname; repositories with the general subscription,
     clean up these repositories first before you start mirroring the new LTSS repositories:
    </para>
    <orderedlist>
      <listitem>
        <para>
-         Disable the original product. This also disables any repositories associated with the product:
+         Disable the original product. This also disables all repositories associated with the product:
        </para>
 <screen>&prompt.root;<command>rmt-cli product disable 1251</command></screen>
      </listitem>
@@ -78,6 +78,9 @@
          If your previous subscription included the &ha; extension, disable this product too:
        </para>
 <screen>&prompt.root;<command>rmt-cli product disable 1252</command></screen>
+       <para>
+         &ha; is not supported with &reponame; &productnumber;.
+       </para>
      </listitem>
      <listitem>
        <para>
@@ -85,7 +88,7 @@
        </para>
 <screen>&prompt.root;<command>rmt-cli repos clean</command></screen>
      </listitem>
-   </orderedlist-->
+   </orderedlist>
  </important>
 
  <procedure xml:id="pro-mirror-repositories-with-rmt">
