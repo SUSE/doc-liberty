@@ -44,6 +44,14 @@
   </meta>
   <revhistory xml:id="rh-art-quickstart">
     <revision>
+      <date>2024-07-08</date>
+      <revdescription>
+        <para>
+          Registration script now installs <package>yum-utils</package>.
+        </para>
+      </revdescription>
+    </revision>
+    <revision>
       <date>2024-07-01</date>
       <revdescription>
         <para>
