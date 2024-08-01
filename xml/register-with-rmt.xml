@@ -31,7 +31,7 @@
   <title>Requirements</title>
   <listitem>
    <para>
-    The &rmt; server is running <package>rmt-server</package> version 2.15 or later.
+    The &rmt; server is running <package>rmt-server</package> version 2.18 or later.
    </para>
   </listitem>
   <listitem>
@@ -94,14 +94,15 @@
 
  <procedure xml:id="pro-register-rhel-with-rmt">
   <title>Registering <phrase audience="sll">&rhla; or </phrase>CentOS Linux with &rmt;</title>
-  <step><!-- Temporary script until the new one is available from RMT
+  <step>
    <para>
     Download the <filename>rmt-client-setup-res</filename> script:
    </para>
-<screen>&prompt.root;<command>curl http://<replaceable>RMT_SERVER</replaceable>/tools/rmt-client-setup-res -/-output rmt-client-setup-res</command></screen-->
+<screen>&prompt.root;<command>curl http://<replaceable>RMT_SERVER</replaceable>/tools/rmt-client-setup-res --output rmt-client-setup-res</command></screen>
+<!-- ##Temporary script until the new one is available from RMT
    <para>
     Save the script in <xref linkend="app-temp-script"/> as <filename>rmt-client-setup-res</filename>.
-   </para>
+   </para-->
   </step>
   <step>
    <para>
