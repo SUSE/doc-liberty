@@ -44,6 +44,14 @@
   </meta>
   <revhistory xml:id="rh-art-quickstart">
     <revision>
+      <date>2024-08-01</date>
+      <revdescription>
+        <para>
+          New registration script released with <package>rmt-server</package> version 2.18.
+        </para>
+      </revdescription>
+    </revision>
+    <revision>
       <date>2024-07-08</date>
       <revdescription>
         <para>
@@ -296,6 +304,6 @@
     </varlistentry>
   </variablelist>
  </section>
- <xi:include href="app-temp-script.xml"/>
+ <!--xi:include href="app-temp-script.xml"/-->
  <xi:include href="common_legal.xml"/>
 </article>
