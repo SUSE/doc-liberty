@@ -22,8 +22,8 @@
   <xi:include href="common_copyright_gfdl.xml"/>
   <abstract>
    <para>
-    This guide describes how to use &productname; to update &rhel;&nbsp;&productnumber;
-    or CentOS&nbsp;Linux&nbsp;&productnumber;.
+    Registering with &smt; is no longer supported in &productname; LTSS &productnumber;.
+    This guide now contains guidance for migrating from &smt; to &rmt;.
    </para>
   </abstract>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
@@ -36,8 +36,8 @@
    <dm:editurl>https://github.com/SUSE/doc-liberty/edit/maintenance/SLL7/xml/</dm:editurl>
    <dm:translation>no</dm:translation>
   </dm:docmanager>
-  <meta name="description" its:translate="yes">How to use SUSE Liberty Linux and SMT to update Red Hat Enterprise Linux 7 or CentOS Linux 7.</meta>
-  <meta name="social-descr" its:translate="yes">Use SUSE Liberty Linux to update RHEL 7 or CentOS 7.</meta>
+  <meta name="description" its:translate="yes">Registering SUSE Liberty Linux 7 with SMT is no longer supported. You can migrate from SMT to RMT.</meta>
+  <meta name="social-descr" its:translate="yes">Registering with SMT is not supported. Migrate to RMT.</meta>
   <meta name="task" its:translate="yes">
     <phrase>Upgrade &amp; Update</phrase>
     <phrase>Administration</phrase>
