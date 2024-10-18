@@ -74,13 +74,13 @@
        <para>
          Disable the original product. This also disables all repositories associated with the product:
        </para>
-<screen>&prompt.root;<command>rmt-cli product disable 1251</command></screen>
+<screen>&prompt.root;<command>rmt-cli products disable 1251</command></screen>
      </listitem>
      <listitem>
        <para>
          If your previous subscription included the &ha; extension, disable this product too:
        </para>
-<screen>&prompt.root;<command>rmt-cli product disable 1252</command></screen>
+<screen>&prompt.root;<command>rmt-cli products disable 1252</command></screen>
        <para>
          &ha; is not supported with &reponame; &productnumber;.
        </para>
@@ -112,7 +112,7 @@
    <para>
     Enable &reponame; &productnumber; using the product ID <literal>2702</literal>:
    </para>
-<screen>&prompt.root;<command>rmt-cli product enable 2702</command></screen>
+<screen>&prompt.root;<command>rmt-cli products enable 2702</command></screen>
    <para>
     This enables the default <literal>RES-7-LTSS-Updates</literal> repository.
    </para>
@@ -127,19 +127,19 @@
        <para>
          <literal>RES-7-BASE-Updates</literal>:
        </para>
-<screen>&prompt.root;<command>rmt-cli repo enable 6986</command></screen>
+<screen>&prompt.root;<command>rmt-cli repos enable 6986</command></screen>
      </listitem>
 <listitem>
        <para>
          <literal>RES-7-LTSS-Source-Updates</literal> and <literal>RES-7-BASE-Source-Updates</literal>:
        </para>
-<screen>&prompt.root;<command>rmt-cli repo enable 6748 6987</command></screen>
+<screen>&prompt.root;<command>rmt-cli repos enable 6748 6987</command></screen>
      </listitem>
      <listitem>
        <para>
          <literal>RES-7-LTSS-Debug-Updates</literal> and <literal>RES-7-BASE-Debug-Updates</literal>:
        </para>
-<screen>&prompt.root;<command>rmt-cli repo enable 6985 6988</command></screen>
+<screen>&prompt.root;<command>rmt-cli repos enable 6985 6988</command></screen>
      </listitem>
    </itemizedlist>
    <tip role="compact">
