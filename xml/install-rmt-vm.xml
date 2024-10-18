@@ -65,11 +65,10 @@
       <important>
         <title>&reponame; &productnumber; repository size</title>
         <para>
-          The &reponame; repositories will grow over time because older package
-          versions are not removed. To meet the 1.5x size recommendation, based on the
-          current<footnote><para>As of 17 September, 2024</para></footnote> size of the default
-          &reponame; &productnumber; repositories, you will need approximately 225&nbsp;GB
-          of disk space available for the &rmt; server.
+          The &reponame; repositories will grow over time because older package versions are not
+          removed. Based on the current<footnote><para>As of 17 September, 2024</para></footnote>
+          size of the &reponame; &productnumber; repositories, to meet the 1.5x size recommendation
+          you will need approximately 225&nbsp;GB of disk space available for the &rmt; server.
         </para>
         <para>
           If you also need the <literal>Source</literal> and <literal>Debug</literal>
@@ -149,7 +148,7 @@
       <para>
         If you did not already increase the VM's disk space before the installation began,
         increase it now. You might need to shut down the VM to do so. The VM must have enough
-        space to mirror the &reponame; &productnumber; repository.
+        space to mirror the &reponame; &productnumber; repositories.
       </para>
     </step>
   </procedure>

@@ -302,6 +302,45 @@
       </orderedlist>
       </listitem>
     </varlistentry>
+    <varlistentry>
+      <term><command>yum update</command> fails with <literal>[Errno 14] HTTPS Error 404 - Not Found</literal></term>
+      <listitem>
+        <para>
+          The repository shown in the error message might not be mirrored on the &rmt; server.
+          The optional <literal>BASE</literal>, <literal>Source</literal> and <literal>Debug</literal>
+          repositories can be enabled with <command>yum-config-manager</command> even if they are
+          not available from &rmt;.
+        </para>
+        <para>
+
+        </para>
+        <orderedlist>
+          <listitem>
+            <para>
+              Run <command>yum repolist all</command> to show the status of the repositories.
+            </para>
+          </listitem>
+          <listitem>
+            <para>
+              If the repository shown in the error message has the status
+              <literal>enabled</literal>, disable it with the following command:
+            </para>
+<screen>&prompt.root;<command>yum-config-manager --disable <replaceable>REPO_ID</replaceable></command></screen>
+          </listitem>
+          <listitem>
+            <para>
+              Run <command>yum update</command> again to see if the issue is resolved.
+            </para>
+          </listitem>
+          <listitem>
+            <para>
+              If you need the unavailable repository for your system, see
+              <xref linkend="mirror-repositories-with-rmt"/>.
+            </para>
+          </listitem>
+        </orderedlist>
+      </listitem>
+    </varlistentry>
   </variablelist>
  </section>
  <!--xi:include href="app-temp-script.xml"/-->

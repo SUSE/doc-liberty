@@ -175,11 +175,33 @@ Installed Products:
    <para>
     Verify the available repositories:
    </para>
-<screen>&prompt.root;<command>yum repolist</command></screen>
+<screen>&prompt.root;<command>yum repolist all</command></screen>
    <para>
-    You should see <literal>RES-&productnumber;-BASE-Updates</literal> and
-    <literal>RES-&productnumber;-LTSS-Updates</literal>.
+    The default repository <literal>RES-&productnumber;-LTSS-Updates</literal> should be
+    <literal>enabled</literal>.
    </para>
+   <para>
+     You will also see optional <literal>BASE</literal>, <literal>Source</literal> and
+     <literal>Debug</literal> repositories with the status <literal>disabled</literal>.
+     Be aware that these repositories are listed even if they are not mirrored on the &rmt; server.
+     You can check the mirrored repositories by browsing the directory listing at
+     <literal>https://<replaceable>RMT_SERVER</replaceable>/repo/SUSE/Updates/</literal> or by
+     logging in to the &rmt; server and running <command>rmt-cli repos list</command>.
+   </para>
+   <tip role="compact">
+     <para>
+       <literal>BASE</literal> repositories are frozen and contain the existing packages from the
+       non-LTSS &productname; repositories. <literal>LTSS</literal> repositories contain new
+       packages for &reponame; &productnumber;.
+     </para>
+   </tip>
+  </step>
+  <step performance="optional">
+    <para>
+      If you need any of the <literal>BASE</literal>, <literal>Source</literal> or
+    <literal>Debug</literal>repositories, enable them with the following command:
+    </para>
+<screen>&prompt.root;<command>yum-config-manager --enable <replaceable>REPO_ID</replaceable></command></screen>
   </step>
   <step>
    <para>
