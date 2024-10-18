@@ -44,6 +44,14 @@
   </meta>
   <revhistory xml:id="rh-art-lite-quickstart">
     <revision>
+      <date>2024-10-18</date>
+      <revdescription>
+        <para>
+          Add more information about default and optional repositories.
+        </para>
+      </revdescription>
+    </revision>
+    <revision>
       <date>2024-08-01</date>
       <revdescription>
         <para>
