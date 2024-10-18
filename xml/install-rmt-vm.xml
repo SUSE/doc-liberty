@@ -65,15 +65,20 @@
       <important>
         <title>&reponame; &productnumber; repository size</title>
         <para>
-          The &reponame; repositories will grow over time because older package
-          versions are not removed. To meet the 1.5x size recommendation, based on the
-          current<footnote><para>As of 17 September, 2024</para></footnote> size of the default
-          &reponame; &productnumber; repositories, you will need approximately 225&nbsp;GB
-          of disk space available for the &rmt; server.
+          The &reponame; &productnumber; repositories will grow over time because older package versions are not
+          removed. Based on the current<footnote><para>As of 17 September, 2024</para></footnote>
+          size of the repositories, to meet the 1.5 times size recommendation
+          you will need approximately 15&nbsp;GB of disk space for the default
+          <literal>LTSS-Updates</literal> repository.
+          If you need the optional <literal>LTSS-Source</literal> and <literal>LTSS-Debug</literal>
+         repositories, you will need an additional 39&nbsp;GB.
         </para>
         <para>
-          If you also need the <literal>Source</literal> and <literal>Debug</literal>
-          repositories, you will need an additional 770&nbsp;GB available.
+          &reponame; &productnumber; also has optional frozen <literal>BASE</literal> repositories
+          that contain the packages from the non-LTSS
+          repositories. If you need these repositories, to meet the 1.5 times size recommendation you will need approximately
+          210&nbsp;GB for the <literal>BASE-Updates</literal> repository and 730&nbsp;GB for the
+          <literal>BASE-Source</literal> and <literal>BASE-Debug</literal> repositories.
         </para>
       </important>
     </listitem>
@@ -149,7 +154,7 @@
       <para>
         If you did not already increase the VM's disk space before the installation began,
         increase it now. You might need to shut down the VM to do so. The VM must have enough
-        space to mirror the &reponame; &productnumber; repository.
+        space to mirror the &reponame; &productnumber; repositories.
       </para>
     </step>
   </procedure>
