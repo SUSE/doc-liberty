@@ -65,15 +65,14 @@
       <important>
         <title>&reponame; &productnumber; repository size</title>
         <para>
-          The &reponame; repositories will grow over time because older package
-          versions are not removed. To meet the 1.5x size recommendation, based on the
-          current<footnote><para>As of 17 September, 2024</para></footnote>
-          size of the &reponame; &productnumber; repositories, you will need approximately
-          320&nbsp;GB of disk space available for the &rmt; server.
+          The &reponame; &productnumber; repositories will grow over time because older package versions
+          are not removed. Based on the current<footnote><para>As of 21 October, 2024</para></footnote>
+          size of the repositories, to meet the 1.5 times size recommendation you will need
+          approximately 335&nbsp;GB of disk space for the default repositories.
         </para>
         <para>
-          If you also need the <literal>Source</literal> and <literal>Debug</literal>
-          repositories, you will need an additional 625&nbsp;GB available.
+          If you need the optional <literal>Source</literal> and <literal>Debug</literal>
+          repositories, you will need an additional 665&nbsp;GB available.
         </para>
       </important>
     </listitem>
