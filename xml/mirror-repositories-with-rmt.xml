@@ -66,7 +66,7 @@
    <para>
     Enable &reponame; &productnumber; using the product ID <literal>1921</literal>:
    </para>
-<screen>&prompt.root;<command>rmt-cli product enable 1921</command></screen>
+<screen>&prompt.root;<command>rmt-cli products enable 1921</command></screen>
    <para>
     This enables all the default repositories associated with the product.
    </para>
@@ -76,7 +76,7 @@
     If your subscription includes the &ha; extension, enable the extension using
     the product ID <literal>1922</literal>:
    </para>
-<screen>&prompt.root;<command>rmt-cli product enable 1922</command></screen>
+<screen>&prompt.root;<command>rmt-cli products enable 1922</command></screen>
    <tip role="compact">
     <para>
      To check whether the &ha; extension is available, run this
@@ -87,10 +87,30 @@
   <step>
    <para>
     If you also need the <literal>Source</literal> or <literal>Debug</literal>
-    repositories, find and enable them with the following commands:
+    repositories, enable them with the following commands:
    </para>
-<screen>&prompt.root;<command>rmt-cli repo list --all | grep RES-</command>
-&prompt.root;<command>rmt-cli repo enable <replaceable>REPO_ID</replaceable></command></screen>
+   <itemizedlist>
+     <listitem>
+       <para>
+         <literal>RES-8-Source-Updates</literal>, <literal>RES-AS-8-Source-Updates</literal> and
+         <literal>RES-CB-8-Source-Updates</literal>:
+       </para>
+<screen>&prompt.root;<command>rmt-cli repos enable 3879 3922 3925</command></screen>
+     </listitem>
+     <listitem>
+       <para>
+         <literal>RES-8-Debug-Updates</literal>, <literal>RES-AS-8-Debug-Updates</literal> and
+         <literal>RES-CB-8-Debug-Updates</literal>:
+       </para>
+<screen>&prompt.root;<command>rmt-cli repos enable 3881 3923 3926</command></screen>
+     </listitem>
+     <listitem>
+       <para>
+         <literal>RES-8-HA-Source-Updates</literal> and <literal>RES-8-HA-Debug-Updates</literal>:
+       </para>
+<screen>&prompt.root;<command>rmt-cli repos enable 3883 3884</command></screen>
+     </listitem>
+   </itemizedlist>
   </step>
   <step>
    <para>

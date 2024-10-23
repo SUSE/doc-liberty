@@ -44,6 +44,14 @@
   </meta>
   <revhistory xml:id="rh-art-quickstart">
     <revision>
+      <date>2024-10-23</date>
+      <revdescription>
+        <para>
+          Add more information about default and optional repositories.
+        </para>
+      </revdescription>
+    </revision>
+    <revision>
       <date>2024-06-27</date>
       <revdescription>
         <para>
@@ -260,6 +268,43 @@
      </orderedlist>
     </listitem>
    </varlistentry>
+   <varlistentry>
+      <term><command>dnf update</command> fails with <literal>Errors during downloading metadata for repository &mdash; Status code: 404</literal></term>
+      <listitem>
+        <para>
+          The repository shown in the error message might not be mirrored on the &rmt; server.
+          The optional <literal>Source</literal> and <literal>Debug</literal> repositories can be
+          enabled with <command>dnf config-manager</command> even if they are not available from &rmt;.
+        </para>
+        <para>
+        </para>
+        <orderedlist>
+          <listitem>
+            <para>
+              Run <command>dnf repolist all</command> to show the status of the repositories.
+            </para>
+          </listitem>
+          <listitem>
+            <para>
+              If the repository shown in the error message has the status
+              <literal>enabled</literal>, disable it with the following command:
+            </para>
+<screen>&prompt.root;<command>dnf config-manager --disable <replaceable>REPO_ID</replaceable></command></screen>
+          </listitem>
+          <listitem>
+            <para>
+              Run <command>dnf update</command> again to see if the issue is resolved.
+            </para>
+          </listitem>
+          <listitem>
+            <para>
+              If you need the unavailable repository for your system, see
+              <xref linkend="mirror-repositories-with-rmt"/>.
+            </para>
+          </listitem>
+        </orderedlist>
+      </listitem>
+    </varlistentry>
   </variablelist>
  </section>
  <xi:include href="common_legal.xml"/>

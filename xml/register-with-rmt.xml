@@ -138,17 +138,6 @@ Installed Products:
   </step>
   <step>
    <para>
-    Verify the available repositories:
-   </para>
-<screen>&prompt.root;<command>dnf repolist</command></screen>
-   <para>
-    You should see <literal>RES-&productnumber;-Updates</literal>,
-    <literal>RES-AS-&productnumber;-Updates</literal>,
-    and <literal>RES-CB-&productnumber;-Updates</literal>.
-   </para>
-  </step>
-  <step>
-   <para>
     If your subscription includes the &ha; extension, activate it with the
     following command:
    </para>
@@ -159,6 +148,34 @@ Installed Products:
      <command>&suseconnect; --list-extensions</command> command.
     </para>
    </tip>
+  </step>
+  <step>
+   <para>
+    Verify the available repositories:
+   </para>
+<screen>&prompt.root;<command>dnf repolist all</command></screen>
+   <para>
+    The default repositories <literal>RES-&productnumber;-Updates</literal>,
+    <literal>RES-AS-&productnumber;-Updates</literal> and
+    <literal>RES-CB-&productnumber;-Updates</literal> should be <literal>enabled</literal>.
+    If you activated the &ha; extension, <literal>RES-8-HA-Updates</literal> should also be
+    <literal>enabled</literal>.
+   </para>
+   <para>
+     You will also see optional <literal>Source</literal> and <literal>Debug</literal>
+     repositories with the status <literal>disabled</literal>. Be aware that these
+     repositories are listed even if they are not mirrored on the &rmt; server.
+     You can check the mirrored repositories by browsing the directory listing at
+     <literal>https://<replaceable>RMT_SERVER</replaceable>/repo/SUSE/Updates/</literal>
+     or by logging in to the &rmt; server and running <command>rmt-cli repos list</command>.
+   </para>
+  </step>
+  <step>
+    <para>
+      If you need the <literal>Source</literal> or <literal>Debug</literal> repositories,
+      enable them with the following command:
+    </para>
+<screen>&prompt.root;<command>dnf config-manager --enable <replaceable>REPO_ID</replaceable></command></screen>
   </step>
   <step>
    <para>
