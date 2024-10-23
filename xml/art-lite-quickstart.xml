@@ -97,7 +97,8 @@
    <para>
      &rmt; is a proxy system for the &scc;. The &rmt; server is registered with the &scc;,
      and other systems in the network are registered with the &rmt; server and receive
-     packages from it directly.
+     packages from it directly. Registering CentOS Linux&nbsp;&productnumber; directly with the
+     &scc; is not currently supported.
    </para>
    <important role="compact">
     <para>

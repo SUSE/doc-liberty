@@ -152,7 +152,7 @@
    </important>
    <para>
     You can register &rhla; &productnumber; or CentOS Linux &productnumber; with either
-    &suma; or the &rmtool; (&rmt;).
+    &suma; or the &rmtool; (&rmt;). Registering directly with the &scc; is not currently supported.
    </para>
    <para>
     This guide describes how to register with an &rmt; server. &rmt; is a proxy system for the
