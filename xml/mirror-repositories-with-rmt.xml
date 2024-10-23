@@ -65,7 +65,7 @@
    <para>
     Enable &reponame; &productnumber; using the product ID <literal>2538</literal>:
    </para>
-<screen>&prompt.root;<command>rmt-cli product enable 2538</command></screen>
+<screen>&prompt.root;<command>rmt-cli products enable 2538</command></screen>
    <para>
     This enables all the default repositories associated with the product.
    </para>
@@ -75,7 +75,7 @@
     If your subscription includes the &ha; extension, enable the extension using
     the product ID <literal>2539</literal>:
    </para>
-<screen>&prompt.root;<command>rmt-cli product enable 2539</command></screen>
+<screen>&prompt.root;<command>rmt-cli products enable 2539</command></screen>
    <tip role="compact">
     <para>
      To check whether the &ha; extension is available, run this
@@ -86,10 +86,30 @@
   <step>
    <para>
     If you also need the <literal>Source</literal> or <literal>Debug</literal>
-    repositories, find and enable them with the following commands:
+    repositories, enable them with the following commands:
    </para>
-<screen>&prompt.root;<command>rmt-cli repo list --all | grep SLL-</command>
-&prompt.root;<command>rmt-cli repo enable <replaceable>REPO_ID</replaceable></command></screen>
+   <itemizedlist>
+     <listitem>
+       <para>
+         <literal>SLL-9-Source-Updates</literal>, <literal>SLL-AS-9-Source-Updates</literal> and
+         <literal>SLL-CB-9-Source-Updates</literal>:
+       </para>
+<screen>&prompt.root;<command>rmt-cli repos enable 5964 5967 5970</command></screen>
+     </listitem>
+     <listitem>
+       <para>
+         <literal>SLL-9-Debug-Updates</literal>, <literal>SLL-AS-9-Debug-Updates</literal> and
+         <literal>SLL-CB-9-Debug-Updates</literal>:
+       </para>
+<screen>&prompt.root;<command>rmt-cli repos enable 5965 5968 5971</command></screen>
+     </listitem>
+     <listitem>
+       <para>
+         <literal>SLL-9-HA-Source-Updates</literal> and <literal>SLL-9-HA-Debug-Updates</literal>:
+       </para>
+<screen>&prompt.root;<command>rmt-cli repos enable 5973 5974</command></screen>
+     </listitem>
+   </itemizedlist>
   </step>
   <step>
    <para>
