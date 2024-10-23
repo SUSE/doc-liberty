@@ -91,20 +91,9 @@
     </para>
    </important>
    <para>
-    You can register &rhla; &productnumber; with one of the following tools:
+    You can register &rhla; &productnumber; with either &suma; or the &rmtool; (&rmt;).
+    Registering directly with the &scc; is not currently supported.
    </para>
-   <itemizedlist>
-     <listitem>
-       <para>
-         &rmtool; (&rmt;)
-       </para>
-     </listitem>
-     <listitem>
-       <para>
-         &suma;
-       </para>
-     </listitem>
-   </itemizedlist>
    <para>
     This guide describes how to register with an &rmt; server. &rmt; is a proxy system for the
     &scc;. The &rmt; server is registered with the &scc;, and other systems in the network are
