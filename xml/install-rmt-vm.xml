@@ -22,11 +22,17 @@
     Use this procedure to install a &minvm;, a preconfigured virtual machine image that contains a slimmed-down version of &sles; (&slsa;). This machine will be the &rmtool; (&rmt;) server.
     You can use your &productname; subscription to register this machine.
   </para>
-  <tip role="compact">
+  <tip>
+    <title>Other installation options</title>
     <para>
-      If you would prefer to install a full &slsa; machine on bare metal, see
+      To install a full &slsa; machine on bare metal, see
       <link xlink:href="https://documentation.suse.com/sles-15/html/SLES-all/article-installation.html">
       <citetitle>&instquick;</citetitle></link>.
+    </para>
+    <para>
+      To deploy &slsa; in the public cloud, see
+      <link xlink:href="https://documentation.suse.com/sles-15/single-html/SLES-rmt/#rmt-public-cloud">
+      Deploying a &sles; instance to support &rmt; in the public cloud</link> in <citetitle>&rmtguide;</citetitle>.
     </para>
   </tip>
   <itemizedlist>
