@@ -15,7 +15,7 @@
  xmlns:xlink="http://www.w3.org/1999/xlink">
 
  <info>
-  <title>Registering &rhla; &productnumber; or CentOS Linux &productnumber; with RMT</title>
+  <title>Registering &rhla; &productnumber; or CentOS Linux &productnumber; with &rmt;</title>
   <productname>&productname;</productname>
   <productname role="abbrev">&productnameshort;</productname>
   <date><?dbtimestamp format="B d, Y"?></date>
