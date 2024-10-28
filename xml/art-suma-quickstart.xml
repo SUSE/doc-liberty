@@ -22,8 +22,12 @@
   <xi:include href="common_copyright_gfdl.xml"/>
   <abstract>
    <para>
-    This guide describes how to use &productname; to update &rhel;&nbsp;&productnumber;
-    or CentOS&nbsp;Linux&nbsp;&productnumber;.
+    This guide explains how to register and update &rhla;&nbsp;&productnumber; or
+    CentOS&nbsp;Linux&nbsp;&productnumber; with &suma;.
+   </para>
+   <para>
+    To register with &rmt;, see <link xlink:href="https://documentation.suse.com/liberty/8/html/quickstart/art-quickstart.html">
+    <citetitle>Registering &rhla; 8 or CentOS Linux 8 with &rmt;</citetitle></link>.
    </para>
   </abstract>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
@@ -36,15 +40,15 @@
    <dm:editurl>https://github.com/SUSE/doc-liberty/edit/main/xml/</dm:editurl>
    <dm:translation>no</dm:translation>
   </dm:docmanager>  <meta name="title" its:translate="yes">Registering &rhla; &productnumber; or CentOS Linux 8 with &suma;</meta>
-  <meta name="description" its:translate="yes">How to use SUSE Liberty Linux to update Red Hat Enterprise Linux 8 or CentOS Linux 8.</meta>
-  <meta name="social-descr" its:translate="yes">Use SUSE Liberty Linux to update RHEL 8 or CentOS 8.</meta>
+  <meta name="description" its:translate="yes">How to use SUSE Liberty Linux and SUSE Manager to update RHEL 8 or CentOS Linux 8.</meta>
+  <meta name="social-descr" its:translate="yes">Use SUSE Manager to update RHEL 8 or CentOS 8.</meta>
   <meta name="task" its:translate="yes">
     <phrase>Upgrade &amp; Update</phrase>
     <phrase>Administration</phrase>
   </meta>
   <revhistory xml:id="rh-art-suma-quickstart">
     <revision>
-      <date>2024-10-25</date>
+      <date>2024-10-28</date>
       <revdescription>
         <para>
           Initial guide creation.
@@ -58,21 +62,82 @@
     <title>Introduction</title>
     <para>
     &productname; is a technology and support solution for mixed Linux environments.
-    With a &productname; subscription, you can register and receive updates for
-    &rhel;, CentOS Linux, and &sles;. An optional &ha; extension is also available.
+    With a &productname; subscription, you can register and update &rhel; and CentOS Linux.
+    An optional &ha; extension is also available.
    </para>
+   <para>
+    The following table shows which Linux distributions are supported by each subscription. These subscriptions also include an entitlement for a registration tool to manage package updates.
+   </para>
+   <table xml:id="supported-distros-and-reg-tools">
+     <title>Supported distributions and registration options</title>
+     <tgroup cols="3">
+     <colspec colname="c1" colwidth="31%"/>
+     <colspec colname="c2" colwidth="38%"/>
+     <colspec colname="c3" colwidth="31%"/>
+       <thead>
+         <row>
+           <entry>Subscription</entry>
+           <entry>Supported distributions</entry>
+           <entry>Registration options</entry>
+         </row>
+       </thead>
+       <tbody>
+         <row>
+           <entry><para><emphasis>&productname; Enterprise</emphasis></para></entry>
+           <entry>
+            <para>CentOS Linux</para>
+            <para>&rhel;</para>
+            <para>&sles;</para>
+           </entry>
+           <entry>
+            <para>&suma;</para>
+            <para>&rmtool;</para>
+           </entry>
+         </row>
+         <row>
+           <entry><para><emphasis>&productname; Professional</emphasis></para></entry>
+           <entry>
+            <para>CentOS Linux</para>
+            <para>&rhel;</para>
+           </entry>
+           <entry><para>&suma;</para></entry>
+         </row>
+         <row>
+           <entry><para><emphasis>&productname; Basic</emphasis></para></entry>
+           <entry><para>CentOS Linux</para></entry>
+           <entry><para>&suma;</para></entry>
+         </row>
+         <row>
+           <entry><para><emphasis>&productname; Lite</emphasis></para></entry>
+           <entry>
+            <para>CentOS Linux</para>
+            <para>Includes <emphasis>one</emphasis> entitlement for &slsa; to host &rmt;</para>
+           </entry>
+           <entry><para>&rmtool;</para></entry>
+         </row>
+       </tbody>
+     </tgroup>
+   </table>
    <important role="compact">
     <para>
      CentOS&nbsp;Stream is not supported.
     </para>
    </important>
+   <important role="compact">
+    <para>
+      Registering &rhla; or CentOS Linux directly with &scc; is not currently supported.
+    </para>
+   </important>
    <para>
-    You can register &rhla; &productnumber; or CentOS Linux &productnumber; with either &suma;
-    or the &rmtool; (&rmt;). Registering directly with the &scc; is not currently supported.
+    This guide describes how to register with &suma;. &suma; is a lifecycle management system for
+    mixed Linux environments. The &suma; Server is registered with &scc;, and other systems are
+    registered as clients of &suma; and receive packages from it directly.
    </para>
    <para>
-    This guide describes how to register with &suma;.
+    To register with &rmtool;, see <link xlink:href="https://documentation.suse.com/liberty/8/html/quickstart/art-quickstart.html">
+    <citetitle>Registering &rhla; 8 or CentOS Linux 8 with &rmt;</citetitle></link>.
    </para>
+
    <itemizedlist>
     <title>Procedure overview</title>
     <listitem>
@@ -102,6 +167,17 @@
    <itemizedlist>
     <title>Related information</title>
     <listitem>
+      <para>
+        <link xlink:href="https://documentation.suse.com/suma/">&suma; documentation</link>
+      </para>
+    </listitem>
+    <listitem>
+     <para>
+      <link xlink:href="https://documentation.suse.com/liberty/7/html/suma-quickstart/art-suma-quickstart.html">
+      <citetitle>Registering &rhla; 7 or CentOS Linux 7 with &suma;</citetitle></link>
+     </para>
+    </listitem>
+    <listitem>
      <para>
       <link xlink:href="https://documentation.suse.com/liberty/7/html/quickstart/art-quickstart.html">
       <citetitle>Registering &rhla; 7 or CentOS Linux 7 with &rmt;</citetitle></link>
@@ -115,6 +191,12 @@
     </listitem>
     <listitem>
      <para>
+      <link xlink:href="https://documentation.suse.com/liberty/9/html/suma-quickstart/art-suma-quickstart.html">
+      <citetitle>Registering &rhla; 9 with &suma;</citetitle></link>
+     </para>
+    </listitem>
+    <listitem>
+     <para>
       <link xlink:href="https://documentation.suse.com/liberty/9/html/quickstart/art-quickstart.html">
       <citetitle>Registering &rhla; 9 with &rmt;</citetitle></link>
      </para>
@@ -125,15 +207,19 @@
   <section xml:id="deploy-suma">
     <title>Deploying &suma;</title>
     <para>
-      <link xlink:href="https://documentation.suse.com/suma/5.0/en/suse-manager/installation-and-upgrade/installation-and-upgrade-overview.html">Installation and Upgrade Guide</link> or
-      <link xlink:href="https://documentation.suse.com/suma/5.0/en/suse-manager/quickstart/quickstart-overview.html">Quick Start</link>.
+      Add size recommendations here.
+    </para>
+    <para>
+      <link xlink:href="https://documentation.suse.com/suma/5.0/en/suse-manager/quickstart/container-deployment/suma/quickstart-deploy-suma-server.html">
+      <citetitle>&suma; Quick Start</citetitle>: Deploy &suma; Server</link>.
     </para>
   </section>
 
   <section xml:id="register-8-with-suma">
     <title>Registering &rhla; or CentOS Linux with &suma;</title>
     <para>
-      <link xlink:href="https://documentation.suse.com/suma/5.0/en/suse-manager/client-configuration/clients-sleses.html">Registering SUSE Liberty Linux Clients</link>.
+      <link xlink:href="https://documentation.suse.com/suma/5.0/en/suse-manager/client-configuration/clients-sleses.html">
+      <citetitle>&suma; Client Configuration Guide</citetitle>: Registering &sliberty; Clients</link>.
     </para>
   </section>
 
