@@ -48,7 +48,7 @@
   </meta>
   <revhistory xml:id="rh-art-suma-quickstart">
     <revision>
-      <date>2024-10-28</date>
+      <date>2024-10-29</date>
       <revdescription>
         <para>
           Initial guide creation.
@@ -207,20 +207,54 @@
   <section xml:id="deploy-suma">
     <title>Deploying &suma;</title>
     <para>
-      Add size recommendations here.
-    </para>
-    <para>
+      See the following guide to install &suma; on &slem;, a lightweight, immutable operating system for containerized and virtual workloads:
       <link xlink:href="https://documentation.suse.com/suma/5.0/en/suse-manager/quickstart/container-deployment/suma/quickstart-deploy-suma-server.html">
       <citetitle>&suma; Quick Start</citetitle>: Deploy &suma; Server</link>.
     </para>
+    <para>
+      You can use most &productname; subscriptions to register this machine. However, the <emphasis>Lite</emphasis> subscription only includes an entitlement for &rmt;, so if you want to use &suma; instead you will need a separate &suma; subscription.
+    </para>
+    <tip>
+      <title>Other installation options</title>
+      <para>
+        For additional installation options, see the full
+        <link xlink:href="https://documentation.suse.com/suma/5.0/en/suse-manager/installation-and-upgrade/installation-and-upgrade-overview.html">
+        <citetitle>&suma; Installation and Upgrade Guide</citetitle></link>.
+      </para>
+      <para>
+        To deploy &suma; in the public cloud, see
+        <link xlink:href="https://documentation.suse.com/suma/5.0/en/suse-manager/specialized-guides/public-cloud-guide/overview.html">
+        <citetitle>&suma; Public Cloud Guide</citetitle></link>.
+      </para>
+    </tip>
+    <important>
+      <title>&reponame; &productnumber; repository size</title>
+      <para>
+        The &reponame; &productnumber; repositories will grow over time because older package versions
+        are not removed. Based on the current<footnote><para>As of 22 October, 2024</para></footnote>
+        size of the repositories, to meet the 1.5 times size recommendation you will need
+        approximately 515&nbsp;GB of disk space for the default repositories.
+      </para>
+      <para>
+        If you need the optional <literal>Source</literal> and <literal>Debug</literal>
+        repositories, you will need an additional 1365&nbsp;GB available.
+      </para>
+    </important>
   </section>
 
   <section xml:id="register-8-with-suma">
     <title>Registering &rhla; or CentOS Linux with &suma;</title>
     <para>
+      See the following guide to register &rhel; &productnumber; or CentOS Linux &productnumber;
+      with &suma;:
       <link xlink:href="https://documentation.suse.com/suma/5.0/en/suse-manager/client-configuration/clients-sleses.html">
       <citetitle>&suma; Client Configuration Guide</citetitle>: Registering &sliberty; Clients</link>.
     </para>
+    <important role="compact">
+      <para>
+      CentOS Stream is not supported.
+      </para>
+    </important>
   </section>
 
  <xi:include href="common_legal.xml"/>
