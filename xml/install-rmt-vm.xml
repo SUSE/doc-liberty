@@ -21,7 +21,12 @@
   <para>
     Use this procedure to install a &minvm;, a preconfigured virtual machine image that contains a
     slimmed-down version of &sles; (&slsa;). This machine will be the &rmtool; (&rmt;) server.
-    You can use your &productname; subscription to register this machine.
+  </para>
+  <para>
+    You can use your &productname; <emphasis>Lite</emphasis> or <emphasis>Enterprise</emphasis>
+    subscription to register this machine. <emphasis>Basic</emphasis> and
+    <emphasis>Professional</emphasis> do not include an entitlement for &slsa;, so you
+    will need a separate &slsa; subscription if you want to use &rmt; instead of &suma;.
   </para>
   <tip>
     <title>Other installation options</title>
