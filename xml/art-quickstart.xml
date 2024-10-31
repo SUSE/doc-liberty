@@ -25,7 +25,8 @@
     This guide explains how to register and update &rhla;&nbsp;&productnumber; with &rmtool; (&rmt;).
    </para>
    <para>
-    To register with &suma;, see <link xlink:href="https://documentation.suse.com/liberty/9/html/suma-quickstart/art-suma-quickstart.html">
+    To register with &suma;, see
+    <link xlink:href="https://documentation.suse.com/liberty/9/html/suma-quickstart/art-suma-quickstart.html">
     <citetitle>Registering &rhla; &productnumber; with &suma;</citetitle></link>.
    </para>
   </abstract>
@@ -39,7 +40,7 @@
    <dm:editurl>https://github.com/SUSE/doc-liberty/edit/main/xml/</dm:editurl>
    <dm:translation>no</dm:translation>
   </dm:docmanager>
-  <meta name="title" its:translate="yes">Registering &rhla; &productnumber; with RMT</meta>
+  <meta name="title" its:translate="yes">Registering &rhla; &productnumber; with &rmt;</meta>
   <meta name="description" its:translate="yes">How to use SUSE Liberty Linux and RMT to update Red Hat Enterprise Linux 9.</meta>
   <meta name="social-descr" its:translate="yes">How to use RMT to update RHEL 9.</meta>
   <meta name="task" its:translate="yes">
@@ -98,7 +99,8 @@
     An optional &ha; extension is also available.
    </para>
    <para>
-    The following table shows which Linux distributions are supported by each subscription. These subscriptions also include an entitlement for a registration tool to manage package updates.
+    The following table shows which Linux distributions are supported by each subscription. These
+    subscriptions also include an entitlement for a registration tool to manage package updates.
    </para>
    <table xml:id="supported-distros-and-reg-tools">
      <title>Supported distributions and registration options</title>
@@ -111,8 +113,8 @@
            <entry>Subscription<footnote><para>The <emphasis>Lite</emphasis> and
            <emphasis>Basic</emphasis> subscriptions only support CentOS Linux,
            so are not applicable to &productname;&nbsp;&productnumber;.</para></footnote></entry>
-           <entry>Supported distributions<footnote><para>There is no CentOS Linux &productnumber;,
-           so CentOS Linux support is not applicable to &productname;&nbsp;&productnumber;.</para></footnote></entry>
+           <entry>Supported distributions<footnote><para>There is no CentOS Linux &productnumber;, so
+           CentOS Linux support is not applicable to &productname;&nbsp;&productnumber;.</para></footnote></entry>
            <entry>Registration options</entry>
          </row>
        </thead>
@@ -156,7 +158,8 @@
     the &rmt; server and receive packages from it directly.
    </para>
    <para>
-    To register with &suma;, see <link xlink:href="https://documentation.suse.com/liberty/9/html/suma-quickstart/art-suma-quickstart.html">
+    To register with &suma;, see
+    <link xlink:href="https://documentation.suse.com/liberty/9/html/suma-quickstart/art-suma-quickstart.html">
     <citetitle>Registering &rhla; &productnumber; with &suma;</citetitle></link>.
    </para>
 

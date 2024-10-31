@@ -65,7 +65,8 @@
     An optional &ha; extension is also available.
    </para>
    <para>
-    The following table shows which Linux distributions are supported by each subscription. These subscriptions also include an entitlement for a registration tool to manage package updates.
+    The following table shows which Linux distributions are supported by each subscription. These
+    subscriptions also include an entitlement for a registration tool to manage package updates.
    </para>
    <table xml:id="supported-distros-and-reg-tools">
      <title>Supported distributions and registration options</title>
@@ -78,8 +79,8 @@
            <entry>Subscription<footnote><para>The <emphasis>Lite</emphasis> and
            <emphasis>Basic</emphasis> subscriptions only support CentOS Linux,
            so are not applicable to &productname;&nbsp;&productnumber;.</para></footnote></entry>
-           <entry>Supported distributions<footnote><para>There is no CentOS Linux &productnumber;,
-           so CentOS Linux support is not applicable to &productname;&nbsp;&productnumber;.</para></footnote></entry>
+           <entry>Supported distributions<footnote><para>There is no CentOS Linux &productnumber;, so
+           CentOS Linux support is not applicable to &productname;&nbsp;&productnumber;.</para></footnote></entry>
            <entry>Registration options</entry>
          </row>
        </thead>
@@ -123,7 +124,8 @@
     registered as clients of &suma; and receive packages from it directly.
    </para>
    <para>
-    To register with &rmtool;, see <link xlink:href="https://documentation.suse.com/liberty/9/html/quickstart/art-quickstart.html">
+    To register with &rmtool;, see
+    <link xlink:href="https://documentation.suse.com/liberty/9/html/quickstart/art-quickstart.html">
     <citetitle>Registering &rhla; 9 with &rmt;</citetitle></link>.
    </para>
 
@@ -133,7 +135,7 @@
      <para>
       If &suma; is already set up and you only need to <emphasis role="bold">register your
       &rhla;&nbsp;&productnumber; system</emphasis>, skip straight to
-      <xref linkend="register-rhel-with-suma"/>.
+      <xref linkend="register-with-suma"/>.
      </para>
     </listitem>
     <listitem>
@@ -222,7 +224,7 @@
     </important>
   </section>
 
-  <section xml:id="register-rhel-with-suma">
+  <section xml:id="register-with-suma">
     <title>Registering &rhla; with &suma;</title>
     <para>
       See the following guide to register &rhel; &productnumber; with &suma;:
