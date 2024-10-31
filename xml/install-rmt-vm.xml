@@ -19,8 +19,14 @@
  </info>
 
   <para>
-    Use this procedure to install a &minvm;, a preconfigured virtual machine image that contains a slimmed-down version of &sles; (&slsa;). This machine will be the &rmtool; (&rmt;) server.
-    You can use your &productname; subscription to register this machine.
+    Use this procedure to install a &minvm;, a preconfigured virtual machine image that contains a
+    slimmed-down version of &sles; (&slsa;). This machine will be the &rmtool; (&rmt;) server.
+  </para>
+  <para>
+    You can use your &productname; <emphasis>Lite</emphasis> or <emphasis>Enterprise</emphasis>
+    subscription to register this machine. <emphasis>Basic</emphasis> and
+    <emphasis>Professional</emphasis> do not include an entitlement for &slsa;, so you
+    will need a separate &slsa; subscription if you want to use &rmt; instead of &suma;.
   </para>
   <tip>
     <title>Other installation options</title>
@@ -71,19 +77,18 @@
       <important>
         <title>&reponame; &productnumber; repository size</title>
         <para>
-          The &reponame; &productnumber; repositories will grow over time because older package versions are not
-          removed. Based on the current<footnote><para>As of 17 September, 2024</para></footnote>
-          size of the repositories, to meet the 1.5 times size recommendation
-          you will need approximately 15&nbsp;GB of disk space for the default
-          <literal>LTSS-Updates</literal> repository.
-          If you need the optional <literal>LTSS-Source</literal> and <literal>LTSS-Debug</literal>
-         repositories, you will need an additional 39&nbsp;GB.
+          The &reponame; &productnumber; repositories will grow over time because older package versions
+          are not removed. Based on the current<footnote><para>As of 31 October, 2024</para></footnote>
+          size of the repositories, to meet the 1.5 times size recommendation you will need
+          approximately 15&nbsp;GB of disk space for the default <literal>LTSS-Updates</literal>
+          repository. If you need the optional <literal>LTSS-Source</literal> and
+          <literal>LTSS-Debug</literal> repositories, you will need an additional 39&nbsp;GB.
         </para>
         <para>
           &reponame; &productnumber; also has optional frozen <literal>BASE</literal> repositories
-          that contain the packages from the non-LTSS
-          repositories. If you need these repositories, to meet the 1.5 times size recommendation you will need approximately
-          210&nbsp;GB for the <literal>BASE-Updates</literal> repository and 730&nbsp;GB for the
+          that contain the packages from the non-LTSS repositories. If you need these repositories,
+          to meet the 1.5 times size recommendation you will need approximately 210&nbsp;GB for the
+          <literal>BASE-Updates</literal> repository and 730&nbsp;GB for the
           <literal>BASE-Source</literal> and <literal>BASE-Debug</literal> repositories.
         </para>
       </important>

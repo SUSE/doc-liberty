@@ -1,8 +1,8 @@
 #
-# DC file for SUSE Liberty Linux with RMT
+# DC file for SUSE Liberty Linux with SUMA
 #
-MAIN="art-quickstart.xml"
-ROOTID="art-quickstart"
+MAIN="art-suma-quickstart.xml"
+ROOTID="art-suma-quickstart"
 
 PROFAUDIENCE="sll"
 PROFCONDITION="suse-product"
