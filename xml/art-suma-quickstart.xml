@@ -145,7 +145,7 @@
      <para>
       If &suma; is already set up and you only need to <emphasis role="bold">register your
       &rhla;&nbsp;&productnumber; or CentOS&nbsp;Linux&nbsp;&productnumber; system</emphasis>,
-      skip straight to <xref linkend="register-8-with-suma"/>.
+      skip straight to <xref linkend="register-with-suma"/>.
      </para>
     </listitem>
     <listitem>
@@ -246,7 +246,7 @@
     </important>
   </section>
 
-  <section xml:id="register-8-with-suma">
+  <section xml:id="register-with-suma">
     <title>Registering &rhla; or CentOS Linux with &suma;</title>
     <para>
       See the following guide to register &rhel; &productnumber; or CentOS Linux &productnumber;
