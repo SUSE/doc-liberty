@@ -27,7 +27,7 @@
    </para>
    <para>
     To register with &rmt;, see <link xlink:href="https://documentation.suse.com/liberty/8/html/quickstart/art-quickstart.html">
-    <citetitle>Registering &rhla; 8 or CentOS Linux 8 with &rmt;</citetitle></link>.
+    <citetitle>Registering &rhla; &productnumber; or CentOS Linux &productnumber; with &rmt;</citetitle></link>.
    </para>
   </abstract>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
@@ -39,7 +39,7 @@
    </dm:bugtracker>
    <dm:editurl>https://github.com/SUSE/doc-liberty/edit/main/xml/</dm:editurl>
    <dm:translation>no</dm:translation>
-  </dm:docmanager>  <meta name="title" its:translate="yes">Registering &rhla; &productnumber; or CentOS Linux 8 with &suma;</meta>
+  </dm:docmanager>  <meta name="title" its:translate="yes">Registering &rhla; &productnumber; or CentOS Linux &productnumber; with &suma;</meta>
   <meta name="description" its:translate="yes">How to use SUSE Liberty Linux and SUSE Manager to update RHEL 8 or CentOS Linux 8.</meta>
   <meta name="social-descr" its:translate="yes">Use SUSE Manager to update RHEL 8 or CentOS 8.</meta>
   <meta name="task" its:translate="yes">
@@ -48,7 +48,7 @@
   </meta>
   <revhistory xml:id="rh-art-suma-quickstart">
     <revision>
-      <date>2024-10-29</date>
+      <date>2024-10-31</date>
       <revdescription>
         <para>
           Initial guide creation.
@@ -66,7 +66,8 @@
     An optional &ha; extension is also available.
    </para>
    <para>
-    The following table shows which Linux distributions are supported by each subscription. These subscriptions also include an entitlement for a registration tool to manage package updates.
+    The following table shows which Linux distributions are supported by each subscription. These
+    subscriptions also include an entitlement for a registration tool to manage package updates.
    </para>
    <table xml:id="supported-distros-and-reg-tools">
      <title>Supported distributions and registration options</title>
@@ -135,7 +136,7 @@
    </para>
    <para>
     To register with &rmtool;, see <link xlink:href="https://documentation.suse.com/liberty/8/html/quickstart/art-quickstart.html">
-    <citetitle>Registering &rhla; 8 or CentOS Linux 8 with &rmt;</citetitle></link>.
+    <citetitle>Registering &rhla; &productnumber; or CentOS Linux &productnumber; with &rmt;</citetitle></link>.
    </para>
 
    <itemizedlist>
@@ -207,12 +208,15 @@
   <section xml:id="deploy-suma">
     <title>Deploying &suma;</title>
     <para>
-      See the following guide to install &suma; on &slem;, a lightweight, immutable operating system for containerized and virtual workloads:
+      See the following guide to install &suma; on &slem;, a lightweight, immutable
+      operating system for containerized and virtual workloads:
       <link xlink:href="https://documentation.suse.com/suma/5.0/en/suse-manager/quickstart/container-deployment/suma/quickstart-deploy-suma-server.html">
       <citetitle>&suma; Quick Start</citetitle>: Deploy &suma; Server</link>.
     </para>
     <para>
-      You can use most &productname; subscriptions to register this machine. However, the <emphasis>Lite</emphasis> subscription only includes an entitlement for &rmt;, so if you want to use &suma; instead you will need a separate &suma; subscription.
+      You can use most &productname; subscriptions to register this machine. However,
+      the <emphasis>Lite</emphasis> subscription only includes an entitlement for &rmt;,
+      so if you want to use &suma; instead you will need a separate &suma; subscription.
     </para>
     <tip>
       <title>Other installation options</title>

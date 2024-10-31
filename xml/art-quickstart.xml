@@ -27,7 +27,7 @@
    </para>
    <para>
     To register with &suma;, see <link xlink:href="https://documentation.suse.com/liberty/8/html/suma-quickstart/art-suma-quickstart.html">
-    <citetitle>Registering &rhla; 8 or CentOS Linux 8 with &suma;</citetitle></link>.
+    <citetitle>Registering &rhla; &productnumber; or CentOS Linux &productnumber; with &suma;</citetitle></link>.
    </para>
   </abstract>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
@@ -39,7 +39,7 @@
    </dm:bugtracker>
    <dm:editurl>https://github.com/SUSE/doc-liberty/edit/main/xml/</dm:editurl>
    <dm:translation>no</dm:translation>
-  </dm:docmanager>  <meta name="title" its:translate="yes">Registering &rhla; &productnumber; or CentOS Linux 8 with RMT</meta>
+  </dm:docmanager>  <meta name="title" its:translate="yes">Registering &rhla; &productnumber; or CentOS Linux &productnumber; with RMT</meta>
   <meta name="description" its:translate="yes">How to use SUSE Liberty Linux and RMT to update Red Hat Enterprise Linux 8 or CentOS Linux 8.</meta>
   <meta name="social-descr" its:translate="yes">Use RMT to update RHEL 8 or CentOS 8.</meta>
   <meta name="task" its:translate="yes">
@@ -48,7 +48,7 @@
   </meta>
   <revhistory xml:id="rh-art-quickstart">
     <revision>
-      <date>2024-10-29</date>
+      <date>2024-10-31</date>
       <revdescription>
         <para>
           Clarify the tools available with each subscription level.
@@ -175,7 +175,7 @@
    </para>
    <para>
     To register with &suma;, see <link xlink:href="https://documentation.suse.com/liberty/8/html/suma-quickstart/art-suma-quickstart.html">
-    <citetitle>Registering &rhla; 8 or CentOS Linux 8 with &suma;</citetitle></link>.
+    <citetitle>Registering &rhla; &productnumber; or CentOS Linux &productnumber; with &suma;</citetitle></link>.
    </para>
 
    <itemizedlist>
