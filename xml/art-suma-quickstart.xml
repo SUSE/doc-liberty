@@ -47,6 +47,14 @@
   </meta>
   <revhistory xml:id="rh-art-suma-quickstart">
     <revision>
+      <date>2024-12-06</date>
+      <revdescription>
+        <para>
+          RMT is now available with all subscription levels.
+        </para>
+      </revdescription>
+    </revision>
+    <revision>
       <date>2024-10-31</date>
       <revdescription>
         <para>
@@ -103,7 +111,10 @@
             <para>CentOS Linux</para>
             <para>&rhel;</para>
            </entry>
-           <entry><para>&suma;</para></entry>
+           <entry>
+            <para>&suma;</para>
+            <para>&rmtool;</para>
+           </entry>
          </row>
        </tbody>
      </tgroup>
