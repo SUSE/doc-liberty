@@ -48,6 +48,14 @@
   </meta>
   <revhistory xml:id="rh-art-quickstart">
     <revision>
+      <date>2024-12-06</date>
+      <revdescription>
+        <para>
+          RMT is now available with all subscription levels.
+        </para>
+      </revdescription>
+    </revision>
+    <revision>
       <date>2024-10-31</date>
       <revdescription>
         <para>
@@ -141,12 +149,18 @@
             <para>CentOS Linux</para>
             <para>&rhel;</para>
            </entry>
-           <entry><para>&suma;</para></entry>
+           <entry>
+            <para>&suma;</para>
+            <para>&rmtool;</para>
+           </entry>
          </row>
          <row>
            <entry><para><emphasis>&productname; Basic</emphasis></para></entry>
            <entry><para>CentOS Linux</para></entry>
-           <entry><para>&suma;</para></entry>
+           <entry>
+            <para>&suma;</para>
+            <para>&rmtool;</para>
+           </entry>
          </row>
          <row>
            <entry><para><emphasis>&productname; Lite</emphasis></para></entry>
