@@ -9,7 +9,7 @@
  xmlns="http://docbook.org/ns/docbook" version="5.1"
  xmlns:xi="http://www.w3.org/2001/XInclude"
  xmlns:xlink="http://www.w3.org/1999/xlink">
- <title>Mirroring &reponame; repositories with &rmt;</title>
+ <title>Mirroring &productname; repositories with &rmt;</title>
  <info>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
    <dm:bugtracker></dm:bugtracker>
@@ -18,7 +18,7 @@
  </info>
 
  <para>
-  Use this procedure to mirror the &reponame; repositories for &rhel; &productnumber;.
+  Use this procedure to mirror the &productname; repositories for &rhel; &productnumber;.
  </para>
  <itemizedlist>
   <title>Requirements</title>
@@ -31,7 +31,7 @@
    <para>
     The &rmt; server has enough storage available for repository mirroring. The amount of storage
     required depends on the number of repositories you mirror. We recommend at least 1.5 times
-    the total size of all enabled repositories. Be aware that the &reponame; repositories will
+    the total size of all enabled repositories. Be aware that the &productname; repositories will
     grow substantially over time.
    </para>
   </listitem>
@@ -48,7 +48,7 @@
  </itemizedlist>
 
  <procedure xml:id="pro-mirror-repositories-with-rmt">
-  <title>Mirroring the &reponame; repositories with &rmt;</title>
+  <title>Mirroring the &productname; repositories with &rmt;</title>
   <step>
    <para>
     On the &rmt; server, update the available product and repository metadata:
@@ -63,7 +63,7 @@
   </step>
   <step>
    <para>
-    Enable &reponame; &productnumber; using the product ID <literal>2538</literal>:
+    Enable &productname; &productnumber; using the product ID <literal>2538</literal>:
    </para>
 <screen>&prompt.root;<command>rmt-cli products enable 2538</command></screen>
    <para>
@@ -79,7 +79,7 @@
    <tip role="compact">
     <para>
      To check whether the &ha; extension is available, run this
-     command: <command>rmt-cli products list --all --name="Liberty" --version=&productnumber;</command>
+     command: <command>rmt-cli products list --all --name=&reponameshort;-HA</command>
     </para>
    </tip>
   </step>
@@ -91,21 +91,24 @@
    <itemizedlist>
      <listitem>
        <para>
-         <literal>SLL-9-Source-Updates</literal>, <literal>SLL-AS-9-Source-Updates</literal> and
-         <literal>SLL-CB-9-Source-Updates</literal>:
+         <literal>&reponameshort;-&productnumber;-Source-Updates</literal>,
+         <literal>&reponameshort;-AS-&productnumber;-Source-Updates</literal> and
+         <literal>&reponameshort;-CB-&productnumber;-Source-Updates</literal>:
        </para>
 <screen>&prompt.root;<command>rmt-cli repos enable 5964 5967 5970</command></screen>
      </listitem>
      <listitem>
        <para>
-         <literal>SLL-9-Debug-Updates</literal>, <literal>SLL-AS-9-Debug-Updates</literal> and
-         <literal>SLL-CB-9-Debug-Updates</literal>:
+         <literal>&reponameshort;-&productnumber;-Debug-Updates</literal>,
+         <literal>&reponameshort;-AS-&productnumber;-Debug-Updates</literal> and
+         <literal>&reponameshort;-CB-&productnumber;-Debug-Updates</literal>:
        </para>
 <screen>&prompt.root;<command>rmt-cli repos enable 5965 5968 5971</command></screen>
      </listitem>
      <listitem>
        <para>
-         <literal>SLL-9-HA-Source-Updates</literal> and <literal>SLL-9-HA-Debug-Updates</literal>:
+         <literal>&reponameshort;-&productnumber;-HA-Source-Updates</literal> and
+         <literal>&reponameshort;-&productnumber;-HA-Debug-Updates</literal>:
        </para>
 <screen>&prompt.root;<command>rmt-cli repos enable 5973 5974</command></screen>
      </listitem>

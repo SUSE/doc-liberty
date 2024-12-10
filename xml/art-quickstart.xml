@@ -41,13 +41,21 @@
    <dm:translation>no</dm:translation>
   </dm:docmanager>
   <meta name="title" its:translate="yes">Registering &rhla; &productnumber; with &rmt;</meta>
-  <meta name="description" its:translate="yes">How to use SUSE Liberty Linux and RMT to update Red Hat Enterprise Linux 9.</meta>
+  <meta name="description" its:translate="yes">How to use &productname; and &rmt; to update &rhel; &productnumber;.</meta>
   <meta name="social-descr" its:translate="yes">How to use RMT to update RHEL 9.</meta>
   <meta name="task" its:translate="yes">
     <phrase>Upgrade &amp; Update</phrase>
     <phrase>Administration</phrase>
   </meta>
   <revhistory xml:id="rh-art-quickstart">
+    <revision>
+      <date>2024-12-10</date>
+      <revdescription>
+        <para>
+          Change to new product name where applicable (some items like repo names have not changed).
+        </para>
+      </revdescription>
+    </revision>
     <revision>
       <date>2024-12-06</date>
       <revdescription>
@@ -197,6 +205,16 @@
      </para>
     </listitem>
    </itemizedlist>
+
+   <note>
+     <title><emphasis>&productname;</emphasis> and <emphasis>SUSE Liberty Linux</emphasis></title>
+     <para>
+       <emphasis>&productname;</emphasis> was previously named <emphasis>SUSE Liberty Linux</emphasis>.
+       During the transition period, some components might still use the name
+       <emphasis>SUSE Liberty Linux</emphasis>.
+     </para>
+   </note>
+
    <itemizedlist>
     <title>Related information</title>
     <listitem>
