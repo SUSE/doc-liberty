@@ -160,7 +160,7 @@
      </para>
      <para>
        Additionally, the optional &ha; extension is no longer supported with
-       &reponame; &productnumber;. You must remove this product from your system
+       &productname; &productnumber; LTSS. You must remove this product from your system
        before you can register with an LTSS subscription.
      </para>
      <para>
@@ -265,7 +265,7 @@
     <listitem>
      <para>
       If you already have an &rmt; server but still need to <emphasis role="bold">mirror the
-      &reponame;&nbsp;&productnumber; repositories</emphasis>, go to
+      &productname;&nbsp;&productnumber; repositories</emphasis>, go to
       <xref linkend="mirror-repositories-with-rmt"/>.
      </para>
     </listitem>

@@ -95,7 +95,7 @@
      </para>
      <para>
        Additionally, the optional &ha; extension is no longer supported with
-       &reponame; &productnumber;. You must remove this product from your system
+       &productname; &productnumber; LTSS. You must remove this product from your system
        before you can register with an LTSS subscription.
      </para>
      <para>
@@ -280,17 +280,17 @@
       </para>
     </tip>
     <important>
-      <title>&productname; &productnumber; repository size</title>
+      <title>&productname; &productnumber; LTSS repository size</title>
       <para>
-        The &productname; &productnumber; repositories will grow over time because older package versions
-        are not removed. Based on the current<footnote><para>As of 31 October, 2024</para></footnote>
+        The &productname; &productnumber; LTSS repositories will grow over time because older package
+        versions are not removed. Based on the current<footnote><para>As of 31 October, 2024</para></footnote>
         size of the repositories, to meet the 1.5 times size recommendation you will need
         approximately 15&nbsp;GB of disk space for the default <literal>LTSS-Updates</literal>
         repository. If you need the optional <literal>LTSS-Source</literal> and
         <literal>LTSS-Debug</literal> repositories, you will need an additional 39&nbsp;GB.
       </para>
       <para>
-        &reponame; &productnumber; also has optional frozen <literal>BASE</literal> repositories
+        &productname; &productnumber; LTSS also has optional frozen <literal>BASE</literal> repositories
         that contain the packages from the non-LTSS repositories. If you need these repositories,
         to meet the 1.5 times size recommendation you will need approximately 210&nbsp;GB for the
         <literal>BASE-Updates</literal> repository and 730&nbsp;GB for the
@@ -302,9 +302,9 @@
   <section xml:id="register-with-suma">
     <title>Registering &rhla; or CentOS Linux with &suma;</title>
     <important>
-      <title>New repositories for &reponame; &productnumber;</title>
+      <title>New repositories for &productname; &productnumber; LTSS</title>
       <para>
-        The repository structure has changed in &reponame; &productnumber;.
+        The repository structure has changed in &productname; &productnumber; LTSS.
         If you previously registered your system with a general &productname; subscription,
         follow the <citetitle>Client Configuration Guide</citetitle> again to add and
         synchronize the LTSS repositories.
