@@ -40,13 +40,22 @@
    <dm:editurl>https://github.com/SUSE/doc-liberty/edit/maintenance/SLL7/xml/</dm:editurl>
    <dm:translation>no</dm:translation>
   </dm:docmanager>
-    <meta name="description" its:translate="yes">How to use SUSE Liberty Linux and RMT to update Red Hat Enterprise Linux 7 or CentOS Linux 7.</meta>
-  <meta name="social-descr" its:translate="yes">Use RMT to update RHEL 7 or CentOS 7.</meta>
+  <meta name="title" its:translate="yes">Registering &rhla; &productnumber; or CentOS Linux &productnumber; with &rmt;</meta>
+  <meta name="description" its:translate="yes">How to use &productname; and &rmt; to update &rhla; &productnumber; or CentOS Linux &productnumber;.</meta>
+  <meta name="social-descr" its:translate="yes">Use &rmt; to update &rhla; &productnumber; or CentOS Linux &productnumber;.</meta>
   <meta name="task" its:translate="yes">
     <phrase>Upgrade &amp; Update</phrase>
     <phrase>Administration</phrase>
   </meta>
   <revhistory xml:id="rh-art-quickstart">
+    <revision>
+      <date>2024-12-11</date>
+      <revdescription>
+        <para>
+          Change to new product name where applicable (some items like repo names have not changed).
+        </para>
+      </revdescription>
+    </revision>
     <revision>
       <date>2024-12-06</date>
       <revdescription>
@@ -151,7 +160,7 @@
      </para>
      <para>
        Additionally, the optional &ha; extension is no longer supported with
-       &reponame; &productnumber;. You must remove this product from your system
+       &productname; &productnumber; LTSS. You must remove this product from your system
        before you can register with an LTSS subscription.
      </para>
      <para>
@@ -256,7 +265,7 @@
     <listitem>
      <para>
       If you already have an &rmt; server but still need to <emphasis role="bold">mirror the
-      &reponame;&nbsp;&productnumber; repositories</emphasis>, go to
+      &productname;&nbsp;&productnumber; repositories</emphasis>, go to
       <xref linkend="mirror-repositories-with-rmt"/>.
      </para>
     </listitem>
@@ -268,17 +277,16 @@
     </listitem>
 
    </itemizedlist>
-   <!-- Can delete this if/when all names have been changed
-        trichardson 2024-06-26: Repo names have changed but repo labels still include RES -->
+
    <note>
-    <title><emphasis>&productname;</emphasis> and <emphasis>&sles; with Expanded Support</emphasis></title>
-    <para>
-     <emphasis>&productname;</emphasis> now provides what used to be covered by
-     the <emphasis>&sles; with Expanded Support</emphasis> subscription. Some
-     components might still use the <emphasis>Expanded Support</emphasis> name
-     during the transition period.
-    </para>
+     <title><emphasis>&productname;</emphasis> and <emphasis>SUSE Liberty Linux</emphasis> or <emphasis>Expanded Support</emphasis></title>
+     <para>
+       <emphasis>&productname;</emphasis> was previously named <emphasis>SUSE Liberty Linux</emphasis>
+       and <emphasis>&sles; with Expanded Support</emphasis>. During the transition period, some
+       components might still use one of these names.
+     </para>
    </note>
+
    <itemizedlist>
     <title>Related information</title>
     <listitem>

@@ -36,7 +36,7 @@
   </listitem>
   <listitem>
    <para>
-    The &reponame; &productnumber; repositories are available on the &rmt; server.
+    The &productname; &productnumber; LTSS repositories are available on the &rmt; server.
    </para>
   </listitem>
     <listitem>
@@ -65,9 +65,9 @@
  </itemizedlist>
 
  <important audience="sll">
-   <title>New registration setup for &reponame; &productnumber;</title>
+   <title>New registration setup for &productname; &productnumber; LTSS</title>
    <para>
-    The repository structure and registration setup has changed in &reponame; &productnumber;.
+    The repository structure and registration setup has changed in &productname; &productnumber; LTSS.
     If you previously registered your system with a general &productname; subscription,
     de-register your system from the original subscription before you re-register
     with the LTSS subscription:
@@ -80,7 +80,7 @@
 <screen>&prompt.root;<command>SUSEConnect --de-register</command></screen>
        <para>
         This command also removes the &ha; extension if it was installed on your system.
-        &ha; is not supported with &reponame; &productnumber;.
+        &ha; is not supported with &productname; &productnumber; LTSS.
       </para>
      </listitem>
      <listitem>
@@ -163,8 +163,8 @@
 Installed Products:
 ------------------------------------------
 
-  SUSE Liberty Linux release file
-  (RES-LTSS/&productnumber;/x86_64)
+  SUSE Liberty Linux Server release file
+  (&reponameshort;-LTSS/&productnumber;/x86_64)
 
   Registered
 
@@ -177,7 +177,7 @@ Installed Products:
    </para>
 <screen>&prompt.root;<command>yum repolist all</command></screen>
    <para>
-    The default repository <literal>RES-&productnumber;-LTSS-Updates</literal> should be
+    The default repository <literal>&reponameshort;-&productnumber;-LTSS-Updates</literal> should be
     <literal>enabled</literal>.
    </para>
    <para>
@@ -192,11 +192,11 @@ Installed Products:
      <para>
        <literal>BASE</literal> repositories are frozen and contain the existing packages from the
        non-LTSS &productname; repositories. <literal>LTSS</literal> repositories contain new
-       packages for &reponame; &productnumber;.
+       packages for &productname; &productnumber; LTSS.
      </para>
    </tip>
   </step>
-  <step performance="optional">
+  <step>
     <para>
       If you need any of the <literal>BASE</literal>, <literal>Source</literal> or
     <literal>Debug</literal>repositories, enable them with the following command:
