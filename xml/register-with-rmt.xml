@@ -36,7 +36,7 @@
   </listitem>
   <listitem>
    <para>
-    The &reponame; &productnumber; repositories are available on the &rmt; server.
+    The &productname; &productnumber; repositories are available on the &rmt; server.
    </para>
   </listitem>
   <listitem>
@@ -128,8 +128,8 @@
 Installed Products:
 ------------------------------------------
 
-  SLES Expanded Support platform release file
-  (RES/&productnumber;/x86_64)
+  &reponame; release file
+  (&reponameshort;/&productnumber;/x86_64)
 
   Registered
 
@@ -141,7 +141,7 @@ Installed Products:
     If your subscription includes the &ha; extension, activate it with the
     following command:
    </para>
-<screen>&prompt.root;<command>&suseconnect; -p RES-HA/&productnumber;/x86_64</command></screen>
+<screen>&prompt.root;<command>&suseconnect; -p &reponameshort;-HA/&productnumber;/x86_64</command></screen>
    <tip role="compact">
     <para>
      To check whether the extension is available, run the
@@ -155,11 +155,11 @@ Installed Products:
    </para>
 <screen>&prompt.root;<command>dnf repolist all</command></screen>
    <para>
-    The default repositories <literal>RES-&productnumber;-Updates</literal>,
-    <literal>RES-AS-&productnumber;-Updates</literal> and
-    <literal>RES-CB-&productnumber;-Updates</literal> should be <literal>enabled</literal>.
-    If you activated the &ha; extension, <literal>RES-8-HA-Updates</literal> should also be
-    <literal>enabled</literal>.
+    The default repositories <literal>&reponameshort;-&productnumber;-Updates</literal>,
+    <literal>&reponameshort;-AS-&productnumber;-Updates</literal> and
+    <literal>&reponameshort;-CB-&productnumber;-Updates</literal> should be <literal>enabled</literal>.
+    If you activated the &ha; extension, <literal>&reponameshort;-&productnumber;-HA-Updates</literal>
+    should also be <literal>enabled</literal>.
    </para>
    <para>
      You will also see optional <literal>Source</literal> and <literal>Debug</literal>

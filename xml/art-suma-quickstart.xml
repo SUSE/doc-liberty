@@ -40,13 +40,21 @@
    <dm:editurl>https://github.com/SUSE/doc-liberty/edit/main/xml/</dm:editurl>
    <dm:translation>no</dm:translation>
   </dm:docmanager>  <meta name="title" its:translate="yes">Registering &rhla; &productnumber; or CentOS Linux &productnumber; with &suma;</meta>
-  <meta name="description" its:translate="yes">How to use SUSE Liberty Linux and SUSE Manager to update RHEL 8 or CentOS Linux 8.</meta>
-  <meta name="social-descr" its:translate="yes">Use SUSE Manager to update RHEL 8 or CentOS 8.</meta>
+  <meta name="description" its:translate="yes">How to use &productname; and &suma; to update &rhla; &productnumber; or CentOS Linux &productnumber;.</meta>
+  <meta name="social-descr" its:translate="yes">Use &suma; to update &rhla; &productnumber; or CentOS Linux &productnumber;.</meta>
   <meta name="task" its:translate="yes">
     <phrase>Upgrade &amp; Update</phrase>
     <phrase>Administration</phrase>
   </meta>
   <revhistory xml:id="rh-art-suma-quickstart">
+    <revision>
+      <date>2024-12-11</date>
+      <revdescription>
+        <para>
+          Change to new product name where applicable (some items like repo names have not changed).
+        </para>
+      </revdescription>
+    </revision>
     <revision>
       <date>2024-12-06</date>
       <revdescription>
@@ -169,16 +177,16 @@
      </para>
     </listitem>
    </itemizedlist>
-   <note><!-- Can delete this if/when all names have been changed
-              trichardson 2024-06-26: Repo names have changed but repo labels still include RES -->
-    <title><emphasis>&productname;</emphasis> and <emphasis>&sles; with Expanded Support</emphasis></title>
+
+   <note>
+    <title><emphasis>&productname;</emphasis> and <emphasis>SUSE Liberty Linux</emphasis> or <emphasis>Expanded Support</emphasis></title>
     <para>
-     <emphasis>&productname;</emphasis> now provides what used to be covered by
-     the <emphasis>&sles; with Expanded Support</emphasis> subscription. Some
-     components might still use the <emphasis>Expanded Support</emphasis> name
-     during the transition period.
+      <emphasis>&productname;</emphasis> was previously named <emphasis>SUSE Liberty Linux</emphasis>
+      and <emphasis>&sles; with Expanded Support</emphasis>. During the transition period, some
+      components might still use one of these names.
     </para>
-   </note>
+  </note>
+
    <itemizedlist>
     <title>Related information</title>
     <listitem>
@@ -246,9 +254,9 @@
       </para>
     </tip>
     <important>
-      <title>&reponame; &productnumber; repository size</title>
+      <title>&productname; &productnumber; repository size</title>
       <para>
-        The &reponame; &productnumber; repositories will grow over time because older package versions
+        The &productname; &productnumber; repositories will grow over time because older package versions
         are not removed. Based on the current<footnote><para>As of 22 October, 2024</para></footnote>
         size of the repositories, to meet the 1.5 times size recommendation you will need
         approximately 515&nbsp;GB of disk space for the default repositories.
