@@ -36,7 +36,7 @@
   </listitem>
   <listitem>
    <para>
-    The &reponame; &productnumber; repositories are available on the &rmt; server.
+    The &productname; &productnumber; repositories are available on the &rmt; server.
    </para>
   </listitem>
     <listitem>
@@ -163,8 +163,8 @@
 Installed Products:
 ------------------------------------------
 
-  SUSE Liberty Linux release file
-  (RES-LTSS/&productnumber;/x86_64)
+  &reponame; release file
+  (&reponameshort;-LTSS/&productnumber;/x86_64)
 
   Registered
 
@@ -177,7 +177,7 @@ Installed Products:
    </para>
 <screen>&prompt.root;<command>yum repolist all</command></screen>
    <para>
-    The default repository <literal>RES-&productnumber;-LTSS-Updates</literal> should be
+    The default repository <literal>&reponameshort;-&productnumber;-LTSS-Updates</literal> should be
     <literal>enabled</literal>.
    </para>
    <para>

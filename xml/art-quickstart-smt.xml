@@ -36,7 +36,7 @@
    <dm:editurl>https://github.com/SUSE/doc-liberty/edit/maintenance/SLL7/xml/</dm:editurl>
    <dm:translation>no</dm:translation>
   </dm:docmanager>
-  <meta name="description" its:translate="yes">Registering with SMT is no longer supported in SUSE Liberty Linux LTSS 7. You can migrate from SMT to RMT.</meta>
+  <meta name="description" its:translate="yes">Registering with SMT is no longer supported in &productname; LTSS 7. You can migrate from SMT to RMT.</meta>
   <meta name="social-descr" its:translate="yes">Registering with SMT is not supported. Migrate to RMT.</meta>
   <meta name="task" its:translate="yes">
     <phrase>Upgrade &amp; Update</phrase>

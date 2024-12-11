@@ -1,9 +1,10 @@
 <!-- PRODUCT NAME AND VERSIONS -->
-<!ENTITY productname            "<phrase xmlns='http://docbook.org/ns/docbook' role='productname'><phrase audience='sll'>SUSE Liberty Linux</phrase><phrase audience='sll-l'>SUSE Liberty Linux Lite</phrase></phrase>">
-<!ENTITY productnameshort       "<phrase xmlns='http://docbook.org/ns/docbook' role='productname'><phrase audience='sll'>SLL</phrase><phrase audience='sll-l'>SLL-L</phrase></phrase>">
-<!ENTITY productnumber          "7">
+<!ENTITY productname            "SUSE Multi-Linux Support">
+<!ENTITY productnameshort       "SMLS">
+<!ENTITY productnumber          "8">
 
 <!ENTITY reponame               "SUSE Liberty Linux LTSS">
+<!ENTITY reponameshort          "RES">
 
 <!-- PROJECT REPOSITORY URL -->
 <!ENTITY repo-url               "https://github.com/SUSE/doc-liberty">

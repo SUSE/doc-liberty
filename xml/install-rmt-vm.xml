@@ -66,16 +66,16 @@
     </listitem>
     <listitem>
       <para>
-        The &rmt; server needs enough available disk space to mirror the &reponame; &productnumber;
+        The &rmt; server needs enough available disk space to mirror the &productname; &productnumber;
         repositories. Downloaded packages are stored in <filename>/var/lib/rmt/public/repo/</filename>.
         The amount of storage required depends on the number of repositories you mirror.
         We recommend at least 1.5 times the total size of all enabled repositories.
       </para>
       <important>
-        <title>&reponame; &productnumber; repository size</title>
+        <title>&productname; &productnumber; repository size</title>
         <para>
-          The &reponame; &productnumber; repositories will grow over time because older package versions
-          are not removed. Based on the current<footnote><para>As of 31 October, 2024</para></footnote>
+          The &productname; &productnumber; repositories will grow over time because older package
+          versions are not removed. Based on the current<footnote><para>As of 31 October, 2024</para></footnote>
           size of the repositories, to meet the 1.5 times size recommendation you will need
           approximately 15&nbsp;GB of disk space for the default <literal>LTSS-Updates</literal>
           repository. If you need the optional <literal>LTSS-Source</literal> and
@@ -162,7 +162,7 @@
       <para>
         If you did not already increase the VM's disk space before the installation began,
         increase it now. You might need to shut down the VM to do so. The VM must have enough
-        space to mirror the &reponame; &productnumber; repositories.
+        space to mirror the &productname; &productnumber; repositories.
       </para>
     </step>
   </procedure>

@@ -9,7 +9,7 @@
  xmlns="http://docbook.org/ns/docbook" version="5.1"
  xmlns:xi="http://www.w3.org/2001/XInclude"
  xmlns:xlink="http://www.w3.org/1999/xlink">
- <title>Mirroring &reponame; repositories with &rmt;</title>
+ <title>Mirroring &productname; repositories with &rmt;</title>
  <info>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
    <dm:bugtracker></dm:bugtracker>
@@ -18,8 +18,8 @@
  </info>
 
  <para>
-  Use this procedure to mirror the &reponame; repositories for
-  <phrase audience="sll">&rhel; &productnumber; and </phrase>CentOS Linux &productnumber;.
+  Use this procedure to mirror the &productname; repositories for &rhel; &productnumber;
+  and CentOS Linux &productnumber;.
  </para>
  <itemizedlist>
   <title>Requirements</title>
@@ -32,8 +32,8 @@
    <para>
     The &rmt; server has enough storage available for repository mirroring. The amount of storage
     required depends on the number of repositories you mirror. We recommend at least 1.5 times
-    the total size of all enabled repositories. Be aware that the &reponame; repositories will
-    grow over time.
+    the total size of all enabled repositories. Be aware that the &productname; repositories will
+    grow substantially over time.
    </para>
   </listitem>
   <listitem>
@@ -95,7 +95,7 @@
  </important>
 
  <procedure xml:id="pro-mirror-repositories-with-rmt">
-  <title>Mirroring the &reponame; repositories with &rmt;</title>
+  <title>Mirroring the &productname; repositories with &rmt;</title>
   <step>
    <para>
     On the &rmt; server, update the available product and repository metadata:
@@ -110,34 +110,36 @@
   </step>
   <step>
    <para>
-    Enable &reponame; &productnumber; using the product ID <literal>2702</literal>:
+    Enable &productname; &productnumber; using the product ID <literal>2702</literal>:
    </para>
 <screen>&prompt.root;<command>rmt-cli products enable 2702</command></screen>
    <para>
-    This enables the default <literal>RES-7-LTSS-Updates</literal> repository.
+    This enables the default <literal>&reponameshort;-&productnumber;-LTSS-Updates</literal> repository.
    </para>
   </step>
   <step>
    <para>
     If you also need the <literal>BASE</literal>, <literal>Source</literal> or
-    <literal>Debug</literal>repositories, enable them with the following commands:
+    <literal>Debug</literal> repositories, enable them with the following commands:
    </para>
    <itemizedlist>
      <listitem>
        <para>
-         <literal>RES-7-BASE-Updates</literal>:
+         <literal>&reponameshort;-&productnumber;-BASE-Updates</literal>:
        </para>
 <screen>&prompt.root;<command>rmt-cli repos enable 6986</command></screen>
      </listitem>
 <listitem>
        <para>
-         <literal>RES-7-LTSS-Source-Updates</literal> and <literal>RES-7-BASE-Source-Updates</literal>:
+         <literal>&reponameshort;-&productnumber;-LTSS-Source-Updates</literal> and
+         <literal>&reponameshort;-&productnumber;-BASE-Source-Updates</literal>:
        </para>
 <screen>&prompt.root;<command>rmt-cli repos enable 6748 6987</command></screen>
      </listitem>
      <listitem>
        <para>
-         <literal>RES-7-LTSS-Debug-Updates</literal> and <literal>RES-7-BASE-Debug-Updates</literal>:
+         <literal>&reponameshort;-&productnumber;-LTSS-Debug-Updates</literal> and
+         <literal>&reponameshort;-&productnumber;-BASE-Debug-Updates</literal>:
        </para>
 <screen>&prompt.root;<command>rmt-cli repos enable 6985 6988</command></screen>
      </listitem>
