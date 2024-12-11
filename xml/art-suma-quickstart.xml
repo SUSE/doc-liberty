@@ -257,7 +257,7 @@
       <title>&productname; &productnumber; repository size</title>
       <para>
         The &productname; &productnumber; repositories will grow over time because older package versions
-        are not removed. Based on the current<footnote><para>As of 22 October, 2024</para></footnote>
+        are not removed. Based on the current<footnote><para>As of 21 October, 2024</para></footnote>
         size of the repositories, to meet the 1.5 times size recommendation you will need
         approximately 515&nbsp;GB of disk space for the default repositories.
       </para>
