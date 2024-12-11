@@ -1,9 +1,10 @@
 <!-- PRODUCT NAME AND VERSIONS -->
-<!ENTITY productname            "SUSE Liberty Linux">
-<!ENTITY productnameshort       "SLL">
+<!ENTITY productname            "SUSE Multi-Linux Support">
+<!ENTITY productnameshort       "SMLS">
 <!ENTITY productnumber          "9">
 
 <!ENTITY reponame               "SUSE Liberty Linux">
+<!ENTITY reponameshort          "SLL">
 
 <!-- PROJECT REPOSITORY URL -->
 <!ENTITY repo-url               "https://github.com/SUSE/doc-liberty">
