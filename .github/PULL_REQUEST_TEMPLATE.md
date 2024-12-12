@@ -13,9 +13,9 @@ Describe the overall goals of this pull request.
 
 When opening a PR, check all versions of the documentation that your PR applies to.
 
-- [ ] SLL 9 *(current `main`, no backport necessary)*
-- [ ] SLL 8
-- [ ] SLL 7
+- [ ] SUSE Multi-Linux Support 9 *(current `main`, no backport necessary)*
+- [ ] SUSE Multi-Linux Support 8
+- [ ] SUSE Multi-Linux Support 7
 
 ### PR reviewer only: Have all backports been applied?
 
