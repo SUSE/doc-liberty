@@ -1,5 +1,5 @@
 #
-# DC file for SUSE Liberty Linux with SMT
+# DC file for SUSE Multi-Linux Support with SMT
 #
 MAIN="art-quickstart-smt.xml"
 ROOTID="art-quickstart-smt"

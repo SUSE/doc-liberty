@@ -1,5 +1,5 @@
 #
-# DC file for SUSE Liberty Linux with SUMA
+# DC file for SUSE Multi-Linux Support with SUSE Manager
 #
 MAIN="art-suma-quickstart.xml"
 ROOTID="art-suma-quickstart"

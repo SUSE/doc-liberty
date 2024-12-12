@@ -1,5 +1,5 @@
 #
-# DC file for SUSE Liberty Linux Lite
+# DC file for SUSE Multi-Linux Support Lite
 #
 MAIN="art-lite-quickstart.xml"
 ROOTID="art-lite-quickstart"
