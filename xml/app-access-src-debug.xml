@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="urn:x-suse:xslt:profiling:docbook51-profile.xsl"
+ type="text/xml"
+ title="Profiling step"?>
+<!DOCTYPE appendix
+[
+  <!ENTITY % entities SYSTEM "generic-entities.ent">
+    %entities;
+]>
+
+<appendix xml:id="app-access-src-debug" xml:lang="en"
+ xmlns="http://docbook.org/ns/docbook" version="5.1"
+ xmlns:xi="http://www.w3.org/2001/XInclude"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>Accessing the <literal>Source</literal> or <literal>Debug</literal> repositories</title>
+  <info>
+    <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
+      <dm:bugtracker></dm:bugtracker>
+      <dm:translation>yes</dm:translation>
+    </dm:docmanager>
+  </info>
+
+  <para>
+    Mirroring the <literal>Source</literal> or <literal>Debug</literal> repositories and enabling
+    them on your system are documented as part of <xref linkend="mirror-repositories-with-rmt"/>
+    and <xref linkend="register-8-with-rmt"/>.
+  </para>
+  <para>
+    However, if your &rhla; or CentOS Linux system is already registered with the &rmt; server and
+    you just need to enable individual repositories, this section highlights the relevant steps.
+  </para>
+  <itemizedlist>
+    <title>Requirements</title>
+    <listitem>
+      <para>
+        The &rmt; server is installed and up to date.
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        The &productname; &productnumber; product is enabled on the &rmt; server.
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        Your &rhla; or CentOS Linux system is registered with the &rmt; server.
+      </para>
+    </listitem>
+  </itemizedlist>
+
+  <para>
+    Repositories must be mirrored on the &rmt; server before you can access them on your system.
+    <literal>Source</literal> and <literal>Debug</literal> repositories are not mirrored by default.
+    Use this procedure to mirror any additional repositories you need:
+  </para>
+  <procedure xml:id="pro-mirror-src-debug">
+    <title>Mirroring additional repositories on the &rmt; server</title>
+    <step>
+      <para>
+        List the &productname; &productnumber; repositories:
+      </para>
+<screen>&prompt.root;<command>rmt-cli repos list --all | grep &reponameshort;[A-Z\-]&productnumber;</command></screen>
+      <para>
+        If the repositories you need already have the status <literal>Mirror</literal>,
+        skip this procedure and go to <xref linkend="pro-enable-src-debug"/>.
+      </para>
+    </step>
+    <step>
+      <para>
+        Enable the repositories using their four-digit repository ID. You can enable multiple
+        repositories at once:
+      </para>
+<screen>&prompt.root;<command>rmt-cli repos enable <replaceable>REPO_ID1</replaceable> <replaceable>REPO_ID2</replaceable> <replaceable>REPO_ID3</replaceable></command></screen>
+    </step>
+    <step>
+      <para>
+        Start package mirroring for the enabled repositories:
+      </para>
+<screen>&prompt.root;<command>rmt-cli mirror</command></screen>
+      <para>
+        This will take some time to complete.
+      </para>
+    </step>
+  </procedure>
+
+  <para>
+    After the repositories finish mirroring, use this procedure to enable them on your
+    &rhla; or CentOS Linux system:
+  </para>
+  <procedure xml:id="pro-enable-src-debug">
+    <title>Enabling additional repositories on &rhla; or CentOS Linux</title>
+    <step>
+      <para>
+        List the available repositories:
+      </para>
+<screen>&prompt.root;<command>dnf repolist all</command></screen>
+      <para>
+        Be aware that all &productname; &productnumber; repositories are listed and can be enabled
+        even if they are not mirrored on the &rmt; server. However, you can only download content
+        from a repository if it is mirrored on the &rmt; server.
+      </para>
+    </step>
+    <step>
+      <para>
+        Enable the repositories you need using their <literal>repo id</literal>.
+        You can enable multiple repositories at once:
+      </para>
+<screen>&prompt.root;<command>dnf config-manager --enable <replaceable>REPO_ID1</replaceable> <replaceable>REPO_ID2</replaceable> <replaceable>REPO_ID3</replaceable></command></screen>
+    </step>
+    <step>
+      <para>
+        Run the update command to make sure there are no errors:
+      </para>
+<screen>&prompt.root;<command>dnf update</command></screen>
+      <para>
+        If you enabled a repository that is not mirrored on the &rmt; server,
+        you will see a <literal>404</literal> error.
+      </para>
+    </step>
+  </procedure>
+
+</appendix>
