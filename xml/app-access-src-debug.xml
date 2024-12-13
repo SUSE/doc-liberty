@@ -21,10 +21,13 @@
   </info>
 
   <para>
-    Mirroring the <literal>Source</literal> or <literal>Debug</literal> repositories and enabling them on your system are documented as part of <xref linkend="mirror-repositories-with-rmt"/> and <xref linkend="register-rhel-with-rmt"/>.
+    Mirroring the <literal>Source</literal> or <literal>Debug</literal> repositories and enabling
+    them on your system are documented as part of <xref linkend="mirror-repositories-with-rmt"/>
+    and <xref linkend="register-rhel-with-rmt"/>.
   </para>
   <para>
-    However, if your &rhla; system is already registered with the &rmt; server and you just need to enable individual repositories, this section highlights the relevant steps.
+    However, if your &rhla; system is already registered with the &rmt; server and you just need
+    to enable individual repositories, this section highlights the relevant steps.
   </para>
   <itemizedlist>
     <title>Requirements</title>
@@ -46,7 +49,9 @@
   </itemizedlist>
 
   <para>
-    Repositories must be mirrored on the &rmt; server before you can access them on your system. <literal>Source</literal> and <literal>Debug</literal> repositories are not mirrored by default. Use this procedure to mirror any additional repositories you need:
+    Repositories must be mirrored on the &rmt; server before you can access them on your system.
+    <literal>Source</literal> and <literal>Debug</literal> repositories are not mirrored by default.
+    Use this procedure to mirror any additional repositories you need:
   </para>
   <procedure xml:id="pro-mirror-src-debug">
     <title>Mirroring additional repositories on the &rmt; server</title>
@@ -56,12 +61,14 @@
       </para>
 <screen>&prompt.root;<command>rmt-cli repos list --all | grep &reponameshort;[A-Z\-]&productnumber;</command></screen>
       <para>
-        If the repositories you need already have the status <literal>Mirror</literal>, skip this procedure and go to <xref linkend="pro-enable-src-debug"/>.
+        If the repositories you need already have the status <literal>Mirror</literal>,
+        skip this procedure and go to <xref linkend="pro-enable-src-debug"/>.
       </para>
     </step>
     <step>
       <para>
-        Enable the repositories using their four-digit repository ID. You can enable multiple repositories at once:
+        Enable the repositories using their four-digit repository ID. You can enable multiple
+        repositories at once:
       </para>
 <screen>&prompt.root;<command>rmt-cli repos enable <replaceable>REPO_ID1</replaceable> <replaceable>REPO_ID2</replaceable> <replaceable>REPO_ID3</replaceable></command></screen>
     </step>
@@ -87,12 +94,15 @@
       </para>
 <screen>&prompt.root;<command>dnf repolist all</command></screen>
       <para>
-        Be aware that all &productname; &productnumber; repositories are listed and can be enabled even if they are not mirrored on the &rmt; server. However, you can only download content from a repository if it is mirrored on the &rmt; server.
+        Be aware that all &productname; &productnumber; repositories are listed and can be
+        enabled even if they are not mirrored on the &rmt; server. However, you can only
+        download content from a repository if it is mirrored on the &rmt; server.
       </para>
     </step>
     <step>
       <para>
-        Enable the repositories you need using their <literal>repo id</literal>. You can enable multiple repositories at once:
+        Enable the repositories you need using their <literal>repo id</literal>.
+        You can enable multiple repositories at once:
       </para>
 <screen>&prompt.root;<command>dnf config-manager --enable <replaceable>REPO_ID1</replaceable> <replaceable>REPO_ID2</replaceable> <replaceable>REPO_ID3</replaceable></command></screen>
     </step>
@@ -102,7 +112,8 @@
       </para>
 <screen>&prompt.root;<command>dnf update</command></screen>
       <para>
-        If you enabled a repository that is not mirrored on the &rmt; server, you will see a <literal>404</literal> error.
+        If you enabled a repository that is not mirrored on the &rmt; server, you will
+        see a <literal>404</literal> error.
       </para>
     </step>
   </procedure>
