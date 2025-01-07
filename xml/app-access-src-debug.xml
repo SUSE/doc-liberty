@@ -22,7 +22,7 @@
 
   <para>
     Mirroring the <literal>Source</literal> or <literal>Debug</literal> repositories and enabling
-    them on your system are documented as part of <xref linkend="mirror-repositories-with-rmt"/>
+    them on your system is documented as part of <xref linkend="mirror-repositories-with-rmt"/>
     and <xref linkend="register-rhel-with-rmt"/>.
   </para>
   <para>
