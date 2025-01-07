@@ -49,6 +49,14 @@
   </meta>
   <revhistory xml:id="rh-art-quickstart">
     <revision>
+      <date>2024-12-13</date>
+      <revdescription>
+        <para>
+          Added Source and Debug appendix
+        </para>
+      </revdescription>
+    </revision>
+    <revision>
       <date>2024-12-11</date>
       <revdescription>
         <para>
@@ -402,5 +410,6 @@
     </varlistentry>
   </variablelist>
  </section>
+ <xi:include href="app-access-src-debug.xml"/>
  <xi:include href="common_legal.xml"/>
 </article>
