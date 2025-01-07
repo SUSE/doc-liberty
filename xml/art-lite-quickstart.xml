@@ -47,7 +47,7 @@
       <date>2024-10-18</date>
       <revdescription>
         <para>
-          Add more information about default and optional repositories.
+          Added more information about default and optional repositories
         </para>
       </revdescription>
     </revision>
@@ -55,7 +55,7 @@
       <date>2024-08-01</date>
       <revdescription>
         <para>
-          New registration script released with <package>rmt-server</package> version 2.18.
+          New registration script released with <package>rmt-server</package> version 2.18
         </para>
       </revdescription>
     </revision>
@@ -63,7 +63,7 @@
       <date>2024-07-08</date>
       <revdescription>
         <para>
-          Registration script now installs <package>yum-utils</package>.
+          Registration script now installs <package>yum-utils</package>
         </para>
       </revdescription>
     </revision>
@@ -71,7 +71,7 @@
       <date>2024-07-01</date>
       <revdescription>
         <para>
-          Updates for LTSS.
+          Updated for LTSS
         </para>
       </revdescription>
     </revision>
@@ -79,7 +79,7 @@
       <date>2024-06-18</date>
       <revdescription>
         <para>
-          Initial release.
+          Initial release
         </para>
       </revdescription>
     </revision>
