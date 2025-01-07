@@ -50,7 +50,7 @@
       <date>2024-12-11</date>
       <revdescription>
         <para>
-          Change to new product name where applicable (some items like repo names have not changed).
+          Changed to new product name where applicable
         </para>
       </revdescription>
     </revision>
@@ -58,7 +58,7 @@
       <date>2024-12-06</date>
       <revdescription>
         <para>
-          RMT is now available with all subscription levels.
+          RMT is now available with all subscription levels
         </para>
       </revdescription>
     </revision>
@@ -66,7 +66,7 @@
       <date>2024-10-31</date>
       <revdescription>
         <para>
-          Initial guide creation.
+          Initial guide creation
         </para>
       </revdescription>
     </revision>

@@ -52,7 +52,7 @@
       <date>2024-12-11</date>
       <revdescription>
         <para>
-          Change to new product name where applicable (some items like repo names have not changed).
+          Changed to new product name where applicable
         </para>
       </revdescription>
     </revision>
@@ -60,7 +60,7 @@
       <date>2024-12-06</date>
       <revdescription>
         <para>
-          RMT is now available with all subscription levels.
+          RMT is now available with all subscription levels
         </para>
       </revdescription>
     </revision>
@@ -68,7 +68,7 @@
       <date>2024-10-31</date>
       <revdescription>
         <para>
-          Clarify the tools available with each subscription level.
+          Clarified the tools available with each subscription level
         </para>
       </revdescription>
     </revision>
@@ -76,7 +76,7 @@
       <date>2024-10-22</date>
       <revdescription>
         <para>
-          Add more information about default and optional repositories.
+          Added more information about default and optional repositories
         </para>
       </revdescription>
     </revision>
@@ -84,7 +84,7 @@
       <date>2024-06-27</date>
       <revdescription>
         <para>
-          Add Minimal VM procedure.
+          Added Minimal VM procedure
         </para>
       </revdescription>
     </revision>
@@ -92,7 +92,7 @@
       <date>2024-03-27</date>
       <revdescription>
         <para>
-          Clarify wording of requirements.
+          Clarified wording of requirements
         </para>
       </revdescription>
     </revision>
@@ -100,7 +100,7 @@
       <date>2022-08-24</date>
       <revdescription>
         <para>
-          Initial release.
+          Initial release
         </para>
       </revdescription>
     </revision>
