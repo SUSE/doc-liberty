@@ -68,7 +68,7 @@
   </para>
 </important>
 <important>
-  <title>End of general support for &productname; &productnumber;</title>
+  <title>End of general support</title>
   <para>
     &productname; &productnumber; has reached the end of general support and is now in LTSS
     (Long Term Service Support).
@@ -98,16 +98,12 @@
       With a &productname; subscription, you can register and update &rhel; and CentOS Linux.
     </para>
     <para>
-      &productname; uses its own branding and paths different from &rhla; and CentOS Linux.
-      This means it also uses different profiles for running compliance scans with &openscap;.
+      Because &productname; uses its own branding and paths that are different from &rhla; and
+      CentOS Linux, it also uses different profiles for running compliance scans with &openscap;.
     </para>
     <para>
-      SCAP (<systemitem class="protocol">Security Content Automation Protocol</systemitem>) is a
-      framework of specifications that support automated configuration, vulnerability scanning,
-      and policy compliance evaluation of systems deployed in an organization. It also standardizes
-      how vulnerabilities and security configurations are communicated both to machines and humans.
-    </para>
-    <para>
+      SCAP is a framework of specifications that support automated configuration, vulnerability
+      scanning, and policy compliance evaluation of systems deployed in an organization.
       &openscap; is a collection of open source tools that implement the SCAP framework for Linux.
     </para>
     <para>
@@ -135,8 +131,8 @@
     </itemizedlist>
     <para>
       This guide describes running compliance scans locally using the <command>oscap</command>
-      command-line tool.
-      TODO: Add a sentence about running scans remotely (i.e. see more info)?
+      command-line tool. To run scans remotely or with the SCAP Workbench GUI tool,
+      see the list of <xref linkend="compliance-scans-related-information"/>.
     </para>
     <important>
       <title>Third-party compliance tools are not supported</title>
@@ -146,8 +142,8 @@
         and are not currently supported.
       </para>
     </important>
-    <orderedlist>
-      <title>Procedure Overview</title>
+    <orderedlist xml:id="compliance-scans-procedure-overview">
+      <title>Overview of procedures</title>
       <listitem>
         <para>
           Review <xref linkend="compliance-scans-requirements"/> to make sure your
@@ -185,7 +181,7 @@
         components might still use one of these names.
       </para>
     </note>
-    <itemizedlist>
+    <itemizedlist xml:id="compliance-scans-related-information">
       <title>Related information</title>
       <listitem>
         <para>
@@ -271,7 +267,9 @@
             <para>
               <package>scap-security-guide</package>
             </para>
-            <important>
+          </listitem>
+        </itemizedlist>
+        <important>
               <title>Supported <package>scap-security-guide</package> version</title>
               <para>
                 &rhla; 7 and its clones are no longer supported by the upstream
@@ -281,16 +279,14 @@
                 <package>scap-security-guide-0.1.73-1.el7_9</package>.
               </para>
             </important>
-          </listitem>
-        </itemizedlist>
         <para>
           Installing these packages might also install additional dependencies.
         </para>
       </listitem>
       <listitem>
         <para>
-          The installed packages are provided by &suse;. You can check the vendor
-          with the <command>rpm -qi</command> command. For example:
+          The installed packages are provided by &suse;. You can use <command>rpm -qi</command>
+          to check the vendor. For example:
         </para>
 <screen>&prompt.root;<command>rpm -qi openscap-scanner | grep -i vendor</command>
 Vendor      : SUSE LLC &lt;https://www.suse.com/&gt;</screen>
@@ -323,17 +319,22 @@ SLES Expanded Support platform</screen>
   <section xml:id="compliance-scans-list-profiles">
     <title>Choosing an &openscap; compliance profile</title>
     <para>
-      TODO: Add an intro para about choosing a profile to run scans with, mention rules
+      The &ssg; contains the latest set of security polices for Linux systems. Each security policy
+      includes multiple compliance profiles, which contain sets of rules to test the system against.
+      Before you can run a compliance scan, you must choose the appropriate compliance profile
+      for your system.
     </para>
+    <tip>
+      <title>Security policy compatibility</title>
+      <para>
+        The security policies are installed in <filename>/usr/share/xml/scap/ssg/content/</filename>.
+        For compatibility, builds of the &ssg; for &productname; also provide &rhla; policies in
+        the same location.
+      </para>
+    </tip>
     <para>
-      The &ssg; installs the compliance content under the path
-      <filename>/usr/share/xml/scap/ssg/content</filename>.
-      For compatibility, builds of the &ssg; for &productname; also provide additional
-      <filename>ssg-rhel&ast;</filename> content in the same location as the
-      &productname; content.
-    </para>
-    <para>
-      To list the available profiles for &productname;&nbsp;&productnumber;, run the following command:
+      To list the profiles for &productname;&nbsp;&productnumber;, query
+      the <literal>ssg-sles_esp7-ds</literal> security policy:
     </para>
 <screen>&prompt.root;<command>oscap info /usr/share/xml/scap/ssg/content/ssg-sles_esp7-ds.xml</command></screen>
     <para>
@@ -353,17 +354,11 @@ SLES Expanded Support platform</screen>
       Select the profile to use. You will specify this profile when you run the compliance scan.
     </para>
     <para>
-      The output of <command>oscap info</command> also includes the following warning:
-    </para>
-<screen>WARNING: Datastream component 'scap_org.open-scap_cref_pub-projects-security-oval-
-suse.liberty.linux.7.xml' points out to the remote 'https://ftp.suse.com/pub/projects/
-security/oval/suse.liberty.linux.7.xml'. Use '--fetch-remote-resources' option to
-download it.
-WARNING: Skipping 'https://ftp.suse.com/pub/projects/security/oval/
-suse.liberty.linux.7.xml' file which is referenced from datastream</screen>
-    <para>
-      Using remote resources in the compliance scan is not compulsory, but can provide useful data
-      about known security vulnerabilities. You can continue with either of the following options:
+      The output of <command>oscap info</command> also includes a <literal>WARNING</literal>
+      if the security policy includes a reference to remote resources from
+      <link xlink:href="https://ftp.suse.com"/>. Using remote resources in the compliance scan
+      is not compulsory, but can provide useful data about known security vulnerabilities.
+      You can continue with either of the following options:
     </para>
     <itemizedlist>
       <listitem>
@@ -428,152 +423,73 @@ Result  pass
 Title   Configure auditd max_log_file_action Upon Reaching Maximum Log Size
 Rule    xccdf_org.ssgproject.content_rule_auditd_data_retention_max_log_file_action
 Result  fail
-
-Title   Configure auditd space_left Action on Low Disk Space
-Rule    xccdf_org.ssgproject.content_rule_auditd_data_retention_space_left_action
-Result  fail</screen>
+[...]</screen>
     <para>
-      After the scan is complete, you can review the report by opening
-      <filename>/tmp/report.html</filename> in a browser. For an overview of the
-      information included in the report, see <xref linkend="compliance-scans-use-report"/>.
+      When the scan is complete, you can review the report by opening
+      <filename>/tmp/report.html</filename> in a browser. See
+      <xref linkend="compliance-scans-use-report"/> for an example of
+      the information provided in the report.
     </para>
   </section>
 
   <section xml:id="compliance-scans-remote-resources">
-    <title>Including remote resources in an &openscap; compliance scan</title>
+    <title>Including remote resources in an &openscap; scan</title>
     <para>
-      &productname; provides external OVAL-formatted content that you can use during scans.
-      This content is downloaded from <link xlink:href="https://ftp.suse.com"/> and includes
-      information such as recently addressed security vulnerabilities. To include remote content
-      in a compliance scan, use one of the following procedures, depending on your
-      security requirements:
+      &productname; provides external OVAL-formatted content for use in scans. This
+      content is downloaded from <link xlink:href="https://ftp.suse.com/pub/projects/security/oval/"/>
+      and includes information such as recently addressed security vulnerabilities. You can
+      automatically download remote resources during a compliance scan with the
+      <literal>--fetch-remote-resources</literal> option.
     </para>
-    <itemizedlist>
-      <listitem>
-        <para>
-          Directly download the remote content during the compliance scan, as described in
-          <xref linkend="pro-compliance-scans-remote-resources-realtime"/>.
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Download the remote content and save it as a local file to use in the compliance scan,
-          as described in <xref linkend="pro-compliance-scans-remote-resources-download"/>.
-        </para>
-      </listitem>
-    </itemizedlist>
     <important role="compact">
       <para>
-        Scans using remote resources take more time to complete, and the generated reports
-        are much larger than usual.
+        Scans using remote resources take longer to complete and generate much larger reports.
       </para>
     </important>
-    <procedure xml:id="pro-compliance-scans-remote-resources-realtime">
-      <title>Fetching remote resources during a compliance scan</title>
-      <step>
-        <para>
-          Make sure the machine you run the scan from has access to
-          <link xlink:href="https://ftp.suse.com"/>:
-        </para>
-<screen>&prompt.root;<command>ping ftp.suse.com</command></screen>
-        <para>
-          Cancel the ping with <keycombo><keycap function="control"/><keycap>C</keycap></keycombo>.
-        </para>
-      </step>
-      <step>
-        <para>
-          Run the compliance scan with the <literal>--fetch-remote-resources</literal> option:
-        </para>
+    <para>
+      Make sure the machine you run the scan from has access to <link xlink:href="https://ftp.suse.com"/>:
+    </para>
+<screen>&prompt.root;<command>nc -zv ftp.suse.com 21</command>
+Connection to ftp.suse.com 21 port [tcp/ftp] succeeded!</screen>
+    <para>
+      Run a compliance scan on the target system with the
+      <command>oscap xccdf eval</command> command. Specify the profile and use the option
+      <literal>--fetch-remote-resources</literal> as shown in the following example:
+    </para>
 <screen>&prompt.root;<command>oscap xccdf eval --fetch-remote-resources \</command><co xml:id="co-fetch-remote-option"/>
 <command>--profile xccdf_org.ssgproject.content_profile_cis \</command><co xml:id="co-fetch-remote-profile"/>
 <command>--report /tmp/report.html \</command><co xml:id="co-fetch-remote-report"/>
 <command>--results-arf /tmp/results-arf.xml \</command><co xml:id="co-fetch-remote-results"/>
 <command>/usr/share/xml/scap/ssg/content/ssg-sles_esp7-ds.xml</command><co xml:id="co-fetch-remote-content"/></screen>
-        <calloutlist>
-          <callout arearefs="co-fetch-remote-option">
-            <para>
-              Fetches remote resources from <link xlink:href="ftp.suse.com"/> for use in the
-              compliance scan.
-            </para>
-          </callout>
-          <callout arearefs="co-fetch-remote-profile">
-            <para>
-              The compliance profile to use for the scan.
-            </para>
-        </callout>
-        <callout arearefs="co-fetch-remote-report">
-            <para>
-              Where to save the HTML report with test results and recommended remediations.
-            </para>
-          </callout>
-          <callout arearefs="co-fetch-remote-results">
-            <para>
-              Where to save the XML report, which can be used later in automation and
-              report generation.
-            </para>
-          </callout>
-          <callout arearefs="co-fetch-remote-content">
-            <para>
-              The &ssg; policy file that the compliance profile belongs to.
-            </para>
-          </callout>
-        </calloutlist>
-      </step>
-    </procedure>
-    <procedure xml:id="pro-compliance-scans-remote-resources-download">
-      <title>Downloading and saving remote resources for a compliance scan</title>
-      <step>
+    <calloutlist>
+      <callout arearefs="co-fetch-remote-option">
         <para>
-          Create a directory for storing downloaded resources:
+          Downloads remote resources from <link xlink:href="ftp.suse.com"/> for use in the
+          compliance scan.
         </para>
-<screen>&prompt.root;<command>mkdir /tmp/scap-files</command></screen>
-      </step>
-      <step>
+      </callout>
+      <callout arearefs="co-fetch-remote-profile">
         <para>
-          Download the remote resource and save it as a local file:
+          The compliance profile to use for the scan.
         </para>
-<screen>&prompt.root;<command>wget -O /tmp/scap-files/pub-projects-security-oval-suse.liberty.linux.7.xml.bz2 \
-https://ftp.suse.com/pub/projects/security/oval/suse.liberty.linux.7.xml.bz2</command></screen>
-      </step>
-      <step>
+      </callout>
+      <callout arearefs="co-fetch-remote-report">
         <para>
-          Run the compliance scan with the <literal>--local-files</literal> option:
+          Where to save the HTML report with test results and recommended remediations.
         </para>
-<screen>&prompt.root;<command>oscap xccdf eval --local-files /tmp/scap-files \</command><co xml:id="co-download-remote-option"/>
-<command>--profile xccdf_org.ssgproject.content_profile_cis \</command><co xml:id="co-download-remote-profile"/>
-<command>--report /tmp/report.html \</command><co xml:id="co-download-remote-report"/>
-<command>--results-arf /tmp/results-arf.xml \</command><co xml:id="co-download-remote-results"/>
-<command>/usr/share/xml/scap/ssg/content/ssg-sles_esp7-ds.xml</command><co xml:id="co-download-remote-content"/></screen>
-        <calloutlist>
-          <callout arearefs="co-download-remote-option">
-            <para>
-              The directory where downloaded resources are stored.
-            </para>
-          </callout>
-          <callout arearefs="co-download-remote-profile">
-            <para>
-              The compliance profile to use for the scan.
-            </para>
-        </callout>
-        <callout arearefs="co-download-remote-report">
-            <para>
-              Where to save the HTML report with test results and recommended remediations.
-            </para>
-          </callout>
-          <callout arearefs="co-download-remote-results">
-            <para>
-              Where to save the XML report, which can be used later in automation and
-              report generation.
-            </para>
-          </callout>
-          <callout arearefs="co-download-remote-content">
-            <para>
-              The &ssg; policy file that the compliance profile belongs to.
-            </para>
-          </callout>
-        </calloutlist>
-      </step>
-    </procedure>
+      </callout>
+      <callout arearefs="co-fetch-remote-results">
+        <para>
+          Where to save the XML report, which can be used later in automation and
+          report generation.
+        </para>
+      </callout>
+      <callout arearefs="co-fetch-remote-content">
+        <para>
+          The &ssg; policy file that the compliance profile belongs to.
+        </para>
+      </callout>
+    </calloutlist>
     <para>
       The compliance scan will take some time to complete. The results of the scan are saved in
       the specified files and also appear onscreen as shown in this example snippet:
@@ -586,14 +502,12 @@ Result  pass
 Title   Configure auditd max_log_file_action Upon Reaching Maximum Log Size
 Rule    xccdf_org.ssgproject.content_rule_auditd_data_retention_max_log_file_action
 Result  fail
-
-Title   Configure auditd space_left Action on Low Disk Space
-Rule    xccdf_org.ssgproject.content_rule_auditd_data_retention_space_left_action
-Result  fail</screen>
+[...]</screen>
     <para>
-      After the scan is complete, you can review the report by opening
-      <filename>/tmp/report.html</filename> in a browser. For an overview of the
-      information included in the report, see <xref linkend="compliance-scans-use-report"/>.
+      When the scan is complete, you can review the report by opening
+      <filename>/tmp/report.html</filename> in a browser. See
+      <xref linkend="compliance-scans-use-report"/> for an example of
+      the information provided in the report.
     </para>
   </section>
 
@@ -601,7 +515,7 @@ Result  fail</screen>
     <title>Reviewing the &openscap; evaluation report</title>
     <para>
       The HTML-formatted &openscap; report contains information collected from the target system
-      and evaluated against the rules set by the selected compliance profile. The examples below
+      and evaluated against the rules set by the selected compliance profile. These examples
       show the main features of the report.
     </para>
     <variablelist>
@@ -612,7 +526,7 @@ Result  fail</screen>
       The header of the report shows information about the chosen compliance profile.
     </para>
     <figure xml:id="fig-openscap-report-header-example">
-      <title>Header of a typical HTML-formatted report generated by OpenSCAP</title>
+      <title>Header of a typical &openscap; report</title>
       <mediaobject>
         <imageobject role="fo">
           <imagedata fileref="openscap-report-header-example.png" width="100%"/>
@@ -622,7 +536,7 @@ Result  fail</screen>
         </imageobject>
         <textobject role="description">
           <phrase>
-            The header of a typical HTML-formatted report generated by OpenSCAP. This example
+            The header of a typical HTML-formatted report generated by &openscap;. This example
             report is titled "Guide to the Secure Configuration of SUSE Liberty Linux 7" and
             uses the profile "CIS Benchmark for Level 2 - Server".
           </phrase>
@@ -636,11 +550,11 @@ Result  fail</screen>
         <listitem>
           <para>
       The <citetitle>Compliance and Scoring</citetitle> section shows a summary of the
-      compliance scan's results, including the number of passed and failed rules, as well
-      as the severity of the failures.
+      scan's results, including the number of passed and failed rules and the severity of
+      the failures.
     </para>
     <figure xml:id="fig-openscap-report-summary-example">
-      <title>Summary of results in a typical HTML-formatted report generated by OpenSCAP</title>
+      <title>Summary of results in a typical &openscap; report</title>
       <mediaobject>
         <imageobject role="fo">
           <imagedata fileref="openscap-report-summary-example.png" width="100%"/>
@@ -670,7 +584,7 @@ Result  fail</screen>
       search the list with a search bar, and click the rule names to see more details.
     </para>
     <figure xml:id="fig-openscap-report-rules-example">
-      <title>List of rules in a typical HTML-formatted report generated by OpenSCAP</title>
+      <title>List of rules in a typical &openscap; report</title>
       <mediaobject>
         <imageobject role="fo">
           <imagedata fileref="openscap-report-rules-example.png" width="100%"/>
@@ -699,7 +613,7 @@ Result  fail</screen>
       Click <guimenu>(show)</guimenu> to expand each remediation option.
     </para>
     <figure xml:id="fig-openscap-report-rule-details-example">
-      <title>Detailed information about a rule</title>
+      <title>Detailed information about a rule in a typical &openscap; report</title>
       <mediaobject>
         <imageobject role="fo">
           <imagedata fileref="openscap-report-rule-details-example.png" width="100%"/>
