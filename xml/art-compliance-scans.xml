@@ -412,8 +412,10 @@ SLES Expanded Support platform</screen>
       </callout>
     </calloutlist>
     <para>
-      The compliance scan will take some time to complete. The results of the scan are saved in
-      the specified files and also appear onscreen as shown in this example snippet:
+      The compliance scan collects information from the target system and evaluates it against
+      the rules set by the selected compliance profile. The scan will take some time to complete.
+      The results of the scan are saved in the specified files and also appear onscreen as shown
+      in this example snippet:
     </para>
 <screen>[...]
 Title   Configure auditd Max Log File Size
@@ -491,8 +493,10 @@ Connection to ftp.suse.com 21 port [tcp/ftp] succeeded!</screen>
       </callout>
     </calloutlist>
     <para>
-      The compliance scan will take some time to complete. The results of the scan are saved in
-      the specified files and also appear onscreen as shown in this example snippet:
+      The compliance scan collects information from the target system and evaluates it against
+      the rules set by the selected compliance profile. The scan will take some time to complete.
+      The results of the scan are saved in the specified files and also appear onscreen as shown
+      in this example snippet:
     </para>
 <screen>[...]
 Title   Configure auditd Max Log File Size
@@ -514,9 +518,8 @@ Result  fail
   <section xml:id="compliance-scans-use-report">
     <title>Reviewing the &openscap; evaluation report</title>
     <para>
-      The HTML-formatted &openscap; report contains information collected from the target system
-      and evaluated against the rules set by the selected compliance profile. These examples
-      show the main features of the report.
+      The HTML-formatted &openscap; report shows the results of the compliance scan in a
+      human-readable format. These examples show the main features of the report.
     </para>
     <variablelist>
       <varlistentry>
@@ -532,7 +535,7 @@ Result  fail
           <imagedata fileref="openscap-report-header-example.png" width="100%"/>
         </imageobject>
         <imageobject role="html">
-          <imagedata fileref="openscap-report-header-example.png" width="80%"/>
+          <imagedata fileref="openscap-report-header-example.png" width="90%"/>
         </imageobject>
         <textobject role="description">
           <phrase>
@@ -560,7 +563,7 @@ Result  fail
           <imagedata fileref="openscap-report-summary-example.png" width="100%"/>
         </imageobject>
         <imageobject role="html">
-          <imagedata fileref="openscap-report-summary-example.png" width="80%"/>
+          <imagedata fileref="openscap-report-summary-example.png" width="90%"/>
         </imageobject>
         <textobject role="description">
           <phrase>
@@ -590,7 +593,7 @@ Result  fail
           <imagedata fileref="openscap-report-rules-example.png" width="100%"/>
         </imageobject>
         <imageobject role="html">
-          <imagedata fileref="openscap-report-rules-example.png" width="80%"/>
+          <imagedata fileref="openscap-report-rules-example.png" width="90%"/>
         </imageobject>
         <textobject role="description">
           <phrase>
@@ -619,15 +622,15 @@ Result  fail
           <imagedata fileref="openscap-report-rule-details-example.png" width="100%"/>
         </imageobject>
         <imageobject role="html">
-          <imagedata fileref="openscap-report-rule-details-example.png" width="80%"/>
+          <imagedata fileref="openscap-report-rule-details-example.png" width="90%"/>
         </imageobject>
         <textobject role="description">
           <phrase>
-            This example shows details about the rule <literal>Ensure /home Located On Separate
-            Partition</literal>, including the result, the time the test ran, the severity of the
+            This example shows details about the rule <literal>Verify /boot/grub2/grub.cfg
+            Permissions</literal>, including the result, the time the test ran, the severity of the
             rule, clickable references, a description of the rule, and a rationale for the rule.
-            The bottom of the window has an expandable <literal>Remediation script</literal> and
-            <literal>Remediation Anaconda snippet</literal>.
+            The bottom of the window has an expandable <literal>Remediation Ansible snippet</literal>
+            and <literal>Remediation Shell script</literal>.
           </phrase>
         </textobject>
       </mediaobject>
