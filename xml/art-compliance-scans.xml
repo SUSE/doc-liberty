@@ -466,7 +466,7 @@ Connection to ftp.suse.com 21 port [tcp/ftp] succeeded!</screen>
     <calloutlist>
       <callout arearefs="co-fetch-remote-option">
         <para>
-          Downloads remote resources from <link xlink:href="ftp.suse.com"/> for use in the
+          Downloads remote resources from <link xlink:href="https://ftp.suse.com"/> for use in the
           compliance scan.
         </para>
       </callout>
