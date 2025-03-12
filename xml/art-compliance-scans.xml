@@ -45,7 +45,7 @@
   </meta>
   <revhistory xml:id="rh-art-compliance-scans">
     <revision>
-      <date>2025-02-28</date>
+      <date>2025-03-12</date>
       <revdescription>
         <para>
           Initial guide creation
@@ -65,29 +65,6 @@
     overall compliance. They assume no responsibility for its use by other
     parties, and make no guarantee, expressed or implied, about its quality,
     reliability or any other characteristic.
-  </para>
-</important>
-<important>
-  <title>End of general support</title>
-  <para>
-    &productname; &productnumber; has reached the end of general support and is now in LTSS
-    (Long Term Service Support).
-  </para>
-  <para>
-    If you have a <emphasis>&productname;</emphasis> subscription but do not have an
-    <emphasis>LTSS</emphasis> subscription, you can continue to use your systems. However,
-    registering new &rhla;&nbsp;&productnumber; or CentOS&nbsp;Linux&nbsp;&productnumber;
-    systems with the general subscription is no longer supported.
-  </para>
-  <para>
-    To register new &rhla;&nbsp;&productnumber; or CentOS&nbsp;Linux&nbsp;&productnumber;
-    systems, and to continue receiving new updates for existing systems, you must use an
-    <emphasis>LTSS</emphasis> subscription.
-  </para>
-  <para>
-    Additionally, the optional &ha; extension is no longer supported with
-    &productname; &productnumber; LTSS. You must remove this product from your system
-    before you can register with an LTSS subscription.
   </para>
 </important>
 
@@ -231,13 +208,13 @@
         <itemizedlist>
           <listitem>
             <para>
-              <link xlink:href="https://documentation.suse.com/liberty/7/html/quickstart/art-quickstart.html">
+              <link xlink:href="https://documentation.suse.com/liberty/8/html/quickstart/art-quickstart.html">
               Registering &rhla; &productnumber; or CentOS Linux &productnumber; with &rmt;</link>
             </para>
           </listitem>
           <listitem>
             <para>
-              <link xlink:href="https://documentation.suse.com/liberty/7/html/suma-quickstart/art-suma-quickstart.html">
+              <link xlink:href="https://documentation.suse.com/liberty/8/html/suma-quickstart/art-suma-quickstart.html">
               Registering &rhla; &productnumber; or CentOS Linux &productnumber; with &suma;</link>
             </para>
           </listitem>
@@ -250,7 +227,7 @@
         <itemizedlist>
           <listitem>
             <para>
-              <package>sles_es-release-server</package>
+              <package>sles_es-release</package>
             </para>
           </listitem>
           <listitem>
@@ -269,16 +246,6 @@
             </para>
           </listitem>
         </itemizedlist>
-        <important>
-              <title>Supported <package>scap-security-guide</package> version</title>
-              <para>
-                &rhla; 7 and its clones are no longer supported by the upstream
-                <literal>ComplianceAsCode</literal> project. Therefore, the most
-                recent version of <package>scap-security-guide</package>
-                available from the &productname; LTSS &productnumber; repository is
-                <package>scap-security-guide-0.1.73-1.el7_9</package>.
-              </para>
-            </important>
         <para>
           Installing these packages might also install additional dependencies.
         </para>
@@ -297,7 +264,7 @@ Vendor      : SUSE LLC &lt;https://www.suse.com/&gt;</screen>
 SLES Expanded Support platform</screen>
         <para>
           If the vendor or distribution is different from the output shown above,
-          reinstall the packages from the &productname; LTSS &productnumber; repository,
+          reinstall the packages from the &productname; &productnumber; repositories,
           and make sure no other repository overrides &productname;.
         </para>
       </listitem>
@@ -334,14 +301,14 @@ SLES Expanded Support platform</screen>
     </tip>
     <para>
       To list the profiles for &productname;&nbsp;&productnumber;, query
-      the <literal>ssg-sles_esp7-ds</literal> security policy:
+      the <literal>ssg-sles_esp8-ds</literal> security policy:
     </para>
-<screen>&prompt.root;<command>oscap info /usr/share/xml/scap/ssg/content/ssg-sles_esp7-ds.xml</command></screen>
+<screen>&prompt.root;<command>oscap info /usr/share/xml/scap/ssg/content/ssg-sles_esp8-ds.xml</command></screen>
     <para>
       You can use <command>grep</command> to narrow down the results. For example,
       to see only CIS profiles, run the following command:
     </para>
-<screen>&prompt.root;<command>oscap info /usr/share/xml/scap/ssg/content/ssg-sles_esp7-ds.xml | grep -i cis</command>
+<screen>&prompt.root;<command>oscap info /usr/share/xml/scap/ssg/content/ssg-sles_esp8-ds.xml | grep -i cis</command>
       Title: <emphasis role="bold">CIS</emphasis> Benchmark for Level 2 - Server
         Id: xccdf_org.ssgproject.content_profile_<emphasis role="bold">cis</emphasis>
       Title: <emphasis role="bold">CIS</emphasis> Benchmark for Level 1 - Server
@@ -387,7 +354,7 @@ SLES Expanded Support platform</screen>
 <command>--profile xccdf_org.ssgproject.content_profile_cis \</command><co xml:id="co-compliance-scans-profile"/>
 <command>--report /tmp/report.html \</command><co xml:id="co-compliance-scans-report"/>
 <command>--results-arf /tmp/results-arf.xml \</command><co xml:id="co-compliance-scans-results"/>
-<command>/usr/share/xml/scap/ssg/content/ssg-sles_esp7-ds.xml</command><co xml:id="co-compliance-scans-content"/></screen>
+<command>/usr/share/xml/scap/ssg/content/ssg-sles_esp8-ds.xml</command><co xml:id="co-compliance-scans-content"/></screen>
     <calloutlist>
       <callout arearefs="co-compliance-scans-profile">
         <para>
@@ -462,11 +429,11 @@ Connection to ftp.suse.com 21 port [tcp/ftp] succeeded!</screen>
 <command>--profile xccdf_org.ssgproject.content_profile_cis \</command><co xml:id="co-fetch-remote-profile"/>
 <command>--report /tmp/report.html \</command><co xml:id="co-fetch-remote-report"/>
 <command>--results-arf /tmp/results-arf.xml \</command><co xml:id="co-fetch-remote-results"/>
-<command>/usr/share/xml/scap/ssg/content/ssg-sles_esp7-ds.xml</command><co xml:id="co-fetch-remote-content"/></screen>
+<command>/usr/share/xml/scap/ssg/content/ssg-sles_esp8-ds.xml</command><co xml:id="co-fetch-remote-content"/></screen>
     <calloutlist>
       <callout arearefs="co-fetch-remote-option">
         <para>
-          Downloads remote resources from <link xlink:href="ftp.suse.com"/> for use in the
+          Downloads remote resources from <link xlink:href="https://ftp.suse.com"/> for use in the
           compliance scan.
         </para>
       </callout>
