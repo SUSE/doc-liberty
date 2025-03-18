@@ -49,6 +49,14 @@
   </meta>
   <revhistory xml:id="rh-art-quickstart">
     <revision>
+      <date>2025-03-19</date>
+      <revdescription>
+        <para>
+          HA repositories are now available with LTSS
+        </para>
+      </revdescription>
+    </revision>
+    <revision>
       <date>2024-12-13</date>
       <revdescription>
         <para>
