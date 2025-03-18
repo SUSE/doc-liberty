@@ -79,8 +79,8 @@
        </para>
 <screen>&prompt.root;<command>SUSEConnect --de-register</command></screen>
        <para>
-        This command also removes the &ha; extension if it was installed on your system.
-        &ha; is not supported with &productname; &productnumber; LTSS.
+        This command also removes the &ha; extension if it was installed on your system. The
+        &ha; repositories are now included in the &productname; &productnumber; LTSS product.
       </para>
      </listitem>
      <listitem>
@@ -181,33 +181,53 @@ Installed Products:
     <literal>enabled</literal>.
    </para>
    <para>
-     You will also see optional <literal>BASE</literal>, <literal>Source</literal> and
-     <literal>Debug</literal> repositories with the status <literal>disabled</literal>.
-     Be aware that these repositories are listed even if they are not mirrored on the &rmt; server.
-     You can check the mirrored repositories by browsing the directory listing at
-     <literal>https://<replaceable>RMT_SERVER</replaceable>/repo/SUSE/Updates/</literal> or by
-     logging in to the &rmt; server and running <command>rmt-cli repos list</command>.
+     You will also see optional repositories with the status <literal>disabled</literal>.
+     Be aware that these repositories are listed even if they are not mirrored on the &rmt;
+     server. You can check the mirrored repositories by browsing the directory listing at
+     <literal>https://<replaceable>RMT_SERVER</replaceable>/repo/SUSE/Updates/</literal>
+     or by logging in to the &rmt; server and running <command>rmt-cli repos list</command>.
    </para>
-   <tip role="compact">
-     <para>
-       <literal>BASE</literal> repositories are frozen and contain the existing packages from the
-       non-LTSS &productname; repositories. <literal>LTSS</literal> repositories contain new
-       packages for &productname; &productnumber; LTSS.
-     </para>
-   </tip>
+   <tip>
+    <title>LTSS repository names</title>
+    <itemizedlist>
+      <listitem>
+        <para>
+          <literal>BASE</literal> repositories are frozen and contain the existing packages
+          from the non-LTSS repositories.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <literal>LTSS</literal> repositories contain new packages for
+          &productname; &productnumber; LTSS.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <literal>LH</literal> repositories are the &ha; repositories for
+          &productname; &productnumber; LTSS.
+        </para>
+      </listitem>
+    </itemizedlist>
+  </tip>
   </step>
   <step>
     <para>
-      If you need any of the <literal>BASE</literal>, <literal>Source</literal> or
-    <literal>Debug</literal>repositories, enable them with the following command:
+      If you need any of the &ha;, <literal>BASE</literal>, <literal>Source</literal> or
+      <literal>Debug</literal>repositories, enable them using their <literal>repo id</literal>.
+      You can enable multiple repositories at once:
     </para>
-<screen>&prompt.root;<command>yum-config-manager --enable <replaceable>REPO_ID</replaceable></command></screen>
+<screen>&prompt.root;<command>yum-config-manager --enable <replaceable>REPO_ID1 REPO_ID2 REPO_ID3</replaceable></command></screen>
   </step>
   <step>
    <para>
     Run the update command to make sure there are no errors:
    </para>
 <screen>&prompt.root;<command>yum update</command></screen>
+    <para>
+      If you enabled a repository that is not mirrored on the &rmt; server,
+      you will see a <literal>404</literal> error.
+    </para>
   </step>
  </procedure>
  <para>
