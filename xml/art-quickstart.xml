@@ -432,7 +432,7 @@
       <listitem>
         <para>
           The repository shown in the error message might not be mirrored on the &rmt; server.
-          The optional <literal>BASE</literal>, <literal>Source</literal> and <literal>Debug</literal>
+          The optional &ha;, <literal>BASE</literal>, <literal>Source</literal> and <literal>Debug</literal>
           repositories can be enabled with <command>yum-config-manager</command> even if they are
           not available from &rmt;.
         </para>
