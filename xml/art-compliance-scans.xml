@@ -613,7 +613,7 @@ Result  fail</screen>
                   The Compliance and Scoring section shows a green and red color-coded bar indicating
                   the number of passed and failed rules. It also shows a color-coded bar indicating the
                   severity of the failed rules, in this example mostly blue (low) and yellow (medium).
-                  There is also a percentage score of passed rules. This example shows 58.97%.
+                  There is also a percentage score of passed rules. This example shows 62.93%.
                 </phrase>
               </textobject>
             </mediaobject>
