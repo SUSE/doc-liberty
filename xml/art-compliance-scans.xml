@@ -1,0 +1,693 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="urn:x-suse:xslt:profiling:docbook51-profile.xsl"
+ type="text/xml"
+ title="Profiling step"?>
+<!DOCTYPE article
+[
+  <!ENTITY % entities SYSTEM "generic-entities.ent">
+    %entities;
+]>
+
+<article xml:id="art-compliance-scans" xml:lang="en"
+ xmlns="http://docbook.org/ns/docbook" version="5.1"
+ xmlns:its="http://www.w3.org/2005/11/its"
+ xmlns:xi="http://www.w3.org/2001/XInclude"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+
+ <info>
+  <title>Running &openscap; compliance scans for &productname;</title>
+  <productname>&productname;</productname>
+  <productname role="abbrev">&productnameshort;</productname>
+  <date><?dbtimestamp format="B d, Y"?></date>
+  <xi:include href="common_copyright_gfdl.xml"/>
+  <abstract>
+   <para>
+    This guide explains how to use &openscap; to run compliance scans on
+    Enterprise Linux systems registered with &productname;&nbsp;&productnumber;.
+   </para>
+  </abstract>
+  <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
+   <dm:bugtracker>
+    <dm:url>https://github.com/SUSE/doc-liberty/issues/new</dm:url>
+    <dm:labels>documentation,issue</dm:labels>
+    <dm:version>8</dm:version>
+    <dm:assignee>tahliar</dm:assignee>
+   </dm:bugtracker>
+   <dm:editurl>https://github.com/SUSE/doc-liberty/edit/maintenance/SLL8/xml/</dm:editurl>
+   <dm:translation>no</dm:translation>
+  </dm:docmanager>
+  <meta name="title" its:translate="yes">Running &openscap; compliance scans for &productname;</meta>
+  <meta name="description" its:translate="yes">How to use &openscap; to run compliance scans on systems registered with &productname; &productnumber;.</meta>
+  <meta name="social-descr" its:translate="yes">Run compliance scans for &productname; &productnumber;.</meta>
+  <meta name="task" its:translate="yes">
+    <phrase>Auditing</phrase>
+    <phrase>Compliance</phrase>
+  </meta>
+  <revhistory xml:id="rh-art-compliance-scans">
+    <revision>
+      <date>2025-03-17</date>
+      <revdescription>
+        <para>
+          Initial guide creation
+        </para>
+      </revdescription>
+    </revision>
+  </revhistory>
+ </info>
+ <important>
+  <title>Disclaimer</title>
+  <para>
+    &suse; seeks to provide customers with quick and easy guides that can
+    assist them in maintaining security compliance. Implementation of the
+    settings contained within this guide without its prior testing in a
+    non-operational environment is highly discouraged. The developers of
+    these profiles and documentation have made reasonable efforts to ensure
+    overall compliance. They assume no responsibility for its use by other
+    parties, and make no guarantee, expressed or implied, about its quality,
+    reliability or any other characteristic.
+  </para>
+</important>
+
+  <section xml:id="sec-compliance-scans-introduction">
+    <title>Introduction</title>
+    <para>
+      &productname; is a technology and support solution for mixed Linux environments.
+      With a &productname; subscription, you can register and update &rhel; and CentOS Linux.
+    </para>
+    <para>
+      Because &productname; uses its own branding and paths that are different from &rhla; and
+      CentOS Linux, it also uses different profiles for running compliance scans with &openscap;.
+    </para>
+    <para>
+      SCAP is a framework of specifications that support automated configuration, vulnerability
+      scanning, and policy compliance evaluation of systems deployed in an organization.
+      &openscap; is a collection of open source tools that implement the SCAP framework for Linux.
+    </para>
+    <para>
+      &productname; provides the following components in its software update repositories:
+    </para>
+    <itemizedlist>
+      <listitem>
+        <para>
+          The &openscap; scanner and utilities.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          The &ssg;, a collection of security guidance and baselines from
+          <link xlink:href="https://github.com/ComplianceAsCode/content"/>
+          to apply against systems for compliance.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          SCAP Workbench, a utility with a graphical user interface for
+          SCAP content tailoring, editing, and validation.
+        </para>
+      </listitem>
+    </itemizedlist>
+    <para>
+      This guide describes running compliance scans locally using the <command>oscap</command>
+      command-line tool. To run scans remotely or with the SCAP Workbench GUI tool,
+      see the list of <xref linkend="compliance-scans-related-information"/>.
+    </para>
+    <important>
+      <title>Third-party compliance tools are not supported</title>
+      <para>
+        Third-party compliance tools, such as proprietary security scanners and upstream builds
+        of <literal>ComplianceAsCode</literal> content, might not recognize &productname; properly
+        and are not currently supported.
+      </para>
+    </important>
+    <orderedlist xml:id="compliance-scans-procedure-overview">
+      <title>Overview of procedures</title>
+      <listitem>
+        <para>
+          Review <xref linkend="compliance-scans-requirements"/> to make sure your
+          system has the registration and packages required to run compliance scans
+          with &productname; profiles.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Choose a profile for running compliance scans in
+          <xref linkend="compliance-scans-list-profiles"/>.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Run the compliance scan as described in <xref linkend="compliance-scans-generate-report"/>.
+          If you need to include remote resources in the compliance scan, use
+          <xref linkend="compliance-scans-remote-resources"/> instead.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Review the report generated by the compliance scan.
+          <xref linkend="compliance-scans-use-report"/> shows examples of the main sections
+          of the report.
+        </para>
+      </listitem>
+    </orderedlist>
+    <note>
+      <title><emphasis>&productname;</emphasis> and <emphasis>SUSE Liberty Linux</emphasis>
+      or <emphasis>Expanded Support</emphasis></title>
+      <para>
+        <emphasis>&productname;</emphasis> was previously named <emphasis>SUSE Liberty Linux</emphasis>
+        and <emphasis>&sles; with Expanded Support</emphasis>. During the transition period, some
+        components might still use one of these names.
+      </para>
+    </note>
+    <itemizedlist xml:id="compliance-scans-related-information">
+      <title>Related information</title>
+      <listitem>
+        <para>
+          <citetitle>OpenSCAP User Manual</citetitle>:
+          <link xlink:href="https://static.open-scap.org/openscap-1.2/oscap_user_manual.html"/>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <citetitle>&ssg;</citetitle>:
+          <link xlink:href="https://www.open-scap.org/security-policies/scap-security-guide/"/>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <literal>ComplianceAsCode</literal> README:
+          <link xlink:href="https://github.com/ComplianceAsCode/content/"/>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <link xlink:href="https://documentation.suse.com/compliance/all/html/SLES-openscap/article-openscap.html">
+          <citetitle>Hardening &sle; with &openscap;</citetitle></link>
+        </para>
+      </listitem>
+    </itemizedlist>
+  </section>
+
+  <section xml:id="compliance-scans-requirements">
+    <title>Requirements</title>
+    <para>
+      Before running compliance scans, make sure your system meets the following requirements:
+    </para>
+    <itemizedlist>
+      <listitem>
+        <para>
+          You can log in to the target system as either the &rootuser; user or a user with
+          <command>sudo</command> privileges. Without &rootuser; access, some tests in the
+          compliance scan might not run correctly.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          The target system is registered with &productname; as described in one
+          of the following guides:
+        </para>
+        <itemizedlist>
+          <listitem>
+            <para>
+              <link xlink:href="https://documentation.suse.com/liberty/8/html/quickstart/art-quickstart.html">
+              Registering &rhla; &productnumber; or CentOS Linux &productnumber; with &rmt;</link>
+            </para>
+          </listitem>
+          <listitem>
+            <para>
+              <link xlink:href="https://documentation.suse.com/liberty/8/html/suma-quickstart/art-suma-quickstart.html">
+              Registering &rhla; &productnumber; or CentOS Linux &productnumber; with &suma;</link>
+            </para>
+          </listitem>
+        </itemizedlist>
+      </listitem>
+      <listitem>
+        <para>
+          The most recent versions of the following packages are installed:
+        </para>
+        <itemizedlist>
+          <listitem>
+            <para>
+              <package>sles_es-release</package>
+            </para>
+          </listitem>
+          <listitem>
+            <para>
+              <package>openscap</package>
+            </para>
+          </listitem>
+          <listitem>
+            <para>
+              <package>openscap-scanner</package>
+            </para>
+          </listitem>
+          <listitem>
+            <para>
+              <package>scap-security-guide</package>
+            </para>
+          </listitem>
+        </itemizedlist>
+        <para>
+          Installing these packages might also install additional dependencies.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          The installed packages are provided by &suse;. You can use <command>rpm -qi</command>
+          to check the vendor. For example:
+        </para>
+<screen>&prompt.root;<command>rpm -qi openscap-scanner | grep -i vendor</command>
+Vendor      : SUSE LLC &lt;https://www.suse.com/&gt;</screen>
+        <para>
+          You can also check the distribution name. For example:
+        </para>
+<screen>&prompt.root;<command>rpm -q --queryformat '%{DISTRIBUTION}\n' openscap</command>
+SLES Expanded Support platform</screen>
+        <para>
+          If the vendor or distribution is different from the output shown above,
+          reinstall the packages from the &productname; &productnumber; repositories,
+          and make sure no other repository overrides &productname;.
+        </para>
+      </listitem>
+    </itemizedlist>
+    <tip>
+      <title>SCAP Workbench</title>
+      <para>
+        The optional package <package>scap-workbench</package> is also available,
+        but is not required to run scans locally from the command line.
+      </para>
+      <para>
+        As a security best practice, avoid installing an application software such as
+        SCAP Workbench on the target system. Instead, install SCAP Workbench on a
+        client machine and scan the target system remotely.
+      </para>
+    </tip>
+  </section>
+
+  <section xml:id="compliance-scans-list-profiles">
+    <title>Choosing an &openscap; compliance profile</title>
+    <para>
+      The &ssg; contains the latest set of security polices for Linux systems. Each security policy
+      includes multiple compliance profiles, which contain sets of rules to test the system against.
+      Before you can run a compliance scan, you must choose the appropriate compliance profile
+      for your system.
+    </para>
+    <tip>
+      <title>Security policy compatibility</title>
+      <para>
+        The security policies are installed in <filename>/usr/share/xml/scap/ssg/content/</filename>.
+        For compatibility, builds of the &ssg; for &productname; also provide &rhla; policies in
+        the same location.
+      </para>
+    </tip>
+    <para>
+      To list the profiles for &productname;&nbsp;&productnumber;, query
+      the <literal>ssg-sles_esp8-ds</literal> security policy:
+    </para>
+<screen>&prompt.root;<command>oscap info /usr/share/xml/scap/ssg/content/ssg-sles_esp8-ds.xml</command></screen>
+    <para>
+      You can use <command>grep</command> to narrow down the results. For example,
+      to see only CIS profiles, run the following command:
+    </para>
+<screen>&prompt.root;<command>oscap info /usr/share/xml/scap/ssg/content/ssg-sles_esp8-ds.xml | grep -i cis</command>
+      Title: <emphasis role="bold">CIS</emphasis> Benchmark for Level 2 - Server
+        Id: xccdf_org.ssgproject.content_profile_<emphasis role="bold">cis</emphasis>
+      Title: <emphasis role="bold">CIS</emphasis> Benchmark for Level 1 - Server
+        Id: xccdf_org.ssgproject.content_profile_<emphasis role="bold">cis</emphasis>_server_l1
+      Title: <emphasis role="bold">CIS</emphasis> Benchmark for Level 1 - Workstation
+        Id: xccdf_org.ssgproject.content_profile_<emphasis role="bold">cis</emphasis>_workstation_l1
+      Title: <emphasis role="bold">CIS</emphasis> Benchmark for Level 2 - Workstation
+        Id: xccdf_org.ssgproject.content_profile_<emphasis role="bold">cis</emphasis>_workstation_l2</screen>
+    <para>
+      Select the profile to use. You will specify this profile when you run the compliance scan.
+    </para>
+    <para>
+      The output of <command>oscap info</command> also includes a <literal>WARNING</literal>
+      if the security policy includes a reference to remote resources from
+      <link xlink:href="https://ftp.suse.com"/>. Using remote resources in the compliance scan
+      is not compulsory, but can provide useful data about known security vulnerabilities.
+      You can continue with either of the following options:
+    </para>
+    <itemizedlist>
+      <listitem>
+        <para>
+          Ignore the warning and perform the compliance scan without remote resources as
+          described in <xref linkend="compliance-scans-generate-report"/>.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Download the remote resources and use them in the compliance scan as described in
+          <xref linkend="compliance-scans-remote-resources"/>.
+        </para>
+      </listitem>
+    </itemizedlist>
+  </section>
+
+  <section xml:id="compliance-scans-generate-report">
+    <title>Running an &openscap; compliance scan</title>
+    <para>
+      After choosing a profile, run a compliance scan on the target system with the
+      <command>oscap xccdf eval</command> command. Specify the profile as shown in
+      the following example:
+    </para>
+<screen>&prompt.root;<command>oscap xccdf eval \</command>
+<command>--profile xccdf_org.ssgproject.content_profile_cis \</command><co xml:id="co-compliance-scans-profile"/>
+<command>--report /tmp/report.html \</command><co xml:id="co-compliance-scans-report"/>
+<command>--results-arf /tmp/results-arf.xml \</command><co xml:id="co-compliance-scans-results"/>
+<command>/usr/share/xml/scap/ssg/content/ssg-sles_esp8-ds.xml</command><co xml:id="co-compliance-scans-content"/></screen>
+    <calloutlist>
+      <callout arearefs="co-compliance-scans-profile">
+        <para>
+          The compliance profile to use for the scan.
+        </para>
+     </callout>
+     <callout arearefs="co-compliance-scans-report">
+        <para>
+          Where to save the HTML report with test results and recommended remediations.
+        </para>
+      </callout>
+      <callout arearefs="co-compliance-scans-results">
+        <para>
+          Where to save the XML report, which can be used later in automation and
+          report generation.
+        </para>
+      </callout>
+      <callout arearefs="co-compliance-scans-content">
+        <para>
+          The &ssg; policy file that the compliance profile belongs to.
+        </para>
+      </callout>
+    </calloutlist>
+    <para>
+      The compliance scan collects information from the target system and evaluates it against
+      rules set by the selected compliance profile. The scan will take some time to complete.
+      The results are saved in the specified files and also appear onscreen as shown
+      in this example snippet:
+    </para>
+<screen>Title   Configure auditd Max Log File Size
+Rule    xccdf_org.ssgproject.content_rule_auditd_data_retention_max_log_file
+Result  pass
+
+Title   Configure auditd max_log_file_action Upon Reaching Maximum Log Size
+Rule    xccdf_org.ssgproject.content_rule_auditd_data_retention_max_log_file_action
+Result  fail</screen>
+    <para>
+      When the scan is complete, you can review the report by opening
+      <filename>/tmp/report.html</filename> in a browser. See
+      <xref linkend="compliance-scans-use-report"/> for examples of the report.
+    </para>
+  </section>
+
+  <section xml:id="compliance-scans-remote-resources">
+    <title>Including remote resources in an &openscap; scan</title>
+    <para>
+      &productname; provides external OVAL-formatted content for use in scans. This content is
+      downloaded from <link xlink:href="https://ftp.suse.com/pub/projects/security/oval/"/> and
+      includes information such as recently addressed security vulnerabilities.
+      Scans using remote resources take longer and generate larger reports.
+    </para>
+    <para>
+      To include remote content in a compliance scan, use one of the following procedures:
+    </para>
+    <itemizedlist>
+      <listitem>
+        <para>
+          Directly download the remote content during the compliance scan, as described in
+          <xref linkend="pro-compliance-scans-remote-resources-realtime"/>.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Download the remote content and save it as a local file, as described
+          in <xref linkend="pro-compliance-scans-remote-resources-download"/>.
+          This can be useful for systems with stricter security policies
+          (for example, if &openscap; cannot access external networks).
+        </para>
+      </listitem>
+    </itemizedlist>
+    <procedure xml:id="pro-compliance-scans-remote-resources-realtime">
+      <title>Fetching remote resources during a compliance scan</title>
+      <step>
+        <para>
+          Make sure the machine you run the scan from has access to
+          <link xlink:href="https://ftp.suse.com"/>:
+        </para>
+<screen>&prompt.root;<command>nc -zv ftp.suse.com 21</command>
+Connection to ftp.suse.com 21 port [tcp/ftp] succeeded!</screen>
+      </step>
+      <step>
+        <para>
+          Run the compliance scan with the <literal>--fetch-remote-resources</literal> option:
+        </para>
+<screen>&prompt.root;<command>oscap xccdf eval --fetch-remote-resources \</command><co xml:id="co-fetch-remote-option"/>
+<command>--profile xccdf_org.ssgproject.content_profile_cis \</command><co xml:id="co-fetch-remote-profile"/>
+<command>--report /tmp/report.html \</command><co xml:id="co-fetch-remote-report"/>
+<command>--results-arf /tmp/results-arf.xml \</command><co xml:id="co-fetch-remote-results"/>
+<command>/usr/share/xml/scap/ssg/content/ssg-sles_esp8-ds.xml</command><co xml:id="co-fetch-remote-content"/></screen>
+        <calloutlist>
+          <callout arearefs="co-fetch-remote-option">
+            <para>
+              Fetches remote resources from <link xlink:href="https://ftp.suse.com"/> for use in the
+              compliance scan.
+            </para>
+          </callout>
+          <callout arearefs="co-fetch-remote-profile">
+            <para>
+              The compliance profile to use for the scan.
+            </para>
+        </callout>
+        <callout arearefs="co-fetch-remote-report">
+            <para>
+              Where to save the HTML report with test results and recommended remediations.
+            </para>
+          </callout>
+          <callout arearefs="co-fetch-remote-results">
+            <para>
+              Where to save the XML report, which can be used later in automation and
+              report generation.
+            </para>
+          </callout>
+          <callout arearefs="co-fetch-remote-content">
+            <para>
+              The &ssg; policy file that the compliance profile belongs to.
+            </para>
+          </callout>
+        </calloutlist>
+      </step>
+    </procedure>
+    <procedure xml:id="pro-compliance-scans-remote-resources-download">
+      <title>Saving remote resources locally to use in a compliance scan</title>
+      <step>
+        <para>
+          Create a directory for storing downloaded resources:
+        </para>
+<screen>&prompt.root;<command>mkdir /tmp/scap-files</command></screen>
+      </step>
+      <step>
+        <para>
+          Find the link to the remote resource by querying the <literal>ssg-sles_esp8-ds</literal>
+          security policy:
+        </para>
+<screen>&prompt.root;<command>oscap info /usr/share/xml/scap/ssg/content/ssg-sles_esp8-ds.xml</command></screen>
+        <para>
+          The output of this command includes a <literal>WARNING</literal> that contains the link.
+        </para>
+      </step>
+      <step>
+        <para>
+          Using the link found in the previous command, download the remote resource and save it as
+          a local file in the <filename>/tmp/scap-files</filename> directory. For example:
+        </para>
+<screen>&prompt.root;<command>wget -O /tmp/scap-files/pub-projects-security-oval-suse.liberty.linux.8.xml \</command>
+<command>https://ftp.suse.com/pub/projects/security/oval/suse.liberty.linux.8.xml</command></screen>
+      </step>
+      <step>
+        <para>
+          Run the compliance scan with the <literal>--local-files</literal> option:
+        </para>
+<screen>&prompt.root;<command>oscap xccdf eval --local-files /tmp/scap-files \</command><co xml:id="co-download-remote-option"/>
+<command>--profile xccdf_org.ssgproject.content_profile_cis \</command><co xml:id="co-download-remote-profile"/>
+<command>--report /tmp/report.html \</command><co xml:id="co-download-remote-report"/>
+<command>--results-arf /tmp/results-arf.xml \</command><co xml:id="co-download-remote-results"/>
+<command>/usr/share/xml/scap/ssg/content/ssg-sles_esp8-ds.xml</command><co xml:id="co-download-remote-content"/></screen>
+        <calloutlist>
+          <callout arearefs="co-download-remote-option">
+            <para>
+              The directory where downloaded resources are stored.
+            </para>
+          </callout>
+          <callout arearefs="co-download-remote-profile">
+            <para>
+              The compliance profile to use for the scan.
+            </para>
+        </callout>
+        <callout arearefs="co-download-remote-report">
+            <para>
+              Where to save the HTML report with test results and recommended remediations.
+            </para>
+          </callout>
+          <callout arearefs="co-download-remote-results">
+            <para>
+              Where to save the XML report, which can be used later in automation and
+              report generation.
+            </para>
+          </callout>
+          <callout arearefs="co-download-remote-content">
+            <para>
+              The &ssg; policy file that the compliance profile belongs to.
+            </para>
+          </callout>
+        </calloutlist>
+      </step>
+    </procedure>
+    <para>
+      The compliance scan collects information from the target system and evaluates it against
+      rules set by the selected compliance profile. The scan will take some time to complete.
+      The results are saved in the specified files and also appear onscreen as shown
+      in this example snippet:
+    </para>
+<screen>Title   Configure auditd Max Log File Size
+Rule    xccdf_org.ssgproject.content_rule_auditd_data_retention_max_log_file
+Result  pass
+
+Title   Configure auditd max_log_file_action Upon Reaching Maximum Log Size
+Rule    xccdf_org.ssgproject.content_rule_auditd_data_retention_max_log_file_action
+Result  fail</screen>
+    <para>
+      After the scan is complete, you can review the report by opening
+      <filename>/tmp/report.html</filename> in a browser. See
+      <xref linkend="compliance-scans-use-report"/> for examples of the report.
+    </para>
+  </section>
+
+  <section xml:id="compliance-scans-use-report">
+    <title>Reviewing the &openscap; evaluation report</title>
+    <para>
+      The HTML-formatted &openscap; report shows the results of the compliance scan in a
+      human-readable format. These examples show the main features of the report.
+    </para>
+    <variablelist>
+      <varlistentry>
+        <term>Report header</term>
+        <listitem>
+          <para>
+            The header of the report shows information about the chosen compliance profile.
+          </para>
+          <figure xml:id="fig-openscap-report-header-example">
+            <title>Header of a typical &openscap; report</title>
+            <mediaobject>
+              <imageobject role="fo">
+                <imagedata fileref="openscap-report-header-example.png" width="100%"/>
+              </imageobject>
+              <imageobject role="html">
+                <imagedata fileref="openscap-report-header-example.png" width="90%"/>
+              </imageobject>
+              <textobject role="description">
+                <phrase>
+                  The header of a typical HTML-formatted report generated by &openscap;. This example
+                  report is titled "Guide to the Secure Configuration of SUSE Liberty Linux 8" and
+                  uses the profile "CIS Benchmark for Level 2 - Server".
+                </phrase>
+              </textobject>
+            </mediaobject>
+          </figure>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Compliance and Scoring</term>
+        <listitem>
+          <para>
+            The <citetitle>Compliance and Scoring</citetitle> section shows a summary of the
+            scan's results, including the number of passed and failed rules and the severity of
+            the failures.
+          </para>
+          <figure xml:id="fig-openscap-report-summary-example">
+            <title>Summary of results in a typical &openscap; report</title>
+            <mediaobject>
+              <imageobject role="fo">
+                <imagedata fileref="openscap-report-summary-example.png" width="100%"/>
+              </imageobject>
+              <imageobject role="html">
+                <imagedata fileref="openscap-report-summary-example.png" width="90%"/>
+              </imageobject>
+              <textobject role="description">
+                <phrase>
+                  The Compliance and Scoring section shows a green and red color-coded bar indicating
+                  the number of passed and failed rules. It also shows a color-coded bar indicating the
+                  severity of the failed rules, in this example mostly blue (low) and yellow (medium).
+                  There is also a percentage score of passed rules. This example shows 58.97%.
+                </phrase>
+              </textobject>
+            </mediaobject>
+          </figure>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Rule Overview</term>
+        <listitem>
+          <para>
+            The <citetitle>Rule Overview</citetitle> section shows a list of rules included with the
+            compliance profile, along with the severity and test result of each rule. This section is
+            interactive. You can check and uncheck filter options, group rules by different criteria,
+            search the list with a search bar, and click the rule names to see more details.
+            You can also expand the details for every rule by clicking
+            <guimenu>Show all result details</guimenu> at the bottom of the report.
+          </para>
+          <figure xml:id="fig-openscap-report-rules-example">
+            <title>Partial list of rules in a typical &openscap; report</title>
+            <mediaobject>
+              <imageobject role="fo">
+                <imagedata fileref="openscap-report-rules-example.png" width="100%"/>
+              </imageobject>
+              <imageobject role="html">
+                <imagedata fileref="openscap-report-rules-example.png" width="90%"/>
+              </imageobject>
+              <textobject role="description">
+                <phrase>
+                  This Rule Overview example shows a small selection of rules along with their
+                  severity and test results. Above the list is a group of check boxes for filtering
+                  the rule list, a search bar to search the list, and a drop-down list of different
+                  ways to group the rules in the list.
+                </phrase>
+              </textobject>
+            </mediaobject>
+          </figure>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Rule details and remediation</term>
+        <listitem>
+          <para>
+            Clicking the name of a rule opens a window showing detailed information about that rule.
+            Depending on the rule, the detail window might also include multiple remediation options.
+            Click a remediation option to expand it.
+          </para>
+          <figure xml:id="fig-openscap-report-rule-details-example">
+            <title>Detailed information about a rule in a typical &openscap; report</title>
+            <mediaobject>
+              <imageobject role="fo">
+                <imagedata fileref="openscap-report-rule-details-example.png" width="100%"/>
+              </imageobject>
+              <imageobject role="html">
+                <imagedata fileref="openscap-report-rule-details-example.png" width="90%"/>
+              </imageobject>
+              <textobject role="description">
+                <phrase>
+                  This example shows details about the rule <literal>Ensure Sudo Logfile Exists -
+                  sudo logfile</literal>, including the result, the time the test ran, the severity
+                  of the rule, clickable references, a description of the rule, and a rationale for
+                  the rule. This example window shows an expandable <literal>Remediation Shell
+                  snippet</literal> and <literal>Remediation Ansible script</literal>. The bottom
+                  of the window also shows specific detail about the test result: in this example,
+                  the scan did not find a log file in the <filename>/etc/sudoers</filename> directory.
+                </phrase>
+              </textobject>
+            </mediaobject>
+          </figure>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </section>
+
+ <xi:include href="common_legal.xml"/>
+</article>
