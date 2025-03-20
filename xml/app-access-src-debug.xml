@@ -49,9 +49,10 @@
   </itemizedlist>
 
   <para>
-    Repositories must be mirrored on the &rmt; server before you can access them on your system.
-    <literal>BASE</literal>, <literal>Source</literal> and <literal>Debug</literal> repositories
-    are not mirrored by default. Use this procedure to mirror any additional repositories you need:
+    Repositories must be mirrored on the &rmt; server before you can access them on your &rhla;
+    or CentOS Linux system. &ha;, <literal>BASE</literal>, <literal>Source</literal> and
+    <literal>Debug</literal> repositories are not mirrored by default. Use this procedure to
+    mirror any additional repositories you need:
   </para>
   <procedure xml:id="pro-mirror-src-debug">
     <title>Mirroring additional repositories on the &rmt; server</title>
@@ -59,12 +60,29 @@
       <para>
         List the &productname; &productnumber; LTSS repositories:
       </para>
-<screen>&prompt.root;<command>rmt-cli repos list --all | grep -E "&reponameshort;-&productnumber;-(BASE|LTSS)"</command></screen>
-      <tip role="compact">
-        <para>
-          <literal>BASE</literal> repositories are frozen and contain the existing packages
-          from the non-LTSS &productname; &productnumber; repositories. <literal>LTSS</literal> repositories contain new packages for &productname; &productnumber; LTSS.
-        </para>
+<screen>&prompt.root;<command>rmt-cli repos list --all | grep -E "&reponameshort;-&productnumber;-(BASE|LTSS|LH)"</command></screen>
+      <tip>
+        <title>LTSS repository names</title>
+        <itemizedlist>
+          <listitem>
+            <para>
+              <literal>BASE</literal> repositories are frozen and contain the existing packages
+              from the non-LTSS repositories.
+            </para>
+          </listitem>
+          <listitem>
+            <para>
+              <literal>LTSS</literal> repositories contain new packages for
+              &productname; &productnumber; LTSS.
+            </para>
+          </listitem>
+          <listitem>
+            <para>
+              <literal>LH</literal> repositories are the &ha; repositories for
+              &productname; &productnumber; LTSS.
+            </para>
+          </listitem>
+        </itemizedlist>
       </tip>
       <para>
         If the repositories you need already have the status <literal>Mirror</literal>,
@@ -73,7 +91,7 @@
     </step>
     <step>
       <para>
-        Enable the repositories using their four-digit repository ID. You can enable multiple
+        Enable a repository using its four-digit repository ID. You can enable multiple
         repositories at once:
       </para>
 <screen>&prompt.root;<command>rmt-cli repos enable <replaceable>REPO_ID1</replaceable> <replaceable>REPO_ID2</replaceable> <replaceable>REPO_ID3</replaceable></command></screen>

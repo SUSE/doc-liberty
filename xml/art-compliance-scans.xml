@@ -84,11 +84,6 @@
     systems, and to continue receiving new updates for existing systems, you must use an
     <emphasis>LTSS</emphasis> subscription.
   </para>
-  <para>
-    Additionally, the optional &ha; extension is no longer supported with
-    &productname; &productnumber; LTSS. You must remove this product from your system
-    before you can register with an LTSS subscription.
-  </para>
 </important>
 
   <section xml:id="sec-compliance-scans-introduction">

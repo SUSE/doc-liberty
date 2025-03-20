@@ -49,6 +49,14 @@
   </meta>
   <revhistory xml:id="rh-art-quickstart">
     <revision>
+      <date>2025-03-19</date>
+      <revdescription>
+        <para>
+          HA repositories are now available with LTSS
+        </para>
+      </revdescription>
+    </revision>
+    <revision>
       <date>2024-12-13</date>
       <revdescription>
         <para>
@@ -150,7 +158,7 @@
  <section xml:id="introduction-quickstart">
   <title>Introduction</title>
    <important>
-     <title>End of general support for &productname; &productnumber;</title>
+     <title>End of general support</title>
      <para>
        &productname; &productnumber; has reached the end of general support and is now in LTSS
        (Long Term Service Support).
@@ -167,19 +175,15 @@
        <emphasis>LTSS</emphasis> subscription.
      </para>
      <para>
-       Additionally, the optional &ha; extension is no longer supported with
-       &productname; &productnumber; LTSS. You must remove this product from your system
-       before you can register with an LTSS subscription.
-     </para>
-     <para>
-       If you previously registered your systems with a general subscription and want to move
-       them to an LTSS subscription, see <xref linkend="mirror-repositories-with-rmt"/>
+       If you previously registered with a general subscription and want to move
+       to an LTSS subscription, see <xref linkend="mirror-repositories-with-rmt"/>
        and <xref linkend="register-7-with-rmt"/>.
      </para>
    </important>
    <para>
     &productname; is a technology and support solution for mixed Linux environments.
     With a &productname; subscription, you can register and update &rhel; and CentOS Linux.
+    Optional &ha; repositories are also available.
    </para>
    <para>
     The following table shows which Linux distributions are supported by each subscription. These
@@ -428,7 +432,7 @@
       <listitem>
         <para>
           The repository shown in the error message might not be mirrored on the &rmt; server.
-          The optional <literal>BASE</literal>, <literal>Source</literal> and <literal>Debug</literal>
+          The optional &ha;, <literal>BASE</literal>, <literal>Source</literal> and <literal>Debug</literal>
           repositories can be enabled with <command>yum-config-manager</command> even if they are
           not available from &rmt;.
         </para>

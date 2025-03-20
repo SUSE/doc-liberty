@@ -63,7 +63,8 @@
      &productname; &productnumber; LTSS.
    </para>
    <para>
-     There are no new &ha; repositories. &ha; is not supported with &productname; &productnumber; LTSS.
+     Additionally, the optional &ha; repositories are now included in the
+     &productname; &productnumber; LTSS product instead of a separate &ha; extension.
    </para>
    <para>
     If you previously mirrored the &productname; repositories with the general subscription,
@@ -82,7 +83,7 @@
        </para>
 <screen>&prompt.root;<command>rmt-cli products disable 1252</command></screen>
        <para>
-         &ha; is not supported with &productname; &productnumber; LTSS.
+         The &ha; repositories are now included in the &productname; &productnumber; LTSS product.
        </para>
      </listitem>
      <listitem>
@@ -119,38 +120,47 @@
   </step>
   <step>
    <para>
-    If you also need the <literal>BASE</literal>, <literal>Source</literal> or
+    If you also need the &ha;, <literal>BASE</literal>, <literal>Source</literal> or
     <literal>Debug</literal> repositories, enable them with the following commands:
    </para>
-   <itemizedlist>
-     <listitem>
+   <substeps>
+     <step>
        <para>
-         <literal>&reponameshort;-&productnumber;-BASE-Updates</literal>:
+        List the &productname; &productnumber; LTSS repositories:
        </para>
-<screen>&prompt.root;<command>rmt-cli repos enable 6986</command></screen>
-     </listitem>
-<listitem>
+<screen>&prompt.root;<command>rmt-cli repos list --all | grep -E "&reponameshort;-&productnumber;-(BASE|LTSS|LH)"</command></screen>
+     </step>
+     <step>
        <para>
-         <literal>&reponameshort;-&productnumber;-LTSS-Source-Updates</literal> and
-         <literal>&reponameshort;-&productnumber;-BASE-Source-Updates</literal>:
+        Enable a repository using its four-digit repository ID. You can enable multiple
+        repositories at once:
        </para>
-<screen>&prompt.root;<command>rmt-cli repos enable 6748 6987</command></screen>
-     </listitem>
-     <listitem>
-       <para>
-         <literal>&reponameshort;-&productnumber;-LTSS-Debug-Updates</literal> and
-         <literal>&reponameshort;-&productnumber;-BASE-Debug-Updates</literal>:
-       </para>
-<screen>&prompt.root;<command>rmt-cli repos enable 6985 6988</command></screen>
-     </listitem>
-   </itemizedlist>
-   <tip role="compact">
-     <para>
-       <literal>BASE</literal> repositories are frozen and contain the existing packages from the
-       non-LTSS &productname; repositories. <literal>LTSS</literal> repositories contain new
-       packages for &productname; &productnumber; LTSS.
-     </para>
-   </tip>
+<screen>&prompt.root;<command>rmt-cli repos enable <replaceable>REPO_ID1 REPO_ID2 REPO_ID3</replaceable></command></screen>
+     </step>
+   </substeps>
+   <tip>
+    <title>LTSS repository names</title>
+    <itemizedlist>
+      <listitem>
+        <para>
+          <literal>BASE</literal> repositories are frozen and contain the existing packages
+          from the non-LTSS repositories.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <literal>LTSS</literal> repositories contain new packages for
+          &productname; &productnumber; LTSS.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <literal>LH</literal> repositories are the &ha; repositories for
+          &productname; &productnumber; LTSS.
+        </para>
+      </listitem>
+    </itemizedlist>
+  </tip>
   </step>
   <step>
    <para>
