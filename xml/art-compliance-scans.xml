@@ -15,7 +15,7 @@
  xmlns:xlink="http://www.w3.org/1999/xlink">
 
  <info>
-  <title>Running &openscap; compliance scans for &productname;</title>
+  <title>Running &openscap; compliance scans for &productname;&nbsp;&productnumber;</title>
   <productname>&productname;</productname>
   <productname role="abbrev">&productnameshort;</productname>
   <date><?dbtimestamp format="B d, Y"?></date>
@@ -36,7 +36,7 @@
    <dm:editurl>https://github.com/SUSE/doc-liberty/edit/maintenance/SLL7/xml/</dm:editurl>
    <dm:translation>no</dm:translation>
   </dm:docmanager>
-  <meta name="title" its:translate="yes">Running &openscap; compliance scans for &productname;</meta>
+  <meta name="title" its:translate="yes">Running &openscap; compliance scans for &productname; &productnumber;</meta>
   <meta name="description" its:translate="yes">How to use &openscap; to run compliance scans on systems registered with &productname; &productnumber;.</meta>
   <meta name="social-descr" its:translate="yes">Run compliance scans for &productname; &productnumber;.</meta>
   <meta name="task" its:translate="yes">
@@ -154,7 +154,7 @@
       </listitem>
       <listitem>
         <para>
-          Run the compliance scan as described in <xref linkend="compliance-scans-generate-report"/>.
+          Run the compliance scan, as described in <xref linkend="compliance-scans-generate-report"/>.
           If you need to include remote resources in the compliance scan, use
           <xref linkend="compliance-scans-remote-resources"/> instead.
         </para>
@@ -220,7 +220,7 @@
       </listitem>
       <listitem>
         <para>
-          The target system is registered with &productname; as described in one
+          The target system is registered with &productname;, as described in one
           of the following guides:
         </para>
         <itemizedlist>
@@ -358,13 +358,13 @@ SLES Expanded Support platform</screen>
     <itemizedlist>
       <listitem>
         <para>
-          Ignore the warning and perform the compliance scan without remote resources as
+          Ignore the warning and perform the compliance scan without remote resources, as
           described in <xref linkend="compliance-scans-generate-report"/>.
         </para>
       </listitem>
       <listitem>
         <para>
-          Download the remote resources and use them in the compliance scan as described in
+          Download the remote resources and use them in the compliance scan, as described in
           <xref linkend="compliance-scans-remote-resources"/>.
         </para>
       </listitem>
@@ -408,8 +408,8 @@ SLES Expanded Support platform</screen>
     </calloutlist>
     <para>
       The compliance scan collects information from the target system and evaluates it against
-      the rules set by the selected compliance profile. The scan will take some time to complete.
-      The results of the scan are saved in the specified files and also appear onscreen as shown
+      rules set by the selected compliance profile. The scan will take some time to complete.
+      The results are saved in the specified files and also appear on screen, as shown
       in this example snippet:
     </para>
 <screen>[...]
@@ -424,8 +424,7 @@ Result  fail
     <para>
       When the scan is complete, you can review the report by opening
       <filename>/tmp/report.html</filename> in a browser. See
-      <xref linkend="compliance-scans-use-report"/> for an example of
-      the information provided in the report.
+      <xref linkend="compliance-scans-use-report"/> for examples of the report.
     </para>
   </section>
 
@@ -489,8 +488,8 @@ Connection to ftp.suse.com 21 port [tcp/ftp] succeeded!</screen>
     </calloutlist>
     <para>
       The compliance scan collects information from the target system and evaluates it against
-      the rules set by the selected compliance profile. The scan will take some time to complete.
-      The results of the scan are saved in the specified files and also appear onscreen as shown
+      rules set by the selected compliance profile. The scan will take some time to complete.
+      The are saved in the specified files and also appear on screen, as shown
       in this example snippet:
     </para>
 <screen>[...]
@@ -505,8 +504,7 @@ Result  fail
     <para>
       When the scan is complete, you can review the report by opening
       <filename>/tmp/report.html</filename> in a browser. See
-      <xref linkend="compliance-scans-use-report"/> for an example of
-      the information provided in the report.
+      <xref linkend="compliance-scans-use-report"/> for examples of the report.
     </para>
   </section>
 
@@ -580,6 +578,8 @@ Result  fail
       compliance profile, along with the severity and test result of each rule. This section is
       interactive. You can check and uncheck filter options, group rules by different criteria,
       search the list with a search bar, and click the rule names to see more details.
+      You can also expand the details for every rule by clicking
+      <guimenu>Show all result details</guimenu> at the bottom of the report.
     </para>
     <figure xml:id="fig-openscap-report-rules-example">
       <title>List of rules in a typical &openscap; report</title>
@@ -633,10 +633,6 @@ Result  fail
         </listitem>
       </varlistentry>
     </variablelist>
-    <para>
-      You can also expand the details for every rule by clicking
-      <guimenu>Show all result details</guimenu> at the bottom of the report.
-    </para>
   </section>
 
  <xi:include href="common_legal.xml"/>
