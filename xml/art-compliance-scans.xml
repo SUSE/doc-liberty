@@ -15,7 +15,7 @@
  xmlns:xlink="http://www.w3.org/1999/xlink">
 
  <info>
-  <title>Running &openscap; compliance scans for &productname;</title>
+  <title>Running &openscap; Compliance Scans for &productname;&nbsp;&productnumber;</title>
   <productname>&productname;</productname>
   <productname role="abbrev">&productnameshort;</productname>
   <date><?dbtimestamp format="B d, Y"?></date>
@@ -36,7 +36,7 @@
    <dm:editurl>https://github.com/SUSE/doc-liberty/edit/maintenance/SLL8/xml/</dm:editurl>
    <dm:translation>no</dm:translation>
   </dm:docmanager>
-  <meta name="title" its:translate="yes">Running &openscap; compliance scans for &productname;</meta>
+  <meta name="title" its:translate="yes">Running &openscap; compliance scans for &productname; &productnumber;</meta>
   <meta name="description" its:translate="yes">How to use &openscap; to run compliance scans on systems registered with &productname; &productnumber;.</meta>
   <meta name="social-descr" its:translate="yes">Run compliance scans for &productname; &productnumber;.</meta>
   <meta name="task" its:translate="yes">
@@ -136,7 +136,7 @@
       </listitem>
       <listitem>
         <para>
-          Run the compliance scan as described in <xref linkend="compliance-scans-generate-report"/>.
+          Run the compliance scan, as described in <xref linkend="compliance-scans-generate-report"/>.
           If you need to include remote resources in the compliance scan, use
           <xref linkend="compliance-scans-remote-resources"/> instead.
         </para>
@@ -202,7 +202,7 @@
       </listitem>
       <listitem>
         <para>
-          The target system is registered with &productname; as described in one
+          The target system is registered with &productname;, as described in one
           of the following guides:
         </para>
         <itemizedlist>
@@ -330,13 +330,13 @@ SLES Expanded Support platform</screen>
     <itemizedlist>
       <listitem>
         <para>
-          Ignore the warning and perform the compliance scan without remote resources as
+          Ignore the warning and perform the compliance scan without remote resources, as
           described in <xref linkend="compliance-scans-generate-report"/>.
         </para>
       </listitem>
       <listitem>
         <para>
-          Download the remote resources and use them in the compliance scan as described in
+          Download the remote resources and use them in the compliance scan, as described in
           <xref linkend="compliance-scans-remote-resources"/>.
         </para>
       </listitem>
@@ -381,7 +381,7 @@ SLES Expanded Support platform</screen>
     <para>
       The compliance scan collects information from the target system and evaluates it against
       rules set by the selected compliance profile. The scan will take some time to complete.
-      The results are saved in the specified files and also appear onscreen as shown
+      The results are saved in the specified files and also appear on screen, as shown
       in this example snippet:
     </para>
 <screen>Title   Configure auditd Max Log File Size
@@ -543,7 +543,7 @@ Connection to ftp.suse.com 21 port [tcp/ftp] succeeded!</screen>
     <para>
       The compliance scan collects information from the target system and evaluates it against
       rules set by the selected compliance profile. The scan will take some time to complete.
-      The results are saved in the specified files and also appear onscreen as shown
+      The results are saved in the specified files and also appear on screen, as shown
       in this example snippet:
     </para>
 <screen>Title   Configure auditd Max Log File Size
@@ -678,7 +678,7 @@ Result  fail</screen>
                   of the rule, clickable references, a description of the rule, and a rationale for
                   the rule. This example window shows an expandable <literal>Remediation Shell
                   snippet</literal> and <literal>Remediation Ansible script</literal>. The bottom
-                  of the window also shows specific detail about the test result: in this example,
+                  of the window also shows specific details about the test result: in this example,
                   the scan did not find a log file in the <filename>/etc/sudoers</filename> directory.
                 </phrase>
               </textobject>
