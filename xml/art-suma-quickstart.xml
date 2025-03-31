@@ -230,10 +230,9 @@
   <section xml:id="deploy-suma">
     <title>Deploying &suma;</title>
     <para>
-      See the following guide to install &suma; on &slem;, a lightweight, immutable
-      operating system for containerized and virtual workloads:
-      <link xlink:href="https://documentation.suse.com/suma/5.0/en/suse-manager/quickstart/container-deployment/suma/quickstart-deploy-suma-server.html">
-      <citetitle>&suma; Quick Start</citetitle>: Deploy &suma; Server</link>.
+      See the following guide to install &suma;:
+      <link xlink:href="https://documentation.suse.com/suma/5.0/en/suse-manager/installation-and-upgrade/installation-and-upgrade-overview.html">
+      <citetitle>&suma; Installation and Upgrade Guide</citetitle></link>.
     </para>
     <para>
       You can use most &productname; subscriptions to register this machine. However,
@@ -242,11 +241,6 @@
     </para>
     <tip>
       <title>Other installation options</title>
-      <para>
-        For additional installation options, see the full
-        <link xlink:href="https://documentation.suse.com/suma/5.0/en/suse-manager/installation-and-upgrade/installation-and-upgrade-overview.html">
-        <citetitle>&suma; Installation and Upgrade Guide</citetitle></link>.
-      </para>
       <para>
         To deploy &suma; in the public cloud, see
         <link xlink:href="https://documentation.suse.com/suma/5.0/en/suse-manager/specialized-guides/public-cloud-guide/overview.html">
