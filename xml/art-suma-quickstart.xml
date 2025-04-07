@@ -252,7 +252,7 @@
     <para>
       See the following guide to register &rhel; &productnumber; with &suma;:
       <link xlink:href="https://documentation.suse.com/suma/5.0/en/suse-manager/client-configuration/clients-sleses.html">
-      <citetitle>&suma; Client Configuration Guide</citetitle>: Registering &sliberty; Clients</link>.
+      <citetitle>&suma; Client Configuration Guide</citetitle>: Registering SUSE Liberty Linux Clients</link>.
     </para>
     <important role="compact">
       <para>
