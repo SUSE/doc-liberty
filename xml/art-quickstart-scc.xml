@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="urn:x-suse:xslt:profiling:docbook51-profile.xsl"
+ type="text/xml"
+ title="Profiling step"?>
+<!DOCTYPE article
+[
+  <!ENTITY % entities SYSTEM "generic-entities.ent">
+    %entities;
+]>
+
+<article xml:id="art-quickstart-scc" xml:lang="en"
+ xmlns="http://docbook.org/ns/docbook" version="5.1"
+ xmlns:its="http://www.w3.org/2005/11/its"
+ xmlns:xi="http://www.w3.org/2001/XInclude"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+
+ <info>
+  <title>Registering CentOS Linux&nbsp;&productnumber; with the &scc;</title>
+  <productname>&productname;</productname>
+  <productname role="abbrev">&productnameshort;</productname>
+  <date><?dbtimestamp format="B d, Y"?></date>
+  <xi:include href="common_copyright_gfdl.xml"/>
+  <abstract>
+   <para>
+    This guide explains how to register and update CentOS&nbsp;Linux&nbsp;&productnumber; directly
+    with the &scc;.
+   </para>
+   <para>
+    To register with &smlm;, see <link xlink:href="https://documentation.suse.com/liberty/7/html/suma-quickstart/art-suma-quickstart.html">
+    <citetitle>Registering &rhla; &productnumber; or CentOS Linux &productnumber; with &smlm;</citetitle></link>.
+   </para>
+   <para>
+    To register with &rmt;, see <link xlink:href="https://documentation.suse.com/liberty/7/html/quickstart/art-quickstart.html">
+    <citetitle>Registering &rhla; &productnumber; or CentOS Linux &productnumber; with &rmt;</citetitle></link>.
+   </para>
+  </abstract>
+  <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
+   <dm:bugtracker>
+    <dm:url>https://github.com/SUSE/doc-liberty/issues/new</dm:url>
+    <dm:labels>documentation,issue</dm:labels>
+    <dm:version>7</dm:version>
+    <dm:assignee>tahliar</dm:assignee>
+   </dm:bugtracker>
+   <dm:editurl>https://github.com/SUSE/doc-liberty/edit/maintenance/SLL7/xml/</dm:editurl>
+   <dm:translation>no</dm:translation>
+  </dm:docmanager>
+  <meta name="title" its:translate="yes">Registering CentOS Linux &productnumber; with the &scc;</meta>
+  <meta name="description" its:translate="yes">How to use &productname; and the &scc; to update CentOS Linux &productnumber;.</meta>
+  <meta name="social-descr" its:translate="yes">Use the &scc; to update CentOS Linux &productnumber;.</meta>
+  <meta name="task" its:translate="yes">
+    <phrase>Upgrade &amp; Update</phrase>
+    <phrase>Administration</phrase>
+  </meta>
+  <revhistory xml:id="rh-art-quickstart">
+    <revision>
+      <date>2025-06-20</date>
+      <revdescription>
+        <para>
+          Initial release
+        </para>
+      </revdescription>
+    </revision>
+  </revhistory>
+ </info>
+ <important>
+  <title>End of general support</title>
+  <para>
+    &productname; &productnumber; has reached the end of general support and is now in LTSS
+    (Long Term Service Support).
+  </para>
+  <para>
+    If you have a <emphasis>&productname;</emphasis> subscription but do not have an
+    <emphasis>LTSS</emphasis> subscription, you can continue to use your systems. However,
+    registering new &rhla;&nbsp;&productnumber; or CentOS&nbsp;Linux&nbsp;&productnumber;
+    systems with the general subscription is no longer supported.
+  </para>
+  <para>
+    To register new &rhla;&nbsp;&productnumber; or CentOS&nbsp;Linux&nbsp;&productnumber;
+    systems, and to continue receiving new updates for existing systems, you must use an
+    <emphasis>LTSS</emphasis> subscription.
+  </para>
+ </important>
+
+ <section xml:id="introduction-quickstart">
+  <title>Introduction</title>
+   <para>
+    &productname; is a technology and support solution for mixed Linux environments.
+    With a &productname; subscription, you can register and update &rhel; and CentOS Linux.
+    Optional &ha; repositories are also available.
+   </para>
+   <important role="compact">
+    <para>
+     CentOS&nbsp;Stream is not supported.
+    </para>
+   </important>
+   <para>
+    This guide describes how to register directly with the &scc;. This registration method is only
+    available for CentOS Linux &productnumber; with the <emphasis>&productname; Lite</emphasis>
+    subscription. If you need to register &rhel;&nbsp;&productnumber;, or if you have a different
+    &productname; subscription, you must use &smlm; or &rmt;.
+   </para>
+   <para>
+    To register with &smlm;, see <link xlink:href="https://documentation.suse.com/liberty/7/html/suma-quickstart/art-suma-quickstart.html">
+    <citetitle>Registering &rhla; &productnumber; or CentOS Linux &productnumber; with &smlm;</citetitle></link>.
+   </para>
+   <para>
+    To register with &rmt;, see <link xlink:href="https://documentation.suse.com/liberty/7/html/quickstart/art-quickstart.html">
+    <citetitle>Registering &rhla; &productnumber; or CentOS Linux &productnumber; with &rmt;</citetitle></link>.
+   </para>
+   <itemizedlist>
+    <title>Procedure overview</title>
+    <listitem>
+     <para>
+       Registration code
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+       Backup
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+       Register
+     </para>
+    </listitem>
+   </itemizedlist>
+
+   <note>
+     <title><emphasis>&productname;</emphasis> and <emphasis>SUSE Liberty Linux</emphasis> or <emphasis>Expanded Support</emphasis></title>
+     <para>
+       <emphasis>&productname;</emphasis> was previously named <emphasis>SUSE Liberty Linux</emphasis>
+       and <emphasis>&sles; with Expanded Support</emphasis>. During the transition period, some
+       components might still use one of these names.
+     </para>
+   </note>
+
+   <itemizedlist>
+    <title>Related information</title>
+    <listitem>
+     <para>
+      <link xlink:href="https://scc.suse.com/docs/userguide">
+      &scc; <citetitle>User Guide</citetitle></link>
+     </para>
+    </listitem>
+    <listitem>
+      <para>
+        <link xlink:href="https://documentation.suse.com/liberty/7/html/suma-quickstart/art-suma-quickstart.html">
+        <citetitle>Registering &rhla; 7 or CentOS Linux 7 with &smlm;</citetitle></link>
+      </para>
+    </listitem>
+    <listitem>
+     <para>
+      <link xlink:href="https://documentation.suse.com/liberty/7/html/quickstart/art-quickstart.html">
+      <citetitle>Registering &rhla; 7 or CentOS Linux 7 with &rmt;</citetitle></link>
+     </para>
+    </listitem>
+    <listitem>
+      <para>
+        <link xlink:href="https://documentation.suse.com/liberty/8/html/suma-quickstart/art-suma-quickstart.html">
+        <citetitle>Registering &rhla; 8 or CentOS Linux 8 with &smlm;</citetitle></link>
+      </para>
+    </listitem>
+    <listitem>
+     <para>
+      <link xlink:href="https://documentation.suse.com/liberty/8/html/quickstart/art-quickstart.html">
+      <citetitle>Registering &rhla; 8 or CentOS Linux 8 with RMT</citetitle></link>
+     </para>
+    </listitem>
+    <listitem>
+      <para>
+        <link xlink:href="https://documentation.suse.com/liberty/9/html/suma-quickstart/art-suma-quickstart.html">
+        <citetitle>Registering &rhla; 9 with &smlm;</citetitle></link>
+      </para>
+    </listitem>
+    <listitem>
+     <para>
+      <link xlink:href="https://documentation.suse.com/liberty/9/html/quickstart/art-quickstart.html">
+      <citetitle>Registering &rhla; 9 with RMT</citetitle></link>
+     </para>
+    </listitem>
+   </itemizedlist>
+ </section>
+
+ <section xml:id="troubleshoot-quickstart">
+  <title>Troubleshooting</title>
+  <para></para>
+ </section>
+ <xi:include href="common_legal.xml"/>
+</article>

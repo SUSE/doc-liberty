@@ -29,6 +29,11 @@
     To register with &rmt;, see <link xlink:href="https://documentation.suse.com/liberty/7/html/quickstart/art-quickstart.html">
     <citetitle>Registering &rhla; &productnumber; or CentOS Linux &productnumber; with &rmt;</citetitle></link>.
    </para>
+   <para>
+    To register CentOS &productnumber; directly with the &scc;, see
+    <link xlink:href="https://documentation.suse.com/liberty/7/html/quickstart-scc/art-quickstart-scc.html">
+    <citetitle>Registering CentOS Linux &productnumber; with the &scc;</citetitle></link>.
+   </para>
   </abstract>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
    <dm:bugtracker>
@@ -146,6 +151,7 @@
            <entry>
             <para>CentOS Linux</para>
             <para>&rhel;</para>
+            <para>Includes <emphasis>one</emphasis> entitlement for &slsa; to host &rmt;</para>
            </entry>
            <entry>
             <para>&suma;</para>
@@ -154,7 +160,10 @@
          </row>
          <row>
            <entry><para><emphasis>&productname; Basic</emphasis></para></entry>
-           <entry><para>CentOS Linux</para></entry>
+           <entry>
+            <para>CentOS Linux</para>
+            <para>Includes <emphasis>one</emphasis> entitlement for &slsa; to host &rmt;</para>
+          </entry>
            <entry>
             <para>&suma;</para>
             <para>&rmtool;</para>
@@ -166,7 +175,10 @@
             <para>CentOS Linux</para>
             <para>Includes <emphasis>one</emphasis> entitlement for &slsa; to host &rmt;</para>
            </entry>
-           <entry><para>&rmtool;</para></entry>
+           <entry>
+            <para>&rmtool;</para>
+            <para>&scc;</para>
+          </entry>
          </row>
        </tbody>
      </tgroup>
@@ -174,11 +186,6 @@
    <important role="compact">
     <para>
      CentOS&nbsp;Stream is not supported.
-    </para>
-   </important>
-   <important role="compact">
-    <para>
-      Registering &rhla; or CentOS Linux directly with &scc; is not currently supported.
     </para>
    </important>
    <para>
@@ -189,6 +196,11 @@
    <para>
     To register with &rmtool;, see <link xlink:href="https://documentation.suse.com/liberty/7/html/quickstart/art-quickstart.html">
     <citetitle>Registering &rhla; &productnumber; or CentOS Linux &productnumber; with &rmt;</citetitle></link>.
+   </para>
+   <para>
+    To register CentOS &productnumber; directly with the &scc;, see
+    <link xlink:href="https://documentation.suse.com/liberty/7/html/quickstart-scc/art-quickstart-scc.html">
+    <citetitle>Registering CentOS Linux &productnumber; with the &scc;</citetitle></link>.
    </para>
 
    <itemizedlist>
@@ -222,6 +234,12 @@
     <listitem>
       <para>
         <link xlink:href="https://documentation.suse.com/suma/">&suma; documentation</link>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <link xlink:href="https://documentation.suse.com/liberty/7/html/quickstart-scc/art-quickstart-scc.html">
+        <citetitle>Registering CentOS Linux &productnumber; with the &scc;</citetitle></link>.
       </para>
     </listitem>
     <listitem>
