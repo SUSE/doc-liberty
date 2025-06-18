@@ -236,6 +236,12 @@
               Registering &rhla; &productnumber; or CentOS Linux &productnumber; with &suma;</link>
             </para>
           </listitem>
+          <listitem>
+            <para>
+              <link xlink:href="https://documentation.suse.com/liberty/7/html/quickstart-scc/art-quickstart-scc.html">
+              <citetitle>Registering CentOS Linux &productnumber; with the &scc;</citetitle></link>.
+            </para>
+          </listitem>
         </itemizedlist>
       </listitem>
       <listitem>

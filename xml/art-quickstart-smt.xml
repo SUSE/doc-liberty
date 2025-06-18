@@ -133,10 +133,28 @@
      </para>
     </listitem>
     <listitem>
+      <para>
+        <link xlink:href="https://documentation.suse.com/liberty/7/html/suma-quickstart/art-suma-quickstart.html">
+        <citetitle>Registering &rhla; 7 or CentOS Linux 7 with &suma;</citetitle></link>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <link xlink:href="https://documentation.suse.com/liberty/7/html/quickstart-scc/art-quickstart-scc.html">
+        <citetitle>Registering CentOS Linux &productnumber; with the &scc;</citetitle></link>.
+      </para>
+    </listitem>
+    <listitem>
      <para>
       <link xlink:href="https://documentation.suse.com/liberty/8/html/quickstart/art-quickstart.html">
       <citetitle>Registering &rhla; 8 or CentOS Linux 8 with RMT</citetitle></link>
      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <link xlink:href="https://documentation.suse.com/liberty/8/html/suma-quickstart/art-suma-quickstart.html">
+        <citetitle>Registering &rhla; 8 or CentOS Linux 8 with &suma;</citetitle></link>
+      </para>
     </listitem>
     <listitem>
      <para>
@@ -146,8 +164,8 @@
     </listitem>
     <listitem>
       <para>
-        <link xlink:href="https://documentation.suse.com/suma/4.3/en/suse-manager/client-configuration/clients-sleses.html">
-        <citetitle>&suma; Client Configuration Guide: Registering SUSE Liberty Linux Clients</citetitle></link>
+        <link xlink:href="https://documentation.suse.com/liberty/9/html/suma-quickstart/art-suma-quickstart.html">
+        <citetitle>Registering &rhla; 9 with &suma;</citetitle></link>
       </para>
     </listitem>
    </itemizedlist>
