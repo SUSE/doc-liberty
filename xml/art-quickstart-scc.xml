@@ -81,7 +81,7 @@
   </para>
  </important>
 
- <section xml:id="introduction-quickstart">
+ <section xml:id="introduction-quickstart-scc">
   <title>Introduction</title>
    <para>
     &productname; is a technology and support solution for mixed Linux environments.
@@ -182,9 +182,13 @@
    </itemizedlist>
  </section>
 
- <section xml:id="troubleshoot-quickstart">
+ <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="register-with-scc.xml"/>
+
+ <!--section xml:id="troubleshoot-quickstart-scc">
   <title>Troubleshooting</title>
-  <para></para>
- </section>
+  <para>
+   Didn't run into any issues ¯\_(ツ)_/¯
+  </para>
+ </section-->
  <xi:include href="common_legal.xml"/>
 </article>
