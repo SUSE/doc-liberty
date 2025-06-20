@@ -20,6 +20,7 @@
 
  <para>
   Use this procedure to register CentOS Linux &productnumber; directly with the &scc;.
+  To automate the process, &suse; provides a registration script in a publicly available repository.
  </para>
  <important role="compact">
   <para>
@@ -28,59 +29,34 @@
  </important>
  <para>
   This registration method is only available for CentOS Linux &productnumber; with the
-  <emphasis>&productname; Lite</emphasis> subscription. If you need to register
-  &rhla;&nbsp;&productnumber;, or if you have a different &productname; subscription,
-  you must use &smlm; or &rmt;.
+  <emphasis>&productname; Lite</emphasis> subscription. To register &rhel; or CentOS&nbsp;Linux
+  with a different &productname; subscription, you must use &smlm; or &rmt;.
  </para>
  <itemizedlist>
   <title>Requirements</title>
   <listitem>
    <para>
-    The system you want to register can access the <link xlink:href="&sccurl;">&scc;</link>.
+    You have a valid registration code for <emphasis>&productname; Lite</emphasis>.
    </para>
   </listitem>
   <listitem>
    <para>
-    You have a <emphasis>&productname; Lite</emphasis> subscription activated in the &scc;.
+    The system you want to register is running CentOS&nbsp;Linux&nbsp;&productnumber;.
+    <emphasis>&productname; Lite</emphasis> only supports CentOS&nbsp;Linux, not &rhel;.
    </para>
   </listitem>
   <listitem>
    <para>
-    The system you want to register is up to date. <emphasis>&productname; Lite</emphasis> only supports
-    the latest minor release of CentOS&nbsp;Linux&nbsp;&productnumber;.
+    The system you want to register has network access to the <link xlink:href="&sccurl;">&scc;</link>
+    and <link xlink:href="https://installer-updates.suse.com"/>.
    </para>
   </listitem>
   <listitem>
     <para>
-      The following packages are installed on the system you want to register:
+      The system you want to register has the following packages installed: <package>bash</package>,
+      <package>ca-certificates</package>, <package>curl</package>, <package>rpm</package> and
+      <package>yum</package>.
     </para>
-    <itemizedlist>
-      <listitem>
-        <para>
-          <package>ca-certificates</package>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          <package>bash</package>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          <package>curl</package>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          <package>rpm</package>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          <package>yum</package>
-        </para>
-      </listitem>
-    </itemizedlist>
   </listitem>
  </itemizedlist>
 
@@ -173,11 +149,6 @@
       Uses <command>&suseconnect;</command> to register the system with the &scc;.
      </para>
     </listitem>
-    <listitem>
-      <para>
-        Checks the system's registration status.
-      </para>
-    </listitem>
    </itemizedlist>
    <para>
     You should see the following output:
@@ -234,9 +205,9 @@ Installed Products:
 <screen>&prompt.root;<command>yum-config-manager --enable <replaceable>REPO_ID1 REPO_ID2 REPO_ID3</replaceable></command></screen>
    <tip role="compact">
      <para>
-       In a <literal>Minimal Install</literal> of CentOS, you must install <package>yum-utils</package>
-       before you can use <command>yum-config-manager</command>. This package is installed by default
-       in most other installations.
+       In a <literal>Minimal Install</literal> of CentOS Linux, you must install
+       <package>yum-utils</package> before you can use <command>yum-config-manager</command>.
+       This package is installed by default in most other installations.
      </para>
    </tip>
   </step>

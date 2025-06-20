@@ -201,15 +201,6 @@
     mixed Linux environments. The &suma; Server is registered with &scc;, and other systems are
     registered as clients of &suma; and receive packages from it directly.
    </para>
-   <para>
-    To register with &rmtool;, see <link xlink:href="https://documentation.suse.com/liberty/7/html/quickstart/art-quickstart.html">
-    <citetitle>Registering &rhla; &productnumber; or CentOS Linux &productnumber; with &rmt;</citetitle></link>.
-   </para>
-   <para>
-    To register CentOS &productnumber; directly with the &scc;, see
-    <link xlink:href="https://documentation.suse.com/liberty/7/html/quickstart-scc/art-quickstart-scc.html">
-    <citetitle>Registering CentOS Linux &productnumber; with the &scc;</citetitle></link>.
-   </para>
 
    <itemizedlist>
     <title>Procedure overview</title>
