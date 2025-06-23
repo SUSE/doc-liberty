@@ -105,7 +105,7 @@
     </step>
     <step>
       <para>
-        Find the subscription called <literal>&reponame;&nbsp;&productnumber;</literal>.
+        Find the subscription named <literal>&reponame;&nbsp;&productnumber;</literal>.
       </para>
     </step>
     <step>
