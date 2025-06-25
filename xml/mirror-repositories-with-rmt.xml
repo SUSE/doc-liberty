@@ -143,7 +143,7 @@
     <itemizedlist>
       <listitem>
         <para>
-          <literal>BASE</literal> repositories are frozen and contain the existing packages
+          <literal>BASE</literal> repositories are frozen and contain the packages
           from the non-LTSS repositories.
         </para>
       </listitem>
@@ -155,8 +155,7 @@
       </listitem>
       <listitem>
         <para>
-          <literal>LH</literal> repositories are the &ha; repositories for
-          &productname; &productnumber; LTSS.
+          <literal>LH</literal> contain the &ha; packages.
         </para>
       </listitem>
     </itemizedlist>

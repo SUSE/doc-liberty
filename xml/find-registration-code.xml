@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section
+[
+  <!ENTITY % entities SYSTEM "generic-entities.ent">
+    %entities;
+]>
+
+<section xml:id="find-registration-code" xml:lang="en"
+ xmlns="http://docbook.org/ns/docbook" version="5.1"
+ xmlns:xi="http://www.w3.org/2001/XInclude"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>Finding your registration code in the &scc;</title>
+
+  <info>
+    <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
+    <dm:bugtracker></dm:bugtracker>
+    <dm:translation>no</dm:translation>
+    </dm:docmanager>
+  </info>
+
+  <para>
+    Use this procedure to find the &productname; registration code in the &scc;. &productname;
+    subscriptions are listed under the product name <emphasis>SUSE Liberty Linux</emphasis>.
+  </para>
+  <itemizedlist>
+    <title>Requirements</title>
+    <listitem>
+      <para>
+        You have a &scc; account. To create an account, see
+        <link xlink:href="https://scc.suse.com/docs/userguide#UG-Creating-a-SUSE-Account">
+        Creating a SUSE Account</link>.
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        Your account is associated with an organization that has a &productname; subscription.
+        For more information, see
+        <link xlink:href="https://scc.suse.com/docs/userguide#UG-Working-with-Organizations">
+        Working with Organizations</link>.
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        The &productname; subscription has been activated in the &scc;.
+        If you still need to activate the subscription, see
+        <link xlink:href="https://scc.suse.com/docs/userguide#UG-Activating-and-Managing-Subscriptions">
+        Activating and Managing Subscriptions</link>.
+      </para>
+    </listitem>
+  </itemizedlist>
+
+  <procedure xml:id="pro-find-registration-code">
+    <title>Finding your registration code in the &scc;</title>
+    <step>
+      <para>
+        Log in to the <link xlink:href="https://scc.suse.com">&scc;</link>.
+      </para>
+    </step>
+    <step>
+      <para>
+        In the sidebar on the left, navigate to <guimenu>My Organizations</guimenu> and select
+        your organization.
+      </para>
+      <informalfigure>
+        <mediaobject>
+          <imageobject role="fo">
+            <imagedata fileref="scc-my-organizations.png" width="45%"/>
+          </imageobject>
+          <imageobject role="html">
+            <imagedata fileref="scc-my-organizations.png" width="45%"/>
+          </imageobject>
+          <textobject role="description">
+            <phrase>
+              This example of the My Organizations section shows one highlighted organization,
+              and options to join or manage organizations.
+            </phrase>
+          </textobject>
+        </mediaobject>
+      </informalfigure>
+      <para>
+        If you belong to more than one organization, make sure the organization you select has an
+        active &productname; subscription.
+      </para>
+    </step>
+    <step>
+      <para>
+        In the top menu, select <guimenu>Subscriptions</guimenu>.
+      </para>
+      <informalfigure>
+        <mediaobject>
+          <imageobject role="fo">
+            <imagedata fileref="scc-subscriptions.png" width="80%"/>
+          </imageobject>
+          <imageobject role="html">
+            <imagedata fileref="scc-subscriptions.png" width="80%"/>
+          </imageobject>
+          <textobject role="description">
+            <phrase>
+              The top bar shows five tabs: Dashboard, Users, Subscriptions, Systems, and
+              Proxies. The Subscriptions tab is highlighted with a green line underneath.
+            </phrase>
+          </textobject>
+        </mediaobject>
+      </informalfigure>
+    </step>
+    <step>
+      <para>
+        Find the subscription named <literal>&reponame;&nbsp;&productnumber;</literal>.
+      </para>
+    </step>
+    <step>
+      <para>
+        You can copy the registration code by clicking the <guimenu>Copy registration code</guimenu> icon.
+      </para>
+      <informalfigure>
+        <mediaobject>
+          <imageobject role="fo">
+            <imagedata fileref="scc-copy-registration-code.png" width="45%"/>
+          </imageobject>
+          <imageobject role="html">
+            <imagedata fileref="scc-copy-registration-code.png" width="45%"/>
+          </imageobject>
+          <textobject role="description">
+            <phrase>
+              A registration code is shown. The icon beside it has hover text that says <quote>Copy
+              registration code</quote>.
+            </phrase>
+          </textobject>
+        </mediaobject>
+      </informalfigure>
+    </step>
+  </procedure>
+
+  <itemizedlist>
+    <title>More information</title>
+    <listitem>
+      <para>
+        <link xlink:href="https://scc.suse.com/docs/userguide">
+        &scc; <citetitle>User Guide</citetitle></link>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <link xlink:href="https://scc.suse.com/docs/help">
+        &scc; <citetitle>Frequently Asked Questions</citetitle></link>
+      </para>
+    </listitem>
+  </itemizedlist>
+</section>

@@ -29,6 +29,11 @@
     To register with &suma;, see <link xlink:href="https://documentation.suse.com/liberty/7/html/suma-quickstart/art-suma-quickstart.html">
     <citetitle>Registering &rhla; &productnumber; or CentOS Linux &productnumber; with &suma;</citetitle></link>.
    </para>
+   <para>
+    To register CentOS &productnumber; directly with the &scc;, see
+    <link xlink:href="https://documentation.suse.com/liberty/7/html/quickstart-scc/art-quickstart-scc.html">
+    <citetitle>Registering CentOS Linux &productnumber; with the &scc;</citetitle></link>.
+   </para>
   </abstract>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
    <dm:bugtracker>
@@ -48,6 +53,14 @@
     <phrase>Administration</phrase>
   </meta>
   <revhistory xml:id="rh-art-quickstart">
+    <revision>
+      <date>2025-06-23</date>
+      <revdescription>
+        <para>
+          Direct SCC registration guide is now available
+        </para>
+      </revdescription>
+    </revision>
     <revision>
       <date>2025-03-19</date>
       <revdescription>
@@ -220,6 +233,7 @@
            <entry>
             <para>CentOS Linux</para>
             <para>&rhel;</para>
+            <para>Includes <emphasis>one</emphasis> entitlement for &slsa; to host &rmt;</para>
            </entry>
            <entry>
             <para>&suma;</para>
@@ -228,7 +242,10 @@
          </row>
          <row>
            <entry><para><emphasis>&productname; Basic</emphasis></para></entry>
-           <entry><para>CentOS Linux</para></entry>
+           <entry>
+            <para>CentOS Linux</para>
+            <para>Includes <emphasis>one</emphasis> entitlement for &slsa; to host &rmt;</para>
+          </entry>
            <entry>
             <para>&suma;</para>
             <para>&rmtool;</para>
@@ -240,7 +257,10 @@
             <para>CentOS Linux</para>
             <para>Includes <emphasis>one</emphasis> entitlement for &slsa; to host &rmt;</para>
            </entry>
-           <entry><para>&rmtool;</para></entry>
+           <entry>
+            <para>&rmtool;</para>
+            <para>&scc;</para>
+          </entry>
          </row>
        </tbody>
      </tgroup>
@@ -250,19 +270,10 @@
      CentOS&nbsp;Stream is not supported.
     </para>
    </important>
-   <important role="compact">
-    <para>
-      Registering &rhla; or CentOS Linux directly with &scc; is not currently supported.
-    </para>
-   </important>
    <para>
     This guide describes how to register with &rmtool; (&rmt;). &rmt; is a proxy system for
     &scc;. The &rmt; server is registered with &scc;, and other systems are registered with
     the &rmt; server and receive packages from it directly.
-   </para>
-   <para>
-    To register with &suma;, see <link xlink:href="https://documentation.suse.com/liberty/7/html/suma-quickstart/art-suma-quickstart.html">
-    <citetitle>Registering &rhla; &productnumber; or CentOS Linux &productnumber; with &suma;</citetitle></link>.
    </para>
 
    <itemizedlist>
@@ -294,8 +305,8 @@
      <title><emphasis>&productname;</emphasis> and <emphasis>SUSE Liberty Linux</emphasis> or <emphasis>Expanded Support</emphasis></title>
      <para>
        <emphasis>&productname;</emphasis> was previously named <emphasis>SUSE Liberty Linux</emphasis>
-       and <emphasis>&sles; with Expanded Support</emphasis>. During the transition period, some
-       components might still use one of these names.
+       and <emphasis>&sles; with Expanded Support</emphasis>. Some components might still use one of
+       these names.
      </para>
    </note>
 
@@ -311,6 +322,12 @@
       <para>
         <link xlink:href="https://documentation.suse.com/liberty/7/html/suma-quickstart/art-suma-quickstart.html">
         <citetitle>Registering &rhla; 7 or CentOS Linux 7 with &suma;</citetitle></link>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <link xlink:href="https://documentation.suse.com/liberty/7/html/quickstart-scc/art-quickstart-scc.html">
+        <citetitle>Registering CentOS Linux &productnumber; with the &scc;</citetitle></link>.
       </para>
     </listitem>
     <listitem>

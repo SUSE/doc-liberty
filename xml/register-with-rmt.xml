@@ -98,7 +98,7 @@
    <para>
     Download the <filename>rmt-client-setup-res</filename> script:
    </para>
-<screen>&prompt.root;<command>curl http://<replaceable>RMT_SERVER</replaceable>/tools/rmt-client-setup-res --output rmt-client-setup-res</command></screen>
+<screen>&prompt.root;<command>curl -O http://<replaceable>RMT_SERVER</replaceable>/tools/rmt-client-setup-res</command></screen>
 <!-- ##Temporary script until the new one is available from RMT
    <para>
     Save the script in <xref linkend="app-temp-script"/> as <filename>rmt-client-setup-res</filename>.
@@ -163,13 +163,10 @@
 Installed Products:
 ------------------------------------------
 
-  SUSE Liberty Linux Server release file
+  SUSE Liberty Linux release file
   (&reponameshort;-LTSS/&productnumber;/x86_64)
 
-  Registered
-
-------------------------------------------
-</screen>
+  Registered</screen>
   </step>
   <step>
    <para>
@@ -192,7 +189,7 @@ Installed Products:
     <itemizedlist>
       <listitem>
         <para>
-          <literal>BASE</literal> repositories are frozen and contain the existing packages
+          <literal>BASE</literal> repositories are frozen and contain the packages
           from the non-LTSS repositories.
         </para>
       </listitem>
@@ -204,8 +201,7 @@ Installed Products:
       </listitem>
       <listitem>
         <para>
-          <literal>LH</literal> repositories are the &ha; repositories for
-          &productname; &productnumber; LTSS.
+          <literal>LH</literal> repositories contain the &ha; packages.
         </para>
       </listitem>
     </itemizedlist>
@@ -214,7 +210,7 @@ Installed Products:
   <step>
     <para>
       If you need any of the &ha;, <literal>BASE</literal>, <literal>Source</literal> or
-      <literal>Debug</literal>repositories, enable them using their <literal>repo id</literal>.
+      <literal>Debug</literal> repositories, enable them using their <literal>repo id</literal>.
       You can enable multiple repositories at once:
     </para>
 <screen>&prompt.root;<command>yum-config-manager --enable <replaceable>REPO_ID1 REPO_ID2 REPO_ID3</replaceable></command></screen>

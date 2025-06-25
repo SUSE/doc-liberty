@@ -172,8 +172,8 @@
       or <emphasis>Expanded Support</emphasis></title>
       <para>
         <emphasis>&productname;</emphasis> was previously named <emphasis>SUSE Liberty Linux</emphasis>
-        and <emphasis>&sles; with Expanded Support</emphasis>. During the transition period, some
-        components might still use one of these names.
+        and <emphasis>&sles; with Expanded Support</emphasis>. Some components might still use one
+        of these names.
       </para>
     </note>
     <itemizedlist xml:id="compliance-scans-related-information">
@@ -234,6 +234,12 @@
             <para>
               <link xlink:href="https://documentation.suse.com/liberty/7/html/suma-quickstart/art-suma-quickstart.html">
               Registering &rhla; &productnumber; or CentOS Linux &productnumber; with &suma;</link>
+            </para>
+          </listitem>
+          <listitem>
+            <para>
+              <link xlink:href="https://documentation.suse.com/liberty/7/html/quickstart-scc/art-quickstart-scc.html">
+              <citetitle>Registering CentOS Linux &productnumber; with the &scc;</citetitle></link>.
             </para>
           </listitem>
         </itemizedlist>

@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section
+[
+  <!ENTITY % entities SYSTEM "generic-entities.ent">
+    %entities;
+]>
+
+<section xml:id="register-with-scc" xml:lang="en"
+ xmlns="http://docbook.org/ns/docbook" version="5.1"
+ xmlns:xi="http://www.w3.org/2001/XInclude"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <title>Registering CentOS Linux &productnumber; with the &scc;</title>
+
+ <info>
+  <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
+   <dm:bugtracker></dm:bugtracker>
+   <dm:translation>no</dm:translation>
+  </dm:docmanager>
+ </info>
+
+ <para>
+  Use this procedure to register CentOS Linux &productnumber; directly with the &scc;.
+  To automate the process, &suse; provides a registration script in a publicly available repository.
+ </para>
+ <important role="compact">
+  <para>
+   CentOS Stream is not supported.
+  </para>
+ </important>
+ <para>
+  This registration method is only available for CentOS Linux &productnumber; with the
+  <emphasis>&productname; Lite</emphasis> subscription. To register &rhel; or CentOS&nbsp;Linux
+  with a different &productname; subscription, you must use &smlm; or &rmt;.
+ </para>
+ <itemizedlist>
+  <title>Requirements</title>
+  <listitem>
+   <para>
+    You have a valid registration code for <emphasis>&productname; Lite</emphasis>.
+   </para>
+  </listitem>
+  <listitem>
+   <para>
+    The system you want to register is running CentOS&nbsp;Linux&nbsp;&productnumber;.
+    <emphasis>&productname; Lite</emphasis> only supports CentOS&nbsp;Linux, not &rhel;.
+   </para>
+  </listitem>
+  <listitem>
+   <para>
+    The system you want to register has network access to the <link xlink:href="&sccurl;">&scc;</link>
+    and <link xlink:href="https://installer-updates.suse.com"/>.
+   </para>
+  </listitem>
+  <listitem>
+    <para>
+      The system you want to register has the following packages installed: <package>bash</package>,
+      <package>ca-certificates</package>, <package>curl</package>, <package>rpm</package> and
+      <package>yum</package>.
+    </para>
+  </listitem>
+ </itemizedlist>
+
+ <procedure xml:id="pro-register-with-scc">
+  <title>Registering CentOS Linux &productnumber; with the &scc;</title>
+  <step>
+   <para>
+    Log in as either the &rootuser; user or a user with <command>sudo</command> privileges.
+   </para>
+  </step>
+  <step>
+    <para>
+      Before you run the registration script, create a backup of <filename>/etc/yum.repos.d/</filename>:
+    </para>
+<screen>&prompt.root;<command>cp -r /etc/yum.repos.d/ /etc/yum.repos.d.bak</command></screen>
+    <para>
+      The registration script also creates a backup at <filename>/etc/yum.repos.d.backup</filename>,
+      but we recommend the additional backup as an extra precaution. The script removes
+      <emphasis>all</emphasis> files in <filename>/etc/yum.repos.d/</filename> that start with
+      <literal>CentOS</literal>. If it removes any custom or third-party repositories that you still
+      need, you can restore them from the backup.
+    </para>
+  </step>
+  <step>
+   <para>
+    Download the registration script:
+   </para>
+<screen>&prompt.root;<command>curl -O https://installer-updates.suse.com/SUSE/Updates/RES-REG/7-LTSS/installer/update/client-setup-mls-lite.sh</command></screen>
+  </step>
+  <step>
+   <para>
+    Add the &productname; registration code to the <literal>SCC_REG_CODE</literal> environment variable:
+   </para>
+<screen>&prompt.root;<command>export SCC_REG_CODE="<replaceable>REGISTRATION_CODE</replaceable>"</command></screen>
+  </step>
+  <step>
+   <para>
+    Run the registration script:
+   </para>
+<screen>&prompt.root;<command>sh ./client-setup-mls-lite.sh</command></screen>
+   <para>
+    The script performs the following tasks:
+   </para>
+   <itemizedlist>
+    <listitem>
+     <para>
+      Creates a backup of <filename>/etc/yum.repos.d/</filename> at
+      <filename>/etc/yum.repos.d.backup</filename>.
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      Removes the existing CentOS repositories from <filename>/etc/yum.repos.d/</filename>.
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      Imports the CA certificate to the trust store.
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      Adds the <literal>SUSE Installer Updates</literal> repository, which provides the
+      registration tools.
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      Imports all required repository keys and GPG keys.
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      Replaces the CentOS release package with the &productname; release package.
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      Upgrades <package>yum</package> to a version that supports accessing repositories directly
+      with a security token.
+     </para>
+    </listitem>
+    <listitem>
+      <para>
+        Installs <command>&suseconnect;</command> and its dependencies.
+      </para>
+    </listitem>
+    <listitem>
+     <para>
+      Uses <command>&suseconnect;</command> to register the system with the &scc;.
+     </para>
+    </listitem>
+   </itemizedlist>
+   <para>
+    You should see the following output:
+   </para>
+<screen>
+Installed Products:
+------------------------------------------
+
+  SUSE Liberty Linux release file
+  (&reponameshort;-LTSS/&productnumber;/x86_64)
+
+  Registered</screen>
+  </step>
+  <step>
+   <para>
+    Verify the available repositories:
+   </para>
+<screen>&prompt.root;<command>yum repolist all</command></screen>
+   <para>
+    The <literal>SUSE Installer Updates</literal> repository and the default
+    <literal>&reponameshort;-&productnumber;-LTSS-Updates</literal> repository should be
+    <literal>enabled</literal>. You will also see optional repositories with the
+    status <literal>disabled</literal>.
+   </para>
+   <tip>
+    <title>LTSS repository names</title>
+    <itemizedlist>
+      <listitem>
+        <para>
+          <literal>BASE</literal> repositories are frozen and contain the packages
+          from the non-LTSS repositories.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <literal>LTSS</literal> repositories contain new packages for
+          &productname; &productnumber; LTSS.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <literal>LH</literal> repositories contain the &ha; packages.
+        </para>
+      </listitem>
+    </itemizedlist>
+  </tip>
+  </step>
+  <step>
+    <para>
+      If you need any of the &ha;, <literal>BASE</literal>, <literal>Source</literal> or
+      <literal>Debug</literal> repositories, enable them using their <literal>repo id</literal>.
+      You can enable multiple repositories at once:
+    </para>
+<screen>&prompt.root;<command>yum-config-manager --enable <replaceable>REPO_ID1 REPO_ID2 REPO_ID3</replaceable></command></screen>
+   <tip role="compact">
+     <para>
+       In a <literal>Minimal Install</literal> of CentOS Linux, you must install
+       <package>yum-utils</package> before you can use <command>yum-config-manager</command>.
+       This package is installed by default in most other installations.
+     </para>
+   </tip>
+  </step>
+  <step>
+    <para>
+      If you need to restore any custom or third-party repositories, copy them from the backup
+      directory to the <filename>/etc/yum.repos.d/</filename> directory:
+    </para>
+<screen>&prompt.root;<command>cp /etc/yum.repos.d.backup/<replaceable>REPOFILE</replaceable>.repo /etc/yum.repos.d/</command></screen>
+  </step>
+  <step>
+   <para>
+    Run the update command to make sure there are no errors:
+   </para>
+<screen>&prompt.root;<command>yum update</command></screen>
+  </step>
+ </procedure>
+ <para>
+  You can now keep your system up to date from repositories provided by &productname;.
+ </para>
+</section>
