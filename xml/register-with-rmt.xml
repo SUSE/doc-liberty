@@ -66,7 +66,7 @@
    <para>
     On the &rhla; system, download the <filename>rmt-client-setup-res</filename> script:
    </para>
-<screen>&prompt.root;<command>curl http://<replaceable>&rmt;_SERVER</replaceable>/tools/rmt-client-setup-res --output rmt-client-setup-res</command></screen>
+<screen>&prompt.root;<command>curl -O http://<replaceable>&rmt;_SERVER</replaceable>/tools/rmt-client-setup-res</command></screen>
   </step>
   <step>
    <para>
