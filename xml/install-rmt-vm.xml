@@ -74,13 +74,13 @@
         <title>&productname; &productnumber; repository size</title>
         <para>
           The &productname; &productnumber; repositories will grow over time because older package
-          versions are not removed. Based on the current<footnote><para>As of 25 March, 2025</para></footnote>
+          versions are not removed. Based on the current<footnote><para>As of 02 July, 2025</para></footnote>
           size of the repositories, to meet the 1.5 times size recommendation you will need
-          approximately 400&nbsp;GB of disk space for the default repositories.
+          approximately 440&nbsp;GB of disk space for the default repositories.
         </para>
         <para>
           If you need the optional <literal>Source</literal> and <literal>Debug</literal>
-          repositories, you will need an additional 860&nbsp;GB available.
+          repositories, you will need an additional 1060&nbsp;GB available.
         </para>
       </important>
     </listitem>
