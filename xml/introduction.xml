@@ -149,14 +149,7 @@
     </listitem>
    </itemizedlist>
 
-  <note>
-    <title><emphasis>&productname;</emphasis> and <emphasis>SUSE Liberty Linux</emphasis> or <emphasis>Expanded Support</emphasis></title>
-    <para>
-      <emphasis>&productname;</emphasis> was previously named <emphasis>SUSE Liberty Linux</emphasis>
-      and <emphasis>&sles; with Expanded Support</emphasis>. During the transition period, some
-      components might still use one of these names.
-     </para>
-  </note>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="snip-name-change.xml"/>
 
   <itemizedlist>
     <title>Related information</title>
