@@ -112,7 +112,8 @@
 <screen>&prompt.root;<command>sh rmt-client-setup-res https://<replaceable>RMT_SERVER</replaceable></command></screen>
    <para>
     The script installs <command>&suseconnect;</command> and its dependencies,
-    then downloads and runs the <filename>rmt-client-setup</filename> script,
+    and replaces the existing release package with the &productname; release package.
+    It then downloads and runs the <filename>rmt-client-setup</filename> script,
     which performs the following tasks:
    </para>
    <itemizedlist>
