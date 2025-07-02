@@ -4,7 +4,6 @@
 MAIN="art-quickstart-smt.xml"
 ROOTID="art-quickstart-smt"
 
-PROFAUDIENCE="sll"
 PROFCONDITION="suse-product"
 #PROFCONDITION="suse-product;beta"
 #PROFCONDITION="community-project"

@@ -48,7 +48,7 @@
   </listitem>
  </itemizedlist>
 
- <important audience="sll">
+ <important>
    <title>New repository structure for &productname; &productnumber; LTSS</title>
    <para>
      The repository structure has changed in &productname; &productnumber; LTSS. The non-LTSS subscription
