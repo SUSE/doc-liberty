@@ -167,29 +167,8 @@
     </revision>
   </revhistory>
  </info>
-<important>
-     <title>End of general support</title>
-     <para>
-       &productname; &productnumber; has reached the end of general support and is now in LTSS
-       (Long Term Service Support).
-     </para>
-     <para>
-       If you have a <emphasis>&productname;</emphasis> subscription but do not have an
-       <emphasis>LTSS</emphasis> subscription, you can continue to use your systems. However,
-       registering new &rhla;&nbsp;&productnumber; or CentOS&nbsp;Linux&nbsp;&productnumber;
-       systems with the general subscription is no longer supported.
-     </para>
-     <para>
-       To register new &rhla;&nbsp;&productnumber; or CentOS&nbsp;Linux&nbsp;&productnumber;
-       systems, and to continue receiving new updates for existing systems, you must use an
-       <emphasis>LTSS</emphasis> subscription.
-     </para>
-     <para>
-       If you previously registered with a general subscription and want to move
-       to an LTSS subscription, see <xref linkend="mirror-repositories-with-rmt"/>
-       and <xref linkend="register-7-with-rmt"/>.
-     </para>
-   </important>
+
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="snip-end-general-support.xml"/>
 
 <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="introduction.xml"/>
 

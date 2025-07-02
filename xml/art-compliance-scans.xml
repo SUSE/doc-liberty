@@ -67,24 +67,8 @@
     reliability or any other characteristic.
   </para>
 </important>
-<important>
-  <title>End of general support</title>
-  <para>
-    &productname; &productnumber; has reached the end of general support and is now in LTSS
-    (Long Term Service Support).
-  </para>
-  <para>
-    If you have a <emphasis>&productname;</emphasis> subscription but do not have an
-    <emphasis>LTSS</emphasis> subscription, you can continue to use your systems. However,
-    registering new &rhla;&nbsp;&productnumber; or CentOS&nbsp;Linux&nbsp;&productnumber;
-    systems with the general subscription is no longer supported.
-  </para>
-  <para>
-    To register new &rhla;&nbsp;&productnumber; or CentOS&nbsp;Linux&nbsp;&productnumber;
-    systems, and to continue receiving new updates for existing systems, you must use an
-    <emphasis>LTSS</emphasis> subscription.
-  </para>
-</important>
+
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="snip-end-general-support.xml"/>
 
   <section xml:id="sec-compliance-scans-introduction">
     <title>Introduction</title>
