@@ -150,7 +150,7 @@
       </listitem>
     </orderedlist>
 
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="snip-note-name-change.xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="snip-name-change.xml"/>
 
     <itemizedlist xml:id="compliance-scans-related-information">
       <title>Related information</title>

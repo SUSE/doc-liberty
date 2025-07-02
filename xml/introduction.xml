@@ -61,6 +61,7 @@
            <entry>
             <para>CentOS Linux</para>
             <para>&rhel;</para>
+            <para>Includes <emphasis>one</emphasis> entitlement for &slsa; to host &rmt;</para>
            </entry>
            <entry>
             <para>&suma;</para>
@@ -132,7 +133,7 @@
     </listitem>
   </itemizedlist>
 
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="snip-note-name-change.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="snip-name-change.xml"/>
 
   <itemizedlist>
     <title>Related information</title>

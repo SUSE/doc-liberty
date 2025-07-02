@@ -70,7 +70,7 @@
         The amount of storage required depends on the number of repositories you mirror.
         We recommend at least 1.5 times the total size of all enabled repositories.
       </para>
-      <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="snip-important-repo-size.xml"/>
+      <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="snip-repo-size.xml"/>
     </listitem>
   </itemizedlist>
   <procedure xml:id="pro-install-rmt-vm">

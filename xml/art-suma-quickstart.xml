@@ -93,7 +93,7 @@
         <citetitle>&suma; Public Cloud Guide</citetitle></link>.
       </para>
     </tip>
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="snip-important-repo-size.xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="snip-repo-size.xml"/>
   </section>
 
   <section xml:id="register-with-suma">
