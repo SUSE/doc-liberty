@@ -93,19 +93,7 @@
         <citetitle>&suma; Public Cloud Guide</citetitle></link>.
       </para>
     </tip>
-    <important>
-      <title>&productname; &productnumber; repository size</title>
-      <para>
-        The &productname; &productnumber; repositories will grow over time because older package versions
-        are not removed. Based on the current<footnote><para>As of 02 July, 2025</para></footnote>
-        size of the repositories, to meet the 1.5 times size recommendation you will need
-        approximately 440&nbsp;GB of disk space for the default repositories.
-      </para>
-      <para>
-        If you need the optional <literal>Source</literal> and <literal>Debug</literal>
-        repositories, you will need an additional 1060&nbsp;GB available.
-      </para>
-    </important>
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="snip-important-repo-size.xml"/>
   </section>
 
   <section xml:id="register-with-suma">
