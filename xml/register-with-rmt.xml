@@ -9,7 +9,7 @@
  xmlns="http://docbook.org/ns/docbook" version="5.1"
  xmlns:xi="http://www.w3.org/2001/XInclude"
  xmlns:xlink="http://www.w3.org/1999/xlink">
- <title>Registering <phrase audience="sll">&rhla; or </phrase>CentOS Linux with &rmt;</title>
+ <title>Registering &rhla; or CentOS Linux with &rmt;</title>
 
  <info>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
@@ -19,8 +19,8 @@
  </info>
 
  <para>
-  Use this procedure to register <phrase audience="sll">&rhel; &productnumber; or </phrase>
-  CentOS Linux &productnumber; with the &rmt; server.
+  Use this procedure to register &rhel; &productnumber; or CentOS Linux &productnumber; with the
+  &rmt; server.
  </para>
  <important role="compact">
   <para>
@@ -47,16 +47,15 @@
   <listitem>
    <para>
     The system you want to register is up to date. &productname; only supports the latest minor
-    release of <phrase audience="sll">&rhla;&nbsp;&productnumber; or</phrase>
-    CentOS&nbsp;Linux&nbsp;&productnumber;.
+    release of &rhla;&nbsp;&productnumber; or CentOS&nbsp;Linux&nbsp;&productnumber;.
    </para>
   </listitem>
   <listitem>
    <para>
-    You have a &productname; subscription activated in <link xlink:href="&sccurl;">&scc;</link>.
+    You have a &productname; subscription activated in the <link xlink:href="&sccurl;">&scc;</link>.
    </para>
   </listitem>
-  <listitem audience="sll">
+  <listitem>
    <para>
     You have removed the system from any &rh; subscription services it was
     registered to.
@@ -64,7 +63,7 @@
   </listitem>
  </itemizedlist>
 
- <important audience="sll">
+ <important>
    <title>New registration setup for &productname; &productnumber; LTSS</title>
    <para>
     The repository structure and registration setup has changed in &productname; &productnumber; LTSS.
@@ -93,7 +92,7 @@
  </important>
 
  <procedure xml:id="pro-register-rhel-with-rmt">
-  <title>Registering <phrase audience="sll">&rhla; or </phrase>CentOS Linux with &rmt;</title>
+  <title>Registering &rhla; or CentOS Linux with &rmt;</title>
   <step>
    <para>
     Download the <filename>rmt-client-setup-res</filename> script:
@@ -185,28 +184,7 @@ Installed Products:
      <literal>https://<replaceable>RMT_SERVER</replaceable>/repo/SUSE/Updates/</literal>
      or by logging in to the &rmt; server and running <command>rmt-cli repos list</command>.
    </para>
-   <tip>
-    <title>LTSS repository names</title>
-    <itemizedlist>
-      <listitem>
-        <para>
-          <literal>BASE</literal> repositories are frozen and contain the packages
-          from the non-LTSS repositories.
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          <literal>LTSS</literal> repositories contain new packages for
-          &productname; &productnumber; LTSS.
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          <literal>LH</literal> repositories contain the &ha; packages.
-        </para>
-      </listitem>
-    </itemizedlist>
-  </tip>
+   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="snip-ltss-repo-names.xml"/>
   </step>
   <step>
     <para>

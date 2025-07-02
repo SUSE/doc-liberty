@@ -67,24 +67,8 @@
     reliability or any other characteristic.
   </para>
 </important>
-<important>
-  <title>End of general support</title>
-  <para>
-    &productname; &productnumber; has reached the end of general support and is now in LTSS
-    (Long Term Service Support).
-  </para>
-  <para>
-    If you have a <emphasis>&productname;</emphasis> subscription but do not have an
-    <emphasis>LTSS</emphasis> subscription, you can continue to use your systems. However,
-    registering new &rhla;&nbsp;&productnumber; or CentOS&nbsp;Linux&nbsp;&productnumber;
-    systems with the general subscription is no longer supported.
-  </para>
-  <para>
-    To register new &rhla;&nbsp;&productnumber; or CentOS&nbsp;Linux&nbsp;&productnumber;
-    systems, and to continue receiving new updates for existing systems, you must use an
-    <emphasis>LTSS</emphasis> subscription.
-  </para>
-</important>
+
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="snip-end-general-support.xml"/>
 
   <section xml:id="sec-compliance-scans-introduction">
     <title>Introduction</title>
@@ -167,15 +151,9 @@
         </para>
       </listitem>
     </orderedlist>
-    <note>
-      <title><emphasis>&productname;</emphasis> and <emphasis>SUSE Liberty Linux</emphasis>
-      or <emphasis>Expanded Support</emphasis></title>
-      <para>
-        <emphasis>&productname;</emphasis> was previously named <emphasis>SUSE Liberty Linux</emphasis>
-        and <emphasis>&sles; with Expanded Support</emphasis>. Some components might still use one
-        of these names.
-      </para>
-    </note>
+
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="snip-name-change.xml"/>
+
     <itemizedlist xml:id="compliance-scans-related-information">
       <title>Related information</title>
       <listitem>

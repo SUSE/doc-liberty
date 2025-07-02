@@ -1,0 +1,29 @@
+<!DOCTYPE tip [
+  <!ENTITY % entities SYSTEM "generic-entities.ent">
+  %entities;
+]>
+
+<tip xmlns="http://docbook.org/ns/docbook" version="5.1"
+xmlns:xi="http://www.w3.org/2001/XInclude"
+xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>LTSS repository names</title>
+  <itemizedlist>
+    <listitem>
+      <para>
+        <literal>BASE</literal> repositories are frozen and contain the packages
+        from the non-LTSS repositories.
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal>LTSS</literal> repositories contain new packages for
+        &productname; &productnumber; LTSS.
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <literal>LH</literal> repositories contain the &ha; packages.
+      </para>
+    </listitem>
+  </itemizedlist>
+</tip>

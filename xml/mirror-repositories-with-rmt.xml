@@ -43,12 +43,12 @@
   </listitem>
   <listitem>
    <para>
-    You have a &productname; subscription activated in <link xlink:href="&sccurl;">&scc;</link>.
+    You have a &productname; subscription activated in the <link xlink:href="&sccurl;">&scc;</link>.
    </para>
   </listitem>
  </itemizedlist>
 
- <important audience="sll">
+ <important>
    <title>New repository structure for &productname; &productnumber; LTSS</title>
    <para>
      The repository structure has changed in &productname; &productnumber; LTSS. The non-LTSS subscription
@@ -138,28 +138,7 @@
 <screen>&prompt.root;<command>rmt-cli repos enable <replaceable>REPO_ID1 REPO_ID2 REPO_ID3</replaceable></command></screen>
      </step>
    </substeps>
-   <tip>
-    <title>LTSS repository names</title>
-    <itemizedlist>
-      <listitem>
-        <para>
-          <literal>BASE</literal> repositories are frozen and contain the packages
-          from the non-LTSS repositories.
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          <literal>LTSS</literal> repositories contain new packages for
-          &productname; &productnumber; LTSS.
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          <literal>LH</literal> contain the &ha; packages.
-        </para>
-      </listitem>
-    </itemizedlist>
-  </tip>
+   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="snip-ltss-repo-names.xml"/>
   </step>
   <step>
    <para>
