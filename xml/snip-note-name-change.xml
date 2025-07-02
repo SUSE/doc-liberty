@@ -1,0 +1,15 @@
+<!DOCTYPE note [
+  <!ENTITY % entities SYSTEM "generic-entities.ent">
+  %entities;
+]>
+
+<note xmlns="http://docbook.org/ns/docbook" version="5.1"
+xmlns:xi="http://www.w3.org/2001/XInclude"
+xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title><emphasis>&productname;</emphasis> and <emphasis>SUSE Liberty Linux</emphasis></title>
+  <para>
+    <emphasis>&productname;</emphasis> was previously named <emphasis>SUSE Liberty Linux</emphasis>.
+    During the transition period, some components might still use the name
+    <emphasis>SUSE Liberty Linux</emphasis>.
+  </para>
+</note>

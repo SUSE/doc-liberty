@@ -130,16 +130,9 @@
       <xref linkend="deploy-suma"/>.
      </para>
     </listitem>
-   </itemizedlist>
+  </itemizedlist>
 
-  <note>
-     <title><emphasis>&productname;</emphasis> and <emphasis>SUSE Liberty Linux</emphasis></title>
-     <para>
-       <emphasis>&productname;</emphasis> was previously named <emphasis>SUSE Liberty Linux</emphasis>.
-       During the transition period, some components might still use the name
-       <emphasis>SUSE Liberty Linux</emphasis>.
-     </para>
-  </note>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="snip-note-name-change.xml"/>
 
   <itemizedlist>
     <title>Related information</title>
