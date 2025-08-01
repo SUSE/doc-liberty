@@ -22,12 +22,12 @@
   <xi:include href="common_copyright_gfdl.xml"/>
   <abstract>
    <para>
-    This guide explains how to register and update &rhla;&nbsp;&productnumber; or
+    This guide explains how to register and update &rhel;&nbsp;&productnumber; or
     CentOS&nbsp;Linux&nbsp;&productnumber; with &rmtool; (&rmt;).
    </para>
    <para>
-    To register with &suma;, see <link xlink:href="https://documentation.suse.com/liberty/7/html/suma-quickstart/art-suma-quickstart.html">
-    <citetitle>Registering &rhla; &productnumber; or CentOS Linux &productnumber; with &suma;</citetitle></link>.
+    To register with &smlm;, see <link xlink:href="https://documentation.suse.com/liberty/7/html/suma-quickstart/art-suma-quickstart.html">
+    <citetitle>Registering &rhla; &productnumber; or CentOS Linux &productnumber; with &smlm;</citetitle></link>.
    </para>
    <para>
     To register CentOS &productnumber; directly with the &scc;, see
@@ -53,6 +53,14 @@
     <phrase>Administration</phrase>
   </meta>
   <revhistory xml:id="rh-art-quickstart">
+    <revision>
+      <date>2025-08-01</date>
+      <revdescription>
+        <para>
+          Changed SUSE Manager to SUSE Multi-Linux Manager where applicable
+        </para>
+      </revdescription>
+    </revision>
     <revision>
       <date>2025-06-23</date>
       <revdescription>
@@ -81,7 +89,7 @@
       <date>2024-12-11</date>
       <revdescription>
         <para>
-          Changed to new product name where applicable
+          Changed SUSE Liberty Linux to SUSE Multi-Linux Support applicable
         </para>
       </revdescription>
     </revision>

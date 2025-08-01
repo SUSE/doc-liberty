@@ -81,7 +81,7 @@
      <para>
        Registering systems with &smt; is not supported under &productname; &productnumber; LTSS.
        You can register &rhla; &productnumber; or CentOS Linux &productnumber; with either
-       &suma; or the &rmtool; (&rmt;).
+       &smlm; or the &rmtool; (&rmt;).
      </para>
      <para>
        Before you register existing systems with &rmt;, de-register them from &smt;.
@@ -135,7 +135,7 @@
     <listitem>
       <para>
         <link xlink:href="https://documentation.suse.com/liberty/7/html/suma-quickstart/art-suma-quickstart.html">
-        <citetitle>Registering &rhla; 7 or CentOS Linux 7 with &suma;</citetitle></link>
+        <citetitle>Registering &rhla; 7 or CentOS Linux 7 with &smlm;</citetitle></link>
       </para>
     </listitem>
     <listitem>
@@ -153,7 +153,7 @@
     <listitem>
       <para>
         <link xlink:href="https://documentation.suse.com/liberty/8/html/suma-quickstart/art-suma-quickstart.html">
-        <citetitle>Registering &rhla; 8 or CentOS Linux 8 with &suma;</citetitle></link>
+        <citetitle>Registering &rhla; 8 or CentOS Linux 8 with &smlm;</citetitle></link>
       </para>
     </listitem>
     <listitem>
@@ -165,7 +165,7 @@
     <listitem>
       <para>
         <link xlink:href="https://documentation.suse.com/liberty/9/html/suma-quickstart/art-suma-quickstart.html">
-        <citetitle>Registering &rhla; 9 with &suma;</citetitle></link>
+        <citetitle>Registering &rhla; 9 with &smlm;</citetitle></link>
       </para>
     </listitem>
    </itemizedlist>
@@ -200,7 +200,7 @@
      </listitem>
      <listitem>
        <para>
-         &suma;
+         &smlm;
        </para>
      </listitem>
    </itemizedlist>
@@ -274,7 +274,7 @@
     <listitem>
       <para>
         <link xlink:href="https://documentation.suse.com/suma/en/suse-manager/client-configuration/clients-sleses.html">
-        <citetitle>&suma; Client Configuration Guide: Registering &sliberty; Clients</citetitle></link>
+        <citetitle>&smlm; Client Configuration Guide: Registering &sliberty; Clients</citetitle></link>
       </para>
     </listitem>
    </itemizedlist>
