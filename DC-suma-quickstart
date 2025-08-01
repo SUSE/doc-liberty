@@ -1,5 +1,5 @@
 #
-# DC file for SUSE Multi-Linux Support with SUSE Manager
+# DC file for SUSE Multi-Linux Support with SUSE Multi-Linux Manager
 #
 MAIN="art-suma-quickstart.xml"
 ROOTID="art-suma-quickstart"
