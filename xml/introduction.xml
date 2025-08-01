@@ -49,7 +49,7 @@
             <para>&sles;</para>
            </entry>
            <entry>
-            <para>&suma;</para>
+            <para>&smlm;</para>
             <para>&rmtool;</para>
            </entry>
          </row>
@@ -61,7 +61,7 @@
             <para>Includes <emphasis>one</emphasis> entitlement for &slsa; to host &rmt;</para>
            </entry>
            <entry>
-            <para>&suma;</para>
+            <para>&smlm;</para>
             <para>&rmtool;</para>
            </entry>
          </row>
@@ -72,7 +72,7 @@
             <para>Includes <emphasis>one</emphasis> entitlement for &slsa; to host &rmt;</para>
           </entry>
            <entry>
-            <para>&suma;</para>
+            <para>&smlm;</para>
             <para>&rmtool;</para>
            </entry>
          </row>
@@ -104,9 +104,9 @@
     the &rmt; server and receive packages from it directly.
   </para>
   <para condition="suma">
-    This guide describes how to register with &suma;. &suma; is a lifecycle management system for
-    mixed Linux environments. The &suma; Server is registered with the &scc;, and other systems are
-    registered as clients of &suma; and receive packages from it directly.
+    This guide describes how to register with &smlm;. &smlm; is a lifecycle management system for
+    mixed Linux environments. The &smlm; Server is registered with the &scc;, and other systems are
+    registered as clients of &smlm; and receive packages from it directly.
    </para>
 
   <itemizedlist condition="rmt">
@@ -136,14 +136,14 @@
     <title>Procedure overview</title>
     <listitem>
      <para>
-      If &suma; is already set up and you only need to <emphasis role="bold">register your
+      If &smlm; is already set up and you only need to <emphasis role="bold">register your
       &rhla;&nbsp;&productnumber; or CentOS&nbsp;Linux&nbsp;&productnumber; system</emphasis>,
       skip straight to <xref linkend="register-with-suma"/>.
      </para>
     </listitem>
     <listitem>
      <para>
-      If you still need to <emphasis role="bold">set up &suma;</emphasis>, start with
+      If you still need to <emphasis role="bold">set up &smlm;</emphasis>, start with
       <xref linkend="deploy-suma"/>.
      </para>
     </listitem>
@@ -161,13 +161,13 @@
     </listitem>
     <listitem condition="suma">
       <para>
-        <link xlink:href="https://documentation.suse.com/suma/">&suma; documentation</link>
+        <link xlink:href="https://documentation.suse.com/multi-linux-manager/">&smlm; documentation</link>
       </para>
     </listitem>
     <listitem>
      <para>
       <link xlink:href="https://documentation.suse.com/liberty/7/html/suma-quickstart/art-suma-quickstart.html">
-      <citetitle>Registering &rhla; 7 or CentOS Linux 7 with &suma;</citetitle></link>
+      <citetitle>Registering &rhla; 7 or CentOS Linux 7 with &smlm;</citetitle></link>
      </para>
     </listitem>
     <listitem>
@@ -185,13 +185,13 @@
     <listitem condition="rmt">
       <para>
         <link xlink:href="https://documentation.suse.com/liberty/8/html/suma-quickstart/art-suma-quickstart.html">
-        <citetitle>Registering &rhla; 8 or CentOS Linux 8 with &suma;</citetitle></link>
+        <citetitle>Registering &rhla; 8 or CentOS Linux 8 with &smlm;</citetitle></link>
       </para>
     </listitem>
     <listitem>
      <para>
       <link xlink:href="https://documentation.suse.com/liberty/9/html/suma-quickstart/art-suma-quickstart.html">
-      <citetitle>Registering &rhla; 9 with &suma;</citetitle></link>
+      <citetitle>Registering &rhla; 9 with &smlm;</citetitle></link>
      </para>
     </listitem>
     <listitem>
