@@ -13,7 +13,8 @@ Describe the overall goals of this pull request.
 
 When opening a PR, check all versions of the documentation that your PR applies to.
 
-- [ ] SUSE Multi-Linux Support 9 *(current `main`, no backport necessary)*
+- [ ] SUSE Multi-Linux Support next *(current `main`, no backport necessary)*
+- [ ] SUSE Multi-Linux Support 9
 - [ ] SUSE Multi-Linux Support 8
 - [ ] SUSE Multi-Linux Support 7
 
