@@ -23,7 +23,7 @@
   <para>
     Mirroring the <literal>Source</literal> or <literal>Debug</literal> repositories and enabling
     them on your system is documented as part of <xref linkend="mirror-repositories-with-rmt"/>
-    and <xref linkend="register-rhel-with-rmt"/>.
+    and <xref linkend="register-with-rmt"/>.
   </para>
   <para>
     However, if your &rhla; system is already registered with the &rmt; server and you just need

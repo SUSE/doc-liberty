@@ -87,7 +87,7 @@
     &scc;. The &rmt; server is registered with the &scc;, and other systems are registered with
     the &rmt; server and receive packages from it directly.
   </para>
-  <para condition="suma">
+  <para condition="smlm">
     This guide describes how to register with &smlm;. &smlm; is a lifecycle management system for
     mixed Linux environments. The &smlm; Server is registered with the &scc;, and other systems are
     registered as clients of &smlm; and receive packages from it directly.
@@ -99,7 +99,7 @@
      <para>
       If you already have an &rmt; server and only need to <emphasis role="bold">register your
       &rhla;&nbsp;&productnumber; system</emphasis>, skip straight to
-      <xref linkend="register-rhel-with-rmt"/>.
+      <xref linkend="register-with-rmt"/>.
      </para>
     </listitem>
     <listitem>
@@ -116,19 +116,19 @@
      </para>
     </listitem>
   </itemizedlist>
-  <itemizedlist condition="suma">
+  <itemizedlist condition="smlm">
     <title>Procedure overview</title>
     <listitem>
      <para>
       If &smlm; is already set up and you only need to <emphasis role="bold">register your
       &rhla;&nbsp;&productnumber; system</emphasis>, skip straight to
-      <xref linkend="register-with-suma"/>.
+      <xref linkend="register-with-smlm"/>.
      </para>
     </listitem>
     <listitem>
      <para>
       If you still need to <emphasis role="bold">set up &smlm;</emphasis>, start with
-      <xref linkend="deploy-suma"/>.
+      <xref linkend="deploy-smlm"/>.
      </para>
     </listitem>
   </itemizedlist>
@@ -143,14 +143,14 @@
       <citetitle>&rmtguide;</citetitle></link>
      </para>
     </listitem>
-    <listitem condition="suma">
+    <listitem condition="smlm">
       <para>
         <link xlink:href="https://documentation.suse.com/multi-linux-manager/">&smlm; documentation</link>
       </para>
     </listitem>
     <listitem>
      <para>
-      <link xlink:href="https://documentation.suse.com/liberty/7/html/suma-quickstart/art-suma-quickstart.html">
+      <link xlink:href="https://documentation.suse.com/liberty/7/html/quickstart-smlm/art-quickstart-smlm.html">
       <citetitle>Registering &rhla; 7 or CentOS Linux 7 with &smlm;</citetitle></link>
      </para>
     </listitem>
@@ -162,7 +162,7 @@
     </listitem>
     <listitem>
       <para>
-        <link xlink:href="https://documentation.suse.com/liberty/8/html/suma-quickstart/art-suma-quickstart.html">
+        <link xlink:href="https://documentation.suse.com/liberty/8/html/quickstart-smlm/art-quickstart-smlm.html">
         <citetitle>Registering &rhla; 8 or CentOS Linux 8 with &smlm;</citetitle></link>
       </para>
     </listitem>
@@ -174,11 +174,11 @@
     </listitem>
     <listitem condition="rmt">
      <para>
-      <link xlink:href="https://documentation.suse.com/liberty/9/html/suma-quickstart/art-suma-quickstart.html">
+      <link xlink:href="https://documentation.suse.com/liberty/9/html/quickstart-smlm/art-quickstart-smlm.html">
       <citetitle>Registering &rhla; 9 with &smlm;</citetitle></link>
      </para>
     </listitem>
-    <listitem condition="suma">
+    <listitem condition="smlm">
      <para>
       <link xlink:href="https://documentation.suse.com/liberty/9/html/quickstart/art-quickstart.html">
       <citetitle>Registering &rhla; 9 with &rmt;</citetitle></link>
