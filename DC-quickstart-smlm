@@ -1,10 +1,10 @@
 #
 # DC file for SUSE Multi-Linux Support with SUSE Multi-Linux Manager
 #
-MAIN="art-suma-quickstart.xml"
-ROOTID="art-suma-quickstart"
+MAIN="art-quickstart-smlm.xml"
+ROOTID="art-quickstart-smlm"
 
-PROFCONDITION="suse-product;suma"
+PROFCONDITION="suse-product;smlm"
 #PROFCONDITION="suse-product;beta"
 #PROFCONDITION="community-project"
 

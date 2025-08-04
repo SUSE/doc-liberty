@@ -8,7 +8,7 @@
     %entities;
 ]>
 
-<article xml:id="art-suma-quickstart" xml:lang="en"
+<article xml:id="art-quickstart-smlm" xml:lang="en"
  xmlns="http://docbook.org/ns/docbook" version="5.1"
  xmlns:its="http://www.w3.org/2005/11/its"
  xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -45,36 +45,12 @@
     <phrase>Upgrade &amp; Update</phrase>
     <phrase>Administration</phrase>
   </meta>
-  <revhistory xml:id="rh-art-suma-quickstart">
+  <revhistory xml:id="rh-art-quickstart-smlm">
     <revision>
-      <date>2025-08-01</date>
+      <date>YYYY-MM-DD</date>
       <revdescription>
         <para>
-          Changed SUSE Manager to SUSE Multi-Linux Manager where applicable
-        </para>
-      </revdescription>
-    </revision>
-    <revision>
-      <date>2024-12-11</date>
-      <revdescription>
-        <para>
-          Changed SUSE Liberty Linux to SUSE Multi-Linux Support where applicable
-        </para>
-      </revdescription>
-    </revision>
-    <revision>
-      <date>2024-12-06</date>
-      <revdescription>
-        <para>
-          RMT is now available with all subscription levels
-        </para>
-      </revdescription>
-    </revision>
-    <revision>
-      <date>2024-10-31</date>
-      <revdescription>
-        <para>
-          Initial guide creation
+          Initial version for &productname; &productnumber;
         </para>
       </revdescription>
     </revision>
@@ -83,7 +59,7 @@
 
 <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="introduction.xml"/>
 
-  <section xml:id="deploy-suma">
+  <section xml:id="deploy-smlm">
     <title>Deploying &smlm;</title>
     <para>
       See the following guide to install &smlm;:
@@ -104,7 +80,7 @@
     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="snip-repo-size.xml"/>
   </section>
 
-  <section xml:id="register-with-suma">
+  <section xml:id="register-with-smlm">
     <title>Registering &rhla; with &smlm;</title>
     <para>
       See the following guide to register &rhel; &productnumber; with &smlm;:

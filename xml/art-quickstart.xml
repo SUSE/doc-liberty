@@ -26,7 +26,7 @@
    </para>
    <para>
     To register with &smlm;, see
-    <link xlink:href="https://documentation.suse.com/liberty/9/html/suma-quickstart/art-suma-quickstart.html">
+    <link xlink:href="https://documentation.suse.com/liberty/9/html/quickstart-smlm/art-quickstart-smlm.html">
     <citetitle>Registering &rhla; &productnumber; with &smlm;</citetitle></link>.
    </para>
   </abstract>
@@ -49,74 +49,10 @@
   </meta>
   <revhistory xml:id="rh-art-quickstart">
     <revision>
-      <date>2025-08-01</date>
+      <date>YYYY-MM-DD</date>
       <revdescription>
         <para>
-          Changed SUSE Manager to SUSE Multi-Linux Manager where applicable
-        </para>
-      </revdescription>
-    </revision>
-    <revision>
-      <date>2024-12-13</date>
-      <revdescription>
-        <para>
-          Added Source and Debug appendix
-        </para>
-      </revdescription>
-    </revision>
-    <revision>
-      <date>2024-12-11</date>
-      <revdescription>
-        <para>
-          Changed SUSE Liberty Linux to SUSE Multi-Linux Support where applicable
-        </para>
-      </revdescription>
-    </revision>
-    <revision>
-      <date>2024-12-06</date>
-      <revdescription>
-        <para>
-          RMT is now available with all subscription levels
-        </para>
-      </revdescription>
-    </revision>
-    <revision>
-      <date>2024-10-31</date>
-      <revdescription>
-        <para>
-          Clarified the tools available with each subscription level
-        </para>
-      </revdescription>
-    </revision>
-    <revision>
-      <date>2024-10-22</date>
-      <revdescription>
-        <para>
-          Added more information about default and optional repositories
-        </para>
-      </revdescription>
-    </revision>
-    <revision>
-      <date>2024-06-27</date>
-      <revdescription>
-        <para>
-          Added Minimal VM procedure
-        </para>
-      </revdescription>
-    </revision>
-    <revision>
-      <date>2024-03-27</date>
-      <revdescription>
-        <para>
-          Clarified wording of requirements
-        </para>
-      </revdescription>
-    </revision>
-    <revision>
-      <date>2022-08-24</date>
-      <revdescription>
-        <para>
-          Initial release
+          Initial version for &productname; &productnumber;
         </para>
       </revdescription>
     </revision>
