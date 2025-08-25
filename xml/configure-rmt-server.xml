@@ -49,7 +49,7 @@ https://documentation.suse.com/sles/15-SP3/single-html/SLES-rmt/#sec-rmt-install
    <para>
     On the &slsa; machine, install &rmt;:
    </para>
-<screen>&prompt.root;<command>zypper in rmt-server</command></screen>
+<screen>&prompt.root;<command>zypper install rmt-server</command></screen>
   </step>
   <step>
     <para>
