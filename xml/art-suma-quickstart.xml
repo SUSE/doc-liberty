@@ -33,7 +33,7 @@
    <dm:bugtracker>
     <dm:url>https://github.com/SUSE/doc-liberty/issues/new</dm:url>
     <dm:labels>documentation,issue</dm:labels>
-    <dm:version>8</dm:version>
+    <dm:version>9</dm:version>
     <dm:assignee>tahliar</dm:assignee>
    </dm:bugtracker>
    <dm:editurl>https://github.com/SUSE/doc-liberty/edit/main/xml/</dm:editurl>
