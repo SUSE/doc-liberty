@@ -172,16 +172,28 @@
       <citetitle>Registering &rhla; 8 or CentOS Linux 8 with &rmt;</citetitle></link>
      </para>
     </listitem>
-    <listitem condition="rmt">
+    <listitem>
      <para>
       <link xlink:href="https://documentation.suse.com/liberty/9/html/quickstart-smlm/art-quickstart-smlm.html">
       <citetitle>Registering &rhla; 9 with &smlm;</citetitle></link>
      </para>
     </listitem>
-    <listitem condition="smlm">
+    <listitem>
      <para>
       <link xlink:href="https://documentation.suse.com/liberty/9/html/quickstart/art-quickstart.html">
       <citetitle>Registering &rhla; 9 with &rmt;</citetitle></link>
+     </para>
+    </listitem>
+    <listitem condition="rmt">
+     <para>
+      <link xlink:href="https://documentation.suse.com/liberty/10/html/quickstart-smlm/art-quickstart-smlm.html">
+      <citetitle>Registering &rhla; 10 with &smlm;</citetitle></link>
+     </para>
+    </listitem>
+    <listitem condition="smlm">
+     <para>
+      <link xlink:href="https://documentation.suse.com/liberty/10/html/quickstart/art-quickstart.html">
+      <citetitle>Registering &rhla; 10 with &rmt;</citetitle></link>
      </para>
     </listitem>
   </itemizedlist>
