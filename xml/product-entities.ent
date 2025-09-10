@@ -1,7 +1,7 @@
 <!-- PRODUCT NAME AND VERSIONS -->
 <!ENTITY productname            "SUSE Multi-Linux Support">
 <!ENTITY productnameshort       "SMLS">
-<!ENTITY productnumber          "9">
+<!ENTITY productnumber          "10">
 
 <!ENTITY reponame               "SUSE Liberty Linux">
 <!ENTITY reponameshort          "SLL">

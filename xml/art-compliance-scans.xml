@@ -30,7 +30,7 @@
    <dm:bugtracker>
     <dm:url>https://github.com/SUSE/doc-liberty/issues/new</dm:url>
     <dm:labels>documentation,issue</dm:labels>
-    <dm:version>9</dm:version>
+    <dm:version>10</dm:version>
     <dm:assignee>tahliar</dm:assignee>
    </dm:bugtracker>
    <dm:editurl>https://github.com/SUSE/doc-liberty/edit/maintenance/main/xml/</dm:editurl>
@@ -45,7 +45,7 @@
   </meta>
   <revhistory xml:id="rh-art-compliance-scans">
     <revision>
-      <date>2025-03-25</date>
+      <date>2025-10-31</date>
       <revdescription>
         <para>
           Initial version for &productname; &productnumber;
@@ -202,13 +202,13 @@
         <itemizedlist>
           <listitem>
             <para>
-              <link xlink:href="https://documentation.suse.com/liberty/9/html/quickstart/art-quickstart.html">
+              <link xlink:href="https://documentation.suse.com/liberty/10/html/quickstart/art-quickstart.html">
               Registering &rhla; &productnumber; with &rmt;</link>
             </para>
           </listitem>
           <listitem>
             <para>
-              <link xlink:href="https://documentation.suse.com/liberty/9/html/quickstart-smlm/art-quickstart-smlm.html">
+              <link xlink:href="https://documentation.suse.com/liberty/10/html/quickstart-smlm/art-quickstart-smlm.html">
               Registering &rhla; &productnumber; with &smlm;</link>
             </para>
           </listitem>
@@ -295,14 +295,14 @@ SUSE Liberty Linux</screen>
     </tip>
     <para>
       To list the profiles for &productname;&nbsp;&productnumber;, query
-      the <literal>ssg-sl_linux9-ds</literal> security policy:
+      the <literal>ssg-sl_linux10-ds</literal> security policy:
     </para>
-<screen>&prompt.root;<command>oscap info /usr/share/xml/scap/ssg/content/ssg-sl_linux9-ds.xml</command></screen>
+<screen>&prompt.root;<command>oscap info /usr/share/xml/scap/ssg/content/ssg-sl_linux10-ds.xml</command></screen>
     <para>
       You can use <command>grep</command> to narrow down the results. For example,
       to see only CIS profiles, run the following command:
     </para>
-<screen>&prompt.root;<command>oscap info /usr/share/xml/scap/ssg/content/ssg-sl_linux9-ds.xml | grep -i cis</command>
+<screen>&prompt.root;<command>oscap info /usr/share/xml/scap/ssg/content/ssg-sl_linux10-ds.xml | grep -i cis</command>
       Title: <emphasis role="bold">CIS</emphasis> Benchmark for Level 2 - Server
         Id: xccdf_org.ssgproject.content_profile_<emphasis role="bold">cis</emphasis>
       Title: <emphasis role="bold">CIS</emphasis> Benchmark for Level 1 - Server
@@ -348,7 +348,7 @@ SUSE Liberty Linux</screen>
 <command>--profile xccdf_org.ssgproject.content_profile_cis \</command><co xml:id="co-compliance-scans-profile"/>
 <command>--report /tmp/report.html \</command><co xml:id="co-compliance-scans-report"/>
 <command>--results-arf /tmp/results-arf.xml \</command><co xml:id="co-compliance-scans-results"/>
-<command>/usr/share/xml/scap/ssg/content/ssg-sl_linux9-ds.xml</command><co xml:id="co-compliance-scans-content"/></screen>
+<command>/usr/share/xml/scap/ssg/content/ssg-sl_linux10-ds.xml</command><co xml:id="co-compliance-scans-content"/></screen>
     <calloutlist>
       <callout arearefs="co-compliance-scans-profile">
         <para>
@@ -437,7 +437,7 @@ Connection to ftp.suse.com 21 port [tcp/ftp] succeeded!</screen>
 <command>--profile xccdf_org.ssgproject.content_profile_cis \</command><co xml:id="co-fetch-remote-profile"/>
 <command>--report /tmp/report.html \</command><co xml:id="co-fetch-remote-report"/>
 <command>--results-arf /tmp/results-arf.xml \</command><co xml:id="co-fetch-remote-results"/>
-<command>/usr/share/xml/scap/ssg/content/ssg-sl_linux9-ds.xml</command><co xml:id="co-fetch-remote-content"/></screen>
+<command>/usr/share/xml/scap/ssg/content/ssg-sl_linux10-ds.xml</command><co xml:id="co-fetch-remote-content"/></screen>
         <calloutlist>
           <callout arearefs="co-fetch-remote-option">
             <para>
@@ -479,10 +479,10 @@ Connection to ftp.suse.com 21 port [tcp/ftp] succeeded!</screen>
       </step>
       <step>
         <para>
-          Find the link to the remote resource by querying the <literal>ssg-sl_linux9-ds</literal>
+          Find the link to the remote resource by querying the <literal>ssg-sl_linux10-ds</literal>
           security policy:
         </para>
-<screen>&prompt.root;<command>oscap info /usr/share/xml/scap/ssg/content/ssg-sl_linux9-ds.xml</command></screen>
+<screen>&prompt.root;<command>oscap info /usr/share/xml/scap/ssg/content/ssg-sl_linux10-ds.xml</command></screen>
         <para>
           The output of this command includes a <literal>WARNING</literal> that contains the link.
         </para>
@@ -492,8 +492,8 @@ Connection to ftp.suse.com 21 port [tcp/ftp] succeeded!</screen>
           Using the link found in the previous command, download the remote resource and save it as
           a local file in the <filename>/tmp/scap-files</filename> directory. For example:
         </para>
-<screen>&prompt.root;<command>wget -O /tmp/scap-files/pub-projects-security-oval-suse.liberty.linux.9.xml \</command>
-<command>https://ftp.suse.com/pub/projects/security/oval/suse.liberty.linux.9.xml</command></screen>
+<screen>&prompt.root;<command>wget -O /tmp/scap-files/pub-projects-security-oval-suse.liberty.linux.10.xml \</command>
+<command>https://ftp.suse.com/pub/projects/security/oval/suse.liberty.linux.10.xml</command></screen>
       </step>
       <step>
         <para>
@@ -503,7 +503,7 @@ Connection to ftp.suse.com 21 port [tcp/ftp] succeeded!</screen>
 <command>--profile xccdf_org.ssgproject.content_profile_cis \</command><co xml:id="co-download-remote-profile"/>
 <command>--report /tmp/report.html \</command><co xml:id="co-download-remote-report"/>
 <command>--results-arf /tmp/results-arf.xml \</command><co xml:id="co-download-remote-results"/>
-<command>/usr/share/xml/scap/ssg/content/ssg-sl_linux9-ds.xml</command><co xml:id="co-download-remote-content"/></screen>
+<command>/usr/share/xml/scap/ssg/content/ssg-sl_linux10-ds.xml</command><co xml:id="co-download-remote-content"/></screen>
         <calloutlist>
           <callout arearefs="co-download-remote-option">
             <para>
@@ -579,7 +579,7 @@ Result  fail</screen>
               <textobject role="description">
                 <phrase>
                   The header of a typical HTML-formatted report generated by &openscap;. This example
-                  report is titled "Guide to the Secure Configuration of SUSE Liberty Linux 9" and
+                  report is titled "Guide to the Secure Configuration of SUSE Liberty Linux 10" and
                   uses the profile "CIS Benchmark for Level 2 - Server".
                 </phrase>
               </textobject>

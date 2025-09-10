@@ -25,7 +25,7 @@
     This guide explains how to register and update &rhel;&nbsp;&productnumber; with &smlm;.
    </para>
    <para>
-    To register with &rmt;, see <link xlink:href="https://documentation.suse.com/liberty/9/html/quickstart/art-quickstart.html">
+    To register with &rmt;, see <link xlink:href="https://documentation.suse.com/liberty/10/html/quickstart/art-quickstart.html">
     <citetitle>Registering &rhla; &productnumber; with &rmt;</citetitle></link>.
    </para>
   </abstract>
@@ -33,7 +33,7 @@
    <dm:bugtracker>
     <dm:url>https://github.com/SUSE/doc-liberty/issues/new</dm:url>
     <dm:labels>documentation,issue</dm:labels>
-    <dm:version>8</dm:version>
+    <dm:version>10</dm:version>
     <dm:assignee>tahliar</dm:assignee>
    </dm:bugtracker>
    <dm:editurl>https://github.com/SUSE/doc-liberty/edit/main/xml/</dm:editurl>
@@ -47,7 +47,7 @@
   </meta>
   <revhistory xml:id="rh-art-quickstart-smlm">
     <revision>
-      <date>2025-03-25</date>
+      <date>2025-10-31</date>
       <revdescription>
         <para>
           Initial version for &productname; &productnumber;
