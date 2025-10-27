@@ -208,4 +208,5 @@ Installed Products:
  <para>
   You can now keep your system up to date from repositories provided by &productname;.
  </para>
+ <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="snip-uefi-secure-boot.xml"/>
 </section>

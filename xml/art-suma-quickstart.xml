@@ -53,6 +53,14 @@
   </meta>
   <revhistory xml:id="rh-art-suma-quickstart">
     <revision>
+      <date>2025-10-27</date>
+      <revdescription>
+        <para>
+          Added UEFI Secure Boot warning
+        </para>
+      </revdescription>
+    </revision>
+    <revision>
       <date>2025-08-01</date>
       <revdescription>
         <para>
@@ -157,6 +165,7 @@
       CentOS Stream is not supported.
       </para>
     </important>
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="snip-uefi-secure-boot.xml"/>
   </section>
 
  <xi:include href="common_legal.xml"/>

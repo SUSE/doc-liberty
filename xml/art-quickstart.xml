@@ -54,6 +54,14 @@
   </meta>
   <revhistory xml:id="rh-art-quickstart">
     <revision>
+      <date>2025-10-27</date>
+      <revdescription>
+        <para>
+          Added UEFI Secure Boot warning
+        </para>
+      </revdescription>
+    </revision>
+    <revision>
       <date>2025-08-01</date>
       <revdescription>
         <para>
