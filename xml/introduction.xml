@@ -133,18 +133,6 @@
     </listitem>
   </itemizedlist>
 
-  <warning>
-    <title>&uefisecboot; requirements</title>
-    <para>
-      To use &productname; on systems with &uefisecboot; enabled, the complete boot chain stack
-      (shim, GRUB, and kernel) must be provided by &suse;. This is necessary because &uefisecboot;
-      requires a strict chain of trust, where each component&mdash;from the firmware to the kernel
-      and its drivers&mdash;must be signed with a key that the previous component in the chain
-      explicitly trusts. Using non-&suse; components could break this chain and prevent the system
-      from booting.
-    </para>
-  </warning>
-
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="snip-name-change.xml"/>
 
   <itemizedlist>
