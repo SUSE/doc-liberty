@@ -1,8 +1,8 @@
 #
 # DC file for SUSE Multi-Linux Support with RMT
 #
-MAIN="art-quickstart.xml"
-ROOTID="art-quickstart"
+MAIN="art-quickstart-rmt.xml"
+ROOTID="art-quickstart-rmt"
 
 PROFCONDITION="suse-product;rmt"
 #PROFCONDITION="suse-product;beta"

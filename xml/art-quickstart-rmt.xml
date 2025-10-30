@@ -8,7 +8,7 @@
     %entities;
 ]>
 
-<article xml:id="art-quickstart" xml:lang="en"
+<article xml:id="art-quickstart-rmt" xml:lang="en"
  xmlns="http://docbook.org/ns/docbook" version="5.1"
  xmlns:its="http://www.w3.org/2005/11/its"
  xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -47,7 +47,7 @@
     <phrase>Upgrade &amp; Update</phrase>
     <phrase>Administration</phrase>
   </meta>
-  <revhistory xml:id="rh-art-quickstart">
+  <revhistory xml:id="rh-art-quickstart-rmt">
     <revision>
       <date>2025-10-31</date>
       <revdescription>
@@ -69,7 +69,7 @@
 
 <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="register-with-rmt.xml"/>
 
- <section xml:id="troubleshoot-quickstart">
+ <section xml:id="troubleshoot-quickstart-rmt">
   <title>Troubleshooting</title>
   <variablelist>
    <varlistentry>
