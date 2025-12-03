@@ -9,11 +9,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink">
 <title>&productname; &productnumber; LTSS repository size</title>
   <para>
     The &productname; &productnumber; LTSS repositories will grow over time because older package
-    versions are not removed. Based on the current<footnote><para>As of 02 July, 2025</para></footnote>
+    versions are not removed. Based on the current<footnote><para>As of 03 December, 2025</para></footnote>
     size of the repositories, to meet the 1.5 times size recommendation you will need
-    approximately 20&nbsp;GB of disk space for the default <literal>LTSS-Updates</literal>
+    approximately 30&nbsp;GB of disk space for the default <literal>LTSS-Updates</literal>
     repository. If you need the optional <literal>LTSS-Source</literal> and
-    <literal>LTSS-Debug</literal> repositories, you will need an additional 50&nbsp;GB.
+    <literal>LTSS-Debug</literal> repositories, you will need an additional 65&nbsp;GB.
   </para>
   <para>
     &productname; &productnumber; LTSS also has optional frozen <literal>BASE</literal> repositories
