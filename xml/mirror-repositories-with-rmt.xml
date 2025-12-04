@@ -102,8 +102,8 @@
      </step>
      <step>
        <para>
-        Enable the repositories you need with their numeric ID. You can enable multiple repositories
-        at once:
+        Enable the repositories you need with their numeric IDs. You can enable multiple
+        repositories at once:
        </para>
 <screen>&prompt.root;<command>rmt-cli repos enable <replaceable>REPO_ID1</replaceable> <replaceable>REPO_ID2</replaceable> <replaceable>REPO_ID3</replaceable></command></screen>
      </step>
