@@ -20,7 +20,7 @@
     </dm:docmanager>
    <revhistory xml:id="rh-app-access-src-debug">
     <revision>
-     <date>2025-18-07</date>
+     <date>2025-12-04</date>
      <revdescription>
       <para/>
      </revdescription>
@@ -67,7 +67,7 @@
       <para>
         List the &productname; &productnumber; repositories:
       </para>
-<screen>&prompt.root;<command>rmt-cli repos list --all | grep &reponameshort;[A-Z\-]&productnumber;</command></screen>
+<screen>&prompt.root;<command>rmt-cli repos list --all | grep &reponameshort; | grep &productnumber;-</command></screen>
       <para>
         If the repositories you need already have the status <literal>Mirror</literal>,
         skip this procedure and go to <xref linkend="pro-enable-src-debug"/>.
@@ -75,8 +75,8 @@
     </step>
     <step>
       <para>
-        Enable the repositories using their four-digit repository ID. You can enable multiple
-        repositories at once:
+        Enable the repositories you need with their numeric ID. You can enable multiple repositories
+        at once:
       </para>
 <screen>&prompt.root;<command>rmt-cli repos enable <replaceable>REPO_ID1</replaceable> <replaceable>REPO_ID2</replaceable> <replaceable>REPO_ID3</replaceable></command></screen>
     </step>
