@@ -87,33 +87,27 @@
   <step>
    <para>
     If you also need the <literal>Source</literal> or <literal>Debug</literal>
-    repositories, enable them with the following commands:
+    repositories, find and enable them with the following steps:
    </para>
-   <itemizedlist>
-     <listitem>
+   <substeps>
+     <step>
        <para>
-         <literal>&reponameshort;-&productnumber;-Source-Updates</literal>,
-         <literal>&reponameshort;-AS-&productnumber;-Source-Updates</literal> and
-         <literal>&reponameshort;-CB-&productnumber;-Source-Updates</literal>:
+         List all the repositories for &productname; &productnumber;:
        </para>
-<screen>&prompt.root;<command>rmt-cli repos enable 3879 3922 3925</command></screen>
-     </listitem>
-     <listitem>
+<screen>&prompt.root;<command>rmt-cli repos list --all | grep &reponameshort; | grep &productnumber;-</command></screen>
        <para>
-         <literal>&reponameshort;-&productnumber;-Debug-Updates</literal>,
-         <literal>&reponameshort;-AS-&productnumber;-Debug-Updates</literal> and
-         <literal>&reponameshort;-CB-&productnumber;-Debug-Updates</literal>:
+        Enabled repositories have the status <literal>Mirror</literal>. Unenabled repositories
+        have the status <literal>Don't Mirror</literal>.
        </para>
-<screen>&prompt.root;<command>rmt-cli repos enable 3881 3923 3926</command></screen>
-     </listitem>
-     <listitem>
+     </step>
+     <step>
        <para>
-         <literal>&reponameshort;-&productnumber;-HA-Source-Updates</literal> and
-         <literal>&reponameshort;-&productnumber;-HA-Debug-Updates</literal>:
+        Enable the repositories you need with their numeric ID. You can enable multiple repositories
+        at once:
        </para>
-<screen>&prompt.root;<command>rmt-cli repos enable 3883 3884</command></screen>
-     </listitem>
-   </itemizedlist>
+<screen>&prompt.root;<command>rmt-cli repos enable <replaceable>REPO_ID1</replaceable> <replaceable>REPO_ID2</replaceable> <replaceable>REPO_ID3</replaceable></command></screen>
+     </step>
+   </substeps>
   </step>
   <step>
    <para>

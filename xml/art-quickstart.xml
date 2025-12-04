@@ -49,6 +49,14 @@
   </meta>
   <revhistory xml:id="rh-art-quickstart">
     <revision>
+      <date>2025-12-04</date>
+      <revdescription>
+        <para>
+          Simplified Source and Debug steps
+        </para>
+      </revdescription>
+    </revision>
+    <revision>
       <date>2025-10-27</date>
       <revdescription>
         <para>
