@@ -63,9 +63,9 @@
   </step>
   <step>
    <para>
-    Enable &productname; &productnumber; using the product ID <literal>2538</literal>:
+    Enable &productname; &productnumber; using the product ID <literal>3141</literal>:
    </para>
-<screen>&prompt.root;<command>rmt-cli products enable 2538</command></screen>
+<screen>&prompt.root;<command>rmt-cli products enable 3141</command></screen>
    <para>
     This enables all the default repositories associated with the product.
    </para>
@@ -73,9 +73,9 @@
   <step>
    <para>
     If your subscription includes the &ha; extension, enable the extension using
-    the product ID <literal>2539</literal>:
+    the product ID <literal>3142</literal>:
    </para>
-<screen>&prompt.root;<command>rmt-cli products enable 2539</command></screen>
+<screen>&prompt.root;<command>rmt-cli products enable 3142</command></screen>
    <tip role="compact">
     <para>
      To check whether the &ha; extension is available, run this
