@@ -78,8 +78,7 @@
   <title>Introduction</title>
    <para>
     &productname; is a technology and support solution for mixed Linux environments.
-    With a &productname; subscription, you can register and update &rhel; and CentOS Linux.
-    Optional &ha; repositories are also available.
+    With a &productname; subscription, you can register and update &rhel; and CentOS Linux from repositories provided by &suse;. Optional &ha; repositories are also available.
    </para>
    <important role="compact">
     <para>
@@ -97,7 +96,7 @@
     <listitem>
      <para>
        <xref linkend="find-registration-code"/>. You must have a valid registration code to register
-       your system with the &scc;.
+       your system to the &scc;.
      </para>
     </listitem>
     <listitem>
@@ -131,27 +130,13 @@
      </para>
     </listitem>
     <listitem>
-      <para>
-        <link xlink:href="https://documentation.suse.com/liberty/8/html/suma-quickstart/art-suma-quickstart.html">
-        <citetitle>Registering &rhla; 8 or CentOS Linux 8 with &smlm;</citetitle></link>
-      </para>
-    </listitem>
-    <listitem>
      <para>
-      <link xlink:href="https://documentation.suse.com/liberty/8/html/quickstart/art-quickstart.html">
-      <citetitle>Registering &rhla; 8 or CentOS Linux 8 with RMT</citetitle></link>
+      <link xlink:href="https://documentation.suse.com/liberty/9/">&productname; 9 documentation</link>
      </para>
     </listitem>
     <listitem>
-      <para>
-        <link xlink:href="https://documentation.suse.com/liberty/9/html/suma-quickstart/art-suma-quickstart.html">
-        <citetitle>Registering &rhla; 9 with &smlm;</citetitle></link>
-      </para>
-    </listitem>
-    <listitem>
      <para>
-      <link xlink:href="https://documentation.suse.com/liberty/9/html/quickstart/art-quickstart.html">
-      <citetitle>Registering &rhla; 9 with RMT</citetitle></link>
+      <link xlink:href="https://documentation.suse.com/liberty/8/">&productname; 8 documentation</link>
      </para>
     </listitem>
    </itemizedlist>

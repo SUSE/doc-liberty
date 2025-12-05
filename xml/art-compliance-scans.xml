@@ -74,7 +74,8 @@
     <title>Introduction</title>
     <para>
       &productname; is a technology and support solution for mixed Linux environments.
-      With a &productname; subscription, you can register and update &rhel; and CentOS Linux.
+      With a &productname; subscription, you can register and update &rhel; and CentOS Linux from
+      repositories provided by &suse;.
     </para>
     <para>
       Because &productname; uses its own branding and paths that are different from &rhla; and
