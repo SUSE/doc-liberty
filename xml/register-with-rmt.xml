@@ -19,8 +19,8 @@
  </info>
 
  <para>
-  Use this procedure to register &rhel; &productnumber; or CentOS Linux &productnumber;
-  with the &rmt; server.
+  Use this procedure to register &rhel; &productnumber; or CentOS Linux &productnumber; as a client
+  of &rmt;.
  </para>
  <important role="compact">
   <para>
