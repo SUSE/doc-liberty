@@ -19,7 +19,7 @@
  </info>
 
  <para>
-  Use this procedure to register &rhel; &productnumber; with the &rmt; server.
+  Use this procedure to register &rhel; &productnumber; as a client of &rmt;.
  </para>
  <important role="compact">
   <para>
