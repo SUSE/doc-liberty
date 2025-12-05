@@ -15,7 +15,7 @@
  xmlns:xlink="http://www.w3.org/1999/xlink">
 
  <info>
-  <title>Registering &rhla; &productnumber; or CentOS Linux &productnumber; with &rmt;</title>
+  <title>Registering &rhla; &productnumber; or &centos; Linux &productnumber; with &rmt;</title>
   <productname>&productname;</productname>
   <productname role="abbrev">&productnameshort;</productname>
   <date><?dbtimestamp format="B d, Y"?></date>
@@ -23,16 +23,16 @@
   <abstract>
    <para>
     This guide explains how to register and update &rhel;&nbsp;&productnumber; or
-    CentOS&nbsp;Linux&nbsp;&productnumber; with &rmtool; (&rmt;).
+    &centos;&nbsp;Linux&nbsp;&productnumber; with &rmtool; (&rmt;).
    </para>
    <para>
     To register with &smlm;, see <link xlink:href="https://documentation.suse.com/liberty/7/html/suma-quickstart/art-suma-quickstart.html">
-    <citetitle>Registering &rhla; &productnumber; or CentOS Linux &productnumber; with &smlm;</citetitle></link>.
+    <citetitle>Registering &rhla; &productnumber; or &centos; Linux &productnumber; with &smlm;</citetitle></link>.
    </para>
    <para>
-    To register CentOS &productnumber; directly with the &scc;, see
+    To register &centos; &productnumber; directly with the &scc;, see
     <link xlink:href="https://documentation.suse.com/liberty/7/html/quickstart-scc/art-quickstart-scc.html">
-    <citetitle>Registering CentOS Linux &productnumber; with the &scc;</citetitle></link>.
+    <citetitle>Registering &centos; Linux &productnumber; with the &scc;</citetitle></link>.
    </para>
   </abstract>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
@@ -45,9 +45,9 @@
    <dm:editurl>https://github.com/SUSE/doc-liberty/edit/maintenance/SLL7/xml/</dm:editurl>
    <dm:translation>no</dm:translation>
   </dm:docmanager>
-  <meta name="title" its:translate="yes">Registering &rhla; &productnumber; or CentOS Linux &productnumber; with &rmt;</meta>
-  <meta name="description" its:translate="yes">How to use &productname; and &rmt; to update &rhla; &productnumber; or CentOS Linux &productnumber;.</meta>
-  <meta name="social-descr" its:translate="yes">Use &rmt; to update &rhla; &productnumber; or CentOS Linux &productnumber;.</meta>
+  <meta name="title" its:translate="yes">Registering &rhla; &productnumber; or &centos; Linux &productnumber; with &rmt;</meta>
+  <meta name="description" its:translate="yes">How to use &productname; and &rmt; to update &rhla; &productnumber; or &centos; Linux &productnumber;.</meta>
+  <meta name="social-descr" its:translate="yes">Use &rmt; to update &rhla; &productnumber; or &centos; Linux &productnumber;.</meta>
   <meta name="task" its:translate="yes">
     <phrase>Upgrade &amp; Update</phrase>
     <phrase>Administration</phrase>
@@ -247,7 +247,7 @@
       package dependencies</term>
       <listitem>
       <para>
-        &productname; only supports the latest minor release of &rhla; or CentOS Linux.
+        &productname; only supports the latest minor release of &rhla; or &centos; Linux.
         If your system is running the latest version and <package>suseconnect-ng</package>
         still has package dependency issues, try the following workaround:
       </para>

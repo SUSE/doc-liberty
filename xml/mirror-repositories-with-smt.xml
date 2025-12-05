@@ -19,7 +19,7 @@
 
  <para>
   Use this procedure to mirror the &productname; repositories for &rhel; &productnumber;
-  and CentOS Linux &productnumber;.
+  and &centos; Linux &productnumber;.
  </para>
  <itemizedlist>
   <title>Requirements</title>

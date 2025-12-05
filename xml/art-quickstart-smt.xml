@@ -15,7 +15,7 @@
  xmlns:xlink="http://www.w3.org/1999/xlink">
 
  <info>
-  <title>Registering &rhla; &productnumber; or CentOS Linux &productnumber; with &smt;</title>
+  <title>Registering &rhla; &productnumber; or &centos; Linux &productnumber; with &smt;</title>
   <productname>&productname;</productname>
   <productname role="abbrev">&productnameshort;</productname>
   <date><?dbtimestamp format="B d, Y"?></date>
@@ -80,7 +80,7 @@
      </para>
      <para>
        Registering systems with &smt; is not supported under &productname; &productnumber; LTSS.
-       You can register &rhla; &productnumber; or CentOS Linux &productnumber; with either
+       You can register &rhla; &productnumber; or &centos; Linux &productnumber; with either
        &smlm; or the &rmtool; (&rmt;).
      </para>
      <para>
@@ -94,7 +94,7 @@
       Migrate from SMT to RMT</link> in <citetitle>&rmtguide;</citetitle>.
       Alternatively, install a fresh &rmt; server using the steps in
       <link xlink:href="https://documentation.suse.com/liberty/7/html/quickstart/art-quickstart.html">
-      <citetitle>Registering &rhla; 7 or CentOS Linux 7 with RMT</citetitle></link>.
+      <citetitle>Registering &rhla; 7 or &centos; Linux 7 with RMT</citetitle></link>.
      </para>
    </warning>
 
@@ -129,31 +129,31 @@
     <listitem>
      <para>
       <link xlink:href="https://documentation.suse.com/liberty/7/html/quickstart/art-quickstart.html">
-      <citetitle>Registering &rhla; 7 or CentOS Linux 7 with RMT</citetitle></link>
+      <citetitle>Registering &rhla; 7 or &centos; Linux 7 with RMT</citetitle></link>
      </para>
     </listitem>
     <listitem>
       <para>
         <link xlink:href="https://documentation.suse.com/liberty/7/html/suma-quickstart/art-suma-quickstart.html">
-        <citetitle>Registering &rhla; 7 or CentOS Linux 7 with &smlm;</citetitle></link>
+        <citetitle>Registering &rhla; 7 or &centos; Linux 7 with &smlm;</citetitle></link>
       </para>
     </listitem>
     <listitem>
       <para>
         <link xlink:href="https://documentation.suse.com/liberty/7/html/quickstart-scc/art-quickstart-scc.html">
-        <citetitle>Registering CentOS Linux &productnumber; with the &scc;</citetitle></link>.
+        <citetitle>Registering &centos; Linux &productnumber; with the &scc;</citetitle></link>.
       </para>
     </listitem>
     <listitem>
      <para>
       <link xlink:href="https://documentation.suse.com/liberty/8/html/quickstart/art-quickstart.html">
-      <citetitle>Registering &rhla; 8 or CentOS Linux 8 with RMT</citetitle></link>
+      <citetitle>Registering &rhla; 8 or &centos; Linux 8 with RMT</citetitle></link>
      </para>
     </listitem>
     <listitem>
       <para>
         <link xlink:href="https://documentation.suse.com/liberty/8/html/suma-quickstart/art-suma-quickstart.html">
-        <citetitle>Registering &rhla; 8 or CentOS Linux 8 with &smlm;</citetitle></link>
+        <citetitle>Registering &rhla; 8 or &centos; Linux 8 with &smlm;</citetitle></link>
       </para>
     </listitem>
     <listitem>
@@ -176,15 +176,15 @@
    <para>
     &productname; is a technology and support solution for mixed Linux environments.
     With a &productname; subscription, you can register and receive updates for
-    &rhel;, CentOS Linux, and &sles;. An optional &ha; extension is also available.
+    &rhel;, &centos; Linux, and &sles;. An optional &ha; extension is also available.
    </para>
    <important role="compact">
     <para>
-     CentOS&nbsp;Stream is not supported.
+     &centos;&nbsp;Stream is not supported.
     </para>
    </important>
    <para>
-    You can register &rhla; &productnumber; or CentOS Linux &productnumber; with one of the
+    You can register &rhla; &productnumber; or &centos; Linux &productnumber; with one of the
     following tools:
    </para>
    <itemizedlist>
@@ -256,13 +256,13 @@
     <listitem>
      <para>
       <link xlink:href="https://documentation.suse.com/liberty/7/html/quickstart/art-quickstart.html">
-      <citetitle>Registering &rhla; 7 or CentOS Linux 7 with RMT</citetitle></link>
+      <citetitle>Registering &rhla; 7 or &centos; Linux 7 with RMT</citetitle></link>
      </para>
     </listitem>
     <listitem>
      <para>
       <link xlink:href="https://documentation.suse.com/liberty/8/html/quickstart/art-quickstart.html">
-      <citetitle>Registering &rhla; 8 or CentOS Linux 8 with RMT</citetitle></link>
+      <citetitle>Registering &rhla; 8 or &centos; Linux 8 with RMT</citetitle></link>
      </para>
     </listitem>
     <listitem>
@@ -296,7 +296,7 @@
    <listitem>
     <para>
      The systems you want to register are up to date. &productname; only
-     supports the latest minor release of each &rhla; or CentOS Linux version.
+     supports the latest minor release of each &rhla; or &centos; Linux version.
     </para>
    </listitem>
    <listitem>
@@ -364,7 +364,7 @@
      </para>
 <screen>&prompt.root;<command>rm -r /usr/share/redhat-release</command></screen>
      <para>
-      On CentOS, this removes the symbolic link between
+      On &centos;, this removes the symbolic link between
       <filename>redhat-release</filename> and <filename>centos-release</filename>.
      </para>
      <important role="compact">

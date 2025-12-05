@@ -9,7 +9,7 @@
  xmlns="http://docbook.org/ns/docbook" version="5.1"
  xmlns:xi="http://www.w3.org/2001/XInclude"
  xmlns:xlink="http://www.w3.org/1999/xlink">
- <title>Registering CentOS Linux &productnumber; with the &scc;</title>
+ <title>Registering &centos; Linux &productnumber; with the &scc;</title>
 
  <info>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
@@ -19,17 +19,17 @@
  </info>
 
  <para>
-  Use this procedure to register CentOS Linux &productnumber; directly with the &scc;.
+  Use this procedure to register &centos; Linux &productnumber; directly with the &scc;.
   To automate the process, &suse; provides a registration script in a publicly available repository.
  </para>
  <important role="compact">
   <para>
-   CentOS Stream is not supported.
+   &centos; Stream is not supported.
   </para>
  </important>
  <para>
-  This registration method is only available for CentOS Linux &productnumber; with the
-  <emphasis>&productname; Lite</emphasis> subscription. To register &rhel; or CentOS&nbsp;Linux
+  This registration method is only available for &centos; Linux &productnumber; with the
+  <emphasis>&productname; Lite</emphasis> subscription. To register &rhel; or &centos;&nbsp;Linux
   with a different &productname; subscription, you must use &smlm; or &rmt;.
  </para>
  <itemizedlist>
@@ -41,8 +41,8 @@
   </listitem>
   <listitem>
    <para>
-    The system you want to register is running CentOS&nbsp;Linux&nbsp;&productnumber;.
-    <emphasis>&productname; Lite</emphasis> only supports CentOS&nbsp;Linux, not &rhel;.
+    The system you want to register is running &centos;&nbsp;Linux&nbsp;&productnumber;.
+    <emphasis>&productname; Lite</emphasis> only supports &centos;&nbsp;Linux, not &rhel;.
    </para>
   </listitem>
   <listitem>
@@ -61,7 +61,7 @@
  </itemizedlist>
 
  <procedure xml:id="pro-register-with-scc">
-  <title>Registering CentOS Linux &productnumber; with the &scc;</title>
+  <title>Registering &centos; Linux &productnumber; with the &scc;</title>
   <step>
    <para>
     Log in as either the &rootuser; user or a user with <command>sudo</command> privileges.
@@ -76,7 +76,7 @@
       The registration script also creates a backup at <filename>/etc/yum.repos.d.backup</filename>,
       but we recommend the additional backup as an extra precaution. The script removes
       <emphasis>all</emphasis> files in <filename>/etc/yum.repos.d/</filename> that start with
-      <literal>CentOS</literal>. If it removes any custom or third-party repositories that you still
+      <literal>&centos;</literal>. If it removes any custom or third-party repositories that you still
       need, you can restore them from the backup.
     </para>
   </step>
@@ -109,7 +109,7 @@
     </listitem>
     <listitem>
      <para>
-      Removes the existing CentOS repositories from <filename>/etc/yum.repos.d/</filename>.
+      Removes the existing &centos; repositories from <filename>/etc/yum.repos.d/</filename>.
      </para>
     </listitem>
     <listitem>
@@ -130,7 +130,7 @@
     </listitem>
     <listitem>
      <para>
-      Replaces the CentOS release package with the &productname; release package.
+      Replaces the &centos; release package with the &productname; release package.
      </para>
     </listitem>
     <listitem>
@@ -184,7 +184,7 @@ Installed Products:
 <screen>&prompt.root;<command>yum-config-manager --enable <replaceable>REPO_ID1 REPO_ID2 REPO_ID3</replaceable></command></screen>
    <tip role="compact">
      <para>
-       In a <literal>Minimal Install</literal> of CentOS Linux, you must install
+       In a <literal>Minimal Install</literal> of &centos; Linux, you must install
        <package>yum-utils</package> before you can use <command>yum-config-manager</command>.
        This package is installed by default in most other installations.
      </para>

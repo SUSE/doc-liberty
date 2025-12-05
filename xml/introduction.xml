@@ -19,7 +19,7 @@
 
   <para>
     &productname; is a technology and support solution for mixed Linux environments. With a
-    &productname; subscription, you can update &rhel; and CentOS Linux from repositories provided
+    &productname; subscription, you can update &rhel; and &centos; Linux from repositories provided
     by &suse;. Optional &ha; repositories are also available.
   </para>
   <para>
@@ -46,7 +46,7 @@
             <itemizedlist spacing="compact">
               <listitem>
                 <para>
-                  CentOS Linux
+                  &centos; Linux
                 </para>
               </listitem>
               <listitem>
@@ -82,7 +82,7 @@
             <itemizedlist spacing="compact">
               <listitem>
                 <para>
-                  CentOS Linux
+                  &centos; Linux
                 </para>
               </listitem>
               <listitem>
@@ -113,7 +113,7 @@
             <itemizedlist spacing="compact">
               <listitem>
                 <para>
-                  CentOS Linux
+                  &centos; Linux
                 </para>
               </listitem>
             </itemizedlist>
@@ -139,7 +139,7 @@
             <itemizedlist spacing="compact">
               <listitem>
                 <para>
-                  CentOS Linux
+                  &centos; Linux
                 </para>
               </listitem>
             </itemizedlist>
@@ -164,7 +164,7 @@
   </table>
   <important role="compact">
     <para>
-     CentOS&nbsp;Stream is not supported.
+     &centos;&nbsp;Stream is not supported.
     </para>
   </important>
 
@@ -197,7 +197,7 @@
     <listitem>
      <para>
       If you already have an &rmt; server and only need to <emphasis role="bold">register your
-      &rhla;&nbsp;&productnumber; or CentOS Linux&nbsp;&productnumber; system</emphasis>, skip
+      &rhla;&nbsp;&productnumber; or &centos; Linux&nbsp;&productnumber; system</emphasis>, skip
       straight to <xref linkend="register-7-with-rmt"/>.
      </para>
     </listitem>
@@ -213,7 +213,7 @@
     <listitem>
      <para>
       If &smlm; is already set up and you only need to <emphasis role="bold">register your
-      &rhla;&nbsp;&productnumber; or CentOS Linux&nbsp;&productnumber; system</emphasis>, skip
+      &rhla;&nbsp;&productnumber; or &centos; Linux&nbsp;&productnumber; system</emphasis>, skip
       straight to <xref linkend="register-with-suma"/>.
      </para>
     </listitem>
@@ -237,19 +237,19 @@
     <listitem>
       <para>
         <link xlink:href="https://documentation.suse.com/liberty/7/html/quickstart-scc/art-quickstart-scc.html">
-        <citetitle>Registering CentOS Linux &productnumber; with the &scc;</citetitle></link>.
+        <citetitle>Registering &centos; Linux &productnumber; with the &scc;</citetitle></link>.
       </para>
     </listitem>
     <listitem condition="rmt">
      <para>
       <link xlink:href="https://documentation.suse.com/liberty/7/html/suma-quickstart/art-suma-quickstart.html">
-      <citetitle>Registering &rhla; 7 or CentOS Linux 7 with &smlm;</citetitle></link>
+      <citetitle>Registering &rhla; 7 or &centos; Linux 7 with &smlm;</citetitle></link>
      </para>
     </listitem>
     <listitem condition="suma">
      <para>
       <link xlink:href="https://documentation.suse.com/liberty/7/html/quickstart/art-quickstart.html">
-      <citetitle>Registering &rhla; 7 or CentOS Linux 7 with &rmt;</citetitle></link>
+      <citetitle>Registering &rhla; 7 or &centos; Linux 7 with &rmt;</citetitle></link>
      </para>
     </listitem>
     <listitem>

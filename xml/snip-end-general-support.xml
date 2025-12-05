@@ -14,11 +14,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink">
   <para>
     If you have a <emphasis>&productname;</emphasis> subscription but do not have an
     <emphasis>LTSS</emphasis> subscription, you can continue to use your systems. However,
-    registering new &rhla;&nbsp;&productnumber; or CentOS&nbsp;Linux&nbsp;&productnumber;
+    registering new &rhla;&nbsp;&productnumber; or &centos;&nbsp;Linux&nbsp;&productnumber;
     systems with the general subscription is no longer supported.
   </para>
   <para>
-    To register new &rhla;&nbsp;&productnumber; or CentOS&nbsp;Linux&nbsp;&productnumber;
+    To register new &rhla;&nbsp;&productnumber; or &centos;&nbsp;Linux&nbsp;&productnumber;
     systems, and to continue receiving new updates for existing systems, you must use an
     <emphasis>LTSS</emphasis> subscription.
   </para>
