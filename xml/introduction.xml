@@ -36,10 +36,10 @@
        <thead>
          <row>
            <entry>Subscription<footnote><para>The <emphasis>Lite</emphasis> and
-           <emphasis>Basic</emphasis> subscriptions only support CentOS Linux,
+           <emphasis>Basic</emphasis> subscriptions only support &centos; Linux,
            so are not applicable to &productname;&nbsp;&productnumber;.</para></footnote></entry>
-           <entry>Supported distributions<footnote><para>There is no CentOS Linux &productnumber;, so
-           CentOS Linux support is not applicable to &productname;&nbsp;&productnumber;.</para></footnote></entry>
+           <entry>Supported distributions<footnote><para>There is no &centos; Linux &productnumber;, so
+           &centos; Linux support is not applicable to &productname;&nbsp;&productnumber;.</para></footnote></entry>
            <entry>Registration options</entry>
          </row>
        </thead>
@@ -50,7 +50,7 @@
             <itemizedlist spacing="compact">
               <listitem>
                 <para>
-                  CentOS Linux
+                  &centos; Linux
                 </para>
               </listitem>
               <listitem>
@@ -86,7 +86,7 @@
             <itemizedlist spacing="compact">
               <listitem>
                 <para>
-                  CentOS Linux
+                  &centos; Linux
                 </para>
               </listitem>
               <listitem>
@@ -116,7 +116,7 @@
   </table>
   <important role="compact">
     <para>
-     CentOS&nbsp;Stream is not supported.
+     &centos;&nbsp;Stream is not supported.
     </para>
   </important>
   <important role="compact">

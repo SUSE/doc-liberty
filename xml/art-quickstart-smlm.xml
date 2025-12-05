@@ -89,7 +89,7 @@
     </para>
     <important role="compact">
       <para>
-      CentOS Stream is not supported.
+      &centos; Stream is not supported.
       </para>
     </important>
     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="snip-uefi-secure-boot.xml"/>
