@@ -72,7 +72,8 @@
     <title>Introduction</title>
     <para>
       &productname; is a technology and support solution for mixed Linux environments.
-      With a &productname; subscription, you can register and update &rhel;.
+      With a &productname; subscription, you can register and update &rhel; from repositories
+      provided by &suse;.
     </para>
     <para>
       Because &productname; uses its own branding and paths that are different from &rhla;,
