@@ -9,7 +9,7 @@
  xmlns="http://docbook.org/ns/docbook" version="5.1"
  xmlns:xi="http://www.w3.org/2001/XInclude"
  xmlns:xlink="http://www.w3.org/1999/xlink">
- <title>Registering &rhla; or CentOS Linux with &rmt;</title>
+ <title>Registering &rhla; or &centos; Linux with &rmt;</title>
 
  <info>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
@@ -19,12 +19,12 @@
  </info>
 
  <para>
-  Use this procedure to register &rhel; &productnumber; or CentOS Linux &productnumber; as a client
+  Use this procedure to register &rhel; &productnumber; or &centos; Linux &productnumber; as a client
   of &rmt;.
  </para>
  <important role="compact">
   <para>
-   CentOS Stream is not supported.
+   &centos; Stream is not supported.
   </para>
  </important>
  <itemizedlist>
@@ -47,7 +47,7 @@
   <listitem>
    <para>
     The system you want to register is up to date. &productname; only supports the latest
-    minor release of &rhla; &productnumber; or CentOS Linux &productnumber;.
+    minor release of &rhla; &productnumber; or &centos; Linux &productnumber;.
    </para>
   </listitem>
   <listitem>
@@ -62,7 +62,7 @@
   </listitem>
  </itemizedlist>
  <procedure xml:id="pro-register-rhel-with-rmt">
-  <title>Registering &rhla; or CentOS Linux with &rmt;</title>
+  <title>Registering &rhla; or &centos; Linux with &rmt;</title>
   <step>
    <para>
     Download the <filename>rmt-client-setup-res</filename> script:

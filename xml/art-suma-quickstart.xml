@@ -15,7 +15,7 @@
  xmlns:xlink="http://www.w3.org/1999/xlink">
 
  <info>
-  <title>Registering &rhla; &productnumber; or CentOS Linux &productnumber; with &smlm;</title>
+  <title>Registering &rhla; &productnumber; or &centos; Linux &productnumber; with &smlm;</title>
   <productname>&productname;</productname>
   <productname role="abbrev">&productnameshort;</productname>
   <date><?dbtimestamp format="B d, Y"?></date>
@@ -23,11 +23,11 @@
   <abstract>
    <para>
     This guide explains how to register and update &rhel;&nbsp;&productnumber; or
-    CentOS&nbsp;Linux&nbsp;&productnumber; with &smlm;.
+    &centos;&nbsp;Linux&nbsp;&productnumber; with &smlm;.
    </para>
    <para>
     To register with &rmt;, see <link xlink:href="https://documentation.suse.com/liberty/8/html/quickstart/art-quickstart.html">
-    <citetitle>Registering &rhla; &productnumber; or CentOS Linux &productnumber; with &rmt;</citetitle></link>.
+    <citetitle>Registering &rhla; &productnumber; or &centos; Linux &productnumber; with &rmt;</citetitle></link>.
    </para>
   </abstract>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
@@ -39,9 +39,9 @@
    </dm:bugtracker>
    <dm:editurl>https://github.com/SUSE/doc-liberty/edit/main/xml/</dm:editurl>
    <dm:translation>no</dm:translation>
-  </dm:docmanager>  <meta name="title" its:translate="yes">Registering &rhla; &productnumber; or CentOS Linux &productnumber; with &smlm;</meta>
-  <meta name="description" its:translate="yes">How to use &productname; and &smlm; to update &rhla; &productnumber; or CentOS Linux &productnumber;.</meta>
-  <meta name="social-descr" its:translate="yes">Use &smlm; to update &rhla; &productnumber; or CentOS Linux &productnumber;.</meta>
+  </dm:docmanager>  <meta name="title" its:translate="yes">Registering &rhla; &productnumber; or &centos; Linux &productnumber; with &smlm;</meta>
+  <meta name="description" its:translate="yes">How to use &productname; and &smlm; to update &rhla; &productnumber; or &centos; Linux &productnumber;.</meta>
+  <meta name="social-descr" its:translate="yes">Use &smlm; to update &rhla; &productnumber; or &centos; Linux &productnumber;.</meta>
   <meta name="task" its:translate="yes">
     <phrase>Upgrade &amp; Update</phrase>
     <phrase>Administration</phrase>
@@ -116,16 +116,16 @@
   </section>
 
   <section xml:id="register-with-suma">
-    <title>Registering &rhla; or CentOS Linux with &smlm;</title>
+    <title>Registering &rhla; or &centos; Linux with &smlm;</title>
     <para>
-      See the following guide to register &rhel; &productnumber; or CentOS Linux &productnumber;
+      See the following guide to register &rhel; &productnumber; or &centos; Linux &productnumber;
       with &smlm;:
       <link xlink:href="https://documentation.suse.com/multi-linux-manager/en/docs/client-configuration/clients-sleses.html">
       <citetitle>&smlm; Client Configuration Guide</citetitle>: Registering SUSE Liberty Linux Clients</link>.
     </para>
     <important role="compact">
       <para>
-      CentOS Stream is not supported.
+      &centos; Stream is not supported.
       </para>
     </important>
     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="snip-uefi-secure-boot.xml"/>

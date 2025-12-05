@@ -72,12 +72,12 @@
     <title>Introduction</title>
     <para>
       &productname; is a technology and support solution for mixed Linux environments.
-      With a &productname; subscription, you can register and update &rhel; and CentOS Linux from
+      With a &productname; subscription, you can register and update &rhel; and &centos; Linux from
       repositories provided by &suse;.
     </para>
     <para>
       Because &productname; uses its own branding and paths that are different from &rhla; and
-      CentOS Linux, it also uses different profiles for running compliance scans with &openscap;.
+      &centos; Linux, it also uses different profiles for running compliance scans with &openscap;.
     </para>
     <para>
       SCAP is a framework of specifications that support automated configuration, vulnerability
@@ -204,13 +204,13 @@
           <listitem>
             <para>
               <link xlink:href="https://documentation.suse.com/liberty/8/html/quickstart/art-quickstart.html">
-              Registering &rhla; &productnumber; or CentOS Linux &productnumber; with &rmt;</link>
+              Registering &rhla; &productnumber; or &centos; Linux &productnumber; with &rmt;</link>
             </para>
           </listitem>
           <listitem>
             <para>
               <link xlink:href="https://documentation.suse.com/liberty/8/html/suma-quickstart/art-suma-quickstart.html">
-              Registering &rhla; &productnumber; or CentOS Linux &productnumber; with &smlm;</link>
+              Registering &rhla; &productnumber; or &centos; Linux &productnumber; with &smlm;</link>
             </para>
           </listitem>
         </itemizedlist>

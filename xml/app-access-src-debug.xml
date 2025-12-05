@@ -34,7 +34,7 @@
     and <xref linkend="register-8-with-rmt"/>.
   </para>
   <para>
-    However, if your &rhla; or CentOS Linux system is already registered with the &rmt; server and
+    However, if your &rhla; or &centos; Linux system is already registered with the &rmt; server and
     you just need to enable individual repositories, this section highlights the relevant steps.
   </para>
   <itemizedlist>
@@ -51,7 +51,7 @@
     </listitem>
     <listitem>
       <para>
-        Your &rhla; or CentOS Linux system is registered with the &rmt; server.
+        Your &rhla; or &centos; Linux system is registered with the &rmt; server.
       </para>
     </listitem>
   </itemizedlist>
@@ -93,10 +93,10 @@
 
   <para>
     After the repositories finish mirroring, use this procedure to enable them on your
-    &rhla; or CentOS Linux system:
+    &rhla; or &centos; Linux system:
   </para>
   <procedure xml:id="pro-enable-src-debug">
-    <title>Enabling additional repositories on &rhla; or CentOS Linux</title>
+    <title>Enabling additional repositories on &rhla; or &centos; Linux</title>
     <step>
       <para>
         List the available repositories:
