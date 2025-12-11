@@ -34,7 +34,7 @@
     and <xref linkend="register-rhel-with-rmt"/>.
   </para>
   <para>
-    However, if your &rhla; system is already registered with the &rmt; server and you just need
+    However, if your &rhla; system is already registered to the &rmt; server and you just need
     to enable individual repositories, this section highlights the relevant steps.
   </para>
   <itemizedlist>
