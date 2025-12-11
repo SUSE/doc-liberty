@@ -19,9 +19,15 @@
  </info>
 
  <para>
-  Use this procedure to register &rhel; &productnumber; or &centos; Linux &productnumber; as a client
-  of &rmt;.
+  Use this procedure to register &rhel; &productnumber; or &centos; Linux &productnumber; as
+  a client of &rmt;.
  </para>
+ <important role="compact">
+  <para>
+   &productname; only supports the latest minor version of &rhla; &productnumber; or
+   &centos; Linux &productnumber;.
+  </para>
+ </important>
  <important role="compact">
   <para>
    &centos; Stream is not supported.
@@ -42,12 +48,6 @@
     <listitem>
    <para>
     The system you want to register can access the &rmt; server.
-   </para>
-  </listitem>
-  <listitem>
-   <para>
-    The system you want to register is up to date. &productname; only supports the latest minor
-    release of &rhla;&nbsp;&productnumber; or &centos;&nbsp;Linux&nbsp;&productnumber;.
    </para>
   </listitem>
   <listitem>
@@ -97,11 +97,11 @@
    <para>
     Download the <filename>rmt-client-setup-res</filename> script:
    </para>
-<screen>&prompt.root;<command>curl -O http://<replaceable>RMT_SERVER</replaceable>/tools/rmt-client-setup-res</command></screen>
-<!-- ##Temporary script until the new one is available from RMT
+<screen>&prompt.root;<command>curl --remote-name http://<replaceable>&rmt;_SERVER</replaceable>/tools/rmt-client-setup-res</command></screen>
    <para>
-    Save the script in <xref linkend="app-temp-script"/> as <filename>rmt-client-setup-res</filename>.
-   </para-->
+    The option <option>--remote-name</option> (or <option>-O</option>) writes the output to a local
+    file with the same name as the remote file.
+   </para>
   </step>
   <step>
    <para>

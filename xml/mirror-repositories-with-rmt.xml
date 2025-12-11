@@ -121,7 +121,7 @@
   <step>
    <para>
     If you also need the &ha;, <literal>BASE</literal>, <literal>Source</literal> or
-    <literal>Debug</literal> repositories, enable them with the following commands:
+    <literal>Debug</literal> repositories, find and enable them with the following commands:
    </para>
    <substeps>
      <step>
