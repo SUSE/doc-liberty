@@ -6,6 +6,8 @@
 <!ENTITY reponame               "SUSE Liberty Linux">
 <!ENTITY reponameshort          "SLL">
 
+<!ENTITY ems                    "Extended Minor Version Support">
+
 <!-- PROJECT REPOSITORY URL -->
 <!ENTITY repo-url               "https://github.com/SUSE/doc-liberty">
 <!ENTITY repo-readme            "&repo-url;/blob/main/README.adoc">

@@ -52,6 +52,14 @@
       <date>2026-05-07</date>
       <revdescription>
         <para>
+          Added extended minor-version support (EMS)
+        </para>
+      </revdescription>
+    </revision>
+    <revision>
+      <date>2026-05-07</date>
+      <revdescription>
+        <para>
           Added the new download link for the registration script
         </para>
       </revdescription>
