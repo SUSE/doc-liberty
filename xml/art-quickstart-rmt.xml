@@ -120,7 +120,7 @@
     package dependencies</term>
     <listitem>
      <para>
-      &productname; only supports the latest minor release of &rhla;.
+      &productname; only supports the latest minor version of each &rhla; release.
       If your system is running the latest version and <package>SUSEConnect</package>
       still has package dependency issues, try the following workaround:
      </para>
