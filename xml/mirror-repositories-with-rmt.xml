@@ -72,14 +72,14 @@
   </step>
   <step>
    <para>
-    If your subscription includes the &ha; extension, enable the extension using
+    If your subscription includes the &ha; extension, enable it using
     the product ID <literal>2539</literal>:
    </para>
 <screen>&prompt.root;<command>rmt-cli products enable 2539</command></screen>
    <tip role="compact">
     <para>
-     To check whether the &ha; extension is available, run this
-     command: <command>rmt-cli products list --all --name=&reponameshort;-HA</command>
+     To check whether the extension is available, run
+     <command>rmt-cli products list --all --name=&reponameshort;-HA</command>.
     </para>
    </tip>
   </step>
@@ -104,7 +104,7 @@
         Enable the repositories you need with their numeric IDs. You can enable multiple
         repositories at once:
        </para>
-<screen>&prompt.root;<command>rmt-cli repos enable <replaceable>REPO_ID1</replaceable> <replaceable>REPO_ID2</replaceable> <replaceable>REPO_ID3</replaceable></command></screen>
+<screen>&prompt.root;<command>rmt-cli repos enable <replaceable>REPO_ID1 REPO_ID2 REPO_ID3</replaceable></command></screen>
      </step>
    </substeps>
   </step>
