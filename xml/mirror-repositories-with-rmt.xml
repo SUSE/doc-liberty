@@ -87,7 +87,7 @@
   <step>
    <para>
     If you also need the <literal>Source</literal> or <literal>Debug</literal>
-    repositories, find and enable them with the following steps:
+    repositories, find and enable them with the following commands:
    </para>
    <substeps>
      <step>
