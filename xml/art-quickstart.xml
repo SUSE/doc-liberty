@@ -49,6 +49,14 @@
   </meta>
   <revhistory xml:id="rh-art-quickstart">
     <revision>
+      <date>2025-12-15</date>
+      <revdescription>
+        <para>
+          Added extended minor-version support (EMS)
+        </para>
+      </revdescription>
+    </revision>
+    <revision>
       <date>2025-12-04</date>
       <revdescription>
         <para>
