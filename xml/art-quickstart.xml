@@ -208,7 +208,7 @@
     package dependencies</term>
     <listitem>
      <para>
-      &productname; only supports the latest minor release of &rhla; or &centos; Linux.
+      &productname; only supports the latest minor version of each &rhla; or &centos; Linux release.
       If your system is running the latest version and <package>SUSEConnect</package>
       still has package dependency issues, try the following workaround:
      </para>
