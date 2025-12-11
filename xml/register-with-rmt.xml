@@ -23,6 +23,11 @@
  </para>
  <important role="compact">
   <para>
+   &productname; only supports the latest minor version of &rhla; &productnumber;.
+  </para>
+ </important>
+ <important role="compact">
+  <para>
    &centos; Stream is not supported.
   </para>
  </important>
@@ -45,12 +50,6 @@
   </listitem>
   <listitem>
    <para>
-    The system you want to register is up to date. &productname; only supports the latest
-    minor release of &rhla; &productnumber;.
-   </para>
-  </listitem>
-  <listitem>
-   <para>
     You have a &productname; subscription activated in the <link xlink:href="&sccurl;">&scc;</link>.
    </para>
   </listitem>
@@ -66,7 +65,11 @@
    <para>
     On the &rhla; system, download the <filename>rmt-client-setup-res</filename> script:
    </para>
-<screen>&prompt.root;<command>curl -O http://<replaceable>&rmt;_SERVER</replaceable>/tools/rmt-client-setup-res</command></screen>
+<screen>&prompt.root;<command>curl --remote-name http://<replaceable>&rmt;_SERVER</replaceable>/tools/rmt-client-setup-res</command></screen>
+   <para>
+    The option <option>--remote-name</option> (or <option>-O</option>) writes the output to a local
+    file with the same name as the remote file.
+   </para>
   </step>
   <step>
    <para>
@@ -138,14 +141,12 @@ Installed Products:
   </step>
   <step>
    <para>
-    If your subscription includes the &ha; extension, activate it with the
-    following command:
+    If your subscription includes the &ha; extension, activate it with this command:
    </para>
 <screen>&prompt.root;<command>&suseconnect; -p &reponameshort;-HA/&productnumber;/x86_64</command></screen>
    <tip role="compact">
     <para>
-     To check whether the extension is available, run the
-     <command>&suseconnect; --list-extensions</command> command.
+     To check whether the extension is available, run <command>&suseconnect; --list-extensions</command>.
     </para>
    </tip>
   </step>
@@ -162,7 +163,7 @@ Installed Products:
     should also be <literal>enabled</literal>.
    </para>
    <para>
-     You will also see optional <literal>Source</literal> and <literal>Debug</literal>
+    You will also see optional <literal>Source</literal> and <literal>Debug</literal>
      repositories with the status <literal>disabled</literal>. Be aware that these
      repositories are listed even if they are not mirrored on the &rmt; server.
      You can check the mirrored repositories by browsing the directory listing at
@@ -172,10 +173,10 @@ Installed Products:
   </step>
   <step>
     <para>
-      If you need the <literal>Source</literal> or <literal>Debug</literal> repositories,
-      enable them with the following command:
+      If you need the <literal>Source</literal> or <literal>Debug</literal> repositories, enable
+      them using their <literal>repo id</literal>. You can enable multiple repositories at once:
     </para>
-<screen>&prompt.root;<command>dnf config-manager --enable <replaceable>REPO_ID</replaceable></command></screen>
+<screen>&prompt.root;<command>dnf config-manager --enable <replaceable>REPO_ID1 REPO_ID2 REPO_ID3</replaceable></command></screen>
   </step>
   <step>
    <para>
