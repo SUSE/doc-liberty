@@ -173,8 +173,8 @@ Installed Products:
   </step>
   <step>
     <para>
-      If you need the <literal>Source</literal> or <literal>Debug</literal> repositories,
-      enable them with the following command. You can enable multiple repositories at once:
+      If you need the <literal>Source</literal> or <literal>Debug</literal> repositories, enable
+      them using their <literal>repo id</literal>. You can enable multiple repositories at once:
     </para>
 <screen>&prompt.root;<command>dnf config-manager --enable <replaceable>REPO_ID1</replaceable> <replaceable>REPO_ID2</replaceable> <replaceable>REPO_ID3</replaceable></command></screen>
   </step>
