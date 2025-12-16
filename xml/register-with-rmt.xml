@@ -21,11 +21,11 @@
  <para>
   Use this procedure to register &rhel; &productnumber; as a client of &rmt;.
  </para>
- <important role="compact">
-  <para>
-   &productname; only supports the latest minor version of &rhla; &productnumber;.
-  </para>
- </important>
+ <para>
+  A standard &productname; subscription only supports the latest minor version of
+  &rhla; &productnumber;. If your subscription includes &ems; (EMS), you can optionally keep your
+  system on a specific minor version (9.6 and later only) while still receiving critical updates.
+ </para>
  <important role="compact">
   <para>
    &centos; Stream is not supported.
@@ -63,7 +63,7 @@
   <title>Registering &rhla; with &rmt;</title>
   <step>
    <para>
-    On the &rhla; system, download the <filename>rmt-client-setup-res</filename> script:
+    On the &rhla; system, download the latest <filename>rmt-client-setup-res</filename> script:
    </para>
 <screen>&prompt.root;<command>curl --remote-name http://<replaceable>&rmt;_SERVER</replaceable>/tools/rmt-client-setup-res</command></screen>
    <para>
@@ -73,10 +73,28 @@
   </step>
   <step>
    <para>
-    Run the <filename>rmt-client-setup-res</filename> script with
-    the URL of the &rmt; server as a parameter:
+    Run the <filename>rmt-client-setup-res</filename> script with the URL of the &rmt; server
+    as a parameter:
    </para>
+   <itemizedlist>
+     <listitem>
+       <para>
+         To keep updating your system to the latest minor version, run the default script:
+       </para>
 <screen>&prompt.root;<command>sh rmt-client-setup-res https://<replaceable>RMT_SERVER</replaceable></command></screen>
+     </listitem>
+     <listitem>
+       <para>
+         To keep your system on a specific minor version, run the script with the
+         <option>--product</option> option and specify the version you need. For example:
+       </para>
+<screen>&prompt.root;<command>sh rmt-client-setup-res https://<replaceable>RMT_SERVER</replaceable> --product 9.6-EMS</command></screen>
+       <para>
+        Any command output shown in the steps below will use this minor version number instead
+        of the standard <literal>9</literal>.
+       </para>
+     </listitem>
+   </itemizedlist>
    <para>
     The script installs <command>&suseconnect;</command> and its dependencies,
     and replaces the existing release package with the &productname; release package.
@@ -139,7 +157,7 @@ Installed Products:
 ------------------------------------------
 </screen>
   </step>
-  <step>
+  <step performance="optional">
    <para>
     If your subscription includes the &ha; extension, activate it with this command:
    </para>
@@ -149,6 +167,11 @@ Installed Products:
      To check whether the extension is available, run <command>&suseconnect; --list-extensions</command>.
     </para>
    </tip>
+   <important role="compact">
+     <para>
+      There is no &ems; for &ha;.
+     </para>
+   </important>
   </step>
   <step>
    <para>
@@ -171,7 +194,7 @@ Installed Products:
      or by logging in to the &rmt; server and running <command>rmt-cli repos list</command>.
    </para>
   </step>
-  <step>
+  <step performance="optional">
     <para>
       If you need the <literal>Source</literal> or <literal>Debug</literal> repositories, enable
       them using their <literal>repo id</literal>. You can enable multiple repositories at once:
