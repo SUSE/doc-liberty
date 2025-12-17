@@ -285,5 +285,6 @@
   </variablelist>
  </section>
  <xi:include href="app-access-src-debug.xml"/>
+ <xi:include href="app-switch-to-ems.xml"/>
  <xi:include href="common_legal.xml"/>
 </article>

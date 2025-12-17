@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="urn:x-suse:xslt:profiling:docbook51-profile.xsl"
+ type="text/xml"
+ title="Profiling step"?>
+<!DOCTYPE appendix
+[
+  <!ENTITY % entities SYSTEM "generic-entities.ent">
+    %entities;
+]>
+
+<appendix xml:id="app-switch-to-ems" xml:lang="en"
+ xmlns="http://docbook.org/ns/docbook" version="5.1"
+ xmlns:xi="http://www.w3.org/2001/XInclude"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>Switching to &ems;</title>
+  <info>
+    <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
+      <dm:bugtracker></dm:bugtracker>
+      <dm:translation>yes</dm:translation>
+    </dm:docmanager>
+   <revhistory xml:id="rh-app-switch-to-ems">
+    <revision>
+     <date>2025-12-18</date>
+     <revdescription>
+      <para/>
+     </revdescription>
+    </revision>
+   </revhistory>
+  </info>
+
+  <para>
+    Mirroring the &ems; (EMS) repositories and enabling them on your system is documented as part
+    of <xref linkend="mirror-repositories-with-rmt"/> and <xref linkend="register-rhel-with-rmt"/>.
+  </para>
+  <para>
+    However, if your &rhla; system is already registered to the &rmt; server under a standard
+    subscription and you need to switch to EMS, this section highlights the relevant steps.
+  </para>
+  <itemizedlist>
+    <title>Requirements</title>
+    <listitem>
+      <para>
+        The &rmt; server is installed and up to date.
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        The &rmt; server has enough space to mirror the EMS repositories, which are separate
+        from the standard repositories. You can enable both, but this uses significantly more
+        disk space on the &rmt; server because of duplicate packages. Alternatively, you can
+        clean up the standard repositories before you mirror the EMS repositories.
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        Your &productname; subscription includes &ems; (EMS).
+      </para>
+    </listitem>
+  </itemizedlist>
+
+   <para>
+      If you previously mirrored the standard repositories but now only need the EMS repositories,
+      use this procedure to clean up the standard repositories:
+    </para>
+   <procedure xml:id="pro-clean-up-standard-repositories">
+     <title>(Optional) Cleaning up the standard repositories on the &rmt; server</title>
+     <step>
+       <para>
+         Disable the standard product. This disables all the associated repositories:
+       </para>
+<screen>&prompt.root;<command>rmt-cli products disable 2538</command></screen>
+     </step>
+     <step>
+       <para>
+         If you no longer need the &ha; repositories, disable this product too:
+       </para>
+<screen>&prompt.root;<command>rmt-cli products disable 2539</command></screen>
+       <important role="compact">
+         <para>
+          There is no &ems; for &ha;.
+         </para>
+       </important>
+     </step>
+     <step>
+       <para>
+        Free up space on the &rmt; server by cleaning up the packages from the disabled repositories:
+       </para>
+<screen>&prompt.root;<command>rmt-cli repos clean</command></screen>
+     </step>
+   </procedure>
+
+  <para>
+    Repositories must be mirrored on the &rmt; server before you can access them on your &rhla;
+    system. Use this procedure to mirror the EMS repositories:
+  </para>
+  <procedure xml:id="pro-mirror-ems">
+    <title>Mirroring the EMS repositories on the &rmt; server</title>
+    <step>
+      <para>
+        On the &rmt; server, update the available product and repository metadata:
+      </para>
+<screen>&prompt.root;<command>rmt-cli sync</command></screen>
+    </step>
+    <step>
+      <para>
+        Find the EMS version you need and enable it using the listed <literal>ID</literal>:
+   </para>
+<screen>&prompt.root;<command>rmt-cli products list --all --name=SLL-EMS</command></screen>
+<screen>&prompt.root;<command>rmt-cli products enable <replaceable>PRODUCT_ID</replaceable></command></screen>
+      <para>
+        This enables all the default repositories.
+      </para>
+    </step>
+    <step performance="optional">
+      <para>
+        If you need the <literal>Source</literal> or <literal>Debug</literal> repositories,
+        find and enable them with the following commands:
+      </para>
+      <substeps>
+        <step>
+          <para>
+            List all the repositories for your EMS version. For example:
+          </para>
+<screen>&prompt.root;<command>rmt-cli repos list --all | grep &reponameshort; | grep &productnumber;[.]6</command></screen>
+          <para>
+            Enabled repositories have the status <literal>Mirror</literal>. Unenabled repositories
+            have the status <literal>Don't Mirror</literal>.
+          </para>
+        </step>
+        <step>
+          <para>
+            Enable the repositories you need with their numeric IDs. You can enable multiple
+            repositories at once:
+          </para>
+<screen>&prompt.root;<command>rmt-cli repos enable <replaceable>REPO_ID1 REPO_ID2 REPO_ID3</replaceable></command></screen>
+        </step>
+      </substeps>
+    </step>
+    <step>
+      <para>
+        Start package mirroring for the enabled repositories:
+      </para>
+<screen>&prompt.root;<command>rmt-cli mirror</command></screen>
+      <para>
+        This will take some time to complete.
+      </para>
+    </step>
+  </procedure>
+
+  <para>
+    After the repositories finish mirroring, you can enable them on your &rhla; system.
+    This procedure registers the system if it was previously unregistered, or switches the
+    system to EMS if it was previously registered under a standard subscription.
+  </para>
+  <procedure xml:id="pro-switch-with-rmt-setup-script">
+    <title>Switching to EMS on &rhel;</title>
+    <step>
+      <para>
+        On the &rhla; system, download the latest <filename>rmt-client-setup-res</filename> script:
+      </para>
+<screen>&prompt.root;<command>curl --remote-name http://<replaceable>&rmt;_SERVER</replaceable>/tools/rmt-client-setup-res</command></screen>
+    </step>
+    <step>
+      <para>
+        Run the <filename>rmt-client-setup-res</filename> script with the URL of the &rmt; server
+        as a parameter, and specify the version you need with the <option>--product</option>
+        option. For example:
+      </para>
+<screen>&prompt.root;<command>sh rmt-client-setup-res https://<replaceable>RMT_SERVER</replaceable> --product 9.6-EMS</command></screen>
+      <para>
+        You should see <literal>Successfully registered system</literal>.
+      </para>
+    </step>
+    <step>
+      <para>
+        Verify the installed product:
+      </para>
+<screen>&prompt.root;<command>&suseconnect; --status-text</command></screen>
+    </step>
+    <step>
+      <para>
+        Verify the available repositories:
+      </para>
+<screen>&prompt.root;<command>dnf repolist all</command></screen>
+      <para>
+        The default repositories should be <literal>enabled</literal>. You will also see optional
+        <literal>Source</literal> and <literal>Debug</literal> repositories with the status
+        <literal>disabled</literal>. These repositories are listed and can be enabled even if
+        they are not mirrored on the &rmt; server. However, you can only download content from
+        a repository if it is mirrored on the &rmt; server.
+      </para>
+    </step>
+    <step performance="optional">
+      <para>
+        If you need the <literal>Source</literal> or <literal>Debug</literal> repositories, enable
+        them using their <literal>repo id</literal>. You can enable multiple repositories at once:
+      </para>
+<screen>&prompt.root;<command>dnf config-manager --enable <replaceable>REPO_ID1</replaceable> <replaceable>REPO_ID2</replaceable> <replaceable>REPO_ID3</replaceable></command></screen>
+    </step>
+    <step>
+      <para>
+        Run the update command to make sure there are no errors:
+      </para>
+<screen>&prompt.root;<command>dnf update</command></screen>
+    </step>
+  </procedure>
+
+</appendix>
