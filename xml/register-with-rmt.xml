@@ -21,6 +21,11 @@
  <para>
   Use this procedure to register &rhel; &productnumber; as a client of &rmt;.
  </para>
+ <para>
+  A standard &productname; subscription only supports the latest minor version of
+  &rhla; &productnumber;. If your subscription includes &ems; (EMS), you can optionally keep your
+  system on a specific minor version (9.6 and later only) while still receiving critical updates.
+ </para>
  <important role="compact">
   <para>
    &centos; Stream is not supported.
@@ -45,12 +50,6 @@
   </listitem>
   <listitem>
    <para>
-    The system you want to register is up to date. &productname; only supports the latest
-    minor release of &rhla; &productnumber;.
-   </para>
-  </listitem>
-  <listitem>
-   <para>
     You have a &productname; subscription activated in the <link xlink:href="&sccurl;">&scc;</link>.
    </para>
   </listitem>
@@ -64,16 +63,38 @@
   <title>Registering &rhla; with &rmt;</title>
   <step>
    <para>
-    On the &rhla; system, download the <filename>rmt-client-setup-res</filename> script:
+    On the &rhla; system, download the latest <filename>rmt-client-setup-res</filename> script:
    </para>
-<screen>&prompt.root;<command>curl -O http://<replaceable>&rmt;_SERVER</replaceable>/tools/rmt-client-setup-res</command></screen>
+<screen>&prompt.root;<command>curl --remote-name http://<replaceable>&rmt;_SERVER</replaceable>/tools/rmt-client-setup-res</command></screen>
+   <para>
+    The option <option>--remote-name</option> (or <option>-O</option>) writes the output to a local
+    file with the same name as the remote file.
+   </para>
   </step>
   <step>
    <para>
-    Run the <filename>rmt-client-setup-res</filename> script with
-    the URL of the &rmt; server as a parameter:
+    Run the <filename>rmt-client-setup-res</filename> script with the URL of the &rmt; server
+    as a parameter:
    </para>
+   <itemizedlist>
+     <listitem>
+       <para>
+         To keep updating your system to the latest minor version, run the default script:
+       </para>
 <screen>&prompt.root;<command>sh rmt-client-setup-res https://<replaceable>RMT_SERVER</replaceable></command></screen>
+     </listitem>
+     <listitem>
+       <para>
+         To keep your system on a specific minor version, run the script with the
+         <option>--product</option> option and specify the version you need. For example:
+       </para>
+<screen>&prompt.root;<command>sh rmt-client-setup-res https://<replaceable>RMT_SERVER</replaceable> --product 9.6-EMS</command></screen>
+       <para>
+        Any command output will use this minor version number instead of the standard
+        <literal>9</literal> shown in the steps below.
+       </para>
+     </listitem>
+   </itemizedlist>
    <para>
     The script installs <command>&suseconnect;</command> and its dependencies,
     and replaces the existing release package with the &productname; release package.
@@ -136,18 +157,21 @@ Installed Products:
 ------------------------------------------
 </screen>
   </step>
-  <step>
+  <step performance="optional">
    <para>
-    If your subscription includes the &ha; extension, activate it with the
-    following command:
+    If your subscription includes the &ha; extension, activate it with this command:
    </para>
 <screen>&prompt.root;<command>&suseconnect; -p &reponameshort;-HA/&productnumber;/x86_64</command></screen>
    <tip role="compact">
     <para>
-     To check whether the extension is available, run the
-     <command>&suseconnect; --list-extensions</command> command.
+     To check whether the extension is available, run <command>&suseconnect; --list-extensions</command>.
     </para>
    </tip>
+   <important role="compact">
+     <para>
+      There is no &ems; for &ha;.
+     </para>
+   </important>
   </step>
   <step>
    <para>
@@ -162,7 +186,7 @@ Installed Products:
     should also be <literal>enabled</literal>.
    </para>
    <para>
-     You will also see optional <literal>Source</literal> and <literal>Debug</literal>
+    You will also see optional <literal>Source</literal> and <literal>Debug</literal>
      repositories with the status <literal>disabled</literal>. Be aware that these
      repositories are listed even if they are not mirrored on the &rmt; server.
      You can check the mirrored repositories by browsing the directory listing at
@@ -170,12 +194,12 @@ Installed Products:
      or by logging in to the &rmt; server and running <command>rmt-cli repos list</command>.
    </para>
   </step>
-  <step>
+  <step performance="optional">
     <para>
-      If you need the <literal>Source</literal> or <literal>Debug</literal> repositories,
-      enable them with the following command:
+      If you need the <literal>Source</literal> or <literal>Debug</literal> repositories, enable
+      them using their <literal>repo id</literal>. You can enable multiple repositories at once:
     </para>
-<screen>&prompt.root;<command>dnf config-manager --enable <replaceable>REPO_ID</replaceable></command></screen>
+<screen>&prompt.root;<command>dnf config-manager --enable <replaceable>REPO_ID1 REPO_ID2 REPO_ID3</replaceable></command></screen>
   </step>
   <step>
    <para>

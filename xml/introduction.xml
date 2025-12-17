@@ -20,11 +20,25 @@
 
   <para>
     &productname; is a technology and support solution for mixed Linux environments. With a
-    &productname; subscription, you can update &rhel; from repositories provided by &suse;.
-    An optional &ha; extension is also available.
+    &productname; subscription, you can register and update &rhel; from repositories provided
+    by &suse;. Two extensions are also available:
   </para>
+  <itemizedlist>
+    <listitem>
+      <para>
+        The &ha; (HA) extension provides package updates for &rhla;'s &ha; and
+        Resilient Storage Add-Ons.
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        The &ems; (EMS) extension allows you to keep your systems on a specific minor version
+        (9.6 and later only) while still receiving critical updates.
+      </para>
+    </listitem>
+  </itemizedlist>
   <para>
-    The following table shows which Linux distributions are supported by each subscription. These
+    The following table shows which Linux distributions are supported. &productname;
     subscriptions also include an entitlement for a registration tool to manage package updates.
   </para>
   <table xml:id="supported-distros-and-reg-tools" pgwide="1">

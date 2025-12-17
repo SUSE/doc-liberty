@@ -51,7 +51,7 @@
     </listitem>
     <listitem>
       <para>
-        Your &rhla; system is registered with the &rmt; server.
+        Your &rhla; system is registered to the &rmt; server.
       </para>
     </listitem>
   </itemizedlist>
@@ -67,7 +67,11 @@
       <para>
         List the &productname; &productnumber; repositories:
       </para>
-<screen>&prompt.root;<command>rmt-cli repos list --all | grep &reponameshort; | grep &productnumber;-</command></screen>
+<screen>&prompt.root;<command>rmt-cli repos list --all | grep &reponameshort; | grep &productnumber;[-.]</command></screen>
+      <para>
+        Depending on your subscription, this command shows the standard repositories,
+        the EMS repositories and the HA repositories.
+      </para>
       <para>
         If the repositories you need already have the status <literal>Mirror</literal>,
         skip this procedure and go to <xref linkend="pro-enable-src-debug"/>.

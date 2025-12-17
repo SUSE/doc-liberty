@@ -49,6 +49,14 @@
   </meta>
   <revhistory xml:id="rh-art-quickstart">
     <revision>
+      <date>2025-12-18</date>
+      <revdescription>
+        <para>
+          Added extended minor-version support (EMS)
+        </para>
+      </revdescription>
+    </revision>
+    <revision>
       <date>2025-12-04</date>
       <revdescription>
         <para>
@@ -200,7 +208,7 @@
     package dependencies</term>
     <listitem>
      <para>
-      &productname; only supports the latest minor release of &rhla;.
+      &productname; only supports the latest minor version of each &rhla; release.
       If your system is running the latest version and <package>SUSEConnect</package>
       still has package dependency issues, try the following workaround:
      </para>
@@ -269,5 +277,6 @@
   </variablelist>
  </section>
  <xi:include href="app-access-src-debug.xml"/>
+ <xi:include href="app-switch-to-ems.xml"/>
  <xi:include href="common_legal.xml"/>
 </article>
