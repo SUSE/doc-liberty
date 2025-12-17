@@ -90,8 +90,8 @@
        </para>
 <screen>&prompt.root;<command>sh rmt-client-setup-res https://<replaceable>RMT_SERVER</replaceable> --product 9.6-EMS</command></screen>
        <para>
-        Any command output shown in the steps below will use this minor version number instead
-        of the standard <literal>9</literal>.
+        Any command output will use this minor version number instead of the standard
+        <literal>9</literal> shown in the steps below.
        </para>
      </listitem>
    </itemizedlist>

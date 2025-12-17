@@ -63,7 +63,7 @@
   </step>
   <step>
    <para>
-    Enable the &productname; &productnumber; product. This also enables all the default repositories:
+    Enable the &productname; &productnumber; product. This enables all the default repositories:
    </para>
    <itemizedlist>
      <listitem>
@@ -84,15 +84,13 @@
    <important>
     <title>EMS disk space requirement</title>
     <para>
-      The standard product and the EMS product use separate repositories. You can enable both,
-      but be aware that doing so uses significantly more disk space on the &rmt; server because
-      it must mirror duplicate packages.
+      The EMS repositories are separate from the standard repositories. You can enable both, but this uses significantly more disk space on the &rmt; server because of duplicate packages.
     </para>
     <para>
-      If you previously mirrored the standard repositories but now only need EMS repositories,
+      If you previously mirrored the standard repositories but now only need the EMS repositories,
       you can clean up the standard repositories with the following commands:
     </para>
-<screen>&prompt.root;<command>rmt-cli products disable 2538</command></screen>
+<screen>&prompt.root;<command>rmt-cli products disable 2538 2539</command></screen>
 <screen>&prompt.root;<command>rmt-cli repos clean</command></screen>
    </important>
   </step>
