@@ -1,0 +1,13 @@
+<!DOCTYPE para [
+  <!ENTITY % entities SYSTEM "generic-entities.ent">
+  %entities;
+]>
+
+<para xmlns="http://docbook.org/ns/docbook" version="5.1"
+xmlns:xi="http://www.w3.org/2001/XInclude"
+xmlns:xlink="http://www.w3.org/1999/xlink">
+  &productname; is a technology and support solution for mixed Linux environments. With a
+  &productname; subscription, you can update &rhel; and &centos; Linux from repositories
+  provided by &suse;. This means you get support from &suse; with no requirement to migrate
+  your existing infrastructure to a different operating system.
+</para>

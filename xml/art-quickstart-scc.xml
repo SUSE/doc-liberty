@@ -76,9 +76,10 @@
 
  <section xml:id="introduction-quickstart-scc">
   <title>Introduction</title>
+
+   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="snip-product-description.xml"/>
    <para>
-    &productname; is a technology and support solution for mixed Linux environments.
-    With a &productname; subscription, you can register and update &rhel; and &centos; Linux from repositories provided by &suse;. Optional &ha; repositories are also available.
+    Optional &ha; repositories are also available.
    </para>
    <important role="compact">
     <para>
