@@ -23,7 +23,7 @@
     An optional &ha; extension is also available.
   </para>
   <para>
-    The following table shows which Linux distributions are supported by each subscription. These
+    The following table shows which Linux distributions are supported. &productname;
     subscriptions also include an entitlement for a registration tool to manage package updates.
   </para>
   <table xml:id="supported-distros-and-reg-tools" pgwide="1">
