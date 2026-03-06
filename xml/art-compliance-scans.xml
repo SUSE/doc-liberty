@@ -70,11 +70,8 @@
 
   <section xml:id="sec-compliance-scans-introduction">
     <title>Introduction</title>
-    <para>
-      &productname; is a technology and support solution for mixed Linux environments.
-      With a &productname; subscription, you can register and update &rhel; from repositories
-      provided by &suse;.
-    </para>
+
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="snip-product-description.xml"/>
     <para>
       Because &productname; uses its own branding and paths that are different from &rhla;,
       it also uses different profiles for running compliance scans with &openscap;.
