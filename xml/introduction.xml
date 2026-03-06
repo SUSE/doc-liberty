@@ -18,19 +18,18 @@
   </dm:docmanager>
  </info>
 
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="snip-product-description.xml"/>
   <para>
-    &productname; is a technology and support solution for mixed Linux environments. With a
-    &productname; subscription, you can update &rhel; from repositories provided by &suse;.
     An optional &ha; extension is also available.
   </para>
   <para>
-    The following table shows which Linux distributions are supported by each subscription. These
+    The following table shows which Linux distributions are supported. &productname;
     subscriptions also include an entitlement for a registration tool to manage package updates.
   </para>
   <table xml:id="supported-distros-and-reg-tools" pgwide="1">
      <title>Supported distributions and registration options</title>
      <tgroup cols="3">
-     <colspec colname="c1" colwidth="3.5*"/>
+     <colspec colname="c1" colwidth="3*"/>
      <colspec colname="c2" colwidth="4*"/>
      <colspec colname="c3" colwidth="4.5*"/>
        <thead>
@@ -121,7 +120,7 @@
   </important>
   <important role="compact">
     <para>
-      Registering &rhla; directly to the &scc; is not currently supported.
+      Registering &rhla; &productnumber; directly to the &scc; is not currently supported.
     </para>
   </important>
 
