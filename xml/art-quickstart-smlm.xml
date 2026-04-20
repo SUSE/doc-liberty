@@ -36,7 +36,7 @@
     <dm:version>10</dm:version>
     <dm:assignee>tahliar</dm:assignee>
    </dm:bugtracker>
-   <dm:editurl>https://github.com/SUSE/doc-liberty/edit/main/xml/</dm:editurl>
+   <dm:editurl>https://github.com/SUSE/doc-liberty/edit/maintenance/SLL10/xml/</dm:editurl>
    <dm:translation>no</dm:translation>
   </dm:docmanager>  <meta name="title" its:translate="yes">Registering &rhla; &productnumber; with &smlm;</meta>
   <meta name="description" its:translate="yes">How to use &productname; and &smlm; to update &rhel; &productnumber;.</meta>
@@ -47,7 +47,7 @@
   </meta>
   <revhistory xml:id="rh-art-quickstart-smlm">
     <revision>
-      <date>2025-10-31</date>
+      <date>2026-04-20</date>
       <revdescription>
         <para>
           Initial version for &productname; &productnumber;

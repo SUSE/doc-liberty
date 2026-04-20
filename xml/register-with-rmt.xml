@@ -35,7 +35,7 @@
   <title>Requirements</title>
   <listitem>
    <para>
-    The &rmt; server is running <package>rmt-server</package> version 2.10 or later.
+    The &rmt; server is running <package>rmt-server</package> version 2.26 or later.
    </para>
   </listitem>
   <listitem>
