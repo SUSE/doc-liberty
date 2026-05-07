@@ -49,6 +49,14 @@
   </meta>
   <revhistory xml:id="rh-art-quickstart">
     <revision>
+      <date>2026-05-07</date>
+      <revdescription>
+        <para>
+          Added the new download link for the registration script
+        </para>
+      </revdescription>
+    </revision>
+    <revision>
       <date>2025-12-04</date>
       <revdescription>
         <para>
