@@ -37,11 +37,6 @@
   <title>Requirements</title>
   <listitem>
    <para>
-    The &rmt; server is running <package>rmt-server</package> version 2.10 or later.
-   </para>
-  </listitem>
-  <listitem>
-   <para>
     The &productname; &productnumber; repositories are available on the &rmt; server.
    </para>
   </listitem>
@@ -67,7 +62,7 @@
    <para>
     Download the <filename>rmt-client-setup-res</filename> script:
    </para>
-<screen>&prompt.root;<command>curl --remote-name http://<replaceable>&rmt;_SERVER</replaceable>/tools/rmt-client-setup-res</command></screen>
+<screen>&prompt.root;<command>curl -O https://installer-updates.suse.com/SUSE/Updates/RES-REG/8/installer/update/rmt-client-setup-res</command></screen>
    <para>
     The option <option>--remote-name</option> (or <option>-O</option>) writes the output to a local
     file with the same name as the remote file.
