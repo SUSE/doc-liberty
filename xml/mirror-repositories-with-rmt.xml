@@ -84,14 +84,9 @@
    <important>
     <title>EMS disk space requirement</title>
     <para>
-      The EMS repositories are separate from the standard repositories. You can enable both, but this uses significantly more disk space on the &rmt; server because of duplicate packages.
+      The EMS repositories are separate from the standard repositories. You can enable both, but
+      this uses significantly more disk space on the &rmt; server because of duplicate packages.
     </para>
-    <para>
-      If you previously mirrored the standard repositories but now only need the EMS repositories,
-      you can clean up the standard repositories with the following commands:
-    </para>
-<screen>&prompt.root;<command>rmt-cli products disable 2538 2539</command></screen>
-<screen>&prompt.root;<command>rmt-cli repos clean</command></screen>
    </important>
   </step>
   <step performance="optional">
