@@ -14,7 +14,7 @@
  xmlns:xlink="http://www.w3.org/1999/xlink">
   <title>Accessing the <literal>Source</literal> or <literal>Debug</literal> repositories</title>
   <info>
-    <meta name="description" its:translate="yes">Learn how to mirror and enable Source or Debug repositories on your RMT server and Red Hat Enterprise Linux system</meta>
+    <meta name="description" its:translate="yes">Learn how to mirror and enable Source or Debug repositories on your RMT server and Red Hat Enterprise Linux or CentOS Linux system</meta>
     <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
       <dm:bugtracker></dm:bugtracker>
       <dm:translation>yes</dm:translation>
