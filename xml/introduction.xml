@@ -20,8 +20,22 @@
 
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="snip-product-description.xml"/>
   <para>
-    An optional &ha; extension is also available.
+    Two extensions are also available:
   </para>
+  <itemizedlist>
+    <listitem>
+      <para>
+        The &ha; (HA) extension provides package updates for &rhla;'s &ha; and
+        Resilient Storage Add-Ons.
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        The &ems; (EMS) extension allows you to keep your systems on a specific minor version
+        while still receiving critical updates.
+      </para>
+    </listitem>
+  </itemizedlist>
   <para>
     The following table shows which Linux distributions are supported. &productname;
     subscriptions also include an entitlement for a registration tool to manage package updates.

@@ -52,6 +52,14 @@
       <date>2026-05-07</date>
       <revdescription>
         <para>
+          Added extended minor-version support (EMS)
+        </para>
+      </revdescription>
+    </revision>
+    <revision>
+      <date>2026-05-07</date>
+      <revdescription>
+        <para>
           Added the new download link for the registration script
         </para>
       </revdescription>
@@ -208,7 +216,7 @@
     package dependencies</term>
     <listitem>
      <para>
-      &productname; only supports the latest minor release of &rhla;.
+      &productname; only supports the latest minor version of each &rhla; release.
       If your system is running the latest version and <package>SUSEConnect</package>
       still has package dependency issues, try the following workaround:
      </para>
@@ -277,5 +285,6 @@
   </variablelist>
  </section>
  <xi:include href="app-access-src-debug.xml"/>
+ <xi:include href="app-switch-to-ems.xml"/>
  <xi:include href="common_legal.xml"/>
 </article>
