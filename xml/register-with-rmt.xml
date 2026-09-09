@@ -81,9 +81,9 @@
      <listitem>
        <para>
          To keep your system on a specific minor version, run the script with the
-         <option>--product</option> option and specify the version you need. For example:
+         <option>--product</option> option and specify the version you need:
        </para>
-<screen>&prompt.root;<command>sh rmt-client-setup-res https://<replaceable>RMT_SERVER</replaceable> --product 9.6</command></screen>
+<screen>&prompt.root;<command>sh rmt-client-setup-res https://<replaceable>RMT_SERVER</replaceable> --product <replaceable>VERSION</replaceable></command></screen>
        <para>
         Any command output will use this minor version number instead of the standard
         <literal>9</literal> shown in the steps below.
