@@ -14,6 +14,7 @@
  xmlns:xlink="http://www.w3.org/1999/xlink">
   <title>Switching to &ems;</title>
   <info>
+    <meta name="description" its:translate="yes">Learn how to switch a &rhla; system from a standard &productname; subscription to an &ems; subscription</meta>
     <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
       <dm:bugtracker></dm:bugtracker>
       <dm:translation>yes</dm:translation>

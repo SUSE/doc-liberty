@@ -41,8 +41,8 @@
    <dm:translation>no</dm:translation>
   </dm:docmanager>
   <meta name="title" its:translate="yes">Registering &rhla; &productnumber; with &rmt;</meta>
-  <meta name="description" its:translate="yes">How to use &productname; and &rmt; to update &rhel; &productnumber;.</meta>
-  <meta name="social-descr" its:translate="yes">How to use &rmt; to update &rhla; &productnumber;.</meta>
+  <meta name="description" its:translate="yes">How to use &productname; and &rmt; to update &rhel; &productnumber;</meta>
+  <meta name="social-descr" its:translate="yes">How to use &rmt; to update &rhla; &productnumber;</meta>
   <meta name="task" its:translate="yes">
     <phrase>Upgrade &amp; Update</phrase>
     <phrase>Administration</phrase>
