@@ -1,18 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet href="urn:x-suse:xslt:profiling:docbook51-profile.xsl"
- type="text/xml"
- title="Profiling step"?>
+<?xml version="1.0"?>
 <!DOCTYPE article
 [
   <!ENTITY % entities SYSTEM "generic-entities.ent">
     %entities;
 ]>
 
-<article xml:id="art-quickstart-smlm" xml:lang="en"
- xmlns="http://docbook.org/ns/docbook" version="5.1"
- xmlns:its="http://www.w3.org/2005/11/its"
- xmlns:xi="http://www.w3.org/2001/XInclude"
- xmlns:xlink="http://www.w3.org/1999/xlink">
+<article xmlns="http://docbook.org/ns/docbook" xmlns:its="http://www.w3.org/2005/11/its" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="art-quickstart-smlm" xml:lang="en" version="5.1">
 
  <info>
   <title>Registering &rhla; &productnumber; with &smlm;</title>
@@ -57,7 +50,7 @@
   </revhistory>
  </info>
 
-<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="introduction.xml"/>
+<xi:include href="introduction.xml"/>
 
   <section xml:id="deploy-smlm">
     <title>Deploying &smlm;</title>
@@ -77,7 +70,7 @@
         <citetitle>&smlm; Public Cloud Guide</citetitle></link>.
       </para>
     </tip>
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="snip-repo-size.xml"/>
+    <xi:include href="snip-repo-size.xml"/>
   </section>
 
   <section xml:id="register-with-smlm">
@@ -92,7 +85,7 @@
       &centos; Stream is not supported.
       </para>
     </important>
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="snip-uefi-secure-boot.xml"/>
+    <xi:include href="snip-uefi-secure-boot.xml"/>
   </section>
 
  <xi:include href="common_legal.xml"/>

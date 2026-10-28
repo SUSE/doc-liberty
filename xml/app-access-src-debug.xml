@@ -1,22 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet href="urn:x-suse:xslt:profiling:docbook51-profile.xsl"
- type="text/xml"
- title="Profiling step"?>
+<?xml version="1.0"?>
 <!DOCTYPE appendix
 [
   <!ENTITY % entities SYSTEM "generic-entities.ent">
     %entities;
 ]>
 
-<appendix xmlns:its="http://www.w3.org/2005/11/its" xml:id="app-access-src-debug" xml:lang="en"
- xmlns="http://docbook.org/ns/docbook" version="5.1"
- xmlns:xi="http://www.w3.org/2001/XInclude"
- xmlns:xlink="http://www.w3.org/1999/xlink">
+<appendix xmlns:its="http://www.w3.org/2005/11/its" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="app-access-src-debug" xml:lang="en" version="5.1">
   <title>Accessing the <literal>Source</literal> or <literal>Debug</literal> repositories</title>
   <info>
     <meta name="description" its:translate="yes">Learn how to mirror and enable Source or Debug repositories on your RMT server and Red Hat Enterprise Linux system</meta>
-    <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
-      <dm:bugtracker></dm:bugtracker>
+  <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
+      <dm:bugtracker/>
       <dm:translation>yes</dm:translation>
     </dm:docmanager>
    <revhistory xml:id="rh-app-access-src-debug">
