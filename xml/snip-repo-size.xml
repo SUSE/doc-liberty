@@ -9,7 +9,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink">
   <title>&productname; &productnumber; repository size</title>
   <para>
     The &productname; &productnumber; repositories will grow over time because older package
-    versions are not removed. Based on the current<footnote><para>As of 7 May, 2026</para></footnote>
+    versions are not removed. Based on the current<footnote><para>As of 2 November, 2026</para></footnote>
     size of the repositories, to meet the 1.5 times size recommendation you will need
     approximately 210&nbsp;GB of disk space for the default repositories.
   </para>
