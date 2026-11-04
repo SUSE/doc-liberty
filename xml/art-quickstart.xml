@@ -41,13 +41,21 @@
    <dm:translation>no</dm:translation>
   </dm:docmanager>
   <meta name="title" its:translate="yes">Registering &rhla; &productnumber; with &rmt;</meta>
-  <meta name="description" its:translate="yes">How to use &productname; and &rmt; to update &rhel; &productnumber;.</meta>
-  <meta name="social-descr" its:translate="yes">How to use &rmt; to update &rhla; &productnumber;.</meta>
+  <meta name="description" its:translate="yes">How to use &productname; and &rmt; to update &rhel; &productnumber;</meta>
+  <meta name="social-descr" its:translate="yes">How to use &rmt; to update &rhla; &productnumber;</meta>
   <meta name="task" its:translate="yes">
     <phrase>Upgrade &amp; Update</phrase>
     <phrase>Administration</phrase>
   </meta>
   <revhistory xml:id="rh-art-quickstart">
+    <revision>
+      <date>2026-10-01</date>
+      <revdescription>
+        <para>
+          Added extended minor-version support (EMS)
+        </para>
+      </revdescription>
+    </revision>
     <revision>
       <date>2026-05-07</date>
       <revdescription>
@@ -208,7 +216,7 @@
     package dependencies</term>
     <listitem>
      <para>
-      &productname; only supports the latest minor release of &rhla;.
+      &productname; only supports the latest minor version of each &rhla; release.
       If your system is running the latest version and <package>SUSEConnect</package>
       still has package dependency issues, try the following workaround:
      </para>
@@ -277,5 +285,6 @@
   </variablelist>
  </section>
  <xi:include href="app-access-src-debug.xml"/>
+ <xi:include href="app-switch-to-ems.xml"/>
  <xi:include href="common_legal.xml"/>
 </article>
