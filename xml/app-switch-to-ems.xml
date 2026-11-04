@@ -121,10 +121,9 @@
       <substeps>
         <step>
           <para>
-            List all the repositories for your EMS version. For example, use the following command
-            for 9.6:
+            List all the repositories for your EMS version (for example, 9.6):
           </para>
-<screen>&prompt.root;<command>rmt-cli repos list --all | grep &reponameshort; | grep &productnumber;[.]6</command></screen>
+<screen>&prompt.root;<command>rmt-cli repos list --all | grep &reponameshort; | grep <replaceable>VERSION</replaceable></command></screen>
           <para>
             Enabled repositories have the status <literal>Mirror</literal>. Unenabled repositories
             have the status <literal>Don't Mirror</literal>.
@@ -171,7 +170,7 @@
       <para>
         Run the <filename>rmt-client-setup-res</filename> script with the URL of the &rmt; server
         as a parameter, and specify the version you need with the <option>--product</option>
-        option:
+        option (for example, 9.6):
       </para>
 <screen>&prompt.root;<command>sh rmt-client-setup-res https://<replaceable>RMT_SERVER</replaceable> --product <replaceable>VERSION</replaceable></command></screen>
       <para>

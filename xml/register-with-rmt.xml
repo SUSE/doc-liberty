@@ -35,7 +35,7 @@
   <title>Requirements</title>
   <listitem>
    <para>
-    The &productname; &productnumber; repositories are available on the &rmt; server.
+    The &productname; &productnumber; repositories (standard or EMS) are available on the &rmt; server.
    </para>
   </listitem>
   <listitem>
@@ -81,7 +81,7 @@
      <listitem>
        <para>
          To keep your system on a specific minor version, run the script with the
-         <option>--product</option> option and specify the version you need:
+         <option>--product</option> option and specify the version you need (for example, 9.6):
        </para>
 <screen>&prompt.root;<command>sh rmt-client-setup-res https://<replaceable>RMT_SERVER</replaceable> --product <replaceable>VERSION</replaceable></command></screen>
        <para>
