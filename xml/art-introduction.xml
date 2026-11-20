@@ -55,34 +55,159 @@
 
   <section xml:id="introduction-what-is">
     <title>What is &productname;?</title>
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="snip-product-description.xml"/>
+    <!--xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="snip-product-description.xml"/-->
+    <para>
+      &productname; is a technology and support solution for mixed Linux environments. With a &productname; subscription, you can update &rhel; from repositories provided by &suse;. This means you get support from &suse; with no requirement to migrate your existing infrastructure to a different operating system.
+      It provides continuous security patches, updates and maintenance.
+      Customers can migrate to &productname; by simply removing their &rh; channels and installing the &suse; channels. This process does not cause any downtime. The &rh; or &centos; package manager yum/dnf is still used; the only change is the repository location.
+      No migration is required, allowing you to maintain your existing infrastructure while benefiting from comprehensive &suse; support.
+    </para>
+    <!-- Gemini:
+     SUSE Multi-Linux Support (SMLS) is a unified technology and support solution designed for mixed Linux environments. By switching repository locations to SUSE-provided channels without downtime, administrators can maintain Red Hat Enterprise Linux (RHEL) and CentOS Linux systems with continuous security patches, updates and maintenance. SMLS provides 100% binary compatibility at the application programming interface (API) and application binary interface (ABI) levels, allowing organizations to retain their existing infrastructure and run certified workloads without migrating to a new operating system.
+     -->
+    <para>
+      &productname; is a support offering, not a new Linux distribution. The patches, packages and maintenance provided keep the same Application Binary Interface (ABI), making them identical for applications. As a result, Linux systems maintained by &suse; are fully compatible at the ABI level with supported &rhla; and &centos; versions. Applications that run on &rhla; are expected to have equivalent performance and functionality when run on Linux maintained with &productname;. However, customers are advised to thoroughly test their specific applications before running production workloads.
+      &productname; is a 100% binary-compatible version of &rhla; (including API and ABI 100% compatibility). This ensures that applications certified for &rhla; run seamlessly on &reponame; without any modifications.
+    </para>
     <para>
       An optional &ha; extension is also available.
     </para>
-    <para>
+  </section>
 
+  <section xml:id="introduction-liberty-linux">
+    <title>What was &reponame;?</title>
+    <para>
+      &reponame; was the former name for &suse;'s offering that provided support for environments
+      using a 100% binary-compatible version of &rhla;. It has now been integrated into &productname;.
+      You may still encounter references to <quote>&reponame;</quote> as part of the &productname;
+      service. The underlying software components, such as channels and repositories, are still
+      named &reponame;.
     </para>
+    <para>
+      The name change reflects the service-oriented nature of &productname; and &suse;'s commitment
+      to supporting multiple Linux distributions within a unified service, emphasizing its
+      capability to handle complex, heterogeneous Linux environments. Additionally, it avoids the
+      misunderstanding of perceiving it as another Linux distribution.
+    </para>
+  </section>
+
+  <section xml:id="introduction-supported-product-versions">
+    <title>Supported product versions</title>
+    <para>
+      This table shows which &rhel; and &centos; Linux versions are supported.
+      Each supported version has its own documentation page.
+    </para>
+    <important role="compact">
+      <para>
+      &centos;&nbsp;Stream is not supported.
+      </para>
+    </important>
+    <table xml:id="supported-versions">
+      <title>Supported &rhel; and &centos; Linux versions</title>
+      <tgroup cols="4">
+      <colspec colname="c1" colwidth="0.5*"/>
+      <colspec colname="c2" colwidth="1.5*"/>
+      <colspec colname="c3" colwidth="1.2*"/>
+      <colspec colname="c4" colwidth="1*"/>
+        <thead>
+          <row>
+            <entry>Version</entry>
+            <entry>Linux distribution</entry>
+            <entry>Lifecycle</entry>
+            <entry>Documentation</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>10</entry>
+            <entry>
+              <itemizedlist spacing="compact">
+                <listitem>
+                  <para>
+                    &rhel;
+                  </para>
+                </listitem>
+              </itemizedlist>
+            </entry>
+            <entry><link xlink:href="https://www.suse.com/lifecycle/#suse-multi-linux-support-10"/></entry>
+            <entry><link xlink:href="https://documentation.suse.com/liberty/10/"/></entry>
+          </row>
+          <row>
+            <entry>9</entry>
+            <entry>
+              <itemizedlist spacing="compact">
+                <listitem>
+                  <para>
+                    &rhel;
+                  </para>
+                </listitem>
+              </itemizedlist>
+            </entry>
+            <entry><link xlink:href="https://www.suse.com/lifecycle/#suse-multi-linux-support-9"/></entry>
+            <entry><link xlink:href="https://documentation.suse.com/liberty/9/"/></entry>
+          </row>
+          <row>
+            <entry>8</entry>
+            <entry>
+              <itemizedlist spacing="compact">
+                <listitem>
+                  <para>
+                    &centos; Linux
+                  </para>
+                </listitem>
+                <listitem>
+                  <para>
+                    &rhel;
+                  </para>
+                </listitem>
+              </itemizedlist>
+            </entry>
+            <entry><link xlink:href="https://www.suse.com/lifecycle/#suse-multi-linux-support-8"/></entry>
+            <entry><link xlink:href="https://documentation.suse.com/liberty/8/"/></entry>
+          </row>
+          <row>
+            <entry>7 (LTSS)<footnote><para>Long Term Service Support</para></footnote></entry>
+            <entry>
+              <itemizedlist spacing="compact">
+                <listitem>
+                  <para>
+                    &centos; Linux
+                  </para>
+                </listitem>
+                <listitem>
+                  <para>
+                    &rhel;
+                  </para>
+                </listitem>
+              </itemizedlist>
+            </entry>
+            <entry><link xlink:href="https://www.suse.com/lifecycle/#suse-multi-linux-support-7"/></entry>
+            <entry><link xlink:href="https://documentation.suse.com/liberty/7/"/></entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
   </section>
 
   <section xml:id="introduction-supported-distributions-registration">
     <title>Supported distributions and registration options</title>
     <para>
-      The following table shows which Linux distributions are supported. &productname;
-      subscriptions also include an entitlement for a registration tool to manage package updates.
+      This table shows which Linux distributions are supported with &productname; &productnumber;.
+    </para>
+    <para>
+      &productname; subscriptions also include an entitlement for a registration tool to manage
+      package updates.
     </para>
     <table xml:id="supported-distros-and-reg-tools" pgwide="1">
       <title>Supported distributions and registration options</title>
       <tgroup cols="3">
-      <colspec colname="c1" colwidth="3*"/>
-      <colspec colname="c2" colwidth="4*"/>
+      <colspec colname="c1" colwidth="2.6*"/>
+      <colspec colname="c2" colwidth="4.5*"/>
       <colspec colname="c3" colwidth="4.5*"/>
         <thead>
           <row>
-            <entry>Subscription<footnote><para>The <emphasis>Lite</emphasis> and
-            <emphasis>Basic</emphasis> subscriptions only support &centos; Linux,
-            so are not applicable to &productname;&nbsp;&productnumber;.</para></footnote></entry>
-            <entry>Supported distributions<footnote><para>There is no &centos; Linux &productnumber;, so
-            &centos; Linux support is not applicable to &productname;&nbsp;&productnumber;.</para></footnote></entry>
+            <entry>Subscription</entry>
+            <entry>Supported distributions</entry>
             <entry>Registration options</entry>
           </row>
         </thead>
@@ -91,11 +216,6 @@
             <entry><para><emphasis>&productname; Enterprise</emphasis></para></entry>
             <entry>
               <itemizedlist spacing="compact">
-                <listitem>
-                  <para>
-                    &centos; Linux
-                  </para>
-                </listitem>
                 <listitem>
                   <para>
                     &rhel;
@@ -129,11 +249,6 @@
               <itemizedlist spacing="compact">
                 <listitem>
                   <para>
-                    &centos; Linux
-                  </para>
-                </listitem>
-                <listitem>
-                  <para>
                     &rhel;
                   </para>
                 </listitem>
@@ -159,7 +274,7 @@
     </table>
     <important role="compact">
       <para>
-      &centos;&nbsp;Stream is not supported.
+      &centos;&nbsp;Stream is not supported, and there is no &centos; Linux 10.
       </para>
     </important>
     <important role="compact">
@@ -169,40 +284,34 @@
     </important>
   </section>
 
-  <section xml:id="introduction-supported-versions">
-    <title>Supported versions</title>
+  <section xml:id="introduction-more-info">
+    <title>For more information</title>
     <para>
-
+      For more information, see the following resources:
     </para>
     <itemizedlist>
       <listitem>
-       <para>
-        <link xlink:href="https://documentation.suse.com/liberty/10/">&productname; 10 documentation</link>
-       </para>
-      </listitem>
-      <listitem>
-       <para>
-        <link xlink:href="https://documentation.suse.com/liberty/9/">&productname; 9 documentation</link>
-       </para>
-      </listitem>
-      <listitem>
-       <para>
-        <link xlink:href="https://documentation.suse.com/liberty/8/">&productname; 8 documentation</link>
-       </para>
-      </listitem>
-      <listitem>
         <para>
-          <link xlink:href="https://documentation.suse.com/liberty/7/">&productname; 7 documentation</link>
+          <link xlink:href="https://www.suse.com/products/multi-linux-support/faq/"/>
+        </para>
+        </listitem>
+        <listitem>
+        <para>
+          <link xlink:href="https://www.suse.com/lifecycle/#suse-multi-linux-support-&productnumber;"/>
         </para>
       </listitem>
+      <listitem>
+      <para>
+        <link xlink:href="https://documentation.suse.com/multi-linux-manager/">&smlm; documentation</link>
+      </para>
+    </listitem>
+      <listitem>
+     <para>
+      <link xlink:href="https://documentation.suse.com/sles-15/html/SLES-all/book-rmt.html">
+      <citetitle>&rmtguide;</citetitle></link>
+     </para>
+    </listitem>
     </itemizedlist>
-  </section>
-
-  <section xml:id="introduction-liberty-linux">
-    <title>What's the deal with SLL?</title>
-    <para>
-      SUSE Liberty Linux was the former name for SUSE's offering that provided support for environments using a 100% binary-compatible version of RHEL. It has now been integrated into SUSE Multi-Linux Support. Customers utilizing SUSE Liberty Linux ISOs and repositories may still encounter references to "SUSE Liberty Linux" as part of the service. The name change reflects the service-oriented nature of SUSE Multi-Linux Support and SUSE's commitment to supporting multiple Linux distributions within a unified service, emphasizing its capability to handle complex, heterogeneous Linux environments. Additionally, it avoids the misunderstanding of perceiving it as another Linux distribution. No migration is needed. SUSE Multi-Linux Support is a service that can be provided without requiring a migration from CentOS or RHEL to SUSE Liberty Linux. It allows you to maintain your existing infrastructure while benefiting from SUSE's comprehensive support. SUSE Multi-Linux Support is a 100% binary-compatible version of RHEL (including API and ABI 100% compatibility). This ensures that applications certified for RHEL will run seamlessly on SUSE Liberty Linux without any modifications.
-    </para>
   </section>
 
   <xi:include href="common_legal.xml"/>
