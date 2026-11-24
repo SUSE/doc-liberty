@@ -22,7 +22,7 @@
     <xi:include href="common_copyright_gfdl.xml"/>
     <abstract>
       <para>
-        TODO
+        This guide explains what &productname; is and which Linux distributions and versions it supports.
       </para>
     </abstract>
     <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
@@ -36,8 +36,8 @@
     <dm:translation>no</dm:translation>
     </dm:docmanager>
     <meta name="title" its:translate="yes">Introduction to &productname;</meta>
-    <meta name="description" its:translate="yes">TODO</meta>
-    <meta name="social-descr" its:translate="yes">TODO</meta>
+    <meta name="description" its:translate="yes">Learn about &productname; and how to get patches and support from &suse; without migrating your existing &rhla; or &centos; Linux infrastructure</meta>
+    <meta name="social-descr" its:translate="yes">Learn about the &productname; service</meta>
     <meta name="task" its:translate="yes">
       <phrase>About</phrase>
     </meta>
@@ -55,22 +55,17 @@
 
   <section xml:id="introduction-what-is">
     <title>What is &productname;?</title>
-    <!--xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="snip-product-description.xml"/-->
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="snip-product-description.xml"/>
     <para>
-      &productname; is a technology and support solution for mixed Linux environments. With a &productname; subscription, you can update &rhel; from repositories provided by &suse;. This means you get support from &suse; with no requirement to migrate your existing infrastructure to a different operating system.
-      It provides continuous security patches, updates and maintenance.
-      Customers can migrate to &productname; by simply removing their &rh; channels and installing the &suse; channels. This process does not cause any downtime. The &rh; or &centos; package manager yum/dnf is still used; the only change is the repository location.
-      No migration is required, allowing you to maintain your existing infrastructure while benefiting from comprehensive &suse; support.
-    </para>
-    <!-- Gemini:
-     SUSE Multi-Linux Support (SMLS) is a unified technology and support solution designed for mixed Linux environments. By switching repository locations to SUSE-provided channels without downtime, administrators can maintain Red Hat Enterprise Linux (RHEL) and CentOS Linux systems with continuous security patches, updates and maintenance. SMLS provides 100% binary compatibility at the application programming interface (API) and application binary interface (ABI) levels, allowing organizations to retain their existing infrastructure and run certified workloads without migrating to a new operating system.
-     -->
-    <para>
-      &productname; is a support offering, not a new Linux distribution. The patches, packages and maintenance provided keep the same Application Binary Interface (ABI), making them identical for applications. As a result, Linux systems maintained by &suse; are fully compatible at the ABI level with supported &rhla; and &centos; versions. Applications that run on &rhla; are expected to have equivalent performance and functionality when run on Linux maintained with &productname;. However, customers are advised to thoroughly test their specific applications before running production workloads.
-      &productname; is a 100% binary-compatible version of &rhla; (including API and ABI 100% compatibility). This ensures that applications certified for &rhla; run seamlessly on &reponame; without any modifications.
+      An optional &ha; extension is also available, providing package updates for &rhla;'s &ha;
+      and Resilient Storage Add-Ons.
     </para>
     <para>
-      An optional &ha; extension is also available.
+      &productname; is a support offering, <emphasis>not</emphasis> a new Linux distribution.
+      It provides 100% binary compatibility, including API and ABI 100% compatibility.
+      Applications certified for &rhla; are expected to have equivalent performance and
+      functionality when maintained by &productname;. However, we recommend thoroughly testing
+      your specific applications before running production workloads.
     </para>
   </section>
 
@@ -78,9 +73,9 @@
     <title>What was &reponame;?</title>
     <para>
       &reponame; was the former name for &suse;'s offering that provided support for environments
-      using a 100% binary-compatible version of &rhla;. It has now been integrated into &productname;.
-      You may still encounter references to <quote>&reponame;</quote> as part of the &productname;
-      service. The underlying software components, such as channels and repositories, are still
+      using a 100% binary-compatible version of &rhla;. It has now been integrated into
+      &productname;. You may still encounter references to &reponame; as part of the &productname;
+      service. The underlying software components, such as the channels or repositories, are still
       named &reponame;.
     </para>
     <para>
@@ -307,8 +302,7 @@
     </listitem>
       <listitem>
      <para>
-      <link xlink:href="https://documentation.suse.com/sles-15/html/SLES-all/book-rmt.html">
-      <citetitle>&rmtguide;</citetitle></link>
+      <link xlink:href="https://documentation.suse.com/sles-15/html/SLES-all/book-rmt.html">&rmtguide;</link>
      </para>
     </listitem>
     </itemizedlist>
