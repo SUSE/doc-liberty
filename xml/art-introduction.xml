@@ -36,7 +36,7 @@
     <dm:translation>no</dm:translation>
     </dm:docmanager>
     <meta name="title" its:translate="yes">Introduction to &productname;</meta>
-    <meta name="description" its:translate="yes">Learn about &productname; and how to get patches and support from &suse; without migrating your existing &rhla; or &centos; Linux infrastructure</meta>
+    <meta name="description" its:translate="yes">Learn about &productname; and how to get patches and support from &suse; without migrating your existing &rhla; infrastructure</meta>
     <meta name="social-descr" its:translate="yes">Learn about the &productname; service</meta>
     <meta name="task" its:translate="yes">
       <phrase>About</phrase>
