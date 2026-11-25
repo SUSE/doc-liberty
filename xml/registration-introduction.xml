@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section
+[
+  <!ENTITY % entities SYSTEM "generic-entities.ent">
+    %entities;
+]>
+
+<section xml:id="registration-introduction" xml:lang="en"
+ xmlns="http://docbook.org/ns/docbook" version="5.1"
+ xmlns:xi="http://www.w3.org/2001/XInclude"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <title>Introduction</title>
+
+ <info>
+  <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
+   <dm:bugtracker></dm:bugtracker>
+   <dm:translation>no</dm:translation>
+  </dm:docmanager>
+ </info>
+
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="snip-product-description.xml"/>
+  <para>
+    An optional &ha; extension is also available.
+  </para>
+
+  <para condition="rmt">
+    This guide describes how to register with &rmtool; (&rmt;). &rmt; is a proxy system for the
+    &scc;. The &rmt; server is registered to the &scc;, and other systems are registered as clients
+    of &rmt; and receive packages from it directly.
+  </para>
+  <para condition="smlm">
+    This guide describes how to register with &smlm;. &smlm; is a lifecycle management system for
+    mixed Linux environments. The &smlm; Server is registered to the &scc;, and other systems are
+    registered as clients of &smlm; and receive packages from it directly.
+  </para>
+
+  <itemizedlist condition="rmt">
+    <title>Procedure overview</title>
+    <listitem>
+     <para>
+      If you still need to <emphasis role="bold">set up the &rmt; server</emphasis>, start with
+      <xref linkend="install-rmt-vm"/> and <xref linkend="configure-rmt-server"/>.
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      If you already have an &rmt; server but still need to <emphasis role="bold">mirror the
+      &productname;&nbsp;&productnumber; repositories</emphasis>, go to
+      <xref linkend="mirror-repositories-with-rmt"/>.
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      If you already have an &rmt; server and only need to <emphasis role="bold">register your
+      &rhla;&nbsp;&productnumber; system</emphasis>, skip straight to
+      <xref linkend="register-with-rmt"/>.
+     </para>
+    </listitem>
+  </itemizedlist>
+  <itemizedlist condition="smlm">
+    <title>Procedure overview</title>
+    <listitem>
+     <para>
+      If you still need to <emphasis role="bold">set up &smlm;</emphasis>, start with
+      <xref linkend="deploy-smlm"/>.
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      If &smlm; is already set up and you only need to <emphasis role="bold">register your
+      &rhla;&nbsp;&productnumber; system</emphasis>, skip straight to
+      <xref linkend="register-with-smlm"/>.
+     </para>
+    </listitem>
+  </itemizedlist>
+
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="snip-name-change.xml"/>
+
+  <itemizedlist>
+    <title>Related information</title>
+    <listitem>
+      <para>
+        <link xlink:href="https://documentation.suse.com/liberty/10/html/introduction/art-introduction.html">
+        <citetitle>Introduction to &productname;</citetitle></link>
+      </para>
+    </listitem>
+    <listitem condition="rmt">
+     <para>
+      <link xlink:href="https://documentation.suse.com/sles-15/html/SLES-all/book-rmt.html">
+      <citetitle>&rmtguide;</citetitle></link>
+     </para>
+    </listitem>
+    <listitem condition="smlm">
+      <para>
+        <link xlink:href="https://documentation.suse.com/multi-linux-manager/">&smlm; documentation</link>
+      </para>
+    </listitem>
+    <listitem condition="rmt">
+     <para>
+      <link xlink:href="https://documentation.suse.com/liberty/10/html/quickstart-smlm/art-quickstart-smlm.html">
+      <citetitle>Registering &rhla; 10 with &smlm;</citetitle></link>
+     </para>
+    </listitem>
+    <listitem condition="smlm">
+     <para>
+      <link xlink:href="https://documentation.suse.com/liberty/10/html/quickstart-rmt/art-quickstart-rmt.html">
+      <citetitle>Registering &rhla; 10 with &rmt;</citetitle></link>
+     </para>
+    </listitem>
+  </itemizedlist>
+</section>

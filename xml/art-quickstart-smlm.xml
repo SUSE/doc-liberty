@@ -57,7 +57,7 @@
   </revhistory>
  </info>
 
-<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="introduction.xml"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="registration-introduction.xml"/>
 
   <section xml:id="deploy-smlm">
     <title>Deploying &smlm;</title>
